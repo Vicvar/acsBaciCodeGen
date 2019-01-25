@@ -1,0 +1,276 @@
+/**
+ */
+package baciCodeGen.impl;
+
+import baciCodeGen.BaciCodeGenPackage;
+import baciCodeGen.Characteristic;
+import baciCodeGen.Property;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Property</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link baciCodeGen.impl.PropertyImpl#getName <em>Name</em>}</li>
+ *   <li>{@link baciCodeGen.impl.PropertyImpl#getBaciType <em>Baci Type</em>}</li>
+ *   <li>{@link baciCodeGen.impl.PropertyImpl#getCharacteristics <em>Characteristics</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class PropertyImpl extends MinimalEObjectImpl.Container implements Property {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getBaciType() <em>Baci Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBaciType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String BACI_TYPE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getBaciType() <em>Baci Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBaciType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String baciType = BACI_TYPE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCharacteristics() <em>Characteristics</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCharacteristics()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Characteristic> characteristics;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PropertyImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return BaciCodeGenPackage.Literals.PROPERTY;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.PROPERTY__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getBaciType() {
+		return baciType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBaciType(String newBaciType) {
+		String oldBaciType = baciType;
+		baciType = newBaciType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.PROPERTY__BACI_TYPE, oldBaciType, baciType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Characteristic> getCharacteristics() {
+		if (characteristics == null) {
+			characteristics = new EObjectContainmentEList<Characteristic>(Characteristic.class, this, BaciCodeGenPackage.PROPERTY__CHARACTERISTICS);
+		}
+		return characteristics;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case BaciCodeGenPackage.PROPERTY__CHARACTERISTICS:
+				return ((InternalEList<?>)getCharacteristics()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case BaciCodeGenPackage.PROPERTY__NAME:
+				return getName();
+			case BaciCodeGenPackage.PROPERTY__BACI_TYPE:
+				return getBaciType();
+			case BaciCodeGenPackage.PROPERTY__CHARACTERISTICS:
+				return getCharacteristics();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case BaciCodeGenPackage.PROPERTY__NAME:
+				setName((String)newValue);
+				return;
+			case BaciCodeGenPackage.PROPERTY__BACI_TYPE:
+				setBaciType((String)newValue);
+				return;
+			case BaciCodeGenPackage.PROPERTY__CHARACTERISTICS:
+				getCharacteristics().clear();
+				getCharacteristics().addAll((Collection<? extends Characteristic>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case BaciCodeGenPackage.PROPERTY__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case BaciCodeGenPackage.PROPERTY__BACI_TYPE:
+				setBaciType(BACI_TYPE_EDEFAULT);
+				return;
+			case BaciCodeGenPackage.PROPERTY__CHARACTERISTICS:
+				getCharacteristics().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case BaciCodeGenPackage.PROPERTY__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case BaciCodeGenPackage.PROPERTY__BACI_TYPE:
+				return BACI_TYPE_EDEFAULT == null ? baciType != null : !BACI_TYPE_EDEFAULT.equals(baciType);
+			case BaciCodeGenPackage.PROPERTY__CHARACTERISTICS:
+				return characteristics != null && !characteristics.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", baciType: ");
+		result.append(baciType);
+		result.append(')');
+		return result.toString();
+	}
+
+} //PropertyImpl

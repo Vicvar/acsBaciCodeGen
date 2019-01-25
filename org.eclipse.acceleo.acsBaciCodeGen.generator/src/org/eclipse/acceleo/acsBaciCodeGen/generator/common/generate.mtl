@@ -1,0 +1,167 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.eclipse.org/emf/2002/Ecore', 'http://vvaras/acsBaciCodeGen/model')]
+
+
+[template public generateElement(aCharacteristicComponent : CharacteristicComponent)]
+[comment @main /]
+[testGen()/]
+[generateIDL(self)/]
+[generateSchema()/]
+[generateObjectConfig()/]
+[generateRTConfig()/]
+[generateImplHead()/]
+[generateImpl()/]
+[generateMakefile()/]
+[generateREADME()/]
+[/template]
+
+[template public testGen(aCharacteristicComponent : CharacteristicComponent)]
+[file ('test', false, 'UTF-8')]
+	[for (self.properties)]
+		[i-1/]
+	[/for]
+[/file]
+[/template]
+
+[template public generateIDL(aCharacteristicComponent : CharacteristicComponent)
+	{
+		cName : String = aCharacteristicComponent.name;
+		cModule : String = aCharacteristicComponent.module;
+		cPrefix : String = aCharacteristicComponent.prefix;
+	}]
+
+[file (cName+'/src/idl/'+aCharacteristicComponent.name+'.idl', false, 'UTF-8')]
+#ifndef _[cName.toUpperCase()/]_IDL_
+#define _[cName.toUpperCase()/]_IDL_
+
+#include <baci.idl>
+
+#pragma prefix "[cPrefix/]"
+
+module [cModule/]
+{	
+	interface [cName/] : ACS::CharacteristicComponent
+	{
+		/*Properties*/
+
+		[for (it : Property | self.properties)]
+		readonly attribute ACS::[it.baciType.accessType/][it.baciType.basicType/][if (it.baciType.seqType='Seq')][it.baciType.seqType/][/if] [it.name/];
+
+		[/for]
+		/*Actions*/
+		[for (it : Action | self.actions)]
+
+		[it.type/] [it.name/]();
+		[/for]
+	};
+};
+
+#endif //_[cName.toUpperCase()/]_IDL_
+
+[/file]
+
+[/template]
+
+[template public generateSchema(aCharacteristicComponent : CharacteristicComponent)
+	{
+		cName : String = aCharacteristicComponent.name;
+	}]
+[file (cName+'/config/CDB/schemas/'+cName+'.xsd', false, 'UTF-8')]
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema
+	targetNamespace="urn:schemas-cosylab-com:[cName/]:1.0"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="urn:schemas-cosylab-com:[cName/]:1.0"
+	xmlns:cdb="urn:schemas-cosylab-com:CDB:1.0" 
+	xmlns:baci="urn:schemas-cosylab-com:BACI:1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	
+	<xs:import namespace="urn:schemas-cosylab-com:CDB:1.0" schemaLocation="CDB.xsd"/>
+	<xs:import namespace="urn:schemas-cosylab-com:BACI:1.0" schemaLocation="BACI.xsd"/>
+	
+	<xs:complexType name="[cName/]Type">
+
+		<xs:complexContent>
+
+			<xs:extension base="baci:CharacteristicComponent">
+
+				<xs:sequence>
+					[for (it : Property | self.properties)]
+					<xs:element name="[it.name/]" type="baci:[it.baciType.accessType/][it.baciType.basicType/][if (it.baciType.seqType='Seq')][it.baciType.seqType/][/if]"/>
+					[/for]			
+				</xs:sequence>
+
+				[for (it : Attribute | self.attributes)]
+				<xs:attribute name="[it.name/]" type="[it.type/]" [if(it.required)]use="required" [/if]/>
+				[/for]
+
+			</xs:extension>
+
+		</xs:complexContent>
+
+	</xs:complexType>
+
+	<xs:element name="SensorTag" type="[cName/]Type"/>
+</xs:schema>
+
+[/file]
+[/template]
+
+[template public generateObjectConfig(aCharacteristicComponent : CharacteristicComponent)
+	{
+		cName : String = aCharacteristicComponent.name;
+		cModule : String = aCharacteristicComponent.module;
+		cPrefix :String = aCharacteristicComponent.prefix;
+		cContainerName : String = aCharacteristicComponent.container.name;
+		cContainerLang : String = aCharacteristicComponent.container.language;
+	}]
+[file (cName+'/test/CDB/MACI/Components/Components.xml', false, 'UTF-8')]
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Components  xmlns="urn:schemas-cosylab-com:Components:1.0"
+	xmlns:cdb="urn:schemas-cosylab-com:CDB:1.0" 
+	xmlns:baci="urn:schemas-cosylab-com:BACI:1.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	[aCharacteristicComponent.componentNumber/]
+	[for (Sequence{1..aCharacteristicComponent.componentNumber})]
+	<_ Name="[cName/][i/]"
+		Code="[cName/]Impl"        
+		Type="IDL:[cPrefix/]/[cModule/]/[cName/]:1.0"
+		Container="[cContainerName/]" ImplLang="[cContainerLang/]"
+		[comment Check when does this go/]
+		Autostart="true" 
+		Default="true" />
+	[/for]
+</Components>
+
+[/file]
+[/template]
+
+[template public generateRTConfig(aCharacteristicComponent : CharacteristicComponent)
+	{
+		cName : String = aCharacteristicComponent.name;
+		cModule : String = aCharacteristicComponent.module;
+	}]
+[comment This should change in the future, to allow differences to be specified/]
+[for (Sequence{1..aCharacteristicComponent.componentNumber})]
+[file (cName+'/test/CDB/alma/'+cName+i+'/'+cName+'.xml', false, 'UTF-8')]
+[for (it : Property | )]
+
+[/for]
+[/file]
+[/for]
+[/template]
+
+[template public generateImplHead(aCharacteristicComponent : CharacteristicComponent)]
+	
+[/template]
+
+[template public generateImpl(aCharacteristicComponent : CharacteristicComponent)]
+	
+[/template]
+
+[template public generateMakefile(aCharacteristicComponent : CharacteristicComponent)]
+	
+[/template]
+
+[template public generateREADME(aCharacteristicComponent : CharacteristicComponent)]
+	
+[/template]

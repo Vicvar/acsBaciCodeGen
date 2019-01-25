@@ -1,0 +1,251 @@
+/**
+ */
+package baciCodeGen.baciTypeModel;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EPackage;
+
+/**
+ * <!-- begin-user-doc -->
+ * The <b>Package</b> for the model.
+ * It contains accessors for the meta objects to represent
+ * <ul>
+ *   <li>each class,</li>
+ *   <li>each feature of each class,</li>
+ *   <li>each operation of each class,</li>
+ *   <li>each enum,</li>
+ *   <li>and each data type</li>
+ * </ul>
+ * <!-- end-user-doc -->
+ * @see baciCodeGen.baciTypeModel.BaciTypeModelFactory
+ * @model kind="package"
+ * @generated
+ */
+public interface BaciTypeModelPackage extends EPackage {
+	/**
+	 * The package name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNAME = "baciTypeModel";
+
+	/**
+	 * The package namespace URI.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNS_URI = "http://vvaras/acsBaciCodeGen/baciTypeModel";
+
+	/**
+	 * The package namespace name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNS_PREFIX = "vvaras.acsBaciCodeGen.baciTypeModel";
+
+	/**
+	 * The singleton instance of the package.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	BaciTypeModelPackage eINSTANCE = baciCodeGen.baciTypeModel.impl.BaciTypeModelPackageImpl.init();
+
+	/**
+	 * The meta object id for the '{@link baciCodeGen.baciTypeModel.impl.BaciTypeImpl <em>Baci Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.baciTypeModel.impl.BaciTypeImpl
+	 * @see baciCodeGen.baciTypeModel.impl.BaciTypeModelPackageImpl#getBaciType()
+	 * @generated
+	 */
+	int BACI_TYPE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Access Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BACI_TYPE__ACCESS_TYPE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Baci Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BACI_TYPE_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Baci Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BACI_TYPE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link baciCodeGen.baciTypeModel.AccessType <em>Access Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.baciTypeModel.AccessType
+	 * @see baciCodeGen.baciTypeModel.impl.BaciTypeModelPackageImpl#getAccessType()
+	 * @generated
+	 */
+	int ACCESS_TYPE = 1;
+
+	/**
+	 * The meta object id for the '{@link baciCodeGen.baciTypeModel.BasicType <em>Basic Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.baciTypeModel.BasicType
+	 * @see baciCodeGen.baciTypeModel.impl.BaciTypeModelPackageImpl#getBasicType()
+	 * @generated
+	 */
+	int BASIC_TYPE = 2;
+
+	/**
+	 * The meta object id for the '{@link baciCodeGen.baciTypeModel.SeqType <em>Seq Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.baciTypeModel.SeqType
+	 * @see baciCodeGen.baciTypeModel.impl.BaciTypeModelPackageImpl#getSeqType()
+	 * @generated
+	 */
+	int SEQ_TYPE = 3;
+
+
+	/**
+	 * Returns the meta object for class '{@link baciCodeGen.baciTypeModel.BaciType <em>Baci Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Baci Type</em>'.
+	 * @see baciCodeGen.baciTypeModel.BaciType
+	 * @generated
+	 */
+	EClass getBaciType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link baciCodeGen.baciTypeModel.BaciType#getAccessType <em>Access Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Access Type</em>'.
+	 * @see baciCodeGen.baciTypeModel.BaciType#getAccessType()
+	 * @see #getBaciType()
+	 * @generated
+	 */
+	EAttribute getBaciType_AccessType();
+
+	/**
+	 * Returns the meta object for enum '{@link baciCodeGen.baciTypeModel.AccessType <em>Access Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Access Type</em>'.
+	 * @see baciCodeGen.baciTypeModel.AccessType
+	 * @generated
+	 */
+	EEnum getAccessType();
+
+	/**
+	 * Returns the meta object for enum '{@link baciCodeGen.baciTypeModel.BasicType <em>Basic Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Basic Type</em>'.
+	 * @see baciCodeGen.baciTypeModel.BasicType
+	 * @generated
+	 */
+	EEnum getBasicType();
+
+	/**
+	 * Returns the meta object for enum '{@link baciCodeGen.baciTypeModel.SeqType <em>Seq Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Seq Type</em>'.
+	 * @see baciCodeGen.baciTypeModel.SeqType
+	 * @generated
+	 */
+	EEnum getSeqType();
+
+	/**
+	 * Returns the factory that creates the instances of the model.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the factory that creates the instances of the model.
+	 * @generated
+	 */
+	BaciTypeModelFactory getBaciTypeModelFactory();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * Defines literals for the meta objects that represent
+	 * <ul>
+	 *   <li>each class,</li>
+	 *   <li>each feature of each class,</li>
+	 *   <li>each operation of each class,</li>
+	 *   <li>each enum,</li>
+	 *   <li>and each data type</li>
+	 * </ul>
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	interface Literals {
+		/**
+		 * The meta object literal for the '{@link baciCodeGen.baciTypeModel.impl.BaciTypeImpl <em>Baci Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see baciCodeGen.baciTypeModel.impl.BaciTypeImpl
+		 * @see baciCodeGen.baciTypeModel.impl.BaciTypeModelPackageImpl#getBaciType()
+		 * @generated
+		 */
+		EClass BACI_TYPE = eINSTANCE.getBaciType();
+
+		/**
+		 * The meta object literal for the '<em><b>Access Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BACI_TYPE__ACCESS_TYPE = eINSTANCE.getBaciType_AccessType();
+
+		/**
+		 * The meta object literal for the '{@link baciCodeGen.baciTypeModel.AccessType <em>Access Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see baciCodeGen.baciTypeModel.AccessType
+		 * @see baciCodeGen.baciTypeModel.impl.BaciTypeModelPackageImpl#getAccessType()
+		 * @generated
+		 */
+		EEnum ACCESS_TYPE = eINSTANCE.getAccessType();
+
+		/**
+		 * The meta object literal for the '{@link baciCodeGen.baciTypeModel.BasicType <em>Basic Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see baciCodeGen.baciTypeModel.BasicType
+		 * @see baciCodeGen.baciTypeModel.impl.BaciTypeModelPackageImpl#getBasicType()
+		 * @generated
+		 */
+		EEnum BASIC_TYPE = eINSTANCE.getBasicType();
+
+		/**
+		 * The meta object literal for the '{@link baciCodeGen.baciTypeModel.SeqType <em>Seq Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see baciCodeGen.baciTypeModel.SeqType
+		 * @see baciCodeGen.baciTypeModel.impl.BaciTypeModelPackageImpl#getSeqType()
+		 * @generated
+		 */
+		EEnum SEQ_TYPE = eINSTANCE.getSeqType();
+
+	}
+
+} //BaciTypeModelPackage

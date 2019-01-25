@@ -1,0 +1,18 @@
+/**
+ */
+package baciCodeGen;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Dev IO</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ *
+ * @see baciCodeGen.BaciCodeGenPackage#getDevIO()
+ * @model
+ * @generated
+ */
+public interface DevIO extends EObject {
+} // DevIO

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="baciCodeGen" nsURI="http://vvaras/acsBaciCodeGen/model" nsPrefix="vvaras.acsBaciCodeGen.model">
+  <eClassifiers xsi:type="ecore:EClass" name="CharacteristicComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="module" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Property">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="characteristics" upperBound="-1"
+        eType="#//Characteristic" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baciType" lowerBound="1"
+        eType="#//BaciType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="devIO" lowerBound="1" eType="#//DevIO"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Characteristic">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" lowerBound="1"
+        upperBound="-1" eType="#//Attribute" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DevIO">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BaciType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        volatile="true" defaultValueLiteral="" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="derivation" value="self.accessType+self.basicType+self.seqType"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessType" eType="#//AccessType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="basicType" eType="#//BasicType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="seqType" eType="#//SeqType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AccessType">
+    <eLiterals name="RO"/>
+    <eLiterals name="RW" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BasicType">
+    <eLiterals name="boolean"/>
+    <eLiterals name="double" value="1"/>
+    <eLiterals name="float" value="2"/>
+    <eLiterals name="long" value="3"/>
+    <eLiterals name="longLong" value="4"/>
+    <eLiterals name="uLong" value="5"/>
+    <eLiterals name="uLongLong" value="6" literal=""/>
+    <eLiterals name="pattern" value="7"/>
+    <eLiterals name="string" value="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SeqType">
+    <eLiterals name="notSeq"/>
+    <eLiterals name="Seq" value="1"/>
+  </eClassifiers>
+</ecore:EPackage>

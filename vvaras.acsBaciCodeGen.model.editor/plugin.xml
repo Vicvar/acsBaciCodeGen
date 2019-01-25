@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated baciCodeGenModel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="baciCodeGen.presentation.BaciCodeGenModelWizardID"
+            name="%_UI_BaciCodeGenModelWizard_label"
+            class="baciCodeGen.presentation.BaciCodeGenModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/BaciCodeGenModelFile.gif">
+         <description>%_UI_BaciCodeGenModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated baciCodeGenModel -->
+      <editor
+            id="baciCodeGen.presentation.BaciCodeGenEditorID"
+            name="%_UI_BaciCodeGenEditor_label"
+            icon="icons/full/obj16/BaciCodeGenModelFile.gif"
+            extensions="bacicodegen"
+            class="baciCodeGen.presentation.BaciCodeGenEditor"
+            contributorClass="baciCodeGen.presentation.BaciCodeGenActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

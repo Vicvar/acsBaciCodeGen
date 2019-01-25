@@ -1,0 +1,164 @@
+/**
+ */
+package baciCodeGen.baciTypeModel.impl;
+
+import baciCodeGen.baciTypeModel.AccessType;
+import baciCodeGen.baciTypeModel.BaciType;
+import baciCodeGen.baciTypeModel.BaciTypeModelPackage;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Baci Type</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link baciCodeGen.baciTypeModel.impl.BaciTypeImpl#getAccessType <em>Access Type</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class BaciTypeImpl extends MinimalEObjectImpl.Container implements BaciType {
+	/**
+	 * The default value of the '{@link #getAccessType() <em>Access Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAccessType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final AccessType ACCESS_TYPE_EDEFAULT = AccessType.RO;
+
+	/**
+	 * The cached value of the '{@link #getAccessType() <em>Access Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAccessType()
+	 * @generated
+	 * @ordered
+	 */
+	protected AccessType accessType = ACCESS_TYPE_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BaciTypeImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return BaciTypeModelPackage.Literals.BACI_TYPE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AccessType getAccessType() {
+		return accessType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAccessType(AccessType newAccessType) {
+		AccessType oldAccessType = accessType;
+		accessType = newAccessType == null ? ACCESS_TYPE_EDEFAULT : newAccessType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BaciTypeModelPackage.BACI_TYPE__ACCESS_TYPE, oldAccessType, accessType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case BaciTypeModelPackage.BACI_TYPE__ACCESS_TYPE:
+				return getAccessType();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case BaciTypeModelPackage.BACI_TYPE__ACCESS_TYPE:
+				setAccessType((AccessType)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case BaciTypeModelPackage.BACI_TYPE__ACCESS_TYPE:
+				setAccessType(ACCESS_TYPE_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case BaciTypeModelPackage.BACI_TYPE__ACCESS_TYPE:
+				return accessType != ACCESS_TYPE_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (accessType: ");
+		result.append(accessType);
+		result.append(')');
+		return result.toString();
+	}
+
+} //BaciTypeImpl

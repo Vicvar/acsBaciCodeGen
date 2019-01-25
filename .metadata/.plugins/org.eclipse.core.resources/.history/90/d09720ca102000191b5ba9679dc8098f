@@ -1,0 +1,39 @@
+/**
+ */
+package baciCodeGen.impl;
+
+import baciCodeGen.BaciCodeGenPackage;
+import baciCodeGen.DevIO;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Dev IO</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * @generated
+ */
+public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DevIOImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return BaciCodeGenPackage.Literals.DEV_IO;
+	}
+
+} //DevIOImpl

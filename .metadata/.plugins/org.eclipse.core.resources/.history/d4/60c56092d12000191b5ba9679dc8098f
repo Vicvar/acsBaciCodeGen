@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/vvaras.acsBaciCodeGen.model/src" modelPluginID="vvaras.acsBaciCodeGen.model"
+    modelName="BaciCodeGenModel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>baciCodeGenModel.ecore</foreignModel>
+  <genPackages prefix="BaciCodeGen" disposableProviderFactory="true" ecorePackage="baciCodeGenModel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="baciCodeGenModel.ecore#//AccessType">
+      <genEnumLiterals ecoreEnumLiteral="baciCodeGenModel.ecore#//AccessType/RO"/>
+      <genEnumLiterals ecoreEnumLiteral="baciCodeGenModel.ecore#//AccessType/RW"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="baciCodeGenModel.ecore#//BasicType">
+      <genEnumLiterals ecoreEnumLiteral="baciCodeGenModel.ecore#//BasicType/boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="baciCodeGenModel.ecore#//BasicType/double"/>
+      <genEnumLiterals ecoreEnumLiteral="baciCodeGenModel.ecore#//BasicType/float"/>
+      <genEnumLiterals ecoreEnumLiteral="baciCodeGenModel.ecore#//BasicType/long"/>
+      <genEnumLiterals ecoreEnumLiteral="baciCodeGenModel.ecore#//BasicType/longLong"/>
+      <genEnumLiterals ecoreEnumLiteral="baciCodeGenModel.ecore#//BasicType/uLong"/>
+      <genEnumLiterals ecoreEnumLiteral="baciCodeGenModel.ecore#//BasicType/uLongLong"/>
+      <genEnumLiterals ecoreEnumLiteral="baciCodeGenModel.ecore#//BasicType/pattern"/>
+      <genEnumLiterals ecoreEnumLiteral="baciCodeGenModel.ecore#//BasicType/string"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="baciCodeGenModel.ecore#//SeqType">
+      <genEnumLiterals ecoreEnumLiteral="baciCodeGenModel.ecore#//SeqType/notSeq"/>
+      <genEnumLiterals ecoreEnumLiteral="baciCodeGenModel.ecore#//SeqType/Seq"/>
+    </genEnums>
+    <genClasses ecoreClass="baciCodeGenModel.ecore#//CharacteristicComponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//CharacteristicComponent/module"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//CharacteristicComponent/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//CharacteristicComponent/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="baciCodeGenModel.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Property/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//Property/characteristics"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//Property/baciType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//Property/devIO"/>
+    </genClasses>
+    <genClasses ecoreClass="baciCodeGenModel.ecore#//Characteristic">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//Characteristic/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="baciCodeGenModel.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Attribute/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Attribute/value"/>
+    </genClasses>
+    <genClasses ecoreClass="baciCodeGenModel.ecore#//DevIO">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//DevIO/name"/>
+    </genClasses>
+    <genClasses ecoreClass="baciCodeGenModel.ecore#//BaciType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BaciType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BaciType/accessType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BaciType/basicType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BaciType/seqType"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
