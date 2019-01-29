@@ -233,26 +233,26 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link baciCodeGen.BaciTypeContainer} instances.
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.UsedBaciTypes} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BaciTypeContainerItemProvider baciTypeContainerItemProvider;
+	protected UsedBaciTypesItemProvider usedBaciTypesItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link baciCodeGen.BaciTypeContainer}.
+	 * This creates an adapter for a {@link baciCodeGen.UsedBaciTypes}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createBaciTypeContainerAdapter() {
-		if (baciTypeContainerItemProvider == null) {
-			baciTypeContainerItemProvider = new BaciTypeContainerItemProvider(this);
+	public Adapter createUsedBaciTypesAdapter() {
+		if (usedBaciTypesItemProvider == null) {
+			usedBaciTypesItemProvider = new UsedBaciTypesItemProvider(this);
 		}
 
-		return baciTypeContainerItemProvider;
+		return usedBaciTypesItemProvider;
 	}
 
 	/**
@@ -384,7 +384,7 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 		if (attributeItemProvider != null) attributeItemProvider.dispose();
 		if (devIOItemProvider != null) devIOItemProvider.dispose();
 		if (containerItemProvider != null) containerItemProvider.dispose();
-		if (baciTypeContainerItemProvider != null) baciTypeContainerItemProvider.dispose();
+		if (usedBaciTypesItemProvider != null) usedBaciTypesItemProvider.dispose();
 		if (baciTypeItemProvider != null) baciTypeItemProvider.dispose();
 	}
 

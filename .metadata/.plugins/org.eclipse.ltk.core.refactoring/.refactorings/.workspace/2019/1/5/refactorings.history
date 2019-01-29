@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 3 resources" deleteContents="true" description="Delete 3 resources" element1="/vvaras.acsBaciCodeGen.model.edit" element2="/vvaras.acsBaciCodeGen.model.editor" element3="/vvaras.acsBaciCodeGen.model.tests" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="3" stamp="1548682802504"/>
+</session>

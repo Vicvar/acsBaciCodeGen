@@ -64,6 +64,7 @@ public class PropertyItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addBaciTypePropertyDescriptor(object);
 			addDevIOPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -87,6 +88,28 @@ public class PropertyItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Baci Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBaciTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Property_baciType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Property_baciType_feature", "_UI_Property_type"),
+				 BaciCodeGenPackage.Literals.PROPERTY__BACI_TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -126,7 +149,6 @@ public class PropertyItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(BaciCodeGenPackage.Literals.PROPERTY__CHARACTERISTICS);
-			childrenFeatures.add(BaciCodeGenPackage.Literals.PROPERTY__BACI_TYPE);
 		}
 		return childrenFeatures;
 	}
@@ -186,7 +208,6 @@ public class PropertyItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case BaciCodeGenPackage.PROPERTY__CHARACTERISTICS:
-			case BaciCodeGenPackage.PROPERTY__BACI_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}

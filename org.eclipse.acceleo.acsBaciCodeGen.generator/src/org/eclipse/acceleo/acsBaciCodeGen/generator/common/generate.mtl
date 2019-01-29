@@ -5,7 +5,7 @@
 [template public generateElement(aCharacteristicComponent : CharacteristicComponent)]
 [comment @main /]
 [testGen()/]
-[generateIDL(self)/]
+[generateIDL()/]
 [generateSchema()/]
 [generateObjectConfig()/]
 [generateRTConfig()/]
@@ -30,7 +30,7 @@
 		cPrefix : String = aCharacteristicComponent.prefix;
 	}]
 
-[file (cName+'/src/idl/'+aCharacteristicComponent.name+'.idl', false, 'UTF-8')]
+[file (cName+'/idl/'+aCharacteristicComponent.name+'.idl', false, 'UTF-8')]
 #ifndef _[cName.toUpperCase()/]_IDL_
 #define _[cName.toUpperCase()/]_IDL_
 
@@ -45,7 +45,7 @@ module [cModule/]
 		/*Properties*/
 
 		[for (it : Property | self.properties)]
-		readonly attribute ACS::[it.baciType.accessType/][it.baciType.basicType/][if (it.baciType.seqType='Seq')][it.baciType.seqType/][/if] [it.name/];
+		readonly attribute ACS::[it.baciType.name/] [it.name/];
 
 		[/for]
 		/*Actions*/
@@ -86,7 +86,7 @@ module [cModule/]
 
 				<xs:sequence>
 					[for (it : Property | self.properties)]
-					<xs:element name="[it.name/]" type="baci:[it.baciType.accessType/][it.baciType.basicType/][if (it.baciType.seqType='Seq')][it.baciType.seqType/][/if]"/>
+					<xs:element name="[it.name/]" type="baci:[it.baciType.name/]"/>
 					[/for]			
 				</xs:sequence>
 
@@ -142,20 +142,180 @@ module [cModule/]
 	}]
 [comment This should change in the future, to allow differences to be specified/]
 [for (Sequence{1..aCharacteristicComponent.componentNumber})]
-[file (cName+'/test/CDB/alma/'+cName+i+'/'+cName+'.xml', false, 'UTF-8')]
-[for (it : Property | )]
+[file (cName+'/test/CDB/alma/'+cName+i+'/'+cName+i+'.xml', false, 'UTF-8')]
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<[cName/] xmlns="urn:schemas-cosylab-com:[cName/]:1.0"
+	xmlns:baci="urn:schemas-cosylab-com:BACI:1.0"
+	xmlns:cdb="urn:schemas-cosylab-com:CDB:1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	[for (it : Attribute | aCharacteristicComponent.attributes)]
+	[comment value missing here/]
+	[it.name/]="VALUE_HERE"[/for]>
 
-[/for]
+	[for (it : Property | aCharacteristicComponent.properties)]
+	<[it.name/]
+		[for (it2 : Characteristic | it.characteristics)]
+		[it2.name/]="[it2.value/]"
+		[/for]
+	/>
+	[/for]
+
+</[cName/]>
+
 [/file]
 [/for]
+
 [/template]
 
-[template public generateImplHead(aCharacteristicComponent : CharacteristicComponent)]
+[template public generateImplHead(aCharacteristicComponent : CharacteristicComponent)
+	{
+		cName : String = aCharacteristicComponent.name;
+		cModule : String = aCharacteristicComponent.module;
+	}]
+[file (cName+'/include/'+cName+'_impl.h', false, 'UTF-8')]
+#ifndef _[cName.toUpperCase()/]_IMPL_H_
+#define _[cName.toUpperCase()/]_IMPL_H_
+
+#include <[cName/]S.h>
+
+#include <baciCharacteristicComponentImpl.h>
+#include <baciSmartPropertyPointer.h>
+#include <baciDevIO.h>
+#include <acsThread.h>
+[for (it : Property | aCharacteristicComponent.properties)]
+#include <baci[it.baciType.accessType/][it.baciType.basicType/][if (it.baciType.seqType='Seq')][it.baciType.seqType/][/if]>
+[/for]
+[comment include DevIO /]
+
+class [cName/]_thread;
+
+class [cName/]_impl : public virtual POA_[cModule/]::[cName/], public baci::CharacteristicComponentImpl
+{
+	public:
+		
+		/*Constructor/Destructor*/
+		[comment check arguments/]
+		[cName/]_impl(const ACE_CString name, maci::ContainerServices * containerServices);
+		virtual ~[cName/]_impl();
+		
+		/*Properties*/
+		[for (it : Property | aCharacteristicComponent.properties)]
+		ACS::[it.baciType.name/]_ptr [it.name/]()
+		[/for]
+
+		/*Actions*/
+		[for (it : Action | aCharacteristicComponent.actions)]
+		[comment Add arguments /]
+		[it.type/] [it.name/]();
+		[/for]
+
+		/*Lifecycle methods*/
+		[comment Statically generated -- maybe don't override/]
+		virtual void initialize(void) throw (acsErrTypeLifeCycle::acsErrTypeLifeCycleExImpl);
+		virtual void execute(void) throw (acsErrTypeLifeCycle::acsErrTypeLifeCycleExImpl);
+		virtual void cleanUp(void);
+		virtual void aboutToAbort(void);
 	
+	private:
+		/*Smart Property Pointers*/
+		[comment Using Tutorial's notation /]
+		[for(it : Property | aCharacteristicComponent.properties)]
+		baci::SmartPropertyPointer<baci::[it.baciType.name/]> m_[it.name/]_sp;
+		[/for]
+
+		/*DevIO read*/
+		//TBI
+		
+		/*DevIO write*/
+		//TBI
+
+		/*DevIO variables*/
+
+		[cName/]_thread * refresh_thread;
+};
+
+#endif //_[cName.toUpperCase()/]_IMPL_H_
+[/file]
 [/template]
 
-[template public generateImpl(aCharacteristicComponent : CharacteristicComponent)]
-	
+[template public generateImpl(aCharacteristicComponent : CharacteristicComponent)
+	{
+		cName : String = aCharacteristicComponent.name;
+		cModule : String = aCharacteristicComponent.module;
+	}]
+[file (cName+'/src/'+cName+'_impl.cpp', false, 'UTF-8')]
+#include <[cName/]_impl.h>
+[comment Include DevIO header/]
+
+/*Constructor*/
+[cName/]_impl::[cName/]_impl(const ACE_CString name, maci::ContainerServices * containerServices):
+	CharacteristicComponentImpl(name, containerServices),
+	[for (it : Property | aCharacteristicComponent.properties)]
+	m_[it.name/]_sp(new [it.baciType.name/](name+":[it.name/]",getComponent()),this)
+	[/for]
+{
+	[comment Check this. Also check the other property creation/]
+	ACS_TRACE("::[cName/]::[cName/]");
+}
+
+/*Destructor*/
+[cName/]::~[cName/]()
+{
+
+}
+
+/*Lyfecycle methods override*/
+void [cName/]::initialize() throw (acsErrTypeLifeCycle::acsErrTypeLifeCycleExImpl)
+{
+	[comment  Should implement construction/]
+}
+
+void [cName/]::execute() throw (acsErrTypeLifeCycle::acsErrTypeLifeCycleExImpl)
+{
+	[comment Signals that the server must be ready after initialize/]
+}
+
+void [cName/]::cleanUp()
+{
+	[comment Should implement destruction/]
+}
+
+void [cName/]::aboutToAbort()
+{
+	[comment Should handle destruction in case of error/]
+}
+
+/*Properties implementation*/
+[for (it : Property | aCharacteristicComponent.properties)]
+
+ACS::[it.baciType.name/] [cName/]::[it.name/]()
+{
+	[comment Not sure if this is a general implementation/]
+	if(m_[it.name/]_sp == 0)
+		return ACS::[it.baciType.name/]::_nil();
+	ACS::[it.baciType.name/]_var prop = ACS::[it.baciType.name/]::_narrow(m_[it.name/]_sp->getCORBAReference());
+	return prop._retn();
+}
+[/for]
+
+/*Actions implementation*/
+[for (it : Action | aCharacteristicComponent.actions)]
+[comment Missing action parameters /]
+[it.type/] [cName/]_impl::[it.name/]()
+{
+	[comment]
+	Not sure what goes here. Maybe differenciate between "normal" actions (on, off, reset)
+	and other kinds, in order to generalize/specify the implementation.
+	[/comment]
+}
+[/for]
+
+
+/* --------------- ['['/] MACI DLL support functions [']'/] -----------------*/
+#include <maciACSComponentDefines.h>
+MACI_DLL_SUPPORT_FUNCTIONS([cName/]_impl)
+/* ----------------------------------------------------------------*/
+[/file]
 [/template]
 
 [template public generateMakefile(aCharacteristicComponent : CharacteristicComponent)]

@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link baciCodeGen.impl.BaciTypeImpl#getName <em>Name</em>}</li>
  *   <li>{@link baciCodeGen.impl.BaciTypeImpl#getAccessType <em>Access Type</em>}</li>
  *   <li>{@link baciCodeGen.impl.BaciTypeImpl#getBasicType <em>Basic Type</em>}</li>
  *   <li>{@link baciCodeGen.impl.BaciTypeImpl#getSeqType <em>Seq Type</em>}</li>
@@ -31,6 +32,16 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class BaciTypeImpl extends MinimalEObjectImpl.Container implements BaciType {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The default value of the '{@link #getAccessType() <em>Access Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -113,6 +124,18 @@ public class BaciTypeImpl extends MinimalEObjectImpl.Container implements BaciTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String getName() {
+		String res = accessType.getLiteral() + basicType.getLiteral();
+		if(seqType.getValue()==1)
+			res+= "Seq";
+		return res;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public AccessType getAccessType() {
@@ -181,6 +204,8 @@ public class BaciTypeImpl extends MinimalEObjectImpl.Container implements BaciTy
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case BaciCodeGenPackage.BACI_TYPE__NAME:
+				return getName();
 			case BaciCodeGenPackage.BACI_TYPE__ACCESS_TYPE:
 				return getAccessType();
 			case BaciCodeGenPackage.BACI_TYPE__BASIC_TYPE:
@@ -241,6 +266,8 @@ public class BaciTypeImpl extends MinimalEObjectImpl.Container implements BaciTy
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case BaciCodeGenPackage.BACI_TYPE__NAME:
+				return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
 			case BaciCodeGenPackage.BACI_TYPE__ACCESS_TYPE:
 				return accessType != ACCESS_TYPE_EDEFAULT;
 			case BaciCodeGenPackage.BACI_TYPE__BASIC_TYPE:

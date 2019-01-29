@@ -5,8 +5,6 @@ package baciCodeGen.provider;
 
 import baciCodeGen.BaciCodeGenPackage;
 import baciCodeGen.BaciType;
-
-import baciCodeGen.BasicType;
 import java.util.Collection;
 import java.util.List;
 
@@ -61,11 +59,34 @@ public class BaciTypeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
 			addAccessTypePropertyDescriptor(object);
 			addBasicTypePropertyDescriptor(object);
 			addSeqTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BaciType_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BaciType_name_feature", "_UI_BaciType_type"),
+				 BaciCodeGenPackage.Literals.BACI_TYPE__NAME,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -153,8 +174,7 @@ public class BaciTypeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		BasicType labelValue = ((BaciType)object).getBasicType();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((BaciType)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_BaciType_type") :
 			getString("_UI_BaciType_type") + " " + label;
@@ -173,6 +193,7 @@ public class BaciTypeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(BaciType.class)) {
+			case BaciCodeGenPackage.BACI_TYPE__NAME:
 			case BaciCodeGenPackage.BACI_TYPE__ACCESS_TYPE:
 			case BaciCodeGenPackage.BACI_TYPE__BASIC_TYPE:
 			case BaciCodeGenPackage.BACI_TYPE__SEQ_TYPE:

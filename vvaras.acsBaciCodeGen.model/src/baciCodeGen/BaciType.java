@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link baciCodeGen.BaciType#getName <em>Name</em>}</li>
  *   <li>{@link baciCodeGen.BaciType#getAccessType <em>Access Type</em>}</li>
  *   <li>{@link baciCodeGen.BaciType#getBasicType <em>Basic Type</em>}</li>
  *   <li>{@link baciCodeGen.BaciType#getSeqType <em>Seq Type</em>}</li>
@@ -23,6 +24,21 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface BaciType extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see baciCodeGen.BaciCodeGenPackage#getBaciType_Name()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @generated
+	 */
+	String getName();
+
 	/**
 	 * Returns the value of the '<em><b>Access Type</b></em>' attribute.
 	 * The literals are from the enumeration {@link baciCodeGen.AccessType}.

@@ -104,13 +104,31 @@ public interface BaciCodeGenPackage extends EPackage {
 	int CHARACTERISTIC_COMPONENT__COMPONENT_NUMBER = 3;
 
 	/**
+	 * The feature id for the '<em><b>Container</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHARACTERISTIC_COMPONENT__CONTAINER = 4;
+
+	/**
+	 * The feature id for the '<em><b>Impl Lang</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHARACTERISTIC_COMPONENT__IMPL_LANG = 5;
+
+	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHARACTERISTIC_COMPONENT__ATTRIBUTES = 4;
+	int CHARACTERISTIC_COMPONENT__ATTRIBUTES = 6;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -119,7 +137,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHARACTERISTIC_COMPONENT__PROPERTIES = 5;
+	int CHARACTERISTIC_COMPONENT__PROPERTIES = 7;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -128,16 +146,16 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHARACTERISTIC_COMPONENT__ACTIONS = 6;
+	int CHARACTERISTIC_COMPONENT__ACTIONS = 8;
 
 	/**
-	 * The feature id for the '<em><b>Container</b></em>' reference.
+	 * The feature id for the '<em><b>Used Baci Types</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHARACTERISTIC_COMPONENT__CONTAINER = 7;
+	int CHARACTERISTIC_COMPONENT__USED_BACI_TYPES = 9;
 
 	/**
 	 * The number of structural features of the '<em>Characteristic Component</em>' class.
@@ -146,7 +164,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHARACTERISTIC_COMPONENT_FEATURE_COUNT = 8;
+	int CHARACTERISTIC_COMPONENT_FEATURE_COUNT = 10;
 
 	/**
 	 * The number of operations of the '<em>Characteristic Component</em>' class.
@@ -452,14 +470,14 @@ public interface BaciCodeGenPackage extends EPackage {
 	int CONTAINER_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link baciCodeGen.impl.BaciTypeContainerImpl <em>Baci Type Container</em>}' class.
+	 * The meta object id for the '{@link baciCodeGen.impl.UsedBaciTypesImpl <em>Used Baci Types</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.impl.BaciTypeContainerImpl
-	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getBaciTypeContainer()
+	 * @see baciCodeGen.impl.UsedBaciTypesImpl
+	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getUsedBaciTypes()
 	 * @generated
 	 */
-	int BACI_TYPE_CONTAINER = 7;
+	int USED_BACI_TYPES = 7;
 
 	/**
 	 * The feature id for the '<em><b>Baci Types</b></em>' containment reference list.
@@ -468,25 +486,25 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BACI_TYPE_CONTAINER__BACI_TYPES = 0;
+	int USED_BACI_TYPES__BACI_TYPES = 0;
 
 	/**
-	 * The number of structural features of the '<em>Baci Type Container</em>' class.
+	 * The number of structural features of the '<em>Used Baci Types</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BACI_TYPE_CONTAINER_FEATURE_COUNT = 1;
+	int USED_BACI_TYPES_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Baci Type Container</em>' class.
+	 * The number of operations of the '<em>Used Baci Types</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BACI_TYPE_CONTAINER_OPERATION_COUNT = 0;
+	int USED_BACI_TYPES_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link baciCodeGen.impl.BaciTypeImpl <em>Baci Type</em>}' class.
@@ -499,13 +517,22 @@ public interface BaciCodeGenPackage extends EPackage {
 	int BACI_TYPE = 8;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BACI_TYPE__NAME = 0;
+
+	/**
 	 * The feature id for the '<em><b>Access Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BACI_TYPE__ACCESS_TYPE = 0;
+	int BACI_TYPE__ACCESS_TYPE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Basic Type</b></em>' attribute.
@@ -514,7 +541,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BACI_TYPE__BASIC_TYPE = 1;
+	int BACI_TYPE__BASIC_TYPE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Seq Type</b></em>' attribute.
@@ -523,7 +550,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BACI_TYPE__SEQ_TYPE = 2;
+	int BACI_TYPE__SEQ_TYPE = 3;
 
 	/**
 	 * The number of structural features of the '<em>Baci Type</em>' class.
@@ -532,7 +559,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BACI_TYPE_FEATURE_COUNT = 3;
+	int BACI_TYPE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Baci Type</em>' class.
@@ -629,6 +656,39 @@ public interface BaciCodeGenPackage extends EPackage {
 	EAttribute getCharacteristicComponent_ComponentNumber();
 
 	/**
+	 * Returns the meta object for the attribute '{@link baciCodeGen.CharacteristicComponent#getContainer <em>Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Container</em>'.
+	 * @see baciCodeGen.CharacteristicComponent#getContainer()
+	 * @see #getCharacteristicComponent()
+	 * @generated
+	 */
+	EAttribute getCharacteristicComponent_Container();
+
+	/**
+	 * Returns the meta object for the attribute '{@link baciCodeGen.CharacteristicComponent#getImplLang <em>Impl Lang</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Impl Lang</em>'.
+	 * @see baciCodeGen.CharacteristicComponent#getImplLang()
+	 * @see #getCharacteristicComponent()
+	 * @generated
+	 */
+	EAttribute getCharacteristicComponent_ImplLang();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link baciCodeGen.CharacteristicComponent#getAttributes <em>Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Attributes</em>'.
+	 * @see baciCodeGen.CharacteristicComponent#getAttributes()
+	 * @see #getCharacteristicComponent()
+	 * @generated
+	 */
+	EReference getCharacteristicComponent_Attributes();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link baciCodeGen.CharacteristicComponent#getProperties <em>Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -651,26 +711,15 @@ public interface BaciCodeGenPackage extends EPackage {
 	EReference getCharacteristicComponent_Actions();
 
 	/**
-	 * Returns the meta object for the reference '{@link baciCodeGen.CharacteristicComponent#getContainer <em>Container</em>}'.
+	 * Returns the meta object for the containment reference '{@link baciCodeGen.CharacteristicComponent#getUsedBaciTypes <em>Used Baci Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Container</em>'.
-	 * @see baciCodeGen.CharacteristicComponent#getContainer()
+	 * @return the meta object for the containment reference '<em>Used Baci Types</em>'.
+	 * @see baciCodeGen.CharacteristicComponent#getUsedBaciTypes()
 	 * @see #getCharacteristicComponent()
 	 * @generated
 	 */
-	EReference getCharacteristicComponent_Container();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link baciCodeGen.CharacteristicComponent#getAttributes <em>Attributes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Attributes</em>'.
-	 * @see baciCodeGen.CharacteristicComponent#getAttributes()
-	 * @see #getCharacteristicComponent()
-	 * @generated
-	 */
-	EReference getCharacteristicComponent_Attributes();
+	EReference getCharacteristicComponent_UsedBaciTypes();
 
 	/**
 	 * Returns the meta object for class '{@link baciCodeGen.Property <em>Property</em>}'.
@@ -887,25 +936,25 @@ public interface BaciCodeGenPackage extends EPackage {
 	EAttribute getContainer_Language();
 
 	/**
-	 * Returns the meta object for class '{@link baciCodeGen.BaciTypeContainer <em>Baci Type Container</em>}'.
+	 * Returns the meta object for class '{@link baciCodeGen.UsedBaciTypes <em>Used Baci Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Baci Type Container</em>'.
-	 * @see baciCodeGen.BaciTypeContainer
+	 * @return the meta object for class '<em>Used Baci Types</em>'.
+	 * @see baciCodeGen.UsedBaciTypes
 	 * @generated
 	 */
-	EClass getBaciTypeContainer();
+	EClass getUsedBaciTypes();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link baciCodeGen.BaciTypeContainer#getBaciTypes <em>Baci Types</em>}'.
+	 * Returns the meta object for the containment reference list '{@link baciCodeGen.UsedBaciTypes#getBaciTypes <em>Baci Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Baci Types</em>'.
-	 * @see baciCodeGen.BaciTypeContainer#getBaciTypes()
-	 * @see #getBaciTypeContainer()
+	 * @see baciCodeGen.UsedBaciTypes#getBaciTypes()
+	 * @see #getUsedBaciTypes()
 	 * @generated
 	 */
-	EReference getBaciTypeContainer_BaciTypes();
+	EReference getUsedBaciTypes_BaciTypes();
 
 	/**
 	 * Returns the meta object for class '{@link baciCodeGen.BaciType <em>Baci Type</em>}'.
@@ -916,6 +965,17 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getBaciType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link baciCodeGen.BaciType#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see baciCodeGen.BaciType#getName()
+	 * @see #getBaciType()
+	 * @generated
+	 */
+	EAttribute getBaciType_Name();
 
 	/**
 	 * Returns the meta object for the attribute '{@link baciCodeGen.BaciType#getAccessType <em>Access Type</em>}'.
@@ -1046,6 +1106,30 @@ public interface BaciCodeGenPackage extends EPackage {
 		EAttribute CHARACTERISTIC_COMPONENT__COMPONENT_NUMBER = eINSTANCE.getCharacteristicComponent_ComponentNumber();
 
 		/**
+		 * The meta object literal for the '<em><b>Container</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHARACTERISTIC_COMPONENT__CONTAINER = eINSTANCE.getCharacteristicComponent_Container();
+
+		/**
+		 * The meta object literal for the '<em><b>Impl Lang</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHARACTERISTIC_COMPONENT__IMPL_LANG = eINSTANCE.getCharacteristicComponent_ImplLang();
+
+		/**
+		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CHARACTERISTIC_COMPONENT__ATTRIBUTES = eINSTANCE.getCharacteristicComponent_Attributes();
+
+		/**
 		 * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1062,20 +1146,12 @@ public interface BaciCodeGenPackage extends EPackage {
 		EReference CHARACTERISTIC_COMPONENT__ACTIONS = eINSTANCE.getCharacteristicComponent_Actions();
 
 		/**
-		 * The meta object literal for the '<em><b>Container</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Used Baci Types</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CHARACTERISTIC_COMPONENT__CONTAINER = eINSTANCE.getCharacteristicComponent_Container();
-
-		/**
-		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CHARACTERISTIC_COMPONENT__ATTRIBUTES = eINSTANCE.getCharacteristicComponent_Attributes();
+		EReference CHARACTERISTIC_COMPONENT__USED_BACI_TYPES = eINSTANCE.getCharacteristicComponent_UsedBaciTypes();
 
 		/**
 		 * The meta object literal for the '{@link baciCodeGen.impl.PropertyImpl <em>Property</em>}' class.
@@ -1250,14 +1326,14 @@ public interface BaciCodeGenPackage extends EPackage {
 		EAttribute CONTAINER__LANGUAGE = eINSTANCE.getContainer_Language();
 
 		/**
-		 * The meta object literal for the '{@link baciCodeGen.impl.BaciTypeContainerImpl <em>Baci Type Container</em>}' class.
+		 * The meta object literal for the '{@link baciCodeGen.impl.UsedBaciTypesImpl <em>Used Baci Types</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see baciCodeGen.impl.BaciTypeContainerImpl
-		 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getBaciTypeContainer()
+		 * @see baciCodeGen.impl.UsedBaciTypesImpl
+		 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getUsedBaciTypes()
 		 * @generated
 		 */
-		EClass BACI_TYPE_CONTAINER = eINSTANCE.getBaciTypeContainer();
+		EClass USED_BACI_TYPES = eINSTANCE.getUsedBaciTypes();
 
 		/**
 		 * The meta object literal for the '<em><b>Baci Types</b></em>' containment reference list feature.
@@ -1265,7 +1341,7 @@ public interface BaciCodeGenPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BACI_TYPE_CONTAINER__BACI_TYPES = eINSTANCE.getBaciTypeContainer_BaciTypes();
+		EReference USED_BACI_TYPES__BACI_TYPES = eINSTANCE.getUsedBaciTypes_BaciTypes();
 
 		/**
 		 * The meta object literal for the '{@link baciCodeGen.impl.BaciTypeImpl <em>Baci Type</em>}' class.
@@ -1276,6 +1352,14 @@ public interface BaciCodeGenPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BACI_TYPE = eINSTANCE.getBaciType();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BACI_TYPE__NAME = eINSTANCE.getBaciType_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Access Type</b></em>' attribute feature.

@@ -19,10 +19,12 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link baciCodeGen.CharacteristicComponent#getName <em>Name</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getPrefix <em>Prefix</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getComponentNumber <em>Component Number</em>}</li>
+ *   <li>{@link baciCodeGen.CharacteristicComponent#getContainer <em>Container</em>}</li>
+ *   <li>{@link baciCodeGen.CharacteristicComponent#getImplLang <em>Impl Lang</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getProperties <em>Properties</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getActions <em>Actions</em>}</li>
- *   <li>{@link baciCodeGen.CharacteristicComponent#getContainer <em>Container</em>}</li>
+ *   <li>{@link baciCodeGen.CharacteristicComponent#getUsedBaciTypes <em>Used Baci Types</em>}</li>
  * </ul>
  *
  * @see baciCodeGen.BaciCodeGenPackage#getCharacteristicComponent()
@@ -136,6 +138,74 @@ public interface CharacteristicComponent extends EObject {
 	void setComponentNumber(int value);
 
 	/**
+	 * Returns the value of the '<em><b>Container</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Container</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Container</em>' attribute.
+	 * @see #setContainer(String)
+	 * @see baciCodeGen.BaciCodeGenPackage#getCharacteristicComponent_Container()
+	 * @model
+	 * @generated
+	 */
+	String getContainer();
+
+	/**
+	 * Sets the value of the '{@link baciCodeGen.CharacteristicComponent#getContainer <em>Container</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Container</em>' attribute.
+	 * @see #getContainer()
+	 * @generated
+	 */
+	void setContainer(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Impl Lang</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Impl Lang</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Impl Lang</em>' attribute.
+	 * @see #setImplLang(String)
+	 * @see baciCodeGen.BaciCodeGenPackage#getCharacteristicComponent_ImplLang()
+	 * @model
+	 * @generated
+	 */
+	String getImplLang();
+
+	/**
+	 * Sets the value of the '{@link baciCodeGen.CharacteristicComponent#getImplLang <em>Impl Lang</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Impl Lang</em>' attribute.
+	 * @see #getImplLang()
+	 * @generated
+	 */
+	void setImplLang(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.
+	 * The list contents are of type {@link baciCodeGen.Attribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Attributes</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Attributes</em>' containment reference list.
+	 * @see baciCodeGen.BaciCodeGenPackage#getCharacteristicComponent_Attributes()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Attribute> getAttributes();
+
+	/**
 	 * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
 	 * The list contents are of type {@link baciCodeGen.Property}.
 	 * <!-- begin-user-doc -->
@@ -168,45 +238,29 @@ public interface CharacteristicComponent extends EObject {
 	EList<Action> getActions();
 
 	/**
-	 * Returns the value of the '<em><b>Container</b></em>' reference.
+	 * Returns the value of the '<em><b>Used Baci Types</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Container</em>' reference isn't clear,
+	 * If the meaning of the '<em>Used Baci Types</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Container</em>' reference.
-	 * @see #setContainer(Container)
-	 * @see baciCodeGen.BaciCodeGenPackage#getCharacteristicComponent_Container()
-	 * @model
+	 * @return the value of the '<em>Used Baci Types</em>' containment reference.
+	 * @see #setUsedBaciTypes(UsedBaciTypes)
+	 * @see baciCodeGen.BaciCodeGenPackage#getCharacteristicComponent_UsedBaciTypes()
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Container getContainer();
+	UsedBaciTypes getUsedBaciTypes();
 
 	/**
-	 * Sets the value of the '{@link baciCodeGen.CharacteristicComponent#getContainer <em>Container</em>}' reference.
+	 * Sets the value of the '{@link baciCodeGen.CharacteristicComponent#getUsedBaciTypes <em>Used Baci Types</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Container</em>' reference.
-	 * @see #getContainer()
+	 * @param value the new value of the '<em>Used Baci Types</em>' containment reference.
+	 * @see #getUsedBaciTypes()
 	 * @generated
 	 */
-	void setContainer(Container value);
-
-	/**
-	 * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.
-	 * The list contents are of type {@link baciCodeGen.Attribute}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Attributes</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attributes</em>' containment reference list.
-	 * @see baciCodeGen.BaciCodeGenPackage#getCharacteristicComponent_Attributes()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Attribute> getAttributes();
+	void setUsedBaciTypes(UsedBaciTypes value);
 
 } // CharacteristicComponent

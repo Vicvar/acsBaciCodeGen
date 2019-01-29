@@ -31,6 +31,7 @@ public class BaciCodeGenModelAllTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new BaciCodeGenModelAllTests("BaciCodeGenModel Tests");
+		suite.addTest(BaciCodeGenTests.suite());
 		return suite;
 	}
 

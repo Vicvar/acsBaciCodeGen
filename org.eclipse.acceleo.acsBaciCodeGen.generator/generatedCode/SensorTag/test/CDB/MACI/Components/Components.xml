@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Components  xmlns="urn:schemas-cosylab-com:Components:1.0"
+	xmlns:cdb="urn:schemas-cosylab-com:CDB:1.0" 
+	xmlns:baci="urn:schemas-cosylab-com:BACI:1.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	10
+	<_ Name="SensorTag1"
+		Code="SensorTagImpl"        
+		Type="IDL:alma/Sensors/SensorTag:1.0"
+		Container="" ImplLang=""
+		Autostart="true" 
+		Default="true" />
+	<_ Name="SensorTag2"
+		Code="SensorTagImpl"        
+		Type="IDL:alma/Sensors/SensorTag:1.0"
+		Container="" ImplLang=""
+		Autostart="true" 
+		Default="true" />
+	<_ Name="SensorTag3"
+		Code="SensorTagImpl"        
+		Type="IDL:alma/Sensors/SensorTag:1.0"
+		Container="" ImplLang=""
+		Autostart="true" 
+		Default="true" />
+	<_ Name="SensorTag4"
+		Code="SensorTagImpl"        
+		Type="IDL:alma/Sensors/SensorTag:1.0"
+		Container="" ImplLang=""
+		Autostart="true" 
+		Default="true" />
+	<_ Name="SensorTag5"
+		Code="SensorTagImpl"        
+		Type="IDL:alma/Sensors/SensorTag:1.0"
+		Container="" ImplLang=""
+		Autostart="true" 
+		Default="true" />
+	<_ Name="SensorTag6"
+		Code="SensorTagImpl"        
+		Type="IDL:alma/Sensors/SensorTag:1.0"
+		Container="" ImplLang=""
+		Autostart="true" 
+		Default="true" />
+	<_ Name="SensorTag7"
+		Code="SensorTagImpl"        
+		Type="IDL:alma/Sensors/SensorTag:1.0"
+		Container="" ImplLang=""
+		Autostart="true" 
+		Default="true" />
+	<_ Name="SensorTag8"
+		Code="SensorTagImpl"        
+		Type="IDL:alma/Sensors/SensorTag:1.0"
+		Container="" ImplLang=""
+		Autostart="true" 
+		Default="true" />
+	<_ Name="SensorTag9"
+		Code="SensorTagImpl"        
+		Type="IDL:alma/Sensors/SensorTag:1.0"
+		Container="" ImplLang=""
+		Autostart="true" 
+		Default="true" />
+	<_ Name="SensorTag10"
+		Code="SensorTagImpl"        
+		Type="IDL:alma/Sensors/SensorTag:1.0"
+		Container="" ImplLang=""
+		Autostart="true" 
+		Default="true" />
+</Components>
+
