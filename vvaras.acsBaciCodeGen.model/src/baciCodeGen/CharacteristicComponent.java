@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link baciCodeGen.CharacteristicComponent#getPrefix <em>Prefix</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getComponentNumber <em>Component Number</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getContainer <em>Container</em>}</li>
- *   <li>{@link baciCodeGen.CharacteristicComponent#getImplLang <em>Impl Lang</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getProperties <em>Properties</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getActions <em>Actions</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getUsedBaciTypes <em>Used Baci Types</em>}</li>
+ *   <li>{@link baciCodeGen.CharacteristicComponent#getUsedDevIOs <em>Used Dev IOs</em>}</li>
  * </ul>
  *
  * @see baciCodeGen.BaciCodeGenPackage#getCharacteristicComponent()
@@ -164,32 +164,6 @@ public interface CharacteristicComponent extends EObject {
 	void setContainer(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Impl Lang</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Impl Lang</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Impl Lang</em>' attribute.
-	 * @see #setImplLang(String)
-	 * @see baciCodeGen.BaciCodeGenPackage#getCharacteristicComponent_ImplLang()
-	 * @model
-	 * @generated
-	 */
-	String getImplLang();
-
-	/**
-	 * Sets the value of the '{@link baciCodeGen.CharacteristicComponent#getImplLang <em>Impl Lang</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Impl Lang</em>' attribute.
-	 * @see #getImplLang()
-	 * @generated
-	 */
-	void setImplLang(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.
 	 * The list contents are of type {@link baciCodeGen.Attribute}.
 	 * <!-- begin-user-doc -->
@@ -262,5 +236,31 @@ public interface CharacteristicComponent extends EObject {
 	 * @generated
 	 */
 	void setUsedBaciTypes(UsedBaciTypes value);
+
+	/**
+	 * Returns the value of the '<em><b>Used Dev IOs</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Used Dev IOs</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Used Dev IOs</em>' containment reference.
+	 * @see #setUsedDevIOs(UsedDevIOs)
+	 * @see baciCodeGen.BaciCodeGenPackage#getCharacteristicComponent_UsedDevIOs()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	UsedDevIOs getUsedDevIOs();
+
+	/**
+	 * Sets the value of the '{@link baciCodeGen.CharacteristicComponent#getUsedDevIOs <em>Used Dev IOs</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Used Dev IOs</em>' containment reference.
+	 * @see #getUsedDevIOs()
+	 * @generated
+	 */
+	void setUsedDevIOs(UsedDevIOs value);
 
 } // CharacteristicComponent

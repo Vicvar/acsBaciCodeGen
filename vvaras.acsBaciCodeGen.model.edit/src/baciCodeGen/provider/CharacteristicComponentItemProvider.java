@@ -68,7 +68,6 @@ public class CharacteristicComponentItemProvider
 			addPrefixPropertyDescriptor(object);
 			addComponentNumberPropertyDescriptor(object);
 			addContainerPropertyDescriptor(object);
-			addImplLangPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -184,28 +183,6 @@ public class CharacteristicComponentItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Impl Lang feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addImplLangPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CharacteristicComponent_implLang_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CharacteristicComponent_implLang_feature", "_UI_CharacteristicComponent_type"),
-				 BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__IMPL_LANG,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -221,6 +198,7 @@ public class CharacteristicComponentItemProvider
 			childrenFeatures.add(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__PROPERTIES);
 			childrenFeatures.add(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__ACTIONS);
 			childrenFeatures.add(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__USED_BACI_TYPES);
+			childrenFeatures.add(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__USED_DEV_IOS);
 		}
 		return childrenFeatures;
 	}
@@ -281,13 +259,13 @@ public class CharacteristicComponentItemProvider
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__PREFIX:
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__COMPONENT_NUMBER:
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__CONTAINER:
-			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__IMPL_LANG:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__ATTRIBUTES:
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__PROPERTIES:
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__ACTIONS:
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_BACI_TYPES:
+			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_DEV_IOS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -324,6 +302,11 @@ public class CharacteristicComponentItemProvider
 			(createChildParameter
 				(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__USED_BACI_TYPES,
 				 BaciCodeGenFactory.eINSTANCE.createUsedBaciTypes()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__USED_DEV_IOS,
+				 BaciCodeGenFactory.eINSTANCE.createUsedDevIOs()));
 	}
 
 	/**

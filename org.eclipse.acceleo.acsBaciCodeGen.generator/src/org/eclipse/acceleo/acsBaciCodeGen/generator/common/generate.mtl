@@ -17,9 +17,11 @@
 
 [template public testGen(aCharacteristicComponent : CharacteristicComponent)]
 [file ('test', false, 'UTF-8')]
-	[for (self.properties)]
-		[i-1/]
+	//[protected('test codegen')]
+	[for (it : Property | aCharacteristicComponent.properties)]
+	[it.name/]= something_[i/];
 	[/for]
+	//[/protected]
 [/file]
 [/template]
 
@@ -111,8 +113,7 @@ module [cModule/]
 		cName : String = aCharacteristicComponent.name;
 		cModule : String = aCharacteristicComponent.module;
 		cPrefix :String = aCharacteristicComponent.prefix;
-		cContainerName : String = aCharacteristicComponent.container.name;
-		cContainerLang : String = aCharacteristicComponent.container.language;
+		cContainerName : String = aCharacteristicComponent.container;
 	}]
 [file (cName+'/test/CDB/MACI/Components/Components.xml', false, 'UTF-8')]
 <?xml version="1.0" encoding="ISO-8859-1"?>
@@ -120,12 +121,12 @@ module [cModule/]
 	xmlns:cdb="urn:schemas-cosylab-com:CDB:1.0" 
 	xmlns:baci="urn:schemas-cosylab-com:BACI:1.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	[aCharacteristicComponent.componentNumber/]
 	[for (Sequence{1..aCharacteristicComponent.componentNumber})]
 	<_ Name="[cName/][i/]"
 		Code="[cName/]Impl"        
 		Type="IDL:[cPrefix/]/[cModule/]/[cName/]:1.0"
-		Container="[cContainerName/]" ImplLang="[cContainerLang/]"
+		[comment Templates are laguaje specific, so container ImplLang is not modeled /]
+		Container="[cContainerName/]" ImplLang="cpp"
 		[comment Check when does this go/]
 		Autostart="true" 
 		Default="true" />
@@ -181,11 +182,13 @@ module [cModule/]
 #include <baciCharacteristicComponentImpl.h>
 #include <baciSmartPropertyPointer.h>
 #include <baciDevIO.h>
-#include <acsThread.h>
+#include <acsThread.h>[comment Should this always be included??/]
 [for (it : Property | aCharacteristicComponent.properties)]
-#include <baci[it.baciType.accessType/][it.baciType.basicType/][if (it.baciType.seqType='Seq')][it.baciType.seqType/][/if]>
+#include <baci[it.baciType.name/]>
 [/for]
-[comment include DevIO /]
+[for (it : DevIO | aCharacteristicComponent.usedDevIOs.devIOs)]
+#include <[it.name/]_devio.h>
+[/for]
 
 class [cName/]_thread;
 
@@ -198,6 +201,12 @@ class [cName/]_impl : public virtual POA_[cModule/]::[cName/], public baci::Char
 		[cName/]_impl(const ACE_CString name, maci::ContainerServices * containerServices);
 		virtual ~[cName/]_impl();
 		
+		/*Lifecycle methods*/
+		virtual void initialize(void) throw (acsErrTypeLifeCycle::acsErrTypeLifeCycleExImpl);
+		virtual void execute(void) throw (acsErrTypeLifeCycle::acsErrTypeLifeCycleExImpl);
+		virtual void cleanUp(void);
+		virtual void aboutToAbort(void);
+
 		/*Properties*/
 		[for (it : Property | aCharacteristicComponent.properties)]
 		ACS::[it.baciType.name/]_ptr [it.name/]()
@@ -208,13 +217,6 @@ class [cName/]_impl : public virtual POA_[cModule/]::[cName/], public baci::Char
 		[comment Add arguments /]
 		[it.type/] [it.name/]();
 		[/for]
-
-		/*Lifecycle methods*/
-		[comment Statically generated -- maybe don't override/]
-		virtual void initialize(void) throw (acsErrTypeLifeCycle::acsErrTypeLifeCycleExImpl);
-		virtual void execute(void) throw (acsErrTypeLifeCycle::acsErrTypeLifeCycleExImpl);
-		virtual void cleanUp(void);
-		virtual void aboutToAbort(void);
 	
 	private:
 		/*Smart Property Pointers*/
@@ -224,14 +226,17 @@ class [cName/]_impl : public virtual POA_[cModule/]::[cName/], public baci::Char
 		[/for]
 
 		/*DevIO read*/
-		//TBI
+		[for (it : Property | aCharacteristicComponent.properties)]
+		[it.devIO.name/]::[it.devIO.name/]_read * [it.name/]_devio_m;[comment why m??/]
+		[/for]
 		
 		/*DevIO write*/
-		//TBI
+		[for (it : Property | aCharacteristicComponent.properties)]
+		[it.devIO.name/]::[it.devIO.name/]_write * [it.name/]_devio_w;
+		[/for]
 
 		/*DevIO variables*/
-
-		[cName/]_thread * refresh_thread;
+		
 };
 
 #endif //_[cName.toUpperCase()/]_IMPL_H_
@@ -245,29 +250,56 @@ class [cName/]_impl : public virtual POA_[cModule/]::[cName/], public baci::Char
 	}]
 [file (cName+'/src/'+cName+'_impl.cpp', false, 'UTF-8')]
 #include <[cName/]_impl.h>
-[comment Include DevIO header/]
+[comment  include devio again?/]
 
 /*Constructor*/
 [cName/]_impl::[cName/]_impl(const ACE_CString name, maci::ContainerServices * containerServices):
 	CharacteristicComponentImpl(name, containerServices),
-	[for (it : Property | aCharacteristicComponent.properties)]
-	m_[it.name/]_sp(new [it.baciType.name/](name+":[it.name/]",getComponent()),this)
-	[/for]
+	[for (it : Property | aCharacteristicComponent.properties) separator(',\n') after('\n')]
+	m_[it.name/]_sp(this)[/for]
 {
-	[comment Check this. Also check the other property creation/]
+	[comment]
+	Check this.
+	Also check the other kind of property creation
+	Also check logging and debugging messages
+	[/comment]
 	ACS_TRACE("::[cName/]::[cName/]");
 }
 
 /*Destructor*/
+[comment Better left empty according to the tutorial/]
 [cName/]::~[cName/]()
 {
-
 }
 
 /*Lyfecycle methods override*/
 void [cName/]::initialize() throw (acsErrTypeLifeCycle::acsErrTypeLifeCycleExImpl)
 {
-	[comment  Should implement construction/]
+	[comment Maybe add comment here with suggested necessary resources /]
+	
+	//[protected ('User defined resource initialization')]
+	
+	//[/protected]
+	
+	//Property initialization
+	[for (it : Property | aCharacteristicComponent.properties)]
+	
+	[it.name/]_devio_m = new [it.devIO.name/]::[it.devIO.name/]_read();
+	[/for]
+
+	[for (it : Property | aCharacteristicComponent.properties)]
+	
+	[it.name/]_devio_w = new [it.devIO.name/]::[it.devIO.name/]_write()
+	[/for]
+	[comment maybe get string from name/]
+	[for (it : Property | aCharacteristicComponent.properties)]
+	
+	m_[it.name/]_sp = new baci::[it.baciType.name/](name+":[it.name/]", getComponent(), [it.name/]_devio_m);
+	[/for]
+
+	//[protected ('User initialization')]
+	
+	//[/protected]
 }
 
 void [cName/]::execute() throw (acsErrTypeLifeCycle::acsErrTypeLifeCycleExImpl)
@@ -290,7 +322,6 @@ void [cName/]::aboutToAbort()
 
 ACS::[it.baciType.name/] [cName/]::[it.name/]()
 {
-	[comment Not sure if this is a general implementation/]
 	if(m_[it.name/]_sp == 0)
 		return ACS::[it.baciType.name/]::_nil();
 	ACS::[it.baciType.name/]_var prop = ACS::[it.baciType.name/]::_narrow(m_[it.name/]_sp->getCORBAReference());
@@ -303,10 +334,7 @@ ACS::[it.baciType.name/] [cName/]::[it.name/]()
 [comment Missing action parameters /]
 [it.type/] [cName/]_impl::[it.name/]()
 {
-	[comment]
-	Not sure what goes here. Maybe differenciate between "normal" actions (on, off, reset)
-	and other kinds, in order to generalize/specify the implementation.
-	[/comment]
+	//TBI by user
 }
 [/for]
 
@@ -318,8 +346,256 @@ MACI_DLL_SUPPORT_FUNCTIONS([cName/]_impl)
 [/file]
 [/template]
 
-[template public generateMakefile(aCharacteristicComponent : CharacteristicComponent)]
-	
+[template public generateMakefile(aCharacteristicComponent : CharacteristicComponent)
+	{
+		cName : String = aCharacteristicComponent.name;
+		cModule : String = aCharacteristicComponent.module;
+	}]
+[comment]
+Mostly copied from sensortag. Changed sensortagish things for [cName/]
+Still must change DevIO specific things and maybe trim some other unnecessary parts.
+[/comment]
+[file (cName+'/src/Makefile', false, 'UTF-8')]
+*******************************************************************************
+# PPPPPPPP
+#
+# "@(#) $Id$"
+#
+# Makefile of ........
+#
+# who       when      what
+# --------  --------  ----------------------------------------------
+# [comment Add author (and some other metadata) data to the model???/]
+#
+
+# ALMA - Atacama Large Millimeter Array
+# Copyright (c) ESO - European Southern Observatory, 2014
+# (in the framework of the ALMA collaboration).
+# All rights reserved.
+# 
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+# 
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# Lesser General Public License for more details.
+# 
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
+#*******************************************************************************
+
+#*******************************************************************************
+# This Makefile follows ALMA/ACS Standards (see Makefile(5) for more).
+#*******************************************************************************
+# REMARKS
+#    None
+#------------------------------------------------------------------------
+
+#
+# user definable C-compilation flags
+USER_CFLAGS = -std=c++11
+
+#
+# additional include and library search paths
+#USER_INC = 
+USER_LIB = -L/usr/local/lib
+USER_LIB += -L/usr/local/lib64 [comment Just in case/]
+
+#
+# MODULE CODE DESCRIPTION:
+# ------------------------
+# As a general rule:  public file are "cleaned" and "installed"  
+#                     local (_L) are not "installed".
+
+#
+# C programs (public and local)
+# -----------------------------
+EXECUTABLES     =
+EXECUTABLES_L   = 
+
+#
+# <brief description of xxxxx program>
+xxxxx_OBJECTS   =	
+xxxxx_LDFLAGS   =
+xxxxx_LIBS      =
+
+#
+# special compilation flags for single c sources
+#yyyyy_CFLAGS   = 
+
+#
+# Includes (.h) files (public only)
+# ---------------------------------
+INCLUDES        = [cName/]_impl.h
+
+#
+# Libraries (public and local)
+# ----------------------------
+LIBRARIES       = [cName/]Impl
+LIBRARIES_L     =
+
+#
+# <brief description of lllll library>
+[cName/]Impl_OBJECTS = [cName/]_impl
+[cName/]Impl_LIBS = [cName/]Stubs baciStubs ACE TAO TAO_PortableServer TAO_CosProperty maciErrType baselogging \
+		ACSErrTypeCommon acscommonStubs acserrStubs acserr logging logging maci maciStubs loki \
+		ACSErrTypeCORBA acscomponent baci loki paho-mqtt3c paho-mqttpp3 paho-mqtt3a paho-mqtt3as paho-mqtt3cs \
+		mqttDevIO
+		[comment Replace with mqtt stuff with current DevIO -- maybe put additional libs in the model/]
+
+[comment Should there be one of these for each component instance??/]
+
+#
+# Scripts (public and local)
+# ----------------------------
+SCRIPTS         =
+SCRIPTS_L       =
+
+#
+# TCL scripts (public and local)
+# ------------------------------
+TCL_SCRIPTS     =
+TCL_SCRIPTS_L   =
+
+#
+# Python stuff (public and local)
+# ----------------------------
+PY_SCRIPTS         =
+PY_SCRIPTS_L       =
+
+PY_MODULES         =
+PY_MODULES_L       =
+
+PY_PACKAGES        =
+PY_PACKAGES_L      =
+pppppp_MODULES	   =
+
+#
+# <brief description of tttttt tcl-script>
+tttttt_OBJECTS  =
+tttttt_TCLSH    = 
+tttttt_LIBS     = 
+
+#
+# TCL libraries (public and local)
+# ------------------------------
+TCL_LIBRARIES   =
+TCL_LIBRARIES_L =
+
+#
+# <brief description of tttlll library>
+tttlll_OBJECTS  = 
+
+#
+# Configuration Database Files
+# ----------------------------
+CDB_SCHEMAS = SensorTag 
+
+# 
+# IDL Files and flags
+# 
+IDL_FILES := sensortag
+TAO_IDLFLAGS =
+USER_IDL =
+
+[cName/]Stubs_LIBS := baciStubs ACE TAO TAO_PortableServer TAO_CosProperty
+#
+# Jarfiles and their directories
+#
+JARFILES= 
+jjj_DIRS=
+jjj_EXTRAS=
+# For expressing dependencies between jarfiles (parallel builds)
+jjj_JLIBS= 
+#
+# java sources in Jarfile on/off
+DEBUG= 
+#
+# ACS XmlIdl generation on/off
+#
+XML_IDL= 
+#
+# Java Component Helper Classes generation on/off
+#
+COMPONENT_HELPERS=
+#
+# Java Entity Classes generation on/off
+#
+XSDBIND=
+#
+# Schema Config files for the above
+#
+XSDBIND_INCLUDE=
+# man pages to be done
+# --------------------
+MANSECTIONS =
+MAN1 =
+MAN3 =
+MAN5 =
+MAN7 =
+MAN8 =
+
+#
+# local man pages
+# ---------------
+MANl =
+
+#
+# ASCII file to be converted into Framemaker-MIF
+# --------------------
+ASCII_TO_MIF = 
+
+#
+# other files to be installed
+#----------------------------
+INSTALL_FILES =
+
+#
+# list of all possible C-sources (used to create automatic dependencies)
+# ------------------------------
+CSOURCENAMES = \
+	$(foreach exe, $(EXECUTABLES) $(EXECUTABLES_L), $($(exe)_OBJECTS)) \
+	$(foreach rtos, $(RTAI_MODULES) , $($(rtos)_OBJECTS)) \
+	$(foreach lib, $(LIBRARIES) $(LIBRARIES_L), $($(lib)_OBJECTS))
+
+#
+#>>>>> END OF standard rules
+
+#
+# INCLUDE STANDARDS
+# -----------------
+
+MAKEDIRTMP := $(shell searchFile include/acsMakefile)
+ifneq ($(MAKEDIRTMP),\#error\#)
+   MAKEDIR := $(MAKEDIRTMP)/include
+   include $(MAKEDIR)/acsMakefile
+endif
+
+#
+# TARGETS
+# -------
+all:	do_all
+	@echo " . . . 'all' done" 
+
+clean : clean_all 
+	@echo " . . . clean done"
+
+clean_dist : clean_all clean_dist_all 
+	@echo " . . . clean_dist done"
+
+man   : do_man 
+	@echo " . . . man page(s) done"
+
+install : install_all
+	@echo " . . . installation done"
+
+
+#___oOo___
+[/file]
 [/template]
 
 [template public generateREADME(aCharacteristicComponent : CharacteristicComponent)]

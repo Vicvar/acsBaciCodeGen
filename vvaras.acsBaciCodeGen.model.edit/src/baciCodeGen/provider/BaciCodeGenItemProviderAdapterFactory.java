@@ -187,6 +187,29 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.UsedDevIOs} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UsedDevIOsItemProvider usedDevIOsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link baciCodeGen.UsedDevIOs}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createUsedDevIOsAdapter() {
+		if (usedDevIOsItemProvider == null) {
+			usedDevIOsItemProvider = new UsedDevIOsItemProvider(this);
+		}
+
+		return usedDevIOsItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link baciCodeGen.DevIO} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -207,29 +230,6 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 		}
 
 		return devIOItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link baciCodeGen.Container} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ContainerItemProvider containerItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link baciCodeGen.Container}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createContainerAdapter() {
-		if (containerItemProvider == null) {
-			containerItemProvider = new ContainerItemProvider(this);
-		}
-
-		return containerItemProvider;
 	}
 
 	/**
@@ -382,8 +382,8 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 		if (actionItemProvider != null) actionItemProvider.dispose();
 		if (characteristicItemProvider != null) characteristicItemProvider.dispose();
 		if (attributeItemProvider != null) attributeItemProvider.dispose();
+		if (usedDevIOsItemProvider != null) usedDevIOsItemProvider.dispose();
 		if (devIOItemProvider != null) devIOItemProvider.dispose();
-		if (containerItemProvider != null) containerItemProvider.dispose();
 		if (usedBaciTypesItemProvider != null) usedBaciTypesItemProvider.dispose();
 		if (baciTypeItemProvider != null) baciTypeItemProvider.dispose();
 	}

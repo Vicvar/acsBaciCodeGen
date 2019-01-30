@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link baciCodeGen.impl.ActionImpl#getName <em>Name</em>}</li>
  *   <li>{@link baciCodeGen.impl.ActionImpl#getType <em>Type</em>}</li>
+ *   <li>{@link baciCodeGen.impl.ActionImpl#getArguments <em>Arguments</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +67,26 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * @ordered
 	 */
 	protected String type = TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getArguments() <em>Arguments</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getArguments()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ARGUMENTS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getArguments() <em>Arguments</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getArguments()
+	 * @generated
+	 * @ordered
+	 */
+	protected String arguments = ARGUMENTS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +154,27 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getArguments() {
+		return arguments;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setArguments(String newArguments) {
+		String oldArguments = arguments;
+		arguments = newArguments;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.ACTION__ARGUMENTS, oldArguments, arguments));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -140,6 +182,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 				return getName();
 			case BaciCodeGenPackage.ACTION__TYPE:
 				return getType();
+			case BaciCodeGenPackage.ACTION__ARGUMENTS:
+				return getArguments();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,6 +201,9 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 				return;
 			case BaciCodeGenPackage.ACTION__TYPE:
 				setType((String)newValue);
+				return;
+			case BaciCodeGenPackage.ACTION__ARGUMENTS:
+				setArguments((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,6 +223,9 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 			case BaciCodeGenPackage.ACTION__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
+			case BaciCodeGenPackage.ACTION__ARGUMENTS:
+				setArguments(ARGUMENTS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,6 +242,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case BaciCodeGenPackage.ACTION__TYPE:
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+			case BaciCodeGenPackage.ACTION__ARGUMENTS:
+				return ARGUMENTS_EDEFAULT == null ? arguments != null : !ARGUMENTS_EDEFAULT.equals(arguments);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -210,6 +262,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 		result.append(name);
 		result.append(", type: ");
 		result.append(type);
+		result.append(", arguments: ");
+		result.append(arguments);
 		result.append(')');
 		return result.toString();
 	}

@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link baciCodeGen.Action#getName <em>Name</em>}</li>
  *   <li>{@link baciCodeGen.Action#getType <em>Type</em>}</li>
+ *   <li>{@link baciCodeGen.Action#getArguments <em>Arguments</em>}</li>
  * </ul>
  *
  * @see baciCodeGen.BaciCodeGenPackage#getAction()
@@ -74,5 +75,31 @@ public interface Action extends EObject {
 	 * @generated
 	 */
 	void setType(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Arguments</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Arguments</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Arguments</em>' attribute.
+	 * @see #setArguments(String)
+	 * @see baciCodeGen.BaciCodeGenPackage#getAction_Arguments()
+	 * @model
+	 * @generated
+	 */
+	String getArguments();
+
+	/**
+	 * Sets the value of the '{@link baciCodeGen.Action#getArguments <em>Arguments</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Arguments</em>' attribute.
+	 * @see #getArguments()
+	 * @generated
+	 */
+	void setArguments(String value);
 
 } // Action

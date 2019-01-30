@@ -88,12 +88,12 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 				return createAttributeAdapter();
 			}
 			@Override
-			public Adapter caseDevIO(DevIO object) {
-				return createDevIOAdapter();
+			public Adapter caseUsedDevIOs(UsedDevIOs object) {
+				return createUsedDevIOsAdapter();
 			}
 			@Override
-			public Adapter caseContainer(Container object) {
-				return createContainerAdapter();
+			public Adapter caseDevIO(DevIO object) {
+				return createDevIOAdapter();
 			}
 			@Override
 			public Adapter caseUsedBaciTypes(UsedBaciTypes object) {
@@ -194,6 +194,20 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link baciCodeGen.UsedDevIOs <em>Used Dev IOs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see baciCodeGen.UsedDevIOs
+	 * @generated
+	 */
+	public Adapter createUsedDevIOsAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link baciCodeGen.DevIO <em>Dev IO</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -204,20 +218,6 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDevIOAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link baciCodeGen.Container <em>Container</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see baciCodeGen.Container
-	 * @generated
-	 */
-	public Adapter createContainerAdapter() {
 		return null;
 	}
 

@@ -9,6 +9,7 @@ import baciCodeGen.CharacteristicComponent;
 import baciCodeGen.Property;
 import baciCodeGen.UsedBaciTypes;
 
+import baciCodeGen.UsedDevIOs;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -38,11 +39,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link baciCodeGen.impl.CharacteristicComponentImpl#getPrefix <em>Prefix</em>}</li>
  *   <li>{@link baciCodeGen.impl.CharacteristicComponentImpl#getComponentNumber <em>Component Number</em>}</li>
  *   <li>{@link baciCodeGen.impl.CharacteristicComponentImpl#getContainer <em>Container</em>}</li>
- *   <li>{@link baciCodeGen.impl.CharacteristicComponentImpl#getImplLang <em>Impl Lang</em>}</li>
  *   <li>{@link baciCodeGen.impl.CharacteristicComponentImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link baciCodeGen.impl.CharacteristicComponentImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link baciCodeGen.impl.CharacteristicComponentImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link baciCodeGen.impl.CharacteristicComponentImpl#getUsedBaciTypes <em>Used Baci Types</em>}</li>
+ *   <li>{@link baciCodeGen.impl.CharacteristicComponentImpl#getUsedDevIOs <em>Used Dev IOs</em>}</li>
  * </ul>
  *
  * @generated
@@ -149,26 +150,6 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 	protected String container = CONTAINER_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getImplLang() <em>Impl Lang</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImplLang()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String IMPL_LANG_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getImplLang() <em>Impl Lang</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImplLang()
-	 * @generated
-	 * @ordered
-	 */
-	protected String implLang = IMPL_LANG_EDEFAULT;
-
-	/**
 	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -207,6 +188,16 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 	 * @ordered
 	 */
 	protected UsedBaciTypes usedBaciTypes;
+
+	/**
+	 * The cached value of the '{@link #getUsedDevIOs() <em>Used Dev IOs</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUsedDevIOs()
+	 * @generated
+	 * @ordered
+	 */
+	protected UsedDevIOs usedDevIOs;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -337,27 +328,6 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getImplLang() {
-		return implLang;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setImplLang(String newImplLang) {
-		String oldImplLang = implLang;
-		implLang = newImplLang;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__IMPL_LANG, oldImplLang, implLang));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Attribute> getAttributes() {
 		if (attributes == null) {
 			attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__ATTRIBUTES);
@@ -437,6 +407,49 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public UsedDevIOs getUsedDevIOs() {
+		return usedDevIOs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetUsedDevIOs(UsedDevIOs newUsedDevIOs, NotificationChain msgs) {
+		UsedDevIOs oldUsedDevIOs = usedDevIOs;
+		usedDevIOs = newUsedDevIOs;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_DEV_IOS, oldUsedDevIOs, newUsedDevIOs);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUsedDevIOs(UsedDevIOs newUsedDevIOs) {
+		if (newUsedDevIOs != usedDevIOs) {
+			NotificationChain msgs = null;
+			if (usedDevIOs != null)
+				msgs = ((InternalEObject)usedDevIOs).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_DEV_IOS, null, msgs);
+			if (newUsedDevIOs != null)
+				msgs = ((InternalEObject)newUsedDevIOs).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_DEV_IOS, null, msgs);
+			msgs = basicSetUsedDevIOs(newUsedDevIOs, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_DEV_IOS, newUsedDevIOs, newUsedDevIOs));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -448,6 +461,8 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 				return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_BACI_TYPES:
 				return basicSetUsedBaciTypes(null, msgs);
+			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_DEV_IOS:
+				return basicSetUsedDevIOs(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -470,8 +485,6 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 				return getComponentNumber();
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__CONTAINER:
 				return getContainer();
-			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__IMPL_LANG:
-				return getImplLang();
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__ATTRIBUTES:
 				return getAttributes();
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__PROPERTIES:
@@ -480,6 +493,8 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 				return getActions();
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_BACI_TYPES:
 				return getUsedBaciTypes();
+			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_DEV_IOS:
+				return getUsedDevIOs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -508,9 +523,6 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__CONTAINER:
 				setContainer((String)newValue);
 				return;
-			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__IMPL_LANG:
-				setImplLang((String)newValue);
-				return;
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__ATTRIBUTES:
 				getAttributes().clear();
 				getAttributes().addAll((Collection<? extends Attribute>)newValue);
@@ -525,6 +537,9 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 				return;
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_BACI_TYPES:
 				setUsedBaciTypes((UsedBaciTypes)newValue);
+				return;
+			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_DEV_IOS:
+				setUsedDevIOs((UsedDevIOs)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -553,9 +568,6 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__CONTAINER:
 				setContainer(CONTAINER_EDEFAULT);
 				return;
-			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__IMPL_LANG:
-				setImplLang(IMPL_LANG_EDEFAULT);
-				return;
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__ATTRIBUTES:
 				getAttributes().clear();
 				return;
@@ -567,6 +579,9 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 				return;
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_BACI_TYPES:
 				setUsedBaciTypes((UsedBaciTypes)null);
+				return;
+			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_DEV_IOS:
+				setUsedDevIOs((UsedDevIOs)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -590,8 +605,6 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 				return componentNumber != COMPONENT_NUMBER_EDEFAULT;
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__CONTAINER:
 				return CONTAINER_EDEFAULT == null ? container != null : !CONTAINER_EDEFAULT.equals(container);
-			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__IMPL_LANG:
-				return IMPL_LANG_EDEFAULT == null ? implLang != null : !IMPL_LANG_EDEFAULT.equals(implLang);
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__ATTRIBUTES:
 				return attributes != null && !attributes.isEmpty();
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__PROPERTIES:
@@ -600,6 +613,8 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 				return actions != null && !actions.isEmpty();
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_BACI_TYPES:
 				return usedBaciTypes != null;
+			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_DEV_IOS:
+				return usedDevIOs != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -624,8 +639,6 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 		result.append(componentNumber);
 		result.append(", container: ");
 		result.append(container);
-		result.append(", implLang: ");
-		result.append(implLang);
 		result.append(')');
 		return result.toString();
 	}

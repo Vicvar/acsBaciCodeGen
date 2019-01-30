@@ -12,10 +12,12 @@ import baciCodeGen.BasicType;
 import baciCodeGen.Characteristic;
 import baciCodeGen.CharacteristicComponent;
 import baciCodeGen.DevIO;
+import baciCodeGen.ImplementationLanguage;
 import baciCodeGen.Property;
 import baciCodeGen.SeqType;
 import baciCodeGen.UsedBaciTypes;
 
+import baciCodeGen.UsedDevIOs;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -71,14 +73,14 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass devIOEClass = null;
+	private EClass usedDevIOsEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass containerEClass = null;
+	private EClass devIOEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,6 +116,13 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * @generated
 	 */
 	private EEnum seqTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum implementationLanguageEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -235,17 +244,8 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCharacteristicComponent_ImplLang() {
-		return (EAttribute)characteristicComponentEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getCharacteristicComponent_Attributes() {
-		return (EReference)characteristicComponentEClass.getEStructuralFeatures().get(6);
+		return (EReference)characteristicComponentEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -254,7 +254,7 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * @generated
 	 */
 	public EReference getCharacteristicComponent_Properties() {
-		return (EReference)characteristicComponentEClass.getEStructuralFeatures().get(7);
+		return (EReference)characteristicComponentEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -263,7 +263,7 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * @generated
 	 */
 	public EReference getCharacteristicComponent_Actions() {
-		return (EReference)characteristicComponentEClass.getEStructuralFeatures().get(8);
+		return (EReference)characteristicComponentEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -272,6 +272,15 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * @generated
 	 */
 	public EReference getCharacteristicComponent_UsedBaciTypes() {
+		return (EReference)characteristicComponentEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCharacteristicComponent_UsedDevIOs() {
 		return (EReference)characteristicComponentEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -352,6 +361,15 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getAction_Arguments() {
+		return (EAttribute)actionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCharacteristic() {
 		return characteristicEClass;
 	}
@@ -415,6 +433,24 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getUsedDevIOs() {
+		return usedDevIOsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUsedDevIOs_DevIOs() {
+		return (EReference)usedDevIOsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDevIO() {
 		return devIOEClass;
 	}
@@ -426,33 +462,6 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 */
 	public EAttribute getDevIO_Name() {
 		return (EAttribute)devIOEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getContainer() {
-		return containerEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getContainer_Name() {
-		return (EAttribute)containerEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getContainer_Language() {
-		return (EAttribute)containerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -550,6 +559,15 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getImplementationLanguage() {
+		return implementationLanguageEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public BaciCodeGenFactory getBaciCodeGenFactory() {
 		return (BaciCodeGenFactory)getEFactoryInstance();
 	}
@@ -579,11 +597,11 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		createEAttribute(characteristicComponentEClass, CHARACTERISTIC_COMPONENT__PREFIX);
 		createEAttribute(characteristicComponentEClass, CHARACTERISTIC_COMPONENT__COMPONENT_NUMBER);
 		createEAttribute(characteristicComponentEClass, CHARACTERISTIC_COMPONENT__CONTAINER);
-		createEAttribute(characteristicComponentEClass, CHARACTERISTIC_COMPONENT__IMPL_LANG);
 		createEReference(characteristicComponentEClass, CHARACTERISTIC_COMPONENT__ATTRIBUTES);
 		createEReference(characteristicComponentEClass, CHARACTERISTIC_COMPONENT__PROPERTIES);
 		createEReference(characteristicComponentEClass, CHARACTERISTIC_COMPONENT__ACTIONS);
 		createEReference(characteristicComponentEClass, CHARACTERISTIC_COMPONENT__USED_BACI_TYPES);
+		createEReference(characteristicComponentEClass, CHARACTERISTIC_COMPONENT__USED_DEV_IOS);
 
 		propertyEClass = createEClass(PROPERTY);
 		createEAttribute(propertyEClass, PROPERTY__NAME);
@@ -594,6 +612,7 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		actionEClass = createEClass(ACTION);
 		createEAttribute(actionEClass, ACTION__NAME);
 		createEAttribute(actionEClass, ACTION__TYPE);
+		createEAttribute(actionEClass, ACTION__ARGUMENTS);
 
 		characteristicEClass = createEClass(CHARACTERISTIC);
 		createEAttribute(characteristicEClass, CHARACTERISTIC__NAME);
@@ -604,12 +623,11 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		createEAttribute(attributeEClass, ATTRIBUTE__TYPE);
 		createEAttribute(attributeEClass, ATTRIBUTE__REQUIRED);
 
+		usedDevIOsEClass = createEClass(USED_DEV_IOS);
+		createEReference(usedDevIOsEClass, USED_DEV_IOS__DEV_IOS);
+
 		devIOEClass = createEClass(DEV_IO);
 		createEAttribute(devIOEClass, DEV_IO__NAME);
-
-		containerEClass = createEClass(CONTAINER);
-		createEAttribute(containerEClass, CONTAINER__NAME);
-		createEAttribute(containerEClass, CONTAINER__LANGUAGE);
 
 		usedBaciTypesEClass = createEClass(USED_BACI_TYPES);
 		createEReference(usedBaciTypesEClass, USED_BACI_TYPES__BACI_TYPES);
@@ -624,6 +642,7 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		accessTypeEEnum = createEEnum(ACCESS_TYPE);
 		basicTypeEEnum = createEEnum(BASIC_TYPE);
 		seqTypeEEnum = createEEnum(SEQ_TYPE);
+		implementationLanguageEEnum = createEEnum(IMPLEMENTATION_LANGUAGE);
 	}
 
 	/**
@@ -662,11 +681,11 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		initEAttribute(getCharacteristicComponent_Prefix(), ecorePackage.getEString(), "prefix", null, 0, 1, CharacteristicComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCharacteristicComponent_ComponentNumber(), ecorePackage.getEInt(), "componentNumber", "1", 0, 1, CharacteristicComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCharacteristicComponent_Container(), ecorePackage.getEString(), "container", null, 0, 1, CharacteristicComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCharacteristicComponent_ImplLang(), ecorePackage.getEString(), "implLang", null, 0, 1, CharacteristicComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCharacteristicComponent_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, CharacteristicComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCharacteristicComponent_Properties(), this.getProperty(), null, "properties", null, 0, -1, CharacteristicComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCharacteristicComponent_Actions(), this.getAction(), null, "actions", null, 0, -1, CharacteristicComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCharacteristicComponent_UsedBaciTypes(), this.getUsedBaciTypes(), null, "usedBaciTypes", null, 1, 1, CharacteristicComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCharacteristicComponent_UsedDevIOs(), this.getUsedDevIOs(), null, "usedDevIOs", null, 1, 1, CharacteristicComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProperty_Name(), ecorePackage.getEString(), "name", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -677,6 +696,7 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAction_Type(), ecorePackage.getEString(), "type", "void", 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAction_Arguments(), ecorePackage.getEString(), "arguments", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(characteristicEClass, Characteristic.class, "Characteristic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCharacteristic_Name(), ecorePackage.getEString(), "name", null, 0, 1, Characteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -687,12 +707,11 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		initEAttribute(getAttribute_Type(), ecorePackage.getEString(), "type", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttribute_Required(), ecorePackage.getEBoolean(), "required", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(usedDevIOsEClass, UsedDevIOs.class, "UsedDevIOs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getUsedDevIOs_DevIOs(), this.getDevIO(), null, "devIOs", null, 0, -1, UsedDevIOs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(devIOEClass, DevIO.class, "DevIO", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDevIO_Name(), ecorePackage.getEString(), "name", null, 0, 1, DevIO.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(containerEClass, baciCodeGen.Container.class, "Container", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getContainer_Name(), ecorePackage.getEString(), "name", null, 0, 1, baciCodeGen.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContainer_Language(), ecorePackage.getEString(), "language", null, 0, 1, baciCodeGen.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(usedBaciTypesEClass, UsedBaciTypes.class, "UsedBaciTypes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUsedBaciTypes_BaciTypes(), this.getBaciType(), null, "baciTypes", null, 0, -1, UsedBaciTypes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -722,6 +741,11 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		initEEnum(seqTypeEEnum, SeqType.class, "SeqType");
 		addEEnumLiteral(seqTypeEEnum, SeqType.NOT_SEQ);
 		addEEnumLiteral(seqTypeEEnum, SeqType.SEQ);
+
+		initEEnum(implementationLanguageEEnum, ImplementationLanguage.class, "ImplementationLanguage");
+		addEEnumLiteral(implementationLanguageEEnum, ImplementationLanguage.CPP);
+		addEEnumLiteral(implementationLanguageEEnum, ImplementationLanguage.PYTHON);
+		addEEnumLiteral(implementationLanguageEEnum, ImplementationLanguage.JAVA);
 
 		// Create resource
 		createResource(eNS_URI);

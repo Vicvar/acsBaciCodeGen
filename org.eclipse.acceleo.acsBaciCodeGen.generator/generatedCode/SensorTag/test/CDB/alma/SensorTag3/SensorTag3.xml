@@ -32,6 +32,8 @@
 		archive_min_int="0"
 		archive_max_int="10"
 	/>
+	<testProp
+	/>
 
 </SensorTag>
 

@@ -67,6 +67,15 @@ public interface BaciCodeGenFactory extends EFactory {
 	Attribute createAttribute();
 
 	/**
+	 * Returns a new object of class '<em>Used Dev IOs</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Used Dev IOs</em>'.
+	 * @generated
+	 */
+	UsedDevIOs createUsedDevIOs();
+
+	/**
 	 * Returns a new object of class '<em>Dev IO</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,15 +83,6 @@ public interface BaciCodeGenFactory extends EFactory {
 	 * @generated
 	 */
 	DevIO createDevIO();
-
-	/**
-	 * Returns a new object of class '<em>Container</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Container</em>'.
-	 * @generated
-	 */
-	Container createContainer();
 
 	/**
 	 * Returns a new object of class '<em>Used Baci Types</em>'.
