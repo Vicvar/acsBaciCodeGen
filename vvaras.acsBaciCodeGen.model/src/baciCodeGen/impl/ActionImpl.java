@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link baciCodeGen.impl.ActionImpl#getName <em>Name</em>}</li>
  *   <li>{@link baciCodeGen.impl.ActionImpl#getType <em>Type</em>}</li>
- *   <li>{@link baciCodeGen.impl.ActionImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link baciCodeGen.impl.ActionImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,24 +69,24 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	protected String type = TYPE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getArguments() <em>Arguments</em>}' attribute.
+	 * The default value of the '{@link #getParameters() <em>Parameters</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getArguments()
+	 * @see #getParameters()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ARGUMENTS_EDEFAULT = null;
+	protected static final String PARAMETERS_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getArguments() <em>Arguments</em>}' attribute.
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getArguments()
+	 * @see #getParameters()
 	 * @generated
 	 * @ordered
 	 */
-	protected String arguments = ARGUMENTS_EDEFAULT;
+	protected String parameters = PARAMETERS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,8 +154,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getArguments() {
-		return arguments;
+	public String getParameters() {
+		return parameters;
 	}
 
 	/**
@@ -163,11 +163,11 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setArguments(String newArguments) {
-		String oldArguments = arguments;
-		arguments = newArguments;
+	public void setParameters(String newParameters) {
+		String oldParameters = parameters;
+		parameters = newParameters;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.ACTION__ARGUMENTS, oldArguments, arguments));
+			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.ACTION__PARAMETERS, oldParameters, parameters));
 	}
 
 	/**
@@ -182,8 +182,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 				return getName();
 			case BaciCodeGenPackage.ACTION__TYPE:
 				return getType();
-			case BaciCodeGenPackage.ACTION__ARGUMENTS:
-				return getArguments();
+			case BaciCodeGenPackage.ACTION__PARAMETERS:
+				return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,8 +202,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 			case BaciCodeGenPackage.ACTION__TYPE:
 				setType((String)newValue);
 				return;
-			case BaciCodeGenPackage.ACTION__ARGUMENTS:
-				setArguments((String)newValue);
+			case BaciCodeGenPackage.ACTION__PARAMETERS:
+				setParameters((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -223,8 +223,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 			case BaciCodeGenPackage.ACTION__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
-			case BaciCodeGenPackage.ACTION__ARGUMENTS:
-				setArguments(ARGUMENTS_EDEFAULT);
+			case BaciCodeGenPackage.ACTION__PARAMETERS:
+				setParameters(PARAMETERS_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -242,8 +242,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case BaciCodeGenPackage.ACTION__TYPE:
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-			case BaciCodeGenPackage.ACTION__ARGUMENTS:
-				return ARGUMENTS_EDEFAULT == null ? arguments != null : !ARGUMENTS_EDEFAULT.equals(arguments);
+			case BaciCodeGenPackage.ACTION__PARAMETERS:
+				return PARAMETERS_EDEFAULT == null ? parameters != null : !PARAMETERS_EDEFAULT.equals(parameters);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -262,8 +262,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 		result.append(name);
 		result.append(", type: ");
 		result.append(type);
-		result.append(", arguments: ");
-		result.append(arguments);
+		result.append(", parameters: ");
+		result.append(parameters);
 		result.append(')');
 		return result.toString();
 	}

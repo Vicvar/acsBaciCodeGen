@@ -3,7 +3,6 @@
 	xmlns:cdb="urn:schemas-cosylab-com:CDB:1.0" 
 	xmlns:baci="urn:schemas-cosylab-com:BACI:1.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	10
 	<_ Name="SensorTag1"
 		Code="SensorTagImpl"        
 		Type="IDL:alma/Sensors/SensorTag:1.0"

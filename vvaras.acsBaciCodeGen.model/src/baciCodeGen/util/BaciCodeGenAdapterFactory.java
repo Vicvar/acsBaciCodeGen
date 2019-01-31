@@ -96,6 +96,18 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 				return createDevIOAdapter();
 			}
 			@Override
+			public Adapter caseReadArgument(ReadArgument object) {
+				return createReadArgumentAdapter();
+			}
+			@Override
+			public Adapter caseWriteArgument(WriteArgument object) {
+				return createWriteArgumentAdapter();
+			}
+			@Override
+			public Adapter caseDevIOArgument(DevIOArgument object) {
+				return createDevIOArgumentAdapter();
+			}
+			@Override
 			public Adapter caseUsedBaciTypes(UsedBaciTypes object) {
 				return createUsedBaciTypesAdapter();
 			}
@@ -218,6 +230,48 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDevIOAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link baciCodeGen.ReadArgument <em>Read Argument</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see baciCodeGen.ReadArgument
+	 * @generated
+	 */
+	public Adapter createReadArgumentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link baciCodeGen.WriteArgument <em>Write Argument</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see baciCodeGen.WriteArgument
+	 * @generated
+	 */
+	public Adapter createWriteArgumentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link baciCodeGen.DevIOArgument <em>Dev IO Argument</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see baciCodeGen.DevIOArgument
+	 * @generated
+	 */
+	public Adapter createDevIOArgumentAdapter() {
 		return null;
 	}
 

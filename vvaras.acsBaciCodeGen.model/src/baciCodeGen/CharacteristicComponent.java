@@ -15,14 +15,14 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link baciCodeGen.CharacteristicComponent#getModule <em>Module</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getName <em>Name</em>}</li>
+ *   <li>{@link baciCodeGen.CharacteristicComponent#getModule <em>Module</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getPrefix <em>Prefix</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getComponentNumber <em>Component Number</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getContainer <em>Container</em>}</li>
+ *   <li>{@link baciCodeGen.CharacteristicComponent#getActions <em>Actions</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getProperties <em>Properties</em>}</li>
- *   <li>{@link baciCodeGen.CharacteristicComponent#getActions <em>Actions</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getUsedBaciTypes <em>Used Baci Types</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getUsedDevIOs <em>Used Dev IOs</em>}</li>
  * </ul>

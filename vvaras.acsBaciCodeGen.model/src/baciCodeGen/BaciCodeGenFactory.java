@@ -85,6 +85,24 @@ public interface BaciCodeGenFactory extends EFactory {
 	DevIO createDevIO();
 
 	/**
+	 * Returns a new object of class '<em>Read Argument</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Read Argument</em>'.
+	 * @generated
+	 */
+	ReadArgument createReadArgument();
+
+	/**
+	 * Returns a new object of class '<em>Write Argument</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Write Argument</em>'.
+	 * @generated
+	 */
+	WriteArgument createWriteArgument();
+
+	/**
 	 * Returns a new object of class '<em>Used Baci Types</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

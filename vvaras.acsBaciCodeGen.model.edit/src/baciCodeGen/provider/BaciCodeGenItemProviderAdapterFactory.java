@@ -233,6 +233,52 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.ReadArgument} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReadArgumentItemProvider readArgumentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link baciCodeGen.ReadArgument}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createReadArgumentAdapter() {
+		if (readArgumentItemProvider == null) {
+			readArgumentItemProvider = new ReadArgumentItemProvider(this);
+		}
+
+		return readArgumentItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.WriteArgument} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected WriteArgumentItemProvider writeArgumentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link baciCodeGen.WriteArgument}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createWriteArgumentAdapter() {
+		if (writeArgumentItemProvider == null) {
+			writeArgumentItemProvider = new WriteArgumentItemProvider(this);
+		}
+
+		return writeArgumentItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link baciCodeGen.UsedBaciTypes} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -384,6 +430,8 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 		if (attributeItemProvider != null) attributeItemProvider.dispose();
 		if (usedDevIOsItemProvider != null) usedDevIOsItemProvider.dispose();
 		if (devIOItemProvider != null) devIOItemProvider.dispose();
+		if (readArgumentItemProvider != null) readArgumentItemProvider.dispose();
+		if (writeArgumentItemProvider != null) writeArgumentItemProvider.dispose();
 		if (usedBaciTypesItemProvider != null) usedBaciTypesItemProvider.dispose();
 		if (baciTypeItemProvider != null) baciTypeItemProvider.dispose();
 	}

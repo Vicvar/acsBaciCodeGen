@@ -26,12 +26,16 @@
       <genEnumLiterals ecoreEnumLiteral="baciCodeGenModel.ecore#//SeqType/Seq"/>
     </genEnums>
     <genClasses ecoreClass="baciCodeGenModel.ecore#//CharacteristicComponent">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//CharacteristicComponent/module"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//CharacteristicComponent/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//CharacteristicComponent/module"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//CharacteristicComponent/prefix"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//CharacteristicComponent/componentNumber"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//CharacteristicComponent/properties"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//CharacteristicComponent/container"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//CharacteristicComponent/actions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//CharacteristicComponent/attributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//CharacteristicComponent/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//CharacteristicComponent/usedBaciTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//CharacteristicComponent/usedDevIOs"/>
     </genClasses>
     <genClasses ecoreClass="baciCodeGenModel.ecore#//Property">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Property/name"/>
@@ -42,6 +46,7 @@
     <genClasses ecoreClass="baciCodeGenModel.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Action/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Action/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Action/parameters"/>
     </genClasses>
     <genClasses ecoreClass="baciCodeGenModel.ecore#//Characteristic">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Characteristic/name"/>
@@ -51,14 +56,28 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Attribute/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Attribute/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Attribute/required"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Attribute/value"/>
+    </genClasses>
+    <genClasses ecoreClass="baciCodeGenModel.ecore#//UsedDevIOs">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//UsedDevIOs/devIOs"/>
     </genClasses>
     <genClasses ecoreClass="baciCodeGenModel.ecore#//DevIO">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//DevIO/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//DevIO/readArguments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//DevIO/writeArguments"/>
     </genClasses>
-    <genClasses ecoreClass="baciCodeGenModel.ecore#//BaciTypeContainer">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//BaciTypeContainer/baciTypes"/>
+    <genClasses ecoreClass="baciCodeGenModel.ecore#//ReadArgument"/>
+    <genClasses ecoreClass="baciCodeGenModel.ecore#//WriteArgument"/>
+    <genClasses image="false" ecoreClass="baciCodeGenModel.ecore#//DevIOArgument">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//DevIOArgument/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//DevIOArgument/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//DevIOArgument/propertySpecific"/>
     </genClasses>
-    <genClasses ecoreClass="baciCodeGenModel.ecore#//BaciType" labelFeature="#//baciCodeGen/BaciType/name">
+    <genClasses ecoreClass="baciCodeGenModel.ecore#//UsedBaciTypes">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//UsedBaciTypes/baciTypes"/>
+    </genClasses>
+    <genClasses ecoreClass="baciCodeGenModel.ecore#//BaciType">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BaciType/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BaciType/accessType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BaciType/basicType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BaciType/seqType"/>

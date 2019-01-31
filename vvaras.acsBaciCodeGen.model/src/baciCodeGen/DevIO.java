@@ -2,6 +2,7 @@
  */
 package baciCodeGen;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,6 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link baciCodeGen.DevIO#getName <em>Name</em>}</li>
+ *   <li>{@link baciCodeGen.DevIO#getReadArguments <em>Read Arguments</em>}</li>
+ *   <li>{@link baciCodeGen.DevIO#getWriteArguments <em>Write Arguments</em>}</li>
  * </ul>
  *
  * @see baciCodeGen.BaciCodeGenPackage#getDevIO()
@@ -46,5 +49,37 @@ public interface DevIO extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Read Arguments</b></em>' containment reference list.
+	 * The list contents are of type {@link baciCodeGen.ReadArgument}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Read Arguments</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Read Arguments</em>' containment reference list.
+	 * @see baciCodeGen.BaciCodeGenPackage#getDevIO_ReadArguments()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ReadArgument> getReadArguments();
+
+	/**
+	 * Returns the value of the '<em><b>Write Arguments</b></em>' containment reference list.
+	 * The list contents are of type {@link baciCodeGen.WriteArgument}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Write Arguments</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Write Arguments</em>' containment reference list.
+	 * @see baciCodeGen.BaciCodeGenPackage#getDevIO_WriteArguments()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<WriteArgument> getWriteArguments();
 
 } // DevIO

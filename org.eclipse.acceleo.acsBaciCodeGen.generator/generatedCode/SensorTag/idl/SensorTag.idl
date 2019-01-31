@@ -17,8 +17,6 @@ module Sensors
 
 		readonly attribute ACS::ROdouble light;
 
-		readonly attribute ACS::ROdouble testProp;
-
 		/*Actions*/
 
 		void on();

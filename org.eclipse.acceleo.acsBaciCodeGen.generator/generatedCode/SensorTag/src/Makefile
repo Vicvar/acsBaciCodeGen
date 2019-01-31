@@ -1,4 +1,4 @@
-*******************************************************************************
+#*******************************************************************************
 # PPPPPPPP
 #
 # "@(#) $Id$"
@@ -137,7 +137,7 @@ CDB_SCHEMAS = SensorTag
 # 
 # IDL Files and flags
 # 
-IDL_FILES := sensortag
+IDL_FILES := SensorTag
 TAO_IDLFLAGS =
 USER_IDL =
 

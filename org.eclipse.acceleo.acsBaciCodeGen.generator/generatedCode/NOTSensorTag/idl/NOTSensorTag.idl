@@ -1,0 +1,35 @@
+#ifndef _NOTSENSORTAG_IDL_
+#define _NOTSENSORTAG_IDL_
+
+#include <baci.idl>
+
+#pragma prefix "alma"
+
+module Sensors
+{	
+	interface NOTSensorTag : ACS::CharacteristicComponent
+	{
+		/*Properties*/
+
+		readonly attribute ACS::ROdouble temperature;
+
+		readonly attribute ACS::ROdouble humidity;
+
+		readonly attribute ACS::ROdouble light;
+
+		/*Actions*/
+
+		void on();
+
+		void off();
+
+		void publishTemperature();
+
+		void publishLight();
+
+		void publishHumidity();
+	};
+};
+
+#endif //_NOTSENSORTAG_IDL_
+

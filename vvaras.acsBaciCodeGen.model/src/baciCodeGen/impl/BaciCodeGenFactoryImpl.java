@@ -64,6 +64,8 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 			case BaciCodeGenPackage.ATTRIBUTE: return createAttribute();
 			case BaciCodeGenPackage.USED_DEV_IOS: return createUsedDevIOs();
 			case BaciCodeGenPackage.DEV_IO: return createDevIO();
+			case BaciCodeGenPackage.READ_ARGUMENT: return createReadArgument();
+			case BaciCodeGenPackage.WRITE_ARGUMENT: return createWriteArgument();
 			case BaciCodeGenPackage.USED_BACI_TYPES: return createUsedBaciTypes();
 			case BaciCodeGenPackage.BACI_TYPE: return createBaciType();
 			default:
@@ -85,8 +87,6 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 				return createBasicTypeFromString(eDataType, initialValue);
 			case BaciCodeGenPackage.SEQ_TYPE:
 				return createSeqTypeFromString(eDataType, initialValue);
-			case BaciCodeGenPackage.IMPLEMENTATION_LANGUAGE:
-				return createImplementationLanguageFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -106,8 +106,6 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 				return convertBasicTypeToString(eDataType, instanceValue);
 			case BaciCodeGenPackage.SEQ_TYPE:
 				return convertSeqTypeToString(eDataType, instanceValue);
-			case BaciCodeGenPackage.IMPLEMENTATION_LANGUAGE:
-				return convertImplementationLanguageToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -188,6 +186,26 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ReadArgument createReadArgument() {
+		ReadArgumentImpl readArgument = new ReadArgumentImpl();
+		return readArgument;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WriteArgument createWriteArgument() {
+		WriteArgumentImpl writeArgument = new WriteArgumentImpl();
+		return writeArgument;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public UsedBaciTypes createUsedBaciTypes() {
 		UsedBaciTypesImpl usedBaciTypes = new UsedBaciTypesImpl();
 		return usedBaciTypes;
@@ -260,26 +278,6 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 	 * @generated
 	 */
 	public String convertSeqTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ImplementationLanguage createImplementationLanguageFromString(EDataType eDataType, String initialValue) {
-		ImplementationLanguage result = ImplementationLanguage.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertImplementationLanguageToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

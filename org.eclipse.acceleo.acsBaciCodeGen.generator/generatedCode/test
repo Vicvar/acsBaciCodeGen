@@ -1,3 +1,6 @@
-		0
-		1
-		2
+	//Start of user code test codegen
+	temperature= something_1;
+	humidity= something_2;
+	light= something_3;
+	testProp= something_4;
+	//End of user code

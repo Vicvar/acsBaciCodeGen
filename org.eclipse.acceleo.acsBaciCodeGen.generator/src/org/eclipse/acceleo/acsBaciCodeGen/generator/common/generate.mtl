@@ -102,7 +102,7 @@ module [cModule/]
 
 	</xs:complexType>
 
-	<xs:element name="SensorTag" type="[cName/]Type"/>
+	<xs:element name="[cName/]" type="[cName/]Type"/>
 </xs:schema>
 
 [/file]
@@ -151,7 +151,7 @@ module [cModule/]
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	[for (it : Attribute | aCharacteristicComponent.attributes)]
 	[comment value missing here/]
-	[it.name/]="VALUE_HERE"[/for]>
+	[it.name/]="[it.value/]"[/for]>
 
 	[for (it : Property | aCharacteristicComponent.properties)]
 	<[it.name/]
@@ -183,8 +183,8 @@ module [cModule/]
 #include <baciSmartPropertyPointer.h>
 #include <baciDevIO.h>
 #include <acsThread.h>[comment Should this always be included??/]
-[for (it : Property | aCharacteristicComponent.properties)]
-#include <baci[it.baciType.name/]>
+[for (it : BaciType | aCharacteristicComponent.usedBaciTypes.baciTypes)]
+#include <baci[it.name/].h>
 [/for]
 [for (it : DevIO | aCharacteristicComponent.usedDevIOs.devIOs)]
 #include <[it.name/]_devio.h>
@@ -198,7 +198,7 @@ class [cName/]_impl : public virtual POA_[cModule/]::[cName/], public baci::Char
 		
 		/*Constructor/Destructor*/
 		[comment check arguments/]
-		[cName/]_impl(const ACE_CString name, maci::ContainerServices * containerServices);
+		[cName/]_impl(const ACE_CString c_name, maci::ContainerServices * containerServices);
 		virtual ~[cName/]_impl();
 		
 		/*Lifecycle methods*/
@@ -209,7 +209,7 @@ class [cName/]_impl : public virtual POA_[cModule/]::[cName/], public baci::Char
 
 		/*Properties*/
 		[for (it : Property | aCharacteristicComponent.properties)]
-		ACS::[it.baciType.name/]_ptr [it.name/]()
+		ACS::[it.baciType.name/]_ptr [it.name/]();
 		[/for]
 
 		/*Actions*/
@@ -235,8 +235,9 @@ class [cName/]_impl : public virtual POA_[cModule/]::[cName/], public baci::Char
 		[it.devIO.name/]::[it.devIO.name/]_write * [it.name/]_devio_w;
 		[/for]
 
-		/*DevIO variables*/
-		
+		[comment this could be done better/]
+		/*Aux variables*/
+		std::string component_name;
 };
 
 #endif //_[cName.toUpperCase()/]_IMPL_H_
@@ -247,80 +248,112 @@ class [cName/]_impl : public virtual POA_[cModule/]::[cName/], public baci::Char
 	{
 		cName : String = aCharacteristicComponent.name;
 		cModule : String = aCharacteristicComponent.module;
+		globalVars : oclstdlib::Set(T);
 	}]
 [file (cName+'/src/'+cName+'_impl.cpp', false, 'UTF-8')]
 #include <[cName/]_impl.h>
 [comment  include devio again?/]
 
 /*Constructor*/
-[cName/]_impl::[cName/]_impl(const ACE_CString name, maci::ContainerServices * containerServices):
-	CharacteristicComponentImpl(name, containerServices),
+[cName/]_impl::[cName/]_impl(const ACE_CString c_name, maci::ContainerServices * containerServices):
+	CharacteristicComponentImpl(c_name, containerServices),
 	[for (it : Property | aCharacteristicComponent.properties) separator(',\n') after('\n')]
 	m_[it.name/]_sp(this)[/for]
 {
 	[comment]
 	Check this.
-	Also check the other kind of property creation
 	Also check logging and debugging messages
 	[/comment]
+	[comment This coudl be done better(?)/]
+	component_name=c_name.c_str();
 	ACS_TRACE("::[cName/]::[cName/]");
 }
 
 /*Destructor*/
 [comment Better left empty according to the tutorial/]
-[cName/]::~[cName/]()
+[cName/]_impl::~[cName/]_impl()
 {
 }
 
 /*Lyfecycle methods override*/
-void [cName/]::initialize() throw (acsErrTypeLifeCycle::acsErrTypeLifeCycleExImpl)
+void [cName/]_impl::initialize() throw (acsErrTypeLifeCycle::acsErrTypeLifeCycleExImpl)
 {
 	[comment Maybe add comment here with suggested necessary resources /]
-	
-	//[protected ('User defined resource initialization')]
+	/* Property specific variables to be initialized
+	 [for (it : Property | aCharacteristicComponent.properties)]
+	 [for (it2 : ReadArgument | it.devIO.readArguments)]
+	 [if (it2.propertySpecific)]
+	 *[it2.type/] r_[it.name/]_[it2.name/]
+	 [/if]
+	 [/for]
+	 [for (it2 : WriteArgument | it.devIO.writeArguments)]
+	 [if (it2.propertySpecific)]
+	 *[it2.type/] w_[it.name/]_[it2.name/]
+	 [/if]
+	 [/for]
+	 [/for]
+	 */
+
+	//[protected ('Required Variables')]
 	
 	//[/protected]
 	
-	//Property initialization
+	/*Property initialization*/
 	[for (it : Property | aCharacteristicComponent.properties)]
 	
-	[it.name/]_devio_m = new [it.devIO.name/]::[it.devIO.name/]_read();
+	[it.name/]_devio_m = new [it.devIO.name/]::[it.devIO.name/]_read([for(it2 : ReadArgument | it.devIO.readArguments) separator(', ')][if(it2.propertySpecific)]r_[it.name/]_[it2.name/][else][it2.name/][/if][/for]);
 	[/for]
 
 	[for (it : Property | aCharacteristicComponent.properties)]
 	
-	[it.name/]_devio_w = new [it.devIO.name/]::[it.devIO.name/]_write()
+	[it.name/]_devio_w = new [it.devIO.name/]::[it.devIO.name/]_write([for(it2 : WriteArgument | it.devIO.writeArguments) separator(', ')][if(it2.propertySpecific)]w_[it.name/]_[it2.name/][else][it2.name/][/if][/for]);
 	[/for]
+
 	[comment maybe get string from name/]
 	[for (it : Property | aCharacteristicComponent.properties)]
 	
-	m_[it.name/]_sp = new baci::[it.baciType.name/](name+":[it.name/]", getComponent(), [it.name/]_devio_m);
+	m_[it.name/]_sp = new baci::[it.baciType.name/]((component_name+":[it.name/]").c_str(), getComponent(), [it.name/]_devio_m);
 	[/for]
 
-	//[protected ('User initialization')]
+
+	//[protected ('initialize implementation')]
 	
 	//[/protected]
 }
 
-void [cName/]::execute() throw (acsErrTypeLifeCycle::acsErrTypeLifeCycleExImpl)
+void [cName/]_impl::execute() throw (acsErrTypeLifeCycle::acsErrTypeLifeCycleExImpl)
 {
 	[comment Signals that the server must be ready after initialize/]
+	//[protected ('execute implementation')]
+	
+	//[/protected]
 }
 
-void [cName/]::cleanUp()
+void [cName/]_impl::cleanUp()
 {
 	[comment Should implement destruction/]
+	[for (it : Property | aCharacteristicComponent.properties)]
+	delete [it.name/]_devio_m;
+	delete [it.name/]_devio_w;
+	[/for]
+
+	//[protected ('cleanUp implementation')]
+	
+	//[/protected]
 }
 
-void [cName/]::aboutToAbort()
+void [cName/]_impl::aboutToAbort()
 {
 	[comment Should handle destruction in case of error/]
+	//[protected ('aboutToAbort implementation')]
+	
+	//[/protected]
 }
 
 /*Properties implementation*/
 [for (it : Property | aCharacteristicComponent.properties)]
 
-ACS::[it.baciType.name/] [cName/]::[it.name/]()
+ACS::[it.baciType.name/]_ptr [cName/]_impl::[it.name/]()
 {
 	if(m_[it.name/]_sp == 0)
 		return ACS::[it.baciType.name/]::_nil();
@@ -334,7 +367,9 @@ ACS::[it.baciType.name/] [cName/]::[it.name/]()
 [comment Missing action parameters /]
 [it.type/] [cName/]_impl::[it.name/]()
 {
-	//TBI by user
+	//[protected ('Action implementation')]
+	
+	//[/protected]
 }
 [/for]
 
@@ -356,7 +391,7 @@ Mostly copied from sensortag. Changed sensortagish things for [cName/]
 Still must change DevIO specific things and maybe trim some other unnecessary parts.
 [/comment]
 [file (cName+'/src/Makefile', false, 'UTF-8')]
-*******************************************************************************
+#*******************************************************************************
 # PPPPPPPP
 #
 # "@(#) $Id$"
@@ -493,12 +528,12 @@ tttlll_OBJECTS  =
 #
 # Configuration Database Files
 # ----------------------------
-CDB_SCHEMAS = SensorTag 
+CDB_SCHEMAS = [cName/] 
 
 # 
 # IDL Files and flags
 # 
-IDL_FILES := sensortag
+IDL_FILES := [cName/]
 TAO_IDLFLAGS =
 USER_IDL =
 

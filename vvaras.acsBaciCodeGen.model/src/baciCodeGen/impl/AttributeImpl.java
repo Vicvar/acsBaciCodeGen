@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link baciCodeGen.impl.AttributeImpl#getName <em>Name</em>}</li>
  *   <li>{@link baciCodeGen.impl.AttributeImpl#getType <em>Type</em>}</li>
  *   <li>{@link baciCodeGen.impl.AttributeImpl#isRequired <em>Required</em>}</li>
+ *   <li>{@link baciCodeGen.impl.AttributeImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -87,6 +88,26 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * @ordered
 	 */
 	protected boolean required = REQUIRED_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALUE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected String value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -175,6 +196,27 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getValue() {
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValue(String newValue) {
+		String oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.ATTRIBUTE__VALUE, oldValue, value));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -184,6 +226,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 				return getType();
 			case BaciCodeGenPackage.ATTRIBUTE__REQUIRED:
 				return isRequired();
+			case BaciCodeGenPackage.ATTRIBUTE__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -204,6 +248,9 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 				return;
 			case BaciCodeGenPackage.ATTRIBUTE__REQUIRED:
 				setRequired((Boolean)newValue);
+				return;
+			case BaciCodeGenPackage.ATTRIBUTE__VALUE:
+				setValue((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -226,6 +273,9 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 			case BaciCodeGenPackage.ATTRIBUTE__REQUIRED:
 				setRequired(REQUIRED_EDEFAULT);
 				return;
+			case BaciCodeGenPackage.ATTRIBUTE__VALUE:
+				setValue(VALUE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -244,6 +294,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 			case BaciCodeGenPackage.ATTRIBUTE__REQUIRED:
 				return required != REQUIRED_EDEFAULT;
+			case BaciCodeGenPackage.ATTRIBUTE__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -264,6 +316,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 		result.append(type);
 		result.append(", required: ");
 		result.append(required);
+		result.append(", value: ");
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}

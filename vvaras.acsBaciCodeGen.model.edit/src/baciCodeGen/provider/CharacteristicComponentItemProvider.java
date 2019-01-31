@@ -63,8 +63,8 @@ public class CharacteristicComponentItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addModulePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addModulePropertyDescriptor(object);
 			addPrefixPropertyDescriptor(object);
 			addComponentNumberPropertyDescriptor(object);
 			addContainerPropertyDescriptor(object);
@@ -194,9 +194,9 @@ public class CharacteristicComponentItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__ACTIONS);
 			childrenFeatures.add(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__ATTRIBUTES);
 			childrenFeatures.add(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__PROPERTIES);
-			childrenFeatures.add(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__ACTIONS);
 			childrenFeatures.add(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__USED_BACI_TYPES);
 			childrenFeatures.add(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__USED_DEV_IOS);
 		}
@@ -254,16 +254,16 @@ public class CharacteristicComponentItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(CharacteristicComponent.class)) {
-			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__MODULE:
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__NAME:
+			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__MODULE:
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__PREFIX:
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__COMPONENT_NUMBER:
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__CONTAINER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__ACTIONS:
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__ATTRIBUTES:
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__PROPERTIES:
-			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__ACTIONS:
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_BACI_TYPES:
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_DEV_IOS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -285,6 +285,11 @@ public class CharacteristicComponentItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__ACTIONS,
+				 BaciCodeGenFactory.eINSTANCE.createAction()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__ATTRIBUTES,
 				 BaciCodeGenFactory.eINSTANCE.createAttribute()));
 
@@ -292,11 +297,6 @@ public class CharacteristicComponentItemProvider
 			(createChildParameter
 				(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__PROPERTIES,
 				 BaciCodeGenFactory.eINSTANCE.createProperty()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__ACTIONS,
-				 BaciCodeGenFactory.eINSTANCE.createAction()));
 
 		newChildDescriptors.add
 			(createChildParameter

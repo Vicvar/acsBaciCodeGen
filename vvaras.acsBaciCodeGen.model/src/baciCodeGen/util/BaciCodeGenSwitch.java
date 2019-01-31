@@ -108,6 +108,26 @@ public class BaciCodeGenSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case BaciCodeGenPackage.READ_ARGUMENT: {
+				ReadArgument readArgument = (ReadArgument)theEObject;
+				T result = caseReadArgument(readArgument);
+				if (result == null) result = caseDevIOArgument(readArgument);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BaciCodeGenPackage.WRITE_ARGUMENT: {
+				WriteArgument writeArgument = (WriteArgument)theEObject;
+				T result = caseWriteArgument(writeArgument);
+				if (result == null) result = caseDevIOArgument(writeArgument);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BaciCodeGenPackage.DEV_IO_ARGUMENT: {
+				DevIOArgument devIOArgument = (DevIOArgument)theEObject;
+				T result = caseDevIOArgument(devIOArgument);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case BaciCodeGenPackage.USED_BACI_TYPES: {
 				UsedBaciTypes usedBaciTypes = (UsedBaciTypes)theEObject;
 				T result = caseUsedBaciTypes(usedBaciTypes);
@@ -226,6 +246,51 @@ public class BaciCodeGenSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDevIO(DevIO object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Read Argument</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Read Argument</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReadArgument(ReadArgument object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Write Argument</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Write Argument</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseWriteArgument(WriteArgument object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Dev IO Argument</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Dev IO Argument</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDevIOArgument(DevIOArgument object) {
 		return null;
 	}
 
