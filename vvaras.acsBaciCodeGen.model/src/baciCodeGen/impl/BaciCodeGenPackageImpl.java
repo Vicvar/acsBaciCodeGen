@@ -11,6 +11,7 @@ import baciCodeGen.BaciType;
 import baciCodeGen.BasicType;
 import baciCodeGen.Characteristic;
 import baciCodeGen.CharacteristicComponent;
+import baciCodeGen.CommonArgument;
 import baciCodeGen.DevIO;
 import baciCodeGen.DevIOArgument;
 import baciCodeGen.Property;
@@ -97,6 +98,13 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * @generated
 	 */
 	private EClass writeArgumentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass commonArgumentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -494,8 +502,17 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDevIO_RequiredLibraries() {
+		return (EAttribute)devIOEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getDevIO_ReadArguments() {
-		return (EReference)devIOEClass.getEStructuralFeatures().get(1);
+		return (EReference)devIOEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -504,7 +521,16 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * @generated
 	 */
 	public EReference getDevIO_WriteArguments() {
-		return (EReference)devIOEClass.getEStructuralFeatures().get(2);
+		return (EReference)devIOEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDevIO_CommonArguments() {
+		return (EReference)devIOEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -523,6 +549,15 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 */
 	public EClass getWriteArgument() {
 		return writeArgumentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCommonArgument() {
+		return commonArgumentEClass;
 	}
 
 	/**
@@ -717,12 +752,16 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 
 		devIOEClass = createEClass(DEV_IO);
 		createEAttribute(devIOEClass, DEV_IO__NAME);
+		createEAttribute(devIOEClass, DEV_IO__REQUIRED_LIBRARIES);
 		createEReference(devIOEClass, DEV_IO__READ_ARGUMENTS);
 		createEReference(devIOEClass, DEV_IO__WRITE_ARGUMENTS);
+		createEReference(devIOEClass, DEV_IO__COMMON_ARGUMENTS);
 
 		readArgumentEClass = createEClass(READ_ARGUMENT);
 
 		writeArgumentEClass = createEClass(WRITE_ARGUMENT);
+
+		commonArgumentEClass = createEClass(COMMON_ARGUMENT);
 
 		devIOArgumentEClass = createEClass(DEV_IO_ARGUMENT);
 		createEAttribute(devIOArgumentEClass, DEV_IO_ARGUMENT__NAME);
@@ -774,6 +813,7 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		// Add supertypes to classes
 		readArgumentEClass.getESuperTypes().add(this.getDevIOArgument());
 		writeArgumentEClass.getESuperTypes().add(this.getDevIOArgument());
+		commonArgumentEClass.getESuperTypes().add(this.getDevIOArgument());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(characteristicComponentEClass, CharacteristicComponent.class, "CharacteristicComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -814,12 +854,16 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 
 		initEClass(devIOEClass, DevIO.class, "DevIO", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDevIO_Name(), ecorePackage.getEString(), "name", null, 0, 1, DevIO.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDevIO_RequiredLibraries(), ecorePackage.getEString(), "requiredLibraries", null, 0, 1, DevIO.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDevIO_ReadArguments(), this.getReadArgument(), null, "readArguments", null, 0, -1, DevIO.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDevIO_WriteArguments(), this.getWriteArgument(), null, "writeArguments", null, 0, -1, DevIO.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDevIO_CommonArguments(), this.getCommonArgument(), null, "commonArguments", null, 0, -1, DevIO.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(readArgumentEClass, ReadArgument.class, "ReadArgument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(writeArgumentEClass, WriteArgument.class, "WriteArgument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(commonArgumentEClass, CommonArgument.class, "CommonArgument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(devIOArgumentEClass, DevIOArgument.class, "DevIOArgument", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDevIOArgument_Name(), ecorePackage.getEString(), "name", null, 0, 1, DevIOArgument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

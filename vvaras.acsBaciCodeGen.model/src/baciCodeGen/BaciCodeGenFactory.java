@@ -103,6 +103,15 @@ public interface BaciCodeGenFactory extends EFactory {
 	WriteArgument createWriteArgument();
 
 	/**
+	 * Returns a new object of class '<em>Common Argument</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Common Argument</em>'.
+	 * @generated
+	 */
+	CommonArgument createCommonArgument();
+
+	/**
 	 * Returns a new object of class '<em>Used Baci Types</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

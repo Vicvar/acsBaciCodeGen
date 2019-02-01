@@ -461,13 +461,22 @@ public interface BaciCodeGenPackage extends EPackage {
 	int DEV_IO__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Required Libraries</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEV_IO__REQUIRED_LIBRARIES = 1;
+
+	/**
 	 * The feature id for the '<em><b>Read Arguments</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEV_IO__READ_ARGUMENTS = 1;
+	int DEV_IO__READ_ARGUMENTS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Write Arguments</b></em>' containment reference list.
@@ -476,7 +485,16 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEV_IO__WRITE_ARGUMENTS = 2;
+	int DEV_IO__WRITE_ARGUMENTS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Common Arguments</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEV_IO__COMMON_ARGUMENTS = 4;
 
 	/**
 	 * The number of structural features of the '<em>Dev IO</em>' class.
@@ -485,7 +503,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEV_IO_FEATURE_COUNT = 3;
+	int DEV_IO_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Dev IO</em>' class.
@@ -504,7 +522,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getDevIOArgument()
 	 * @generated
 	 */
-	int DEV_IO_ARGUMENT = 9;
+	int DEV_IO_ARGUMENT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -662,6 +680,61 @@ public interface BaciCodeGenPackage extends EPackage {
 	int WRITE_ARGUMENT_OPERATION_COUNT = DEV_IO_ARGUMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link baciCodeGen.impl.CommonArgumentImpl <em>Common Argument</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.impl.CommonArgumentImpl
+	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getCommonArgument()
+	 * @generated
+	 */
+	int COMMON_ARGUMENT = 9;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMON_ARGUMENT__NAME = DEV_IO_ARGUMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMON_ARGUMENT__TYPE = DEV_IO_ARGUMENT__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Property Specific</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMON_ARGUMENT__PROPERTY_SPECIFIC = DEV_IO_ARGUMENT__PROPERTY_SPECIFIC;
+
+	/**
+	 * The number of structural features of the '<em>Common Argument</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMON_ARGUMENT_FEATURE_COUNT = DEV_IO_ARGUMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Common Argument</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMON_ARGUMENT_OPERATION_COUNT = DEV_IO_ARGUMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link baciCodeGen.impl.UsedBaciTypesImpl <em>Used Baci Types</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -669,7 +742,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getUsedBaciTypes()
 	 * @generated
 	 */
-	int USED_BACI_TYPES = 10;
+	int USED_BACI_TYPES = 11;
 
 	/**
 	 * The feature id for the '<em><b>Baci Types</b></em>' containment reference list.
@@ -706,7 +779,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getBaciType()
 	 * @generated
 	 */
-	int BACI_TYPE = 11;
+	int BACI_TYPE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -770,7 +843,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getAccessType()
 	 * @generated
 	 */
-	int ACCESS_TYPE = 12;
+	int ACCESS_TYPE = 13;
 
 	/**
 	 * The meta object id for the '{@link baciCodeGen.BasicType <em>Basic Type</em>}' enum.
@@ -780,7 +853,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getBasicType()
 	 * @generated
 	 */
-	int BASIC_TYPE = 13;
+	int BASIC_TYPE = 14;
 
 	/**
 	 * The meta object id for the '{@link baciCodeGen.SeqType <em>Seq Type</em>}' enum.
@@ -790,7 +863,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getSeqType()
 	 * @generated
 	 */
-	int SEQ_TYPE = 14;
+	int SEQ_TYPE = 15;
 
 
 	/**
@@ -1139,6 +1212,17 @@ public interface BaciCodeGenPackage extends EPackage {
 	EAttribute getDevIO_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link baciCodeGen.DevIO#getRequiredLibraries <em>Required Libraries</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Required Libraries</em>'.
+	 * @see baciCodeGen.DevIO#getRequiredLibraries()
+	 * @see #getDevIO()
+	 * @generated
+	 */
+	EAttribute getDevIO_RequiredLibraries();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link baciCodeGen.DevIO#getReadArguments <em>Read Arguments</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1161,6 +1245,17 @@ public interface BaciCodeGenPackage extends EPackage {
 	EReference getDevIO_WriteArguments();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link baciCodeGen.DevIO#getCommonArguments <em>Common Arguments</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Common Arguments</em>'.
+	 * @see baciCodeGen.DevIO#getCommonArguments()
+	 * @see #getDevIO()
+	 * @generated
+	 */
+	EReference getDevIO_CommonArguments();
+
+	/**
 	 * Returns the meta object for class '{@link baciCodeGen.ReadArgument <em>Read Argument</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1179,6 +1274,16 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getWriteArgument();
+
+	/**
+	 * Returns the meta object for class '{@link baciCodeGen.CommonArgument <em>Common Argument</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Common Argument</em>'.
+	 * @see baciCodeGen.CommonArgument
+	 * @generated
+	 */
+	EClass getCommonArgument();
 
 	/**
 	 * Returns the meta object for class '{@link baciCodeGen.DevIOArgument <em>Dev IO Argument</em>}'.
@@ -1622,6 +1727,14 @@ public interface BaciCodeGenPackage extends EPackage {
 		EAttribute DEV_IO__NAME = eINSTANCE.getDevIO_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>Required Libraries</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DEV_IO__REQUIRED_LIBRARIES = eINSTANCE.getDevIO_RequiredLibraries();
+
+		/**
 		 * The meta object literal for the '<em><b>Read Arguments</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1636,6 +1749,14 @@ public interface BaciCodeGenPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DEV_IO__WRITE_ARGUMENTS = eINSTANCE.getDevIO_WriteArguments();
+
+		/**
+		 * The meta object literal for the '<em><b>Common Arguments</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEV_IO__COMMON_ARGUMENTS = eINSTANCE.getDevIO_CommonArguments();
 
 		/**
 		 * The meta object literal for the '{@link baciCodeGen.impl.ReadArgumentImpl <em>Read Argument</em>}' class.
@@ -1656,6 +1777,16 @@ public interface BaciCodeGenPackage extends EPackage {
 		 * @generated
 		 */
 		EClass WRITE_ARGUMENT = eINSTANCE.getWriteArgument();
+
+		/**
+		 * The meta object literal for the '{@link baciCodeGen.impl.CommonArgumentImpl <em>Common Argument</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see baciCodeGen.impl.CommonArgumentImpl
+		 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getCommonArgument()
+		 * @generated
+		 */
+		EClass COMMON_ARGUMENT = eINSTANCE.getCommonArgument();
 
 		/**
 		 * The meta object literal for the '{@link baciCodeGen.impl.DevIOArgumentImpl <em>Dev IO Argument</em>}' class.

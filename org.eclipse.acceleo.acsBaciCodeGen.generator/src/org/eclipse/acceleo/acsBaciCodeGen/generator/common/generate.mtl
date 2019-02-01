@@ -248,7 +248,7 @@ class [cName/]_impl : public virtual POA_[cModule/]::[cName/], public baci::Char
 	{
 		cName : String = aCharacteristicComponent.name;
 		cModule : String = aCharacteristicComponent.module;
-		globalVars : oclstdlib::Set(T);
+		hasCommonArg : oclstdlib::Boolean;
 	}]
 [file (cName+'/src/'+cName+'_impl.cpp', false, 'UTF-8')]
 #include <[cName/]_impl.h>
@@ -279,7 +279,14 @@ class [cName/]_impl : public virtual POA_[cModule/]::[cName/], public baci::Char
 void [cName/]_impl::initialize() throw (acsErrTypeLifeCycle::acsErrTypeLifeCycleExImpl)
 {
 	[comment Maybe add comment here with suggested necessary resources /]
-	/* Property specific variables to be initialized
+	/*Suggested variables to be initialized
+	 [for (it : DevIO | aCharacteristicComponent.usedDevIOs.devIOs)]
+	 **Common for DevIO: [it.name/]
+	 [for (it2 : CommonArgument | it.commonArguments)]
+	 *[it2.type/] [it2.name/]
+	 [/for]
+	 [/for]
+	 **Property specific
 	 [for (it : Property | aCharacteristicComponent.properties)]
 	 [for (it2 : ReadArgument | it.devIO.readArguments)]
 	 [if (it2.propertySpecific)]
@@ -301,15 +308,14 @@ void [cName/]_impl::initialize() throw (acsErrTypeLifeCycle::acsErrTypeLifeCycle
 	/*Property initialization*/
 	[for (it : Property | aCharacteristicComponent.properties)]
 	
-	[it.name/]_devio_m = new [it.devIO.name/]::[it.devIO.name/]_read([for(it2 : ReadArgument | it.devIO.readArguments) separator(', ')][if(it2.propertySpecific)]r_[it.name/]_[it2.name/][else][it2.name/][/if][/for]);
+	[it.name/]_devio_m = new [it.devIO.name/]::[it.devIO.name/]_read([for (it2 : DevIO | aCharacteristicComponent.usedDevIOs.devIOs)][if (it2.name=it.devIO.name)][for (it3 : CommonArgument | it2.commonArguments) separator(', ')][it3.name/][/for][/if][/for][if ((not it.devIO.commonArguments->isEmpty()) and (not it.devIO.readArguments->isEmpty()))], [/if][for(it2 : ReadArgument | it.devIO.readArguments) separator(', ')][if(it2.propertySpecific)]r_[it.name/]_[it2.name/][else][it2.name/][/if][/for]);
 	[/for]
 
 	[for (it : Property | aCharacteristicComponent.properties)]
 	
-	[it.name/]_devio_w = new [it.devIO.name/]::[it.devIO.name/]_write([for(it2 : WriteArgument | it.devIO.writeArguments) separator(', ')][if(it2.propertySpecific)]w_[it.name/]_[it2.name/][else][it2.name/][/if][/for]);
+	[it.name/]_devio_w = new [it.devIO.name/]::[it.devIO.name/]_write([for (it2 : DevIO | aCharacteristicComponent.usedDevIOs.devIOs)][if (it2.name=it.devIO.name)][for (it3 : CommonArgument | it2.commonArguments) separator(', ')][it3.name/][/for][/if][/for][if ((not it.devIO.commonArguments->isEmpty()) and (not it.devIO.writeArguments->isEmpty()))], [/if][for(it2 : WriteArgument | it.devIO.writeArguments) separator(', ')][if(it2.propertySpecific)]w_[it.name/]_[it2.name/][else][it2.name/][/if][/for]);
 	[/for]
 
-	[comment maybe get string from name/]
 	[for (it : Property | aCharacteristicComponent.properties)]
 	
 	m_[it.name/]_sp = new baci::[it.baciType.name/]((component_name+":[it.name/]").c_str(), getComponent(), [it.name/]_devio_m);
@@ -367,7 +373,7 @@ ACS::[it.baciType.name/]_ptr [cName/]_impl::[it.name/]()
 [comment Missing action parameters /]
 [it.type/] [cName/]_impl::[it.name/]()
 {
-	//[protected ('Action implementation')]
+	//[protected (it.name+' Action implementation')]
 	
 	//[/protected]
 }
@@ -478,8 +484,9 @@ LIBRARIES_L     =
 [cName/]Impl_OBJECTS = [cName/]_impl
 [cName/]Impl_LIBS = [cName/]Stubs baciStubs ACE TAO TAO_PortableServer TAO_CosProperty maciErrType baselogging \
 		ACSErrTypeCommon acscommonStubs acserrStubs acserr logging logging maci maciStubs loki \
-		ACSErrTypeCORBA acscomponent baci loki paho-mqtt3c paho-mqttpp3 paho-mqtt3a paho-mqtt3as paho-mqtt3cs \
-		mqttDevIO
+		ACSErrTypeCORBA acscomponent baci loki \
+		[for (it : DevIO | aCharacteristicComponent.usedDevIOs.devIOs) separator(' \\\n')]
+		[it.requiredLibraries/][/for]
 		[comment Replace with mqtt stuff with current DevIO -- maybe put additional libs in the model/]
 
 [comment Should there be one of these for each component instance??/]

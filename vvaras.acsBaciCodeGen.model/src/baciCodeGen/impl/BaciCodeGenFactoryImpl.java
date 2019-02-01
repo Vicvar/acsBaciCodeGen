@@ -66,6 +66,7 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 			case BaciCodeGenPackage.DEV_IO: return createDevIO();
 			case BaciCodeGenPackage.READ_ARGUMENT: return createReadArgument();
 			case BaciCodeGenPackage.WRITE_ARGUMENT: return createWriteArgument();
+			case BaciCodeGenPackage.COMMON_ARGUMENT: return createCommonArgument();
 			case BaciCodeGenPackage.USED_BACI_TYPES: return createUsedBaciTypes();
 			case BaciCodeGenPackage.BACI_TYPE: return createBaciType();
 			default:
@@ -199,6 +200,16 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 	public WriteArgument createWriteArgument() {
 		WriteArgumentImpl writeArgument = new WriteArgumentImpl();
 		return writeArgument;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CommonArgument createCommonArgument() {
+		CommonArgumentImpl commonArgument = new CommonArgumentImpl();
+		return commonArgument;
 	}
 
 	/**

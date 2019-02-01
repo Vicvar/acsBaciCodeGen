@@ -104,6 +104,10 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 				return createWriteArgumentAdapter();
 			}
 			@Override
+			public Adapter caseCommonArgument(CommonArgument object) {
+				return createCommonArgumentAdapter();
+			}
+			@Override
 			public Adapter caseDevIOArgument(DevIOArgument object) {
 				return createDevIOArgumentAdapter();
 			}
@@ -258,6 +262,20 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createWriteArgumentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link baciCodeGen.CommonArgument <em>Common Argument</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see baciCodeGen.CommonArgument
+	 * @generated
+	 */
+	public Adapter createCommonArgumentAdapter() {
 		return null;
 	}
 

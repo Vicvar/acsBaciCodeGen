@@ -1,0 +1,35 @@
+#ifndef _COSMEFULANITO_IDL_
+#define _COSMEFULANITO_IDL_
+
+#include <baci.idl>
+
+#pragma prefix "alma"
+
+module Sensors
+{	
+	interface CosmeFulanito : ACS::CharacteristicComponent
+	{
+		/*Properties*/
+
+		readonly attribute ACS::ROdouble temperature;
+
+		readonly attribute ACS::ROdouble humidity;
+
+		readonly attribute ACS::ROdouble light;
+
+		/*Actions*/
+
+		void on();
+
+		void off();
+
+		void publishTemperature();
+
+		void publishLight();
+
+		void publishHumidity();
+	};
+};
+
+#endif //_COSMEFULANITO_IDL_
+

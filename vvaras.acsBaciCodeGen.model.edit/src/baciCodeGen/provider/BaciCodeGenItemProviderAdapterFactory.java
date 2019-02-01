@@ -279,6 +279,29 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.CommonArgument} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CommonArgumentItemProvider commonArgumentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link baciCodeGen.CommonArgument}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCommonArgumentAdapter() {
+		if (commonArgumentItemProvider == null) {
+			commonArgumentItemProvider = new CommonArgumentItemProvider(this);
+		}
+
+		return commonArgumentItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link baciCodeGen.UsedBaciTypes} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -432,6 +455,7 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 		if (devIOItemProvider != null) devIOItemProvider.dispose();
 		if (readArgumentItemProvider != null) readArgumentItemProvider.dispose();
 		if (writeArgumentItemProvider != null) writeArgumentItemProvider.dispose();
+		if (commonArgumentItemProvider != null) commonArgumentItemProvider.dispose();
 		if (usedBaciTypesItemProvider != null) usedBaciTypesItemProvider.dispose();
 		if (baciTypeItemProvider != null) baciTypeItemProvider.dispose();
 	}

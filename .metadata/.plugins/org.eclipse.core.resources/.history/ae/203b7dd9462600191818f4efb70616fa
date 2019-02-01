@@ -1,0 +1,91 @@
+#
+
+pluginName = BaciCodeGenModel Edit Support
+providerName = www.example.org
+
+_UI_CreateChild_text = {0}
+_UI_CreateChild_text2 = {1} {0}
+_UI_CreateChild_text3 = {1}
+_UI_CreateChild_tooltip = Create New {0} Under {1} Feature
+_UI_CreateChild_description = Create a new child of type {0} for the {1} feature of the selected {2}.
+_UI_CreateSibling_description = Create a new sibling of type {0} for the selected {2}, under the {1} feature of their parent.
+
+_UI_PropertyDescriptor_description = The {0} of the {1}
+
+_UI_CharacteristicComponent_type = Characteristic Component
+_UI_Property_type = Property
+_UI_Action_type = Action
+_UI_Characteristic_type = Characteristic
+_UI_Attribute_type = Attribute
+_UI_DevIO_type = Dev IO
+_UI_Container_type = Container
+_UI_UsedBaciTypes_type = Used Baci Types
+_UI_BaciType_type = Baci Type
+_UI_Unknown_type = Object
+
+_UI_Unknown_datatype= Value
+
+_UI_CharacteristicComponent_module_feature = Module
+_UI_CharacteristicComponent_name_feature = Name
+_UI_CharacteristicComponent_prefix_feature = Prefix
+_UI_CharacteristicComponent_componentNumber_feature = Component Number
+_UI_CharacteristicComponent_container_feature = Container
+_UI_CharacteristicComponent_implLang_feature = Impl Lang
+_UI_CharacteristicComponent_attributes_feature = Attributes
+_UI_CharacteristicComponent_properties_feature = Properties
+_UI_CharacteristicComponent_actions_feature = Actions
+_UI_CharacteristicComponent_usedBaciTypes_feature = Used Baci Types
+_UI_Property_name_feature = Name
+_UI_Property_characteristics_feature = Characteristics
+_UI_Property_baciType_feature = Baci Type
+_UI_Property_devIO_feature = Dev IO
+_UI_Action_name_feature = Name
+_UI_Action_type_feature = Type
+_UI_Characteristic_name_feature = Name
+_UI_Characteristic_value_feature = Value
+_UI_Attribute_name_feature = Name
+_UI_Attribute_type_feature = Type
+_UI_Attribute_required_feature = Required
+_UI_DevIO_name_feature = Name
+_UI_Container_name_feature = Name
+_UI_Container_language_feature = Language
+_UI_UsedBaciTypes_baciTypes_feature = Baci Types
+_UI_BaciType_accessType_feature = Access Type
+_UI_BaciType_basicType_feature = Basic Type
+_UI_BaciType_seqType_feature = Seq Type
+_UI_Unknown_feature = Unspecified
+
+_UI_AccessType_RO_literal = RO
+_UI_AccessType_RW_literal = RW
+_UI_BasicType_boolean_literal = boolean
+_UI_BasicType_double_literal = double
+_UI_BasicType_float_literal = float
+_UI_BasicType_long_literal = long
+_UI_BasicType_longLong_literal = longLong
+_UI_BasicType_uLong_literal = uLong
+_UI_BasicType_uLongLong_literal = uLongLong
+_UI_BasicType_pattern_literal = pattern
+_UI_BasicType_string_literal = string
+_UI_SeqType_notSeq_literal = notSeq
+_UI_SeqType_Seq_literal = Seq
+_UI_BaciType_name_feature = Name
+_UI_UsedDevIOs_type = Used Dev IOs
+_UI_CharacteristicComponent_usedDevIOs_feature = Used Dev IOs
+_UI_Action_arguments_feature = Arguments
+_UI_UsedDevIOs_devIOs_feature = Dev IOs
+_UI_ImplementationLanguage_cpp_literal = cpp
+_UI_ImplementationLanguage_python_literal = python
+_UI_ImplementationLanguage_java_literal = java
+_UI_DevIOArgument_type = Dev IO Argument
+_UI_Action_parameters_feature = Parameters
+_UI_Attribute_value_feature = Value
+_UI_DevIO_arguments_feature = Arguments
+_UI_DevIOArgument_name_feature = Name
+_UI_DevIOArgument_type_feature = Type
+_UI_DevIOArgument_propertySpecific_feature = Property Specific
+_UI_ReadArgument_type = Read Argument
+_UI_WriteArgument_type = Write Argument
+_UI_DevIO_readArguments_feature = Read Arguments
+_UI_DevIO_writeArguments_feature = Write Arguments
+_UI_DevIO_requiredLibraries_feature = Required Libraries
+_UI_CommonArgument_type = Common Argument

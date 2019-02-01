@@ -63,6 +63,7 @@ public class DevIOItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addRequiredLibrariesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,6 +91,28 @@ public class DevIOItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Required Libraries feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiredLibrariesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DevIO_requiredLibraries_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DevIO_requiredLibraries_feature", "_UI_DevIO_type"),
+				 BaciCodeGenPackage.Literals.DEV_IO__REQUIRED_LIBRARIES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -103,6 +126,7 @@ public class DevIOItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(BaciCodeGenPackage.Literals.DEV_IO__READ_ARGUMENTS);
 			childrenFeatures.add(BaciCodeGenPackage.Literals.DEV_IO__WRITE_ARGUMENTS);
+			childrenFeatures.add(BaciCodeGenPackage.Literals.DEV_IO__COMMON_ARGUMENTS);
 		}
 		return childrenFeatures;
 	}
@@ -159,10 +183,12 @@ public class DevIOItemProvider
 
 		switch (notification.getFeatureID(DevIO.class)) {
 			case BaciCodeGenPackage.DEV_IO__NAME:
+			case BaciCodeGenPackage.DEV_IO__REQUIRED_LIBRARIES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case BaciCodeGenPackage.DEV_IO__READ_ARGUMENTS:
 			case BaciCodeGenPackage.DEV_IO__WRITE_ARGUMENTS:
+			case BaciCodeGenPackage.DEV_IO__COMMON_ARGUMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -189,6 +215,11 @@ public class DevIOItemProvider
 			(createChildParameter
 				(BaciCodeGenPackage.Literals.DEV_IO__WRITE_ARGUMENTS,
 				 BaciCodeGenFactory.eINSTANCE.createWriteArgument()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.DEV_IO__COMMON_ARGUMENTS,
+				 BaciCodeGenFactory.eINSTANCE.createCommonArgument()));
 	}
 
 	/**

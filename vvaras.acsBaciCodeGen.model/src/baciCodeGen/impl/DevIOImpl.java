@@ -3,6 +3,7 @@
 package baciCodeGen.impl;
 
 import baciCodeGen.BaciCodeGenPackage;
+import baciCodeGen.CommonArgument;
 import baciCodeGen.DevIO;
 import baciCodeGen.ReadArgument;
 import baciCodeGen.WriteArgument;
@@ -28,8 +29,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link baciCodeGen.impl.DevIOImpl#getName <em>Name</em>}</li>
+ *   <li>{@link baciCodeGen.impl.DevIOImpl#getRequiredLibraries <em>Required Libraries</em>}</li>
  *   <li>{@link baciCodeGen.impl.DevIOImpl#getReadArguments <em>Read Arguments</em>}</li>
  *   <li>{@link baciCodeGen.impl.DevIOImpl#getWriteArguments <em>Write Arguments</em>}</li>
+ *   <li>{@link baciCodeGen.impl.DevIOImpl#getCommonArguments <em>Common Arguments</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,6 +59,26 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getRequiredLibraries() <em>Required Libraries</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredLibraries()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REQUIRED_LIBRARIES_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRequiredLibraries() <em>Required Libraries</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredLibraries()
+	 * @generated
+	 * @ordered
+	 */
+	protected String requiredLibraries = REQUIRED_LIBRARIES_EDEFAULT;
+
+	/**
 	 * The cached value of the '{@link #getReadArguments() <em>Read Arguments</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,6 +97,16 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 	 * @ordered
 	 */
 	protected EList<WriteArgument> writeArguments;
+
+	/**
+	 * The cached value of the '{@link #getCommonArguments() <em>Common Arguments</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCommonArguments()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<CommonArgument> commonArguments;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -120,6 +153,27 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getRequiredLibraries() {
+		return requiredLibraries;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRequiredLibraries(String newRequiredLibraries) {
+		String oldRequiredLibraries = requiredLibraries;
+		requiredLibraries = newRequiredLibraries;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.DEV_IO__REQUIRED_LIBRARIES, oldRequiredLibraries, requiredLibraries));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<ReadArgument> getReadArguments() {
 		if (readArguments == null) {
 			readArguments = new EObjectContainmentEList<ReadArgument>(ReadArgument.class, this, BaciCodeGenPackage.DEV_IO__READ_ARGUMENTS);
@@ -144,6 +198,18 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<CommonArgument> getCommonArguments() {
+		if (commonArguments == null) {
+			commonArguments = new EObjectContainmentEList<CommonArgument>(CommonArgument.class, this, BaciCodeGenPackage.DEV_IO__COMMON_ARGUMENTS);
+		}
+		return commonArguments;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -151,6 +217,8 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 				return ((InternalEList<?>)getReadArguments()).basicRemove(otherEnd, msgs);
 			case BaciCodeGenPackage.DEV_IO__WRITE_ARGUMENTS:
 				return ((InternalEList<?>)getWriteArguments()).basicRemove(otherEnd, msgs);
+			case BaciCodeGenPackage.DEV_IO__COMMON_ARGUMENTS:
+				return ((InternalEList<?>)getCommonArguments()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -165,10 +233,14 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 		switch (featureID) {
 			case BaciCodeGenPackage.DEV_IO__NAME:
 				return getName();
+			case BaciCodeGenPackage.DEV_IO__REQUIRED_LIBRARIES:
+				return getRequiredLibraries();
 			case BaciCodeGenPackage.DEV_IO__READ_ARGUMENTS:
 				return getReadArguments();
 			case BaciCodeGenPackage.DEV_IO__WRITE_ARGUMENTS:
 				return getWriteArguments();
+			case BaciCodeGenPackage.DEV_IO__COMMON_ARGUMENTS:
+				return getCommonArguments();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -185,6 +257,9 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 			case BaciCodeGenPackage.DEV_IO__NAME:
 				setName((String)newValue);
 				return;
+			case BaciCodeGenPackage.DEV_IO__REQUIRED_LIBRARIES:
+				setRequiredLibraries((String)newValue);
+				return;
 			case BaciCodeGenPackage.DEV_IO__READ_ARGUMENTS:
 				getReadArguments().clear();
 				getReadArguments().addAll((Collection<? extends ReadArgument>)newValue);
@@ -192,6 +267,10 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 			case BaciCodeGenPackage.DEV_IO__WRITE_ARGUMENTS:
 				getWriteArguments().clear();
 				getWriteArguments().addAll((Collection<? extends WriteArgument>)newValue);
+				return;
+			case BaciCodeGenPackage.DEV_IO__COMMON_ARGUMENTS:
+				getCommonArguments().clear();
+				getCommonArguments().addAll((Collection<? extends CommonArgument>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -208,11 +287,17 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 			case BaciCodeGenPackage.DEV_IO__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case BaciCodeGenPackage.DEV_IO__REQUIRED_LIBRARIES:
+				setRequiredLibraries(REQUIRED_LIBRARIES_EDEFAULT);
+				return;
 			case BaciCodeGenPackage.DEV_IO__READ_ARGUMENTS:
 				getReadArguments().clear();
 				return;
 			case BaciCodeGenPackage.DEV_IO__WRITE_ARGUMENTS:
 				getWriteArguments().clear();
+				return;
+			case BaciCodeGenPackage.DEV_IO__COMMON_ARGUMENTS:
+				getCommonArguments().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -228,10 +313,14 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 		switch (featureID) {
 			case BaciCodeGenPackage.DEV_IO__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case BaciCodeGenPackage.DEV_IO__REQUIRED_LIBRARIES:
+				return REQUIRED_LIBRARIES_EDEFAULT == null ? requiredLibraries != null : !REQUIRED_LIBRARIES_EDEFAULT.equals(requiredLibraries);
 			case BaciCodeGenPackage.DEV_IO__READ_ARGUMENTS:
 				return readArguments != null && !readArguments.isEmpty();
 			case BaciCodeGenPackage.DEV_IO__WRITE_ARGUMENTS:
 				return writeArguments != null && !writeArguments.isEmpty();
+			case BaciCodeGenPackage.DEV_IO__COMMON_ARGUMENTS:
+				return commonArguments != null && !commonArguments.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -248,6 +337,8 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", requiredLibraries: ");
+		result.append(requiredLibraries);
 		result.append(')');
 		return result.toString();
 	}
