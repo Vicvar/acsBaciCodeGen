@@ -214,8 +214,7 @@ class [cName/]_impl : public virtual POA_[cModule/]::[cName/], public baci::Char
 
 		/*Actions*/
 		[for (it : Action | aCharacteristicComponent.actions)]
-		[comment Add arguments /]
-		[it.type/] [it.name/]();
+		[it.type/] [it.name/]([for (it2 : Parameter | it.parameters) separator(', ')][it2.type/] [it2.name/][/for]);
 		[/for]
 	
 	private:
@@ -248,11 +247,10 @@ class [cName/]_impl : public virtual POA_[cModule/]::[cName/], public baci::Char
 	{
 		cName : String = aCharacteristicComponent.name;
 		cModule : String = aCharacteristicComponent.module;
-		hasCommonArg : oclstdlib::Boolean;
 	}]
 [file (cName+'/src/'+cName+'_impl.cpp', false, 'UTF-8')]
 #include <[cName/]_impl.h>
-[comment  include devio again?/]
+[comment  include devio again? -- no need/]
 
 /*Constructor*/
 [cName/]_impl::[cName/]_impl(const ACE_CString c_name, maci::ContainerServices * containerServices):
@@ -260,11 +258,7 @@ class [cName/]_impl : public virtual POA_[cModule/]::[cName/], public baci::Char
 	[for (it : Property | aCharacteristicComponent.properties) separator(',\n') after('\n')]
 	m_[it.name/]_sp(this)[/for]
 {
-	[comment]
-	Check this.
-	Also check logging and debugging messages
-	[/comment]
-	[comment This coudl be done better(?)/]
+	[comment Also check logging and debugging messages/]
 	component_name=c_name.c_str();
 	ACS_TRACE("::[cName/]::[cName/]");
 }
@@ -278,7 +272,6 @@ class [cName/]_impl : public virtual POA_[cModule/]::[cName/], public baci::Char
 /*Lyfecycle methods override*/
 void [cName/]_impl::initialize() throw (acsErrTypeLifeCycle::acsErrTypeLifeCycleExImpl)
 {
-	[comment Maybe add comment here with suggested necessary resources /]
 	/*Suggested variables to be initialized
 	 [for (it : DevIO | aCharacteristicComponent.usedDevIOs.devIOs)]
 	 **Common for DevIO: [it.name/]
@@ -371,7 +364,7 @@ ACS::[it.baciType.name/]_ptr [cName/]_impl::[it.name/]()
 /*Actions implementation*/
 [for (it : Action | aCharacteristicComponent.actions)]
 [comment Missing action parameters /]
-[it.type/] [cName/]_impl::[it.name/]()
+[it.type/] [cName/]_impl::[it.name/]([for (it2 : Parameter | it.parameters) separator(', ')][it2.type/] [it2.name/][/for])
 {
 	//[protected (it.name+' Action implementation')]
 	

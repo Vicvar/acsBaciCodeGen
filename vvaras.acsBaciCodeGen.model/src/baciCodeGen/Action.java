@@ -2,6 +2,7 @@
  */
 package baciCodeGen;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -77,29 +78,19 @@ public interface Action extends EObject {
 	void setType(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Parameters</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
+	 * The list contents are of type {@link baciCodeGen.Parameter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parameters</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parameters</em>' attribute.
-	 * @see #setParameters(String)
+	 * @return the value of the '<em>Parameters</em>' containment reference list.
 	 * @see baciCodeGen.BaciCodeGenPackage#getAction_Parameters()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
-	String getParameters();
-
-	/**
-	 * Sets the value of the '{@link baciCodeGen.Action#getParameters <em>Parameters</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parameters</em>' attribute.
-	 * @see #getParameters()
-	 * @generated
-	 */
-	void setParameters(String value);
+	EList<Parameter> getParameters();
 
 } // Action

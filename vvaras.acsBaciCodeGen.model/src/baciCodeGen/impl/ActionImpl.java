@@ -5,12 +5,19 @@ package baciCodeGen.impl;
 import baciCodeGen.Action;
 import baciCodeGen.BaciCodeGenPackage;
 
+import baciCodeGen.Parameter;
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -69,24 +76,14 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	protected String type = TYPE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getParameters() <em>Parameters</em>}' attribute.
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParameters()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARAMETERS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parameters = PARAMETERS_EDEFAULT;
+	protected EList<Parameter> parameters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,7 +151,10 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getParameters() {
+	public EList<Parameter> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, BaciCodeGenPackage.ACTION__PARAMETERS);
+		}
 		return parameters;
 	}
 
@@ -163,11 +163,13 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParameters(String newParameters) {
-		String oldParameters = parameters;
-		parameters = newParameters;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.ACTION__PARAMETERS, oldParameters, parameters));
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case BaciCodeGenPackage.ACTION__PARAMETERS:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -193,6 +195,7 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -203,7 +206,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 				setType((String)newValue);
 				return;
 			case BaciCodeGenPackage.ACTION__PARAMETERS:
-				setParameters((String)newValue);
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends Parameter>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -224,7 +228,7 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 				setType(TYPE_EDEFAULT);
 				return;
 			case BaciCodeGenPackage.ACTION__PARAMETERS:
-				setParameters(PARAMETERS_EDEFAULT);
+				getParameters().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -243,7 +247,7 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 			case BaciCodeGenPackage.ACTION__TYPE:
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 			case BaciCodeGenPackage.ACTION__PARAMETERS:
-				return PARAMETERS_EDEFAULT == null ? parameters != null : !PARAMETERS_EDEFAULT.equals(parameters);
+				return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -262,8 +266,6 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 		result.append(name);
 		result.append(", type: ");
 		result.append(type);
-		result.append(", parameters: ");
-		result.append(parameters);
 		result.append(')');
 		return result.toString();
 	}

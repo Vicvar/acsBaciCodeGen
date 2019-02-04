@@ -60,6 +60,7 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT: return createCharacteristicComponent();
 			case BaciCodeGenPackage.PROPERTY: return createProperty();
 			case BaciCodeGenPackage.ACTION: return createAction();
+			case BaciCodeGenPackage.PARAMETER: return createParameter();
 			case BaciCodeGenPackage.CHARACTERISTIC: return createCharacteristic();
 			case BaciCodeGenPackage.ATTRIBUTE: return createAttribute();
 			case BaciCodeGenPackage.USED_DEV_IOS: return createUsedDevIOs();
@@ -140,6 +141,16 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 	public Action createAction() {
 		ActionImpl action = new ActionImpl();
 		return action;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Parameter createParameter() {
+		ParameterImpl parameter = new ParameterImpl();
+		return parameter;
 	}
 
 	/**
