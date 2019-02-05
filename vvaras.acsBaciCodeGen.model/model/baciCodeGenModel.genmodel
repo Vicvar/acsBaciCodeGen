@@ -46,7 +46,11 @@
     <genClasses ecoreClass="baciCodeGenModel.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Action/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Action/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Action/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//Action/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="baciCodeGenModel.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Parameter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Parameter/type"/>
     </genClasses>
     <genClasses ecoreClass="baciCodeGenModel.ecore#//Characteristic">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Characteristic/name"/>
@@ -63,11 +67,14 @@
     </genClasses>
     <genClasses ecoreClass="baciCodeGenModel.ecore#//DevIO">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//DevIO/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//DevIO/requiredLibraries"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//DevIO/readArguments"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//DevIO/writeArguments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//DevIO/commonArguments"/>
     </genClasses>
     <genClasses ecoreClass="baciCodeGenModel.ecore#//ReadArgument"/>
     <genClasses ecoreClass="baciCodeGenModel.ecore#//WriteArgument"/>
+    <genClasses ecoreClass="baciCodeGenModel.ecore#//CommonArgument"/>
     <genClasses image="false" ecoreClass="baciCodeGenModel.ecore#//DevIOArgument">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//DevIOArgument/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//DevIOArgument/type"/>

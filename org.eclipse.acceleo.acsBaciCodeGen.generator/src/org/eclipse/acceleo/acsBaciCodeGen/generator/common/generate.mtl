@@ -76,32 +76,22 @@ module [cModule/]
 	xmlns="urn:schemas-cosylab-com:[cName/]:1.0"
 	xmlns:cdb="urn:schemas-cosylab-com:CDB:1.0" 
 	xmlns:baci="urn:schemas-cosylab-com:BACI:1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	
 	<xs:import namespace="urn:schemas-cosylab-com:CDB:1.0" schemaLocation="CDB.xsd"/>
 	<xs:import namespace="urn:schemas-cosylab-com:BACI:1.0" schemaLocation="BACI.xsd"/>
-	
 	<xs:complexType name="[cName/]Type">
-
 		<xs:complexContent>
-
 			<xs:extension base="baci:CharacteristicComponent">
-
 				<xs:sequence>
 					[for (it : Property | self.properties)]
 					<xs:element name="[it.name/]" type="baci:[it.baciType.name/]"/>
 					[/for]			
 				</xs:sequence>
-
 				[for (it : Attribute | self.attributes)]
 				<xs:attribute name="[it.name/]" type="[it.type/]" [if(it.required)]use="required" [/if]/>
 				[/for]
-
 			</xs:extension>
-
 		</xs:complexContent>
-
 	</xs:complexType>
-
 	<xs:element name="[cName/]" type="[cName/]Type"/>
 </xs:schema>
 
@@ -141,7 +131,6 @@ module [cModule/]
 		cName : String = aCharacteristicComponent.name;
 		cModule : String = aCharacteristicComponent.module;
 	}]
-[comment This should change in the future, to allow differences to be specified/]
 [for (Sequence{1..aCharacteristicComponent.componentNumber})]
 [file (cName+'/test/CDB/alma/'+cName+i+'/'+cName+i+'.xml', false, 'UTF-8')]
 <?xml version="1.0" encoding="ISO-8859-1"?>
@@ -149,18 +138,13 @@ module [cModule/]
 	xmlns:baci="urn:schemas-cosylab-com:BACI:1.0"
 	xmlns:cdb="urn:schemas-cosylab-com:CDB:1.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	[for (it : Attribute | aCharacteristicComponent.attributes)]
-	[comment value missing here/]
+	[for (it : Attribute | aCharacteristicComponent.attributes) separator('\n')]
 	[it.name/]="[it.value/]"[/for]>
-
 	[for (it : Property | aCharacteristicComponent.properties)]
 	<[it.name/]
-		[for (it2 : Characteristic | it.characteristics)]
-		[it2.name/]="[it2.value/]"
-		[/for]
-	/>
+		[for (it2 : Characteristic | it.characteristics) separator('\n') after('/>')]
+		[it2.name/]="[it2.value/]"[/for]
 	[/for]
-
 </[cName/]>
 
 [/file]
@@ -197,7 +181,6 @@ class [cName/]_impl : public virtual POA_[cModule/]::[cName/], public baci::Char
 	public:
 		
 		/*Constructor/Destructor*/
-		[comment check arguments/]
 		[cName/]_impl(const ACE_CString c_name, maci::ContainerServices * containerServices);
 		virtual ~[cName/]_impl();
 		
@@ -250,7 +233,6 @@ class [cName/]_impl : public virtual POA_[cModule/]::[cName/], public baci::Char
 	}]
 [file (cName+'/src/'+cName+'_impl.cpp', false, 'UTF-8')]
 #include <[cName/]_impl.h>
-[comment  include devio again? -- no need/]
 
 /*Constructor*/
 [cName/]_impl::[cName/]_impl(const ACE_CString c_name, maci::ContainerServices * containerServices):
@@ -363,7 +345,6 @@ ACS::[it.baciType.name/]_ptr [cName/]_impl::[it.name/]()
 
 /*Actions implementation*/
 [for (it : Action | aCharacteristicComponent.actions)]
-[comment Missing action parameters /]
 [it.type/] [cName/]_impl::[it.name/]([for (it2 : Parameter | it.parameters) separator(', ')][it2.type/] [it2.name/][/for])
 {
 	//[protected (it.name+' Action implementation')]
@@ -480,7 +461,6 @@ LIBRARIES_L     =
 		ACSErrTypeCORBA acscomponent baci loki \
 		[for (it : DevIO | aCharacteristicComponent.usedDevIOs.devIOs) separator(' \\\n')]
 		[it.requiredLibraries/][/for]
-		[comment Replace with mqtt stuff with current DevIO -- maybe put additional libs in the model/]
 
 [comment Should there be one of these for each component instance??/]
 
