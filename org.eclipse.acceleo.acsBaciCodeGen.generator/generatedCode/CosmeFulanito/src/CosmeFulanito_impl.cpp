@@ -5,7 +5,8 @@ CosmeFulanito_impl::CosmeFulanito_impl(const ACE_CString c_name, maci::Container
 	CharacteristicComponentImpl(c_name, containerServices),
 	m_temperature_sp(this),
 	m_humidity_sp(this),
-	m_light_sp(this)
+	m_light_sp(this),
+	m_lala_sp(this)
 {
 	component_name=c_name.c_str();
 	ACS_TRACE("::CosmeFulanito::CosmeFulanito");
@@ -35,6 +36,10 @@ void CosmeFulanito_impl::initialize() throw (acsErrTypeLifeCycle::acsErrTypeLife
 	 *std::string r_light_clientName
 	 *std::string w_light_componentName
 	 *std::string w_light_clientName
+	 *std::string r_lala_componentName
+	 *std::string r_lala_clientName
+	 *std::string w_lala_componentName
+	 *std::string w_lala_clientName
 	 */
 
 	//Start of user code Required Variables
@@ -91,6 +96,8 @@ void CosmeFulanito_impl::initialize() throw (acsErrTypeLifeCycle::acsErrTypeLife
 	humidity_devio_m = new mqtt::mqtt_read(componentBroker, r_humidity_componentName, r_humidity_clientName);
 	
 	light_devio_m = new mqtt::mqtt_read(componentBroker, r_light_componentName, r_light_clientName);
+	
+	lala_devio_m = new mqtt::mqtt_read(componentBroker, r_lala_componentName, r_lala_clientName);
 
 	
 	temperature_devio_w = new mqtt::mqtt_write(componentBroker, w_temperature_componentName, w_temperature_clientName);
@@ -98,6 +105,8 @@ void CosmeFulanito_impl::initialize() throw (acsErrTypeLifeCycle::acsErrTypeLife
 	humidity_devio_w = new mqtt::mqtt_write(componentBroker, w_humidity_componentName, w_humidity_clientName);
 	
 	light_devio_w = new mqtt::mqtt_write(componentBroker, w_light_componentName, w_light_clientName);
+	
+	lala_devio_w = new mqtt::mqtt_write(componentBroker, w_lala_componentName, w_lala_clientName);
 
 	
 	m_temperature_sp = new baci::ROdouble((component_name+":temperature").c_str(), getComponent(), temperature_devio_m);
@@ -105,6 +114,8 @@ void CosmeFulanito_impl::initialize() throw (acsErrTypeLifeCycle::acsErrTypeLife
 	m_humidity_sp = new baci::ROdouble((component_name+":humidity").c_str(), getComponent(), humidity_devio_m);
 	
 	m_light_sp = new baci::ROdouble((component_name+":light").c_str(), getComponent(), light_devio_m);
+	
+	m_lala_sp = new baci::RWlong((component_name+":lala").c_str(), getComponent(), lala_devio_m);
 
 
 	//Start of user code initialize implementation
@@ -127,6 +138,8 @@ void CosmeFulanito_impl::cleanUp()
 	delete humidity_devio_w;
 	delete light_devio_m;
 	delete light_devio_w;
+	delete lala_devio_m;
+	delete lala_devio_w;
 
 	//Start of user code cleanUp implementation
 	
@@ -163,6 +176,14 @@ ACS::ROdouble_ptr CosmeFulanito_impl::light()
 	if(m_light_sp == 0)
 		return ACS::ROdouble::_nil();
 	ACS::ROdouble_var prop = ACS::ROdouble::_narrow(m_light_sp->getCORBAReference());
+	return prop._retn();
+}
+
+ACS::RWlong_ptr CosmeFulanito_impl::lala()
+{
+	if(m_lala_sp == 0)
+		return ACS::RWlong::_nil();
+	ACS::RWlong_var prop = ACS::RWlong::_narrow(m_lala_sp->getCORBAReference());
 	return prop._retn();
 }
 

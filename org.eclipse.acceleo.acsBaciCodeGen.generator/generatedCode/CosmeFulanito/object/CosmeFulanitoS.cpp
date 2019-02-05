@@ -69,19 +69,19 @@ TAO_Sensors_CosmeFulanito_Perfect_Hash_OpTable::hash (const char *str, unsigned 
 {
   static const unsigned char asso_values[] =
     {
-     29, 29, 29, 29, 29, 29, 29, 29, 29, 29,
-     29, 29, 29, 29, 29, 29, 29, 29, 29, 29,
-     29, 29, 29, 29, 29, 29, 29, 29, 29, 29,
-     29, 29, 29, 29, 29, 29, 29, 29, 29, 29,
-     29, 29, 29, 29, 29, 29, 29, 29, 29, 29,
-     29, 29, 29, 29, 29, 29, 29, 29, 29, 29,
-     29, 29, 29, 29, 29, 29, 29, 29, 29, 29,
-     29, 29, 29, 29, 29, 29, 29, 29, 29, 29,
-     29, 29, 29, 29, 29, 29, 29, 29, 29, 29,
-     29, 29, 29, 29, 29,  0, 29,  0, 29,  5,
-      0,  0,  0,  0, 29, 29, 29, 29, 29, 29,
-      0,  0,  5, 29, 15,  5,  5, 29, 29, 29,
-     29,  0, 29, 29, 29, 29, 29, 29,
+     31, 31, 31, 31, 31, 31, 31, 31, 31, 31,
+     31, 31, 31, 31, 31, 31, 31, 31, 31, 31,
+     31, 31, 31, 31, 31, 31, 31, 31, 31, 31,
+     31, 31, 31, 31, 31, 31, 31, 31, 31, 31,
+     31, 31, 31, 31, 31, 31, 31, 31, 31, 31,
+     31, 31, 31, 31, 31, 31, 31, 31, 31, 31,
+     31, 31, 31, 31, 31, 31, 31, 31, 31, 31,
+     31, 31, 31, 31, 31, 31, 31, 31, 31, 31,
+     31, 31, 31, 31, 31, 31, 31, 31, 31, 31,
+     31, 31, 31, 31, 31,  0, 31, 20, 31,  5,
+      0,  0,  0,  0, 31, 31, 31, 31, 31, 31,
+      0,  0,  5, 31, 20,  5,  5, 31, 31, 31,
+     31,  0, 31, 31, 31, 31, 31, 31,
     };
   return len + asso_values[static_cast<int>(str[len - 1])] + asso_values[static_cast<int>(str[0])];
 }
@@ -91,14 +91,14 @@ TAO_Sensors_CosmeFulanito_Perfect_Hash_OpTable::lookup (const char *str, unsigne
 {
   enum
     {
-      TOTAL_KEYWORDS = 19,
+      TOTAL_KEYWORDS = 20,
       MIN_WORD_LENGTH = 2,
       MAX_WORD_LENGTH = 26,
       MIN_HASH_VALUE = 2,
-      MAX_HASH_VALUE = 28,
-      HASH_VALUE_RANGE = 27,
+      MAX_HASH_VALUE = 30,
+      HASH_VALUE_RANGE = 29,
       DUPLICATES = 2,
-      WORDLIST_SIZE = 21
+      WORDLIST_SIZE = 22
     };
 
   static const TAO_operation_db_entry wordlist[] =
@@ -106,7 +106,6 @@ TAO_Sensors_CosmeFulanito_Perfect_Hash_OpTable::lookup (const char *str, unsigne
       {"",0,0},{"",0,0},
       {"on", &POA_Sensors::CosmeFulanito::on_skel, 0},
       {"off", &POA_Sensors::CosmeFulanito::off_skel, 0},
-      {"_is_a", &TAO_ServantBase::_is_a_thru_poa_skel, 0},
       {"_get_name", &POA_ACS::ACSComponent::_get_name_skel, 0},
       {"_interface", &TAO_ServantBase::_interface_skel, 0},
       {"_get_humidity", &POA_Sensors::CosmeFulanito::_get_humidity_skel, 0},
@@ -120,16 +119,18 @@ TAO_Sensors_CosmeFulanito_Perfect_Hash_OpTable::lookup (const char *str, unsigne
       {"publishLight", &POA_Sensors::CosmeFulanito::publishLight_skel, 0},
       {"publishTemperature", &POA_Sensors::CosmeFulanito::publishTemperature_skel, 0},
       {"find_characteristic", &POA_ACS::CharacteristicModel::find_characteristic_skel, 0},
-      {"descriptor", &POA_ACS::CharacteristicComponent::descriptor_skel, 0},
+      {"_is_a", &TAO_ServantBase::_is_a_thru_poa_skel, 0},
       {"get_characteristic_by_name", &POA_ACS::CharacteristicModel::get_characteristic_by_name_skel, 0},
       {"get_all_characteristics", &POA_ACS::CharacteristicModel::get_all_characteristics_skel, 0},
+      {"_get_lala", &POA_Sensors::CosmeFulanito::_get_lala_skel, 0},
+      {"descriptor", &POA_ACS::CharacteristicComponent::descriptor_skel, 0},
     };
 
   static const signed char lookup[] =
     {
-       -1,  -1,   2,   3,  -1,   4,  -1,  -1,  -1,   5,   6,  -9,  -2,   7, 
-        8, -32,  11,  -1,  12,  13,  14,  -1,  15,  16,  17,  18,  19,  -1, 
-       20, 
+       -1,  -1,   2,   3,  -1,  -1,  -1,  -1,  -1,   4,   5,  -8,  -2,   6, 
+        7, -34,  10,  -1,  11,  12,  13,  -1,  14,  15,  16,  17,  18,  -1, 
+       19,  20,  21, 
     };
 
   if (len <= MAX_WORD_LENGTH && len >= MIN_WORD_LENGTH)
@@ -434,6 +435,94 @@ void POA_Sensors::CosmeFulanito::_get_light_skel (
     }
 
   _get_light_CosmeFulanito command (
+    impl,
+    server_request.operation_details (),
+    args);
+  
+  TAO::Upcall_Wrapper upcall_wrapper;
+  upcall_wrapper.upcall (server_request
+                         , args
+                         , nargs
+                         , command
+#if TAO_HAS_INTERCEPTORS == 1
+                         , servant_upcall
+                         , exceptions
+                         , nexceptions
+#endif  /* TAO_HAS_INTERCEPTORS == 1 */
+                         );
+}
+
+
+namespace POA_Sensors
+{
+  
+
+  // TAO_IDL - Generated from
+  // be/be_visitor_operation/upcall_command_ss.cpp:80
+
+  class _get_lala_CosmeFulanito
+    : public TAO::Upcall_Command
+  {
+  public:
+    inline _get_lala_CosmeFulanito (
+      POA_Sensors::CosmeFulanito * servant,
+      TAO_Operation_Details const * operation_details,
+      TAO::Argument * const args[])
+      : servant_ (servant)
+        , operation_details_ (operation_details)
+        , args_ (args)
+    {
+    }
+
+    virtual void execute (void)
+    {
+      TAO::SArg_Traits< ::ACS::RWlong>::ret_arg_type retval =
+        TAO::Portable_Server::get_ret_arg< ::ACS::RWlong> (
+          this->operation_details_,
+          this->args_);
+      
+      retval =
+        this->servant_->lala ();
+    }
+  
+  private:
+    POA_Sensors::CosmeFulanito * const servant_;
+    TAO_Operation_Details const * const operation_details_;
+    TAO::Argument * const * const args_;
+  };
+}
+
+// TAO_IDL - Generated from
+// be/be_visitor_operation/operation_ss.cpp:168
+
+void POA_Sensors::CosmeFulanito::_get_lala_skel (
+  TAO_ServerRequest & server_request,
+  TAO::Portable_Server::Servant_Upcall *TAO_INTERCEPTOR (servant_upcall),
+  TAO_ServantBase *servant)
+{
+#if TAO_HAS_INTERCEPTORS == 1
+  static ::CORBA::TypeCode_ptr const * const exceptions = 0;
+  static ::CORBA::ULong const nexceptions = 0;
+#endif /* TAO_HAS_INTERCEPTORS */
+
+  TAO::SArg_Traits< ::ACS::RWlong>::ret_val retval;
+
+  TAO::Argument * const args[] =
+    {
+      &retval
+    };
+  
+  static size_t const nargs = 1;
+
+  POA_Sensors::CosmeFulanito * const impl =
+    dynamic_cast<POA_Sensors::CosmeFulanito *> (servant);
+
+  if (!impl)
+    {
+      throw ::CORBA::INTERNAL ();
+    }
+
+  _get_lala_CosmeFulanito command (
     impl,
     server_request.operation_details (),
     args);

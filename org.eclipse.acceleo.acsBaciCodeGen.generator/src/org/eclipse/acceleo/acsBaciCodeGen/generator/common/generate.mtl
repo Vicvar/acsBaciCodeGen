@@ -142,8 +142,7 @@ module [cModule/]
 	[it.name/]="[it.value/]"[/for]>
 	[for (it : Property | aCharacteristicComponent.properties)]
 	<[it.name/]
-		[for (it2 : Characteristic | it.characteristics) separator('\n') after('/>')]
-		[it2.name/]="[it2.value/]"[/for]
+		[for (it2 : Characteristic | it.characteristics) separator('\n\t\t')][it2.name/]="[it2.value/]"[/for]/>
 	[/for]
 </[cName/]>
 

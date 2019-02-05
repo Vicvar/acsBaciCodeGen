@@ -14,6 +14,8 @@
         eType="#//Attribute" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
         eType="#//Property" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instances" lowerBound="1"
+        upperBound="-1" eType="#//Instance" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="usedBaciTypes" lowerBound="1"
         eType="#//UsedBaciTypes" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="usedDevIOs" lowerBound="1"
@@ -99,5 +101,8 @@
   <eClassifiers xsi:type="ecore:EEnum" name="SeqType">
     <eLiterals name="notSeq"/>
     <eLiterals name="Seq" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Instance">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -892,6 +892,9 @@
  /alma/ACS-2018DEC/ACSSW/include/ASIMessage.h \
  /alma/ACS-2018DEC/ACSSW/include/ASIConfiguration.h \
  /alma/ACS-2018DEC/ACSSW/include/baciAlarmSystemMonitorCont_T.h \
+ /alma/ACS-2018DEC/ACSSW/include/baciRWlong.h \
+ /alma/ACS-2018DEC/ACSSW/include/baciRWcontImpl_T.h \
+ /alma/ACS-2018DEC/ACSSW/include/baciRWcommonImpl_T.h \
  /home/vvaras/introot/include/mqtt_devio.h \
  /alma/ACS-2018DEC/ACSSW/include/maciACSComponentDefines.h \
  /alma/ACS-2018DEC/ACSSW/include/acserrACSbaseExImpl.h

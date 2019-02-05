@@ -197,6 +197,43 @@ Sensors::CosmeFulanito::light (
 // TAO_IDL - Generated from
 // be/be_visitor_operation/operation_cs.cpp:88
 
+::ACS::RWlong_ptr
+Sensors::CosmeFulanito::lala (
+  void)
+{
+  if (!this->is_evaluated ())
+    {
+      ::CORBA::Object::tao_object_initialize (this);
+    }
+  
+  TAO::Arg_Traits< ::ACS::RWlong>::ret_val _tao_retval;
+
+  TAO::Argument *_the_tao_operation_signature [] =
+    {
+      &_tao_retval
+    };
+
+  TAO::Invocation_Adapter _tao_call (
+      this,
+      _the_tao_operation_signature,
+      1,
+      "_get_lala",
+      9,
+      TAO::TAO_CO_NONE | TAO::TAO_CO_THRU_POA_STRATEGY,
+      TAO::TAO_TWOWAY_INVOCATION
+      ,
+      TAO::TAO_SYNCHRONOUS_INVOCATION,
+      false
+    );
+
+  _tao_call.invoke (0, 0);
+
+  return _tao_retval.retn ();
+}
+
+// TAO_IDL - Generated from
+// be/be_visitor_operation/operation_cs.cpp:88
+
 void
 Sensors::CosmeFulanito::on (
   void)

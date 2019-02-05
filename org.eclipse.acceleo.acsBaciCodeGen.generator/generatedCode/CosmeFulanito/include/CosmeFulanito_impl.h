@@ -8,6 +8,7 @@
 #include <baciDevIO.h>
 #include <acsThread.h>
 #include <baciROdouble.h>
+#include <baciRWlong.h>
 #include <mqtt_devio.h>
 
 class CosmeFulanito_thread;
@@ -30,6 +31,7 @@ class CosmeFulanito_impl : public virtual POA_Sensors::CosmeFulanito, public bac
 		ACS::ROdouble_ptr temperature();
 		ACS::ROdouble_ptr humidity();
 		ACS::ROdouble_ptr light();
+		ACS::RWlong_ptr lala();
 
 		/*Actions*/
 		void on();
@@ -43,16 +45,19 @@ class CosmeFulanito_impl : public virtual POA_Sensors::CosmeFulanito, public bac
 		baci::SmartPropertyPointer<baci::ROdouble> m_temperature_sp;
 		baci::SmartPropertyPointer<baci::ROdouble> m_humidity_sp;
 		baci::SmartPropertyPointer<baci::ROdouble> m_light_sp;
+		baci::SmartPropertyPointer<baci::RWlong> m_lala_sp;
 
 		/*DevIO read*/
 		mqtt::mqtt_read * temperature_devio_m;
 		mqtt::mqtt_read * humidity_devio_m;
 		mqtt::mqtt_read * light_devio_m;
+		mqtt::mqtt_read * lala_devio_m;
 		
 		/*DevIO write*/
 		mqtt::mqtt_write * temperature_devio_w;
 		mqtt::mqtt_write * humidity_devio_w;
 		mqtt::mqtt_write * light_devio_w;
+		mqtt::mqtt_write * lala_devio_w;
 
 		/*Aux variables*/
 		std::string component_name;

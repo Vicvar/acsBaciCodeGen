@@ -9,5 +9,59 @@
 		Container="bilboContainer" ImplLang="cpp"
 		Autostart="true" 
 		Default="true" />
+	<_ Name="CosmeFulanito2"
+		Code="CosmeFulanitoImpl"        
+		Type="IDL:alma/Sensors/CosmeFulanito:1.0"
+		Container="bilboContainer" ImplLang="cpp"
+		Autostart="true" 
+		Default="true" />
+	<_ Name="CosmeFulanito3"
+		Code="CosmeFulanitoImpl"        
+		Type="IDL:alma/Sensors/CosmeFulanito:1.0"
+		Container="bilboContainer" ImplLang="cpp"
+		Autostart="true" 
+		Default="true" />
+	<_ Name="CosmeFulanito4"
+		Code="CosmeFulanitoImpl"        
+		Type="IDL:alma/Sensors/CosmeFulanito:1.0"
+		Container="bilboContainer" ImplLang="cpp"
+		Autostart="true" 
+		Default="true" />
+	<_ Name="CosmeFulanito5"
+		Code="CosmeFulanitoImpl"        
+		Type="IDL:alma/Sensors/CosmeFulanito:1.0"
+		Container="bilboContainer" ImplLang="cpp"
+		Autostart="true" 
+		Default="true" />
+	<_ Name="CosmeFulanito6"
+		Code="CosmeFulanitoImpl"        
+		Type="IDL:alma/Sensors/CosmeFulanito:1.0"
+		Container="bilboContainer" ImplLang="cpp"
+		Autostart="true" 
+		Default="true" />
+	<_ Name="CosmeFulanito7"
+		Code="CosmeFulanitoImpl"        
+		Type="IDL:alma/Sensors/CosmeFulanito:1.0"
+		Container="bilboContainer" ImplLang="cpp"
+		Autostart="true" 
+		Default="true" />
+	<_ Name="CosmeFulanito8"
+		Code="CosmeFulanitoImpl"        
+		Type="IDL:alma/Sensors/CosmeFulanito:1.0"
+		Container="bilboContainer" ImplLang="cpp"
+		Autostart="true" 
+		Default="true" />
+	<_ Name="CosmeFulanito9"
+		Code="CosmeFulanitoImpl"        
+		Type="IDL:alma/Sensors/CosmeFulanito:1.0"
+		Container="bilboContainer" ImplLang="cpp"
+		Autostart="true" 
+		Default="true" />
+	<_ Name="CosmeFulanito10"
+		Code="CosmeFulanitoImpl"        
+		Type="IDL:alma/Sensors/CosmeFulanito:1.0"
+		Container="bilboContainer" ImplLang="cpp"
+		Autostart="true" 
+		Default="true" />
 </Components>
 

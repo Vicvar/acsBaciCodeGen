@@ -17,6 +17,8 @@ module Sensors
 
 		readonly attribute ACS::ROdouble light;
 
+		readonly attribute ACS::RWlong lala;
+
 		/*Actions*/
 
 		void on();
