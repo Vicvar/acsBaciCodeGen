@@ -210,6 +210,29 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.ComponentInstances} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComponentInstancesItemProvider componentInstancesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link baciCodeGen.ComponentInstances}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createComponentInstancesAdapter() {
+		if (componentInstancesItemProvider == null) {
+			componentInstancesItemProvider = new ComponentInstancesItemProvider(this);
+		}
+
+		return componentInstancesItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link baciCodeGen.UsedDevIOs} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -371,6 +394,29 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.Instance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InstanceItemProvider instanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link baciCodeGen.Instance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createInstanceAdapter() {
+		if (instanceItemProvider == null) {
+			instanceItemProvider = new InstanceItemProvider(this);
+		}
+
+		return instanceItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -475,6 +521,8 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 		if (parameterItemProvider != null) parameterItemProvider.dispose();
 		if (characteristicItemProvider != null) characteristicItemProvider.dispose();
 		if (attributeItemProvider != null) attributeItemProvider.dispose();
+		if (componentInstancesItemProvider != null) componentInstancesItemProvider.dispose();
+		if (instanceItemProvider != null) instanceItemProvider.dispose();
 		if (usedDevIOsItemProvider != null) usedDevIOsItemProvider.dispose();
 		if (devIOItemProvider != null) devIOItemProvider.dispose();
 		if (readArgumentItemProvider != null) readArgumentItemProvider.dispose();

@@ -63,6 +63,8 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 			case BaciCodeGenPackage.PARAMETER: return createParameter();
 			case BaciCodeGenPackage.CHARACTERISTIC: return createCharacteristic();
 			case BaciCodeGenPackage.ATTRIBUTE: return createAttribute();
+			case BaciCodeGenPackage.COMPONENT_INSTANCES: return createComponentInstances();
+			case BaciCodeGenPackage.INSTANCE: return createInstance();
 			case BaciCodeGenPackage.USED_DEV_IOS: return createUsedDevIOs();
 			case BaciCodeGenPackage.DEV_IO: return createDevIO();
 			case BaciCodeGenPackage.READ_ARGUMENT: return createReadArgument();
@@ -178,6 +180,16 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ComponentInstances createComponentInstances() {
+		ComponentInstancesImpl componentInstances = new ComponentInstancesImpl();
+		return componentInstances;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public UsedDevIOs createUsedDevIOs() {
 		UsedDevIOsImpl usedDevIOs = new UsedDevIOsImpl();
 		return usedDevIOs;
@@ -241,6 +253,16 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 	public BaciType createBaciType() {
 		BaciTypeImpl baciType = new BaciTypeImpl();
 		return baciType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Instance createInstance() {
+		InstanceImpl instance = new InstanceImpl();
+		return instance;
 	}
 
 	/**

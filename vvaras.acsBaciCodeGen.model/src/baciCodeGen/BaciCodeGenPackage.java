@@ -95,22 +95,13 @@ public interface BaciCodeGenPackage extends EPackage {
 	int CHARACTERISTIC_COMPONENT__PREFIX = 2;
 
 	/**
-	 * The feature id for the '<em><b>Component Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHARACTERISTIC_COMPONENT__COMPONENT_NUMBER = 3;
-
-	/**
 	 * The feature id for the '<em><b>Container</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHARACTERISTIC_COMPONENT__CONTAINER = 4;
+	int CHARACTERISTIC_COMPONENT__CONTAINER = 3;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -119,7 +110,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHARACTERISTIC_COMPONENT__ACTIONS = 5;
+	int CHARACTERISTIC_COMPONENT__ACTIONS = 4;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -128,7 +119,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHARACTERISTIC_COMPONENT__ATTRIBUTES = 6;
+	int CHARACTERISTIC_COMPONENT__ATTRIBUTES = 5;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -137,7 +128,16 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHARACTERISTIC_COMPONENT__PROPERTIES = 7;
+	int CHARACTERISTIC_COMPONENT__PROPERTIES = 6;
+
+	/**
+	 * The feature id for the '<em><b>Component Instances</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES = 7;
 
 	/**
 	 * The feature id for the '<em><b>Used Baci Types</b></em>' containment reference.
@@ -451,6 +451,43 @@ public interface BaciCodeGenPackage extends EPackage {
 	int ATTRIBUTE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link baciCodeGen.impl.ComponentInstancesImpl <em>Component Instances</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.impl.ComponentInstancesImpl
+	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getComponentInstances()
+	 * @generated
+	 */
+	int COMPONENT_INSTANCES = 6;
+
+	/**
+	 * The feature id for the '<em><b>Instances</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCES__INSTANCES = 0;
+
+	/**
+	 * The number of structural features of the '<em>Component Instances</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCES_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Component Instances</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCES_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link baciCodeGen.impl.UsedDevIOsImpl <em>Used Dev IOs</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -458,7 +495,114 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getUsedDevIOs()
 	 * @generated
 	 */
-	int USED_DEV_IOS = 6;
+	int USED_DEV_IOS = 8;
+
+	/**
+	 * The meta object id for the '{@link baciCodeGen.impl.DevIOImpl <em>Dev IO</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.impl.DevIOImpl
+	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getDevIO()
+	 * @generated
+	 */
+	int DEV_IO = 9;
+
+	/**
+	 * The meta object id for the '{@link baciCodeGen.impl.DevIOArgumentImpl <em>Dev IO Argument</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.impl.DevIOArgumentImpl
+	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getDevIOArgument()
+	 * @generated
+	 */
+	int DEV_IO_ARGUMENT = 13;
+
+	/**
+	 * The meta object id for the '{@link baciCodeGen.impl.ReadArgumentImpl <em>Read Argument</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.impl.ReadArgumentImpl
+	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getReadArgument()
+	 * @generated
+	 */
+	int READ_ARGUMENT = 10;
+
+	/**
+	 * The meta object id for the '{@link baciCodeGen.impl.WriteArgumentImpl <em>Write Argument</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.impl.WriteArgumentImpl
+	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getWriteArgument()
+	 * @generated
+	 */
+	int WRITE_ARGUMENT = 11;
+
+	/**
+	 * The meta object id for the '{@link baciCodeGen.impl.CommonArgumentImpl <em>Common Argument</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.impl.CommonArgumentImpl
+	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getCommonArgument()
+	 * @generated
+	 */
+	int COMMON_ARGUMENT = 12;
+
+	/**
+	 * The meta object id for the '{@link baciCodeGen.impl.UsedBaciTypesImpl <em>Used Baci Types</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.impl.UsedBaciTypesImpl
+	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getUsedBaciTypes()
+	 * @generated
+	 */
+	int USED_BACI_TYPES = 14;
+
+	/**
+	 * The meta object id for the '{@link baciCodeGen.impl.BaciTypeImpl <em>Baci Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.impl.BaciTypeImpl
+	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getBaciType()
+	 * @generated
+	 */
+	int BACI_TYPE = 15;
+
+	/**
+	 * The meta object id for the '{@link baciCodeGen.impl.InstanceImpl <em>Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.impl.InstanceImpl
+	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getInstance()
+	 * @generated
+	 */
+	int INSTANCE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTANCE__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTANCE_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTANCE_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Dev IOs</b></em>' containment reference list.
@@ -486,16 +630,6 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @ordered
 	 */
 	int USED_DEV_IOS_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link baciCodeGen.impl.DevIOImpl <em>Dev IO</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.impl.DevIOImpl
-	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getDevIO()
-	 * @generated
-	 */
-	int DEV_IO = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -561,16 +695,6 @@ public interface BaciCodeGenPackage extends EPackage {
 	int DEV_IO_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link baciCodeGen.impl.DevIOArgumentImpl <em>Dev IO Argument</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.impl.DevIOArgumentImpl
-	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getDevIOArgument()
-	 * @generated
-	 */
-	int DEV_IO_ARGUMENT = 11;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -614,16 +738,6 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @ordered
 	 */
 	int DEV_IO_ARGUMENT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link baciCodeGen.impl.ReadArgumentImpl <em>Read Argument</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.impl.ReadArgumentImpl
-	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getReadArgument()
-	 * @generated
-	 */
-	int READ_ARGUMENT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -671,16 +785,6 @@ public interface BaciCodeGenPackage extends EPackage {
 	int READ_ARGUMENT_OPERATION_COUNT = DEV_IO_ARGUMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link baciCodeGen.impl.WriteArgumentImpl <em>Write Argument</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.impl.WriteArgumentImpl
-	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getWriteArgument()
-	 * @generated
-	 */
-	int WRITE_ARGUMENT = 9;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -724,16 +828,6 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @ordered
 	 */
 	int WRITE_ARGUMENT_OPERATION_COUNT = DEV_IO_ARGUMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link baciCodeGen.impl.CommonArgumentImpl <em>Common Argument</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.impl.CommonArgumentImpl
-	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getCommonArgument()
-	 * @generated
-	 */
-	int COMMON_ARGUMENT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -781,16 +875,6 @@ public interface BaciCodeGenPackage extends EPackage {
 	int COMMON_ARGUMENT_OPERATION_COUNT = DEV_IO_ARGUMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link baciCodeGen.impl.UsedBaciTypesImpl <em>Used Baci Types</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.impl.UsedBaciTypesImpl
-	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getUsedBaciTypes()
-	 * @generated
-	 */
-	int USED_BACI_TYPES = 12;
-
-	/**
 	 * The feature id for the '<em><b>Baci Types</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -816,16 +900,6 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @ordered
 	 */
 	int USED_BACI_TYPES_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link baciCodeGen.impl.BaciTypeImpl <em>Baci Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.impl.BaciTypeImpl
-	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getBaciType()
-	 * @generated
-	 */
-	int BACI_TYPE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -889,7 +963,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getAccessType()
 	 * @generated
 	 */
-	int ACCESS_TYPE = 14;
+	int ACCESS_TYPE = 16;
 
 	/**
 	 * The meta object id for the '{@link baciCodeGen.BasicType <em>Basic Type</em>}' enum.
@@ -899,7 +973,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getBasicType()
 	 * @generated
 	 */
-	int BASIC_TYPE = 15;
+	int BASIC_TYPE = 17;
 
 	/**
 	 * The meta object id for the '{@link baciCodeGen.SeqType <em>Seq Type</em>}' enum.
@@ -909,7 +983,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getSeqType()
 	 * @generated
 	 */
-	int SEQ_TYPE = 16;
+	int SEQ_TYPE = 18;
 
 
 	/**
@@ -956,17 +1030,6 @@ public interface BaciCodeGenPackage extends EPackage {
 	EAttribute getCharacteristicComponent_Prefix();
 
 	/**
-	 * Returns the meta object for the attribute '{@link baciCodeGen.CharacteristicComponent#getComponentNumber <em>Component Number</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Component Number</em>'.
-	 * @see baciCodeGen.CharacteristicComponent#getComponentNumber()
-	 * @see #getCharacteristicComponent()
-	 * @generated
-	 */
-	EAttribute getCharacteristicComponent_ComponentNumber();
-
-	/**
 	 * Returns the meta object for the attribute '{@link baciCodeGen.CharacteristicComponent#getContainer <em>Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -998,6 +1061,17 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCharacteristicComponent_Properties();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link baciCodeGen.CharacteristicComponent#getComponentInstances <em>Component Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Component Instances</em>'.
+	 * @see baciCodeGen.CharacteristicComponent#getComponentInstances()
+	 * @see #getCharacteristicComponent()
+	 * @generated
+	 */
+	EReference getCharacteristicComponent_ComponentInstances();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link baciCodeGen.CharacteristicComponent#getActions <em>Actions</em>}'.
@@ -1248,6 +1322,27 @@ public interface BaciCodeGenPackage extends EPackage {
 	EAttribute getAttribute_Value();
 
 	/**
+	 * Returns the meta object for class '{@link baciCodeGen.ComponentInstances <em>Component Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Component Instances</em>'.
+	 * @see baciCodeGen.ComponentInstances
+	 * @generated
+	 */
+	EClass getComponentInstances();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link baciCodeGen.ComponentInstances#getInstances <em>Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Instances</em>'.
+	 * @see baciCodeGen.ComponentInstances#getInstances()
+	 * @see #getComponentInstances()
+	 * @generated
+	 */
+	EReference getComponentInstances_Instances();
+
+	/**
 	 * Returns the meta object for class '{@link baciCodeGen.UsedDevIOs <em>Used Dev IOs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1482,6 +1577,27 @@ public interface BaciCodeGenPackage extends EPackage {
 	EAttribute getBaciType_SeqType();
 
 	/**
+	 * Returns the meta object for class '{@link baciCodeGen.Instance <em>Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Instance</em>'.
+	 * @see baciCodeGen.Instance
+	 * @generated
+	 */
+	EClass getInstance();
+
+	/**
+	 * Returns the meta object for the attribute '{@link baciCodeGen.Instance#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see baciCodeGen.Instance#getName()
+	 * @see #getInstance()
+	 * @generated
+	 */
+	EAttribute getInstance_Name();
+
+	/**
 	 * Returns the meta object for enum '{@link baciCodeGen.AccessType <em>Access Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1569,14 +1685,6 @@ public interface BaciCodeGenPackage extends EPackage {
 		EAttribute CHARACTERISTIC_COMPONENT__PREFIX = eINSTANCE.getCharacteristicComponent_Prefix();
 
 		/**
-		 * The meta object literal for the '<em><b>Component Number</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CHARACTERISTIC_COMPONENT__COMPONENT_NUMBER = eINSTANCE.getCharacteristicComponent_ComponentNumber();
-
-		/**
 		 * The meta object literal for the '<em><b>Container</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1599,6 +1707,14 @@ public interface BaciCodeGenPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CHARACTERISTIC_COMPONENT__PROPERTIES = eINSTANCE.getCharacteristicComponent_Properties();
+
+		/**
+		 * The meta object literal for the '<em><b>Component Instances</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES = eINSTANCE.getCharacteristicComponent_ComponentInstances();
 
 		/**
 		 * The meta object literal for the '<em><b>Actions</b></em>' containment reference list feature.
@@ -1795,6 +1911,24 @@ public interface BaciCodeGenPackage extends EPackage {
 		EAttribute ATTRIBUTE__VALUE = eINSTANCE.getAttribute_Value();
 
 		/**
+		 * The meta object literal for the '{@link baciCodeGen.impl.ComponentInstancesImpl <em>Component Instances</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see baciCodeGen.impl.ComponentInstancesImpl
+		 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getComponentInstances()
+		 * @generated
+		 */
+		EClass COMPONENT_INSTANCES = eINSTANCE.getComponentInstances();
+
+		/**
+		 * The meta object literal for the '<em><b>Instances</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_INSTANCES__INSTANCES = eINSTANCE.getComponentInstances_Instances();
+
+		/**
 		 * The meta object literal for the '{@link baciCodeGen.impl.UsedDevIOsImpl <em>Used Dev IOs</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1985,6 +2119,24 @@ public interface BaciCodeGenPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BACI_TYPE__SEQ_TYPE = eINSTANCE.getBaciType_SeqType();
+
+		/**
+		 * The meta object literal for the '{@link baciCodeGen.impl.InstanceImpl <em>Instance</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see baciCodeGen.impl.InstanceImpl
+		 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getInstance()
+		 * @generated
+		 */
+		EClass INSTANCE = eINSTANCE.getInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INSTANCE__NAME = eINSTANCE.getInstance_Name();
 
 		/**
 		 * The meta object literal for the '{@link baciCodeGen.AccessType <em>Access Type</em>}' enum.

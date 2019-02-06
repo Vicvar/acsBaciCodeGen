@@ -92,6 +92,14 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 				return createAttributeAdapter();
 			}
 			@Override
+			public Adapter caseComponentInstances(ComponentInstances object) {
+				return createComponentInstancesAdapter();
+			}
+			@Override
+			public Adapter caseInstance(Instance object) {
+				return createInstanceAdapter();
+			}
+			@Override
 			public Adapter caseUsedDevIOs(UsedDevIOs object) {
 				return createUsedDevIOsAdapter();
 			}
@@ -228,6 +236,20 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link baciCodeGen.ComponentInstances <em>Component Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see baciCodeGen.ComponentInstances
+	 * @generated
+	 */
+	public Adapter createComponentInstancesAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link baciCodeGen.UsedDevIOs <em>Used Dev IOs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -336,6 +358,20 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBaciTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link baciCodeGen.Instance <em>Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see baciCodeGen.Instance
+	 * @generated
+	 */
+	public Adapter createInstanceAdapter() {
 		return null;
 	}
 

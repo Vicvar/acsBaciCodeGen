@@ -76,6 +76,15 @@ public interface BaciCodeGenFactory extends EFactory {
 	Attribute createAttribute();
 
 	/**
+	 * Returns a new object of class '<em>Component Instances</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Component Instances</em>'.
+	 * @generated
+	 */
+	ComponentInstances createComponentInstances();
+
+	/**
 	 * Returns a new object of class '<em>Used Dev IOs</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -137,6 +146,15 @@ public interface BaciCodeGenFactory extends EFactory {
 	 * @generated
 	 */
 	BaciType createBaciType();
+
+	/**
+	 * Returns a new object of class '<em>Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Instance</em>'.
+	 * @generated
+	 */
+	Instance createInstance();
 
 	/**
 	 * Returns the package supported by this factory.

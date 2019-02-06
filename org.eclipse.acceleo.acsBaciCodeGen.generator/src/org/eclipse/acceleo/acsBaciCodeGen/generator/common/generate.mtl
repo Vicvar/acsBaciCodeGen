@@ -111,8 +111,8 @@ module [cModule/]
 	xmlns:cdb="urn:schemas-cosylab-com:CDB:1.0" 
 	xmlns:baci="urn:schemas-cosylab-com:BACI:1.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	[for (Sequence{1..aCharacteristicComponent.componentNumber})]
-	<_ Name="[cName/][i/]"
+	[for (it : Instance | aCharacteristicComponent.componentInstances.instances)]
+	<_ Name="[it.name/]"
 		Code="[cName/]Impl"        
 		Type="IDL:[cPrefix/]/[cModule/]/[cName/]:1.0"
 		[comment Templates are laguaje specific, so container ImplLang is not modeled /]
@@ -131,18 +131,18 @@ module [cModule/]
 		cName : String = aCharacteristicComponent.name;
 		cModule : String = aCharacteristicComponent.module;
 	}]
-[for (Sequence{1..aCharacteristicComponent.componentNumber})]
-[file (cName+'/test/CDB/alma/'+cName+i+'/'+cName+i+'.xml', false, 'UTF-8')]
+[for (it : Instance | aCharacteristicComponent.componentInstances.instances)]
+[file (cName+'/test/CDB/alma/'+it.name+'/'+it.name+'.xml', false, 'UTF-8')]
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <[cName/] xmlns="urn:schemas-cosylab-com:[cName/]:1.0"
 	xmlns:baci="urn:schemas-cosylab-com:BACI:1.0"
 	xmlns:cdb="urn:schemas-cosylab-com:CDB:1.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	[for (it : Attribute | aCharacteristicComponent.attributes) separator('\n')]
-	[it.name/]="[it.value/]"[/for]>
-	[for (it : Property | aCharacteristicComponent.properties)]
-	<[it.name/]
-		[for (it2 : Characteristic | it.characteristics) separator('\n\t\t')][it2.name/]="[it2.value/]"[/for]/>
+	[for (it2 : Attribute | aCharacteristicComponent.attributes) separator('\n')]
+	[it2.name/]="[it2.value/]"[/for]>
+	[for (it2 : Property | aCharacteristicComponent.properties)]
+	<[it2.name/]
+		[for (it3 : Characteristic | it2.characteristics) separator('\n\t\t')][it3.name/]="[it3.value/]"[/for]/>
 	[/for]
 </[cName/]>
 
@@ -164,16 +164,13 @@ module [cModule/]
 
 #include <baciCharacteristicComponentImpl.h>
 #include <baciSmartPropertyPointer.h>
-#include <baciDevIO.h>
-#include <acsThread.h>[comment Should this always be included??/]
+#include <baciDevIO.h>[comment not necessary if no Properties/]
 [for (it : BaciType | aCharacteristicComponent.usedBaciTypes.baciTypes)]
 #include <baci[it.name/].h>
 [/for]
 [for (it : DevIO | aCharacteristicComponent.usedDevIOs.devIOs)]
 #include <[it.name/]_devio.h>
 [/for]
-
-class [cName/]_thread;
 
 class [cName/]_impl : public virtual POA_[cModule/]::[cName/], public baci::CharacteristicComponentImpl
 {
@@ -235,9 +232,7 @@ class [cName/]_impl : public virtual POA_[cModule/]::[cName/], public baci::Char
 
 /*Constructor*/
 [cName/]_impl::[cName/]_impl(const ACE_CString c_name, maci::ContainerServices * containerServices):
-	CharacteristicComponentImpl(c_name, containerServices),
-	[for (it : Property | aCharacteristicComponent.properties) separator(',\n') after('\n')]
-	m_[it.name/]_sp(this)[/for]
+	CharacteristicComponentImpl(c_name, containerServices)[for (it : Property | aCharacteristicComponent.properties) before(',\n\t') separator(',\n\t')]m_[it.name/]_sp(this)[/for]
 {
 	[comment Also check logging and debugging messages/]
 	component_name=c_name.c_str();

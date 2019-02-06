@@ -34,6 +34,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//CharacteristicComponent/actions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//CharacteristicComponent/attributes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//CharacteristicComponent/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//CharacteristicComponent/componentInstances"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//CharacteristicComponent/usedBaciTypes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//CharacteristicComponent/usedDevIOs"/>
     </genClasses>
@@ -61,6 +62,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Attribute/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Attribute/required"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Attribute/value"/>
+    </genClasses>
+    <genClasses ecoreClass="baciCodeGenModel.ecore#//ComponentInstances">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//ComponentInstances/instances"/>
+    </genClasses>
+    <genClasses ecoreClass="baciCodeGenModel.ecore#//Instance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Instance/name"/>
     </genClasses>
     <genClasses ecoreClass="baciCodeGenModel.ecore#//UsedDevIOs">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//UsedDevIOs/devIOs"/>

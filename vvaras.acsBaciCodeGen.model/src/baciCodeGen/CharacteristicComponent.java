@@ -18,11 +18,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link baciCodeGen.CharacteristicComponent#getName <em>Name</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getModule <em>Module</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getPrefix <em>Prefix</em>}</li>
- *   <li>{@link baciCodeGen.CharacteristicComponent#getComponentNumber <em>Component Number</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getContainer <em>Container</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getActions <em>Actions</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getProperties <em>Properties</em>}</li>
+ *   <li>{@link baciCodeGen.CharacteristicComponent#getComponentInstances <em>Component Instances</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getUsedBaciTypes <em>Used Baci Types</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getUsedDevIOs <em>Used Dev IOs</em>}</li>
  * </ul>
@@ -111,33 +111,6 @@ public interface CharacteristicComponent extends EObject {
 	void setPrefix(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Component Number</b></em>' attribute.
-	 * The default value is <code>"1"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Component Number</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Component Number</em>' attribute.
-	 * @see #setComponentNumber(int)
-	 * @see baciCodeGen.BaciCodeGenPackage#getCharacteristicComponent_ComponentNumber()
-	 * @model default="1"
-	 * @generated
-	 */
-	int getComponentNumber();
-
-	/**
-	 * Sets the value of the '{@link baciCodeGen.CharacteristicComponent#getComponentNumber <em>Component Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Component Number</em>' attribute.
-	 * @see #getComponentNumber()
-	 * @generated
-	 */
-	void setComponentNumber(int value);
-
-	/**
 	 * Returns the value of the '<em><b>Container</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -194,6 +167,32 @@ public interface CharacteristicComponent extends EObject {
 	 * @generated
 	 */
 	EList<Property> getProperties();
+
+	/**
+	 * Returns the value of the '<em><b>Component Instances</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Component Instances</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Component Instances</em>' containment reference.
+	 * @see #setComponentInstances(ComponentInstances)
+	 * @see baciCodeGen.BaciCodeGenPackage#getCharacteristicComponent_ComponentInstances()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	ComponentInstances getComponentInstances();
+
+	/**
+	 * Sets the value of the '{@link baciCodeGen.CharacteristicComponent#getComponentInstances <em>Component Instances</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Component Instances</em>' containment reference.
+	 * @see #getComponentInstances()
+	 * @generated
+	 */
+	void setComponentInstances(ComponentInstances value);
 
 	/**
 	 * Returns the value of the '<em><b>Actions</b></em>' containment reference list.

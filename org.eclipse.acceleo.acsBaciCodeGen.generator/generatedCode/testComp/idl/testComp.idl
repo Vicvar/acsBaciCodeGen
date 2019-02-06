@@ -1,0 +1,19 @@
+#ifndef _TESTCOMP_IDL_
+#define _TESTCOMP_IDL_
+
+#include <baci.idl>
+
+#pragma prefix ""
+
+module 
+{	
+	interface testComp : ACS::CharacteristicComponent
+	{
+		/*Properties*/
+
+		/*Actions*/
+	};
+};
+
+#endif //_TESTCOMP_IDL_
+

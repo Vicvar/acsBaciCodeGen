@@ -102,6 +102,18 @@ public class BaciCodeGenSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case BaciCodeGenPackage.COMPONENT_INSTANCES: {
+				ComponentInstances componentInstances = (ComponentInstances)theEObject;
+				T result = caseComponentInstances(componentInstances);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BaciCodeGenPackage.INSTANCE: {
+				Instance instance = (Instance)theEObject;
+				T result = caseInstance(instance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case BaciCodeGenPackage.USED_DEV_IOS: {
 				UsedDevIOs usedDevIOs = (UsedDevIOs)theEObject;
 				T result = caseUsedDevIOs(usedDevIOs);
@@ -248,6 +260,21 @@ public class BaciCodeGenSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Component Instances</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Component Instances</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComponentInstances(ComponentInstances object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Used Dev IOs</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -364,6 +391,21 @@ public class BaciCodeGenSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBaciType(BaciType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInstance(Instance object) {
 		return null;
 	}
 
