@@ -233,6 +233,29 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.Instance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InstanceItemProvider instanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link baciCodeGen.Instance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createInstanceAdapter() {
+		if (instanceItemProvider == null) {
+			instanceItemProvider = new InstanceItemProvider(this);
+		}
+
+		return instanceItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link baciCodeGen.UsedDevIOs} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -279,72 +302,72 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link baciCodeGen.ReadArgument} instances.
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.PropertySpecificVariable} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ReadArgumentItemProvider readArgumentItemProvider;
+	protected PropertySpecificVariableItemProvider propertySpecificVariableItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link baciCodeGen.ReadArgument}.
+	 * This creates an adapter for a {@link baciCodeGen.PropertySpecificVariable}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createReadArgumentAdapter() {
-		if (readArgumentItemProvider == null) {
-			readArgumentItemProvider = new ReadArgumentItemProvider(this);
+	public Adapter createPropertySpecificVariableAdapter() {
+		if (propertySpecificVariableItemProvider == null) {
+			propertySpecificVariableItemProvider = new PropertySpecificVariableItemProvider(this);
 		}
 
-		return readArgumentItemProvider;
+		return propertySpecificVariableItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link baciCodeGen.WriteArgument} instances.
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.CommonVariable} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected WriteArgumentItemProvider writeArgumentItemProvider;
+	protected CommonVariableItemProvider commonVariableItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link baciCodeGen.WriteArgument}.
+	 * This creates an adapter for a {@link baciCodeGen.CommonVariable}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createWriteArgumentAdapter() {
-		if (writeArgumentItemProvider == null) {
-			writeArgumentItemProvider = new WriteArgumentItemProvider(this);
+	public Adapter createCommonVariableAdapter() {
+		if (commonVariableItemProvider == null) {
+			commonVariableItemProvider = new CommonVariableItemProvider(this);
 		}
 
-		return writeArgumentItemProvider;
+		return commonVariableItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link baciCodeGen.CommonArgument} instances.
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.AuxiliaryVariable} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CommonArgumentItemProvider commonArgumentItemProvider;
+	protected AuxiliaryVariableItemProvider auxiliaryVariableItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link baciCodeGen.CommonArgument}.
+	 * This creates an adapter for a {@link baciCodeGen.AuxiliaryVariable}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createCommonArgumentAdapter() {
-		if (commonArgumentItemProvider == null) {
-			commonArgumentItemProvider = new CommonArgumentItemProvider(this);
+	public Adapter createAuxiliaryVariableAdapter() {
+		if (auxiliaryVariableItemProvider == null) {
+			auxiliaryVariableItemProvider = new AuxiliaryVariableItemProvider(this);
 		}
 
-		return commonArgumentItemProvider;
+		return auxiliaryVariableItemProvider;
 	}
 
 	/**
@@ -391,29 +414,6 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 		}
 
 		return baciTypeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link baciCodeGen.Instance} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected InstanceItemProvider instanceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link baciCodeGen.Instance}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createInstanceAdapter() {
-		if (instanceItemProvider == null) {
-			instanceItemProvider = new InstanceItemProvider(this);
-		}
-
-		return instanceItemProvider;
 	}
 
 	/**
@@ -525,9 +525,9 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 		if (instanceItemProvider != null) instanceItemProvider.dispose();
 		if (usedDevIOsItemProvider != null) usedDevIOsItemProvider.dispose();
 		if (devIOItemProvider != null) devIOItemProvider.dispose();
-		if (readArgumentItemProvider != null) readArgumentItemProvider.dispose();
-		if (writeArgumentItemProvider != null) writeArgumentItemProvider.dispose();
-		if (commonArgumentItemProvider != null) commonArgumentItemProvider.dispose();
+		if (propertySpecificVariableItemProvider != null) propertySpecificVariableItemProvider.dispose();
+		if (commonVariableItemProvider != null) commonVariableItemProvider.dispose();
+		if (auxiliaryVariableItemProvider != null) auxiliaryVariableItemProvider.dispose();
 		if (usedBaciTypesItemProvider != null) usedBaciTypesItemProvider.dispose();
 		if (baciTypeItemProvider != null) baciTypeItemProvider.dispose();
 	}

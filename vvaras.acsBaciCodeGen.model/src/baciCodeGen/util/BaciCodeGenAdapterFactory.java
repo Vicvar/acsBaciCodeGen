@@ -108,20 +108,20 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 				return createDevIOAdapter();
 			}
 			@Override
-			public Adapter caseReadArgument(ReadArgument object) {
-				return createReadArgumentAdapter();
+			public Adapter casePropertySpecificVariable(PropertySpecificVariable object) {
+				return createPropertySpecificVariableAdapter();
 			}
 			@Override
-			public Adapter caseWriteArgument(WriteArgument object) {
-				return createWriteArgumentAdapter();
+			public Adapter caseCommonVariable(CommonVariable object) {
+				return createCommonVariableAdapter();
 			}
 			@Override
-			public Adapter caseCommonArgument(CommonArgument object) {
-				return createCommonArgumentAdapter();
+			public Adapter caseAuxiliaryVariable(AuxiliaryVariable object) {
+				return createAuxiliaryVariableAdapter();
 			}
 			@Override
-			public Adapter caseDevIOArgument(DevIOArgument object) {
-				return createDevIOArgumentAdapter();
+			public Adapter caseDevIOVariable(DevIOVariable object) {
+				return createDevIOVariableAdapter();
 			}
 			@Override
 			public Adapter caseUsedBaciTypes(UsedBaciTypes object) {
@@ -250,6 +250,20 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link baciCodeGen.Instance <em>Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see baciCodeGen.Instance
+	 * @generated
+	 */
+	public Adapter createInstanceAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link baciCodeGen.UsedDevIOs <em>Used Dev IOs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -278,58 +292,58 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link baciCodeGen.ReadArgument <em>Read Argument</em>}'.
+	 * Creates a new adapter for an object of class '{@link baciCodeGen.PropertySpecificVariable <em>Property Specific Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see baciCodeGen.ReadArgument
+	 * @see baciCodeGen.PropertySpecificVariable
 	 * @generated
 	 */
-	public Adapter createReadArgumentAdapter() {
+	public Adapter createPropertySpecificVariableAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link baciCodeGen.WriteArgument <em>Write Argument</em>}'.
+	 * Creates a new adapter for an object of class '{@link baciCodeGen.CommonVariable <em>Common Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see baciCodeGen.WriteArgument
+	 * @see baciCodeGen.CommonVariable
 	 * @generated
 	 */
-	public Adapter createWriteArgumentAdapter() {
+	public Adapter createCommonVariableAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link baciCodeGen.CommonArgument <em>Common Argument</em>}'.
+	 * Creates a new adapter for an object of class '{@link baciCodeGen.AuxiliaryVariable <em>Auxiliary Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see baciCodeGen.CommonArgument
+	 * @see baciCodeGen.AuxiliaryVariable
 	 * @generated
 	 */
-	public Adapter createCommonArgumentAdapter() {
+	public Adapter createAuxiliaryVariableAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link baciCodeGen.DevIOArgument <em>Dev IO Argument</em>}'.
+	 * Creates a new adapter for an object of class '{@link baciCodeGen.DevIOVariable <em>Dev IO Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see baciCodeGen.DevIOArgument
+	 * @see baciCodeGen.DevIOVariable
 	 * @generated
 	 */
-	public Adapter createDevIOArgumentAdapter() {
+	public Adapter createDevIOVariableAdapter() {
 		return null;
 	}
 
@@ -358,20 +372,6 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBaciTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link baciCodeGen.Instance <em>Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see baciCodeGen.Instance
-	 * @generated
-	 */
-	public Adapter createInstanceAdapter() {
 		return null;
 	}
 

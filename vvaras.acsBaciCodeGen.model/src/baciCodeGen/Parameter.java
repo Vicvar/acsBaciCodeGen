@@ -33,7 +33,7 @@ public interface Parameter extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see baciCodeGen.BaciCodeGenPackage#getParameter_Name()
-	 * @model
+	 * @model id="true"
 	 * @generated
 	 */
 	String getName();

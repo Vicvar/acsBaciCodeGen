@@ -2,21 +2,25 @@
  */
 package baciCodeGen.impl;
 
+import baciCodeGen.AuxiliaryVariable;
 import baciCodeGen.BaciCodeGenPackage;
-import baciCodeGen.CommonArgument;
+import baciCodeGen.CommonVariable;
 import baciCodeGen.DevIO;
-import baciCodeGen.ReadArgument;
-import baciCodeGen.WriteArgument;
+import baciCodeGen.PropertySpecificVariable;
+
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -30,9 +34,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link baciCodeGen.impl.DevIOImpl#getName <em>Name</em>}</li>
  *   <li>{@link baciCodeGen.impl.DevIOImpl#getRequiredLibraries <em>Required Libraries</em>}</li>
- *   <li>{@link baciCodeGen.impl.DevIOImpl#getReadArguments <em>Read Arguments</em>}</li>
- *   <li>{@link baciCodeGen.impl.DevIOImpl#getWriteArguments <em>Write Arguments</em>}</li>
- *   <li>{@link baciCodeGen.impl.DevIOImpl#getCommonArguments <em>Common Arguments</em>}</li>
+ *   <li>{@link baciCodeGen.impl.DevIOImpl#getPropertySpecificVariables <em>Property Specific Variables</em>}</li>
+ *   <li>{@link baciCodeGen.impl.DevIOImpl#getCommonVariables <em>Common Variables</em>}</li>
+ *   <li>{@link baciCodeGen.impl.DevIOImpl#getAuxiliaryVariables <em>Auxiliary Variables</em>}</li>
  * </ul>
  *
  * @generated
@@ -79,34 +83,34 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 	protected String requiredLibraries = REQUIRED_LIBRARIES_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getReadArguments() <em>Read Arguments</em>}' containment reference list.
+	 * The cached value of the '{@link #getPropertySpecificVariables() <em>Property Specific Variables</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReadArguments()
+	 * @see #getPropertySpecificVariables()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ReadArgument> readArguments;
+	protected EList<PropertySpecificVariable> propertySpecificVariables;
 
 	/**
-	 * The cached value of the '{@link #getWriteArguments() <em>Write Arguments</em>}' containment reference list.
+	 * The cached value of the '{@link #getCommonVariables() <em>Common Variables</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getWriteArguments()
+	 * @see #getCommonVariables()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<WriteArgument> writeArguments;
+	protected EList<CommonVariable> commonVariables;
 
 	/**
-	 * The cached value of the '{@link #getCommonArguments() <em>Common Arguments</em>}' containment reference list.
+	 * The cached value of the '{@link #getAuxiliaryVariables() <em>Auxiliary Variables</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCommonArguments()
+	 * @see #getAuxiliaryVariables()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CommonArgument> commonArguments;
+	protected EList<AuxiliaryVariable> auxiliaryVariables;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -174,11 +178,11 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ReadArgument> getReadArguments() {
-		if (readArguments == null) {
-			readArguments = new EObjectContainmentEList<ReadArgument>(ReadArgument.class, this, BaciCodeGenPackage.DEV_IO__READ_ARGUMENTS);
+	public EList<PropertySpecificVariable> getPropertySpecificVariables() {
+		if (propertySpecificVariables == null) {
+			propertySpecificVariables = new EObjectContainmentEList<PropertySpecificVariable>(PropertySpecificVariable.class, this, BaciCodeGenPackage.DEV_IO__PROPERTY_SPECIFIC_VARIABLES);
 		}
-		return readArguments;
+		return propertySpecificVariables;
 	}
 
 	/**
@@ -186,11 +190,11 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<WriteArgument> getWriteArguments() {
-		if (writeArguments == null) {
-			writeArguments = new EObjectContainmentEList<WriteArgument>(WriteArgument.class, this, BaciCodeGenPackage.DEV_IO__WRITE_ARGUMENTS);
+	public EList<CommonVariable> getCommonVariables() {
+		if (commonVariables == null) {
+			commonVariables = new EObjectContainmentEList<CommonVariable>(CommonVariable.class, this, BaciCodeGenPackage.DEV_IO__COMMON_VARIABLES);
 		}
-		return writeArguments;
+		return commonVariables;
 	}
 
 	/**
@@ -198,11 +202,11 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CommonArgument> getCommonArguments() {
-		if (commonArguments == null) {
-			commonArguments = new EObjectContainmentEList<CommonArgument>(CommonArgument.class, this, BaciCodeGenPackage.DEV_IO__COMMON_ARGUMENTS);
+	public EList<AuxiliaryVariable> getAuxiliaryVariables() {
+		if (auxiliaryVariables == null) {
+			auxiliaryVariables = new EObjectContainmentEList<AuxiliaryVariable>(AuxiliaryVariable.class, this, BaciCodeGenPackage.DEV_IO__AUXILIARY_VARIABLES);
 		}
-		return commonArguments;
+		return auxiliaryVariables;
 	}
 
 	/**
@@ -213,12 +217,12 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BaciCodeGenPackage.DEV_IO__READ_ARGUMENTS:
-				return ((InternalEList<?>)getReadArguments()).basicRemove(otherEnd, msgs);
-			case BaciCodeGenPackage.DEV_IO__WRITE_ARGUMENTS:
-				return ((InternalEList<?>)getWriteArguments()).basicRemove(otherEnd, msgs);
-			case BaciCodeGenPackage.DEV_IO__COMMON_ARGUMENTS:
-				return ((InternalEList<?>)getCommonArguments()).basicRemove(otherEnd, msgs);
+			case BaciCodeGenPackage.DEV_IO__PROPERTY_SPECIFIC_VARIABLES:
+				return ((InternalEList<?>)getPropertySpecificVariables()).basicRemove(otherEnd, msgs);
+			case BaciCodeGenPackage.DEV_IO__COMMON_VARIABLES:
+				return ((InternalEList<?>)getCommonVariables()).basicRemove(otherEnd, msgs);
+			case BaciCodeGenPackage.DEV_IO__AUXILIARY_VARIABLES:
+				return ((InternalEList<?>)getAuxiliaryVariables()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -235,12 +239,12 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 				return getName();
 			case BaciCodeGenPackage.DEV_IO__REQUIRED_LIBRARIES:
 				return getRequiredLibraries();
-			case BaciCodeGenPackage.DEV_IO__READ_ARGUMENTS:
-				return getReadArguments();
-			case BaciCodeGenPackage.DEV_IO__WRITE_ARGUMENTS:
-				return getWriteArguments();
-			case BaciCodeGenPackage.DEV_IO__COMMON_ARGUMENTS:
-				return getCommonArguments();
+			case BaciCodeGenPackage.DEV_IO__PROPERTY_SPECIFIC_VARIABLES:
+				return getPropertySpecificVariables();
+			case BaciCodeGenPackage.DEV_IO__COMMON_VARIABLES:
+				return getCommonVariables();
+			case BaciCodeGenPackage.DEV_IO__AUXILIARY_VARIABLES:
+				return getAuxiliaryVariables();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -260,17 +264,17 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 			case BaciCodeGenPackage.DEV_IO__REQUIRED_LIBRARIES:
 				setRequiredLibraries((String)newValue);
 				return;
-			case BaciCodeGenPackage.DEV_IO__READ_ARGUMENTS:
-				getReadArguments().clear();
-				getReadArguments().addAll((Collection<? extends ReadArgument>)newValue);
+			case BaciCodeGenPackage.DEV_IO__PROPERTY_SPECIFIC_VARIABLES:
+				getPropertySpecificVariables().clear();
+				getPropertySpecificVariables().addAll((Collection<? extends PropertySpecificVariable>)newValue);
 				return;
-			case BaciCodeGenPackage.DEV_IO__WRITE_ARGUMENTS:
-				getWriteArguments().clear();
-				getWriteArguments().addAll((Collection<? extends WriteArgument>)newValue);
+			case BaciCodeGenPackage.DEV_IO__COMMON_VARIABLES:
+				getCommonVariables().clear();
+				getCommonVariables().addAll((Collection<? extends CommonVariable>)newValue);
 				return;
-			case BaciCodeGenPackage.DEV_IO__COMMON_ARGUMENTS:
-				getCommonArguments().clear();
-				getCommonArguments().addAll((Collection<? extends CommonArgument>)newValue);
+			case BaciCodeGenPackage.DEV_IO__AUXILIARY_VARIABLES:
+				getAuxiliaryVariables().clear();
+				getAuxiliaryVariables().addAll((Collection<? extends AuxiliaryVariable>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -290,14 +294,14 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 			case BaciCodeGenPackage.DEV_IO__REQUIRED_LIBRARIES:
 				setRequiredLibraries(REQUIRED_LIBRARIES_EDEFAULT);
 				return;
-			case BaciCodeGenPackage.DEV_IO__READ_ARGUMENTS:
-				getReadArguments().clear();
+			case BaciCodeGenPackage.DEV_IO__PROPERTY_SPECIFIC_VARIABLES:
+				getPropertySpecificVariables().clear();
 				return;
-			case BaciCodeGenPackage.DEV_IO__WRITE_ARGUMENTS:
-				getWriteArguments().clear();
+			case BaciCodeGenPackage.DEV_IO__COMMON_VARIABLES:
+				getCommonVariables().clear();
 				return;
-			case BaciCodeGenPackage.DEV_IO__COMMON_ARGUMENTS:
-				getCommonArguments().clear();
+			case BaciCodeGenPackage.DEV_IO__AUXILIARY_VARIABLES:
+				getAuxiliaryVariables().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -315,12 +319,12 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case BaciCodeGenPackage.DEV_IO__REQUIRED_LIBRARIES:
 				return REQUIRED_LIBRARIES_EDEFAULT == null ? requiredLibraries != null : !REQUIRED_LIBRARIES_EDEFAULT.equals(requiredLibraries);
-			case BaciCodeGenPackage.DEV_IO__READ_ARGUMENTS:
-				return readArguments != null && !readArguments.isEmpty();
-			case BaciCodeGenPackage.DEV_IO__WRITE_ARGUMENTS:
-				return writeArguments != null && !writeArguments.isEmpty();
-			case BaciCodeGenPackage.DEV_IO__COMMON_ARGUMENTS:
-				return commonArguments != null && !commonArguments.isEmpty();
+			case BaciCodeGenPackage.DEV_IO__PROPERTY_SPECIFIC_VARIABLES:
+				return propertySpecificVariables != null && !propertySpecificVariables.isEmpty();
+			case BaciCodeGenPackage.DEV_IO__COMMON_VARIABLES:
+				return commonVariables != null && !commonVariables.isEmpty();
+			case BaciCodeGenPackage.DEV_IO__AUXILIARY_VARIABLES:
+				return auxiliaryVariables != null && !auxiliaryVariables.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

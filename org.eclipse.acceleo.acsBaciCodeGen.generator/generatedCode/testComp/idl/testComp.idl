@@ -11,6 +11,8 @@ module
 	{
 		/*Properties*/
 
+		readonly attribute ACS::ROboolean p1;
+
 		/*Actions*/
 	};
 };

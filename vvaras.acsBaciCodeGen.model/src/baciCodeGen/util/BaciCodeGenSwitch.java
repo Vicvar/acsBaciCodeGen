@@ -126,30 +126,30 @@ public class BaciCodeGenSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BaciCodeGenPackage.READ_ARGUMENT: {
-				ReadArgument readArgument = (ReadArgument)theEObject;
-				T result = caseReadArgument(readArgument);
-				if (result == null) result = caseDevIOArgument(readArgument);
+			case BaciCodeGenPackage.PROPERTY_SPECIFIC_VARIABLE: {
+				PropertySpecificVariable propertySpecificVariable = (PropertySpecificVariable)theEObject;
+				T result = casePropertySpecificVariable(propertySpecificVariable);
+				if (result == null) result = caseDevIOVariable(propertySpecificVariable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BaciCodeGenPackage.WRITE_ARGUMENT: {
-				WriteArgument writeArgument = (WriteArgument)theEObject;
-				T result = caseWriteArgument(writeArgument);
-				if (result == null) result = caseDevIOArgument(writeArgument);
+			case BaciCodeGenPackage.COMMON_VARIABLE: {
+				CommonVariable commonVariable = (CommonVariable)theEObject;
+				T result = caseCommonVariable(commonVariable);
+				if (result == null) result = caseDevIOVariable(commonVariable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BaciCodeGenPackage.COMMON_ARGUMENT: {
-				CommonArgument commonArgument = (CommonArgument)theEObject;
-				T result = caseCommonArgument(commonArgument);
-				if (result == null) result = caseDevIOArgument(commonArgument);
+			case BaciCodeGenPackage.AUXILIARY_VARIABLE: {
+				AuxiliaryVariable auxiliaryVariable = (AuxiliaryVariable)theEObject;
+				T result = caseAuxiliaryVariable(auxiliaryVariable);
+				if (result == null) result = caseDevIOVariable(auxiliaryVariable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BaciCodeGenPackage.DEV_IO_ARGUMENT: {
-				DevIOArgument devIOArgument = (DevIOArgument)theEObject;
-				T result = caseDevIOArgument(devIOArgument);
+			case BaciCodeGenPackage.DEV_IO_VARIABLE: {
+				DevIOVariable devIOVariable = (DevIOVariable)theEObject;
+				T result = caseDevIOVariable(devIOVariable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -275,6 +275,21 @@ public class BaciCodeGenSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInstance(Instance object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Used Dev IOs</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -305,62 +320,62 @@ public class BaciCodeGenSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Read Argument</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Property Specific Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Read Argument</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Property Specific Variable</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseReadArgument(ReadArgument object) {
+	public T casePropertySpecificVariable(PropertySpecificVariable object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Write Argument</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Common Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Write Argument</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Common Variable</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseWriteArgument(WriteArgument object) {
+	public T caseCommonVariable(CommonVariable object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Common Argument</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Auxiliary Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Common Argument</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Auxiliary Variable</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCommonArgument(CommonArgument object) {
+	public T caseAuxiliaryVariable(AuxiliaryVariable object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Dev IO Argument</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Dev IO Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Dev IO Argument</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Dev IO Variable</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDevIOArgument(DevIOArgument object) {
+	public T caseDevIOVariable(DevIOVariable object) {
 		return null;
 	}
 
@@ -391,21 +406,6 @@ public class BaciCodeGenSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBaciType(BaciType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Instance</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseInstance(Instance object) {
 		return null;
 	}
 

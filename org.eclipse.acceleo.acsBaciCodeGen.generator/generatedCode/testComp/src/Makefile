@@ -85,7 +85,7 @@ testCompImpl_OBJECTS = testComp_impl
 testCompImpl_LIBS = testCompStubs baciStubs ACE TAO TAO_PortableServer TAO_CosProperty maciErrType baselogging \
 		ACSErrTypeCommon acscommonStubs acserrStubs acserr logging logging maci maciStubs loki \
 		ACSErrTypeCORBA acscomponent baci loki \
-
+		
 
 #
 # Scripts (public and local)

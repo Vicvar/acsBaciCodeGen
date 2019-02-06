@@ -34,7 +34,7 @@ public interface BaciType extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see baciCodeGen.BaciCodeGenPackage#getBaciType_Name()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model id="true" transient="true" changeable="false" volatile="true" derived="true"
 	 * @generated
 	 */
 	String getName();

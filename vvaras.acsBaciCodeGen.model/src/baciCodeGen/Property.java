@@ -37,7 +37,7 @@ public interface Property extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see baciCodeGen.BaciCodeGenPackage#getProperty_Name()
-	 * @model
+	 * @model id="true"
 	 * @generated
 	 */
 	String getName();

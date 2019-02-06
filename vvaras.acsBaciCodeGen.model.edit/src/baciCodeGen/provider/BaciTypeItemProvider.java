@@ -5,6 +5,7 @@ package baciCodeGen.provider;
 
 import baciCodeGen.BaciCodeGenPackage;
 import baciCodeGen.BaciType;
+
 import java.util.Collection;
 import java.util.List;
 

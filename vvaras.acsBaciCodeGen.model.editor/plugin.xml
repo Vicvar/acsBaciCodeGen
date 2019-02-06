@@ -33,29 +33,5 @@
             contributorClass="baciCodeGen.presentation.BaciCodeGenActionBarContributor">
       </editor>
    </extension>
-   <extension
-         id="bacicodegenerator"
-         point="org.eclipse.core.runtime.products">
-      <product
-            application="org.eclipse.ui.ide.workbench"
-            name="Baci Code Generator">
-         <property
-               name="appName"
-               value="Baci Code Generator">
-         </property>
-      </product>
-   </extension>
-   <extension
-         id="acsbacicodegen"
-         point="org.eclipse.core.runtime.products">
-      <product
-            application="org.eclipse.ui.ide.workbench"
-            name="acsBaciCodeGen">
-         <property
-               name="appName"
-               value="acsBaciCodeGen">
-         </property>
-      </product>
-   </extension>
 
 </plugin>

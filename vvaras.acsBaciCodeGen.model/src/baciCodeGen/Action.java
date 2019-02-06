@@ -3,6 +3,7 @@
 package baciCodeGen;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -35,7 +36,7 @@ public interface Action extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see baciCodeGen.BaciCodeGenPackage#getAction_Name()
-	 * @model
+	 * @model id="true"
 	 * @generated
 	 */
 	String getName();
@@ -82,7 +83,7 @@ public interface Action extends EObject {
 	 * The list contents are of type {@link baciCodeGen.Parameter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Parameters</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->

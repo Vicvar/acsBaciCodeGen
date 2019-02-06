@@ -72,28 +72,6 @@ public class CharacteristicComponentItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Module feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addModulePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CharacteristicComponent_module_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CharacteristicComponent_module_feature", "_UI_CharacteristicComponent_type"),
-				 BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__MODULE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -107,6 +85,28 @@ public class CharacteristicComponentItemProvider
 				 getString("_UI_CharacteristicComponent_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CharacteristicComponent_name_feature", "_UI_CharacteristicComponent_type"),
 				 BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Module feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addModulePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CharacteristicComponent_module_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CharacteristicComponent_module_feature", "_UI_CharacteristicComponent_type"),
+				 BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__MODULE,
 				 true,
 				 false,
 				 false,

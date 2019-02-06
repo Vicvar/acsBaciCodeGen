@@ -67,9 +67,9 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 			case BaciCodeGenPackage.INSTANCE: return createInstance();
 			case BaciCodeGenPackage.USED_DEV_IOS: return createUsedDevIOs();
 			case BaciCodeGenPackage.DEV_IO: return createDevIO();
-			case BaciCodeGenPackage.READ_ARGUMENT: return createReadArgument();
-			case BaciCodeGenPackage.WRITE_ARGUMENT: return createWriteArgument();
-			case BaciCodeGenPackage.COMMON_ARGUMENT: return createCommonArgument();
+			case BaciCodeGenPackage.PROPERTY_SPECIFIC_VARIABLE: return createPropertySpecificVariable();
+			case BaciCodeGenPackage.COMMON_VARIABLE: return createCommonVariable();
+			case BaciCodeGenPackage.AUXILIARY_VARIABLE: return createAuxiliaryVariable();
 			case BaciCodeGenPackage.USED_BACI_TYPES: return createUsedBaciTypes();
 			case BaciCodeGenPackage.BACI_TYPE: return createBaciType();
 			default:
@@ -190,6 +190,16 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Instance createInstance() {
+		InstanceImpl instance = new InstanceImpl();
+		return instance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public UsedDevIOs createUsedDevIOs() {
 		UsedDevIOsImpl usedDevIOs = new UsedDevIOsImpl();
 		return usedDevIOs;
@@ -210,9 +220,9 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReadArgument createReadArgument() {
-		ReadArgumentImpl readArgument = new ReadArgumentImpl();
-		return readArgument;
+	public PropertySpecificVariable createPropertySpecificVariable() {
+		PropertySpecificVariableImpl propertySpecificVariable = new PropertySpecificVariableImpl();
+		return propertySpecificVariable;
 	}
 
 	/**
@@ -220,9 +230,9 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public WriteArgument createWriteArgument() {
-		WriteArgumentImpl writeArgument = new WriteArgumentImpl();
-		return writeArgument;
+	public CommonVariable createCommonVariable() {
+		CommonVariableImpl commonVariable = new CommonVariableImpl();
+		return commonVariable;
 	}
 
 	/**
@@ -230,9 +240,9 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CommonArgument createCommonArgument() {
-		CommonArgumentImpl commonArgument = new CommonArgumentImpl();
-		return commonArgument;
+	public AuxiliaryVariable createAuxiliaryVariable() {
+		AuxiliaryVariableImpl auxiliaryVariable = new AuxiliaryVariableImpl();
+		return auxiliaryVariable;
 	}
 
 	/**
@@ -253,16 +263,6 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 	public BaciType createBaciType() {
 		BaciTypeImpl baciType = new BaciTypeImpl();
 		return baciType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Instance createInstance() {
-		InstanceImpl instance = new InstanceImpl();
-		return instance;
 	}
 
 	/**

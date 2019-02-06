@@ -85,6 +85,15 @@ public interface BaciCodeGenFactory extends EFactory {
 	ComponentInstances createComponentInstances();
 
 	/**
+	 * Returns a new object of class '<em>Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Instance</em>'.
+	 * @generated
+	 */
+	Instance createInstance();
+
+	/**
 	 * Returns a new object of class '<em>Used Dev IOs</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -103,31 +112,31 @@ public interface BaciCodeGenFactory extends EFactory {
 	DevIO createDevIO();
 
 	/**
-	 * Returns a new object of class '<em>Read Argument</em>'.
+	 * Returns a new object of class '<em>Property Specific Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Read Argument</em>'.
+	 * @return a new object of class '<em>Property Specific Variable</em>'.
 	 * @generated
 	 */
-	ReadArgument createReadArgument();
+	PropertySpecificVariable createPropertySpecificVariable();
 
 	/**
-	 * Returns a new object of class '<em>Write Argument</em>'.
+	 * Returns a new object of class '<em>Common Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Write Argument</em>'.
+	 * @return a new object of class '<em>Common Variable</em>'.
 	 * @generated
 	 */
-	WriteArgument createWriteArgument();
+	CommonVariable createCommonVariable();
 
 	/**
-	 * Returns a new object of class '<em>Common Argument</em>'.
+	 * Returns a new object of class '<em>Auxiliary Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Common Argument</em>'.
+	 * @return a new object of class '<em>Auxiliary Variable</em>'.
 	 * @generated
 	 */
-	CommonArgument createCommonArgument();
+	AuxiliaryVariable createAuxiliaryVariable();
 
 	/**
 	 * Returns a new object of class '<em>Used Baci Types</em>'.
@@ -146,15 +155,6 @@ public interface BaciCodeGenFactory extends EFactory {
 	 * @generated
 	 */
 	BaciType createBaciType();
-
-	/**
-	 * Returns a new object of class '<em>Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Instance</em>'.
-	 * @generated
-	 */
-	Instance createInstance();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -9,8 +9,8 @@ import baciCodeGen.CharacteristicComponent;
 import baciCodeGen.ComponentInstances;
 import baciCodeGen.Property;
 import baciCodeGen.UsedBaciTypes;
-
 import baciCodeGen.UsedDevIOs;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -214,27 +214,6 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getModule() {
-		return module;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setModule(String newModule) {
-		String oldModule = module;
-		module = newModule;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__MODULE, oldModule, module));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getName() {
 		return name;
 	}
@@ -249,6 +228,27 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getModule() {
+		return module;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setModule(String newModule) {
+		String oldModule = module;
+		module = newModule;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__MODULE, oldModule, module));
 	}
 
 	/**
@@ -291,6 +291,18 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 		container = newContainer;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__CONTAINER, oldContainer, container));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Action> getActions() {
+		if (actions == null) {
+			actions = new EObjectContainmentEList<Action>(Action.class, this, BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__ACTIONS);
+		}
+		return actions;
 	}
 
 	/**
@@ -358,18 +370,6 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES, newComponentInstances, newComponentInstances));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Action> getActions() {
-		if (actions == null) {
-			actions = new EObjectContainmentEList<Action>(Action.class, this, BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__ACTIONS);
-		}
-		return actions;
 	}
 
 	/**

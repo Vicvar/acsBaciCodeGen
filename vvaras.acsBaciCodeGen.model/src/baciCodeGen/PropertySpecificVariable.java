@@ -1,0 +1,76 @@
+/**
+ */
+package baciCodeGen;
+
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Property Specific Variable</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link baciCodeGen.PropertySpecificVariable#isIsRead <em>Is Read</em>}</li>
+ *   <li>{@link baciCodeGen.PropertySpecificVariable#isIsWrite <em>Is Write</em>}</li>
+ * </ul>
+ *
+ * @see baciCodeGen.BaciCodeGenPackage#getPropertySpecificVariable()
+ * @model
+ * @generated
+ */
+public interface PropertySpecificVariable extends DevIOVariable {
+	/**
+	 * Returns the value of the '<em><b>Is Read</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Read</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Read</em>' attribute.
+	 * @see #setIsRead(boolean)
+	 * @see baciCodeGen.BaciCodeGenPackage#getPropertySpecificVariable_IsRead()
+	 * @model
+	 * @generated
+	 */
+	boolean isIsRead();
+
+	/**
+	 * Sets the value of the '{@link baciCodeGen.PropertySpecificVariable#isIsRead <em>Is Read</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Read</em>' attribute.
+	 * @see #isIsRead()
+	 * @generated
+	 */
+	void setIsRead(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Write</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Write</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Write</em>' attribute.
+	 * @see #setIsWrite(boolean)
+	 * @see baciCodeGen.BaciCodeGenPackage#getPropertySpecificVariable_IsWrite()
+	 * @model
+	 * @generated
+	 */
+	boolean isIsWrite();
+
+	/**
+	 * Sets the value of the '{@link baciCodeGen.PropertySpecificVariable#isIsWrite <em>Is Write</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Write</em>' attribute.
+	 * @see #isIsWrite()
+	 * @generated
+	 */
+	void setIsWrite(boolean value);
+
+} // PropertySpecificVariable

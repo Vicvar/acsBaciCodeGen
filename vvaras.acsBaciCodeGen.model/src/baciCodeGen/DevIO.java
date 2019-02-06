@@ -3,6 +3,7 @@
 package baciCodeGen;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,9 +17,9 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link baciCodeGen.DevIO#getName <em>Name</em>}</li>
  *   <li>{@link baciCodeGen.DevIO#getRequiredLibraries <em>Required Libraries</em>}</li>
- *   <li>{@link baciCodeGen.DevIO#getReadArguments <em>Read Arguments</em>}</li>
- *   <li>{@link baciCodeGen.DevIO#getWriteArguments <em>Write Arguments</em>}</li>
- *   <li>{@link baciCodeGen.DevIO#getCommonArguments <em>Common Arguments</em>}</li>
+ *   <li>{@link baciCodeGen.DevIO#getPropertySpecificVariables <em>Property Specific Variables</em>}</li>
+ *   <li>{@link baciCodeGen.DevIO#getCommonVariables <em>Common Variables</em>}</li>
+ *   <li>{@link baciCodeGen.DevIO#getAuxiliaryVariables <em>Auxiliary Variables</em>}</li>
  * </ul>
  *
  * @see baciCodeGen.BaciCodeGenPackage#getDevIO()
@@ -37,7 +38,7 @@ public interface DevIO extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see baciCodeGen.BaciCodeGenPackage#getDevIO_Name()
-	 * @model
+	 * @model id="true"
 	 * @generated
 	 */
 	String getName();
@@ -79,51 +80,51 @@ public interface DevIO extends EObject {
 	void setRequiredLibraries(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Read Arguments</b></em>' containment reference list.
-	 * The list contents are of type {@link baciCodeGen.ReadArgument}.
+	 * Returns the value of the '<em><b>Property Specific Variables</b></em>' containment reference list.
+	 * The list contents are of type {@link baciCodeGen.PropertySpecificVariable}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Read Arguments</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Property Specific Variables</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Read Arguments</em>' containment reference list.
-	 * @see baciCodeGen.BaciCodeGenPackage#getDevIO_ReadArguments()
+	 * @return the value of the '<em>Property Specific Variables</em>' containment reference list.
+	 * @see baciCodeGen.BaciCodeGenPackage#getDevIO_PropertySpecificVariables()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ReadArgument> getReadArguments();
+	EList<PropertySpecificVariable> getPropertySpecificVariables();
 
 	/**
-	 * Returns the value of the '<em><b>Write Arguments</b></em>' containment reference list.
-	 * The list contents are of type {@link baciCodeGen.WriteArgument}.
+	 * Returns the value of the '<em><b>Common Variables</b></em>' containment reference list.
+	 * The list contents are of type {@link baciCodeGen.CommonVariable}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Write Arguments</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Common Variables</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Write Arguments</em>' containment reference list.
-	 * @see baciCodeGen.BaciCodeGenPackage#getDevIO_WriteArguments()
+	 * @return the value of the '<em>Common Variables</em>' containment reference list.
+	 * @see baciCodeGen.BaciCodeGenPackage#getDevIO_CommonVariables()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<WriteArgument> getWriteArguments();
+	EList<CommonVariable> getCommonVariables();
 
 	/**
-	 * Returns the value of the '<em><b>Common Arguments</b></em>' containment reference list.
-	 * The list contents are of type {@link baciCodeGen.CommonArgument}.
+	 * Returns the value of the '<em><b>Auxiliary Variables</b></em>' containment reference list.
+	 * The list contents are of type {@link baciCodeGen.AuxiliaryVariable}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Common Arguments</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Auxiliary Variables</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Common Arguments</em>' containment reference list.
-	 * @see baciCodeGen.BaciCodeGenPackage#getDevIO_CommonArguments()
+	 * @return the value of the '<em>Auxiliary Variables</em>' containment reference list.
+	 * @see baciCodeGen.BaciCodeGenPackage#getDevIO_AuxiliaryVariables()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<CommonArgument> getCommonArguments();
+	EList<AuxiliaryVariable> getAuxiliaryVariables();
 
 } // DevIO
