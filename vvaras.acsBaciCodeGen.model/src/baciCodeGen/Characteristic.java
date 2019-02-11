@@ -33,7 +33,7 @@ public interface Characteristic extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see baciCodeGen.BaciCodeGenPackage#getCharacteristic_Name()
-	 * @model id="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();

@@ -40,7 +40,7 @@ public class BaciTypeImpl extends MinimalEObjectImpl.Container implements BaciTy
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = "";
 
 	/**
 	 * The default value of the '{@link #getAccessType() <em>Access Type</em>}' attribute.

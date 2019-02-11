@@ -37,8 +37,9 @@
 #define _[cName.toUpperCase()/]_IDL_
 
 #include <baci.idl>
-
-#pragma prefix "[cPrefix/]"
+[if (aCharacteristicComponent.eClass().eIsSet(aCharacteristicComponent.eClass().getEStructuralFeature('prefix')))]
+#pragma prefix "[cPrefix/]"	
+[/if]
 
 module [cModule/]
 {	
@@ -114,7 +115,7 @@ module [cModule/]
 	[for (it : Instance | aCharacteristicComponent.componentInstances.instances)]
 	<_ Name="[it.name/]"
 		Code="[cName/]Impl"        
-		Type="IDL:[cPrefix/]/[cModule/]/[cName/]:1.0"
+		Type="IDL:[if(aCharacteristicComponent.eClass().eIsSet(aCharacteristicComponent.eClass().getEStructuralFeature('prefix')))][cPrefix/]/[/if][cModule/]/[cName/]:1.0"
 		[comment Templates are laguaje specific, so container ImplLang is not modeled /]
 		Container="[cContainerName/]" ImplLang="cpp"
 		[comment Check when does this go/]
@@ -138,6 +139,7 @@ module [cModule/]
 	xmlns:baci="urn:schemas-cosylab-com:BACI:1.0"
 	xmlns:cdb="urn:schemas-cosylab-com:CDB:1.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	[if (not aCharacteristicComponent.properties->isEmpty())]
 	[for (it2 : Attribute | aCharacteristicComponent.attributes) separator('\n')]
 	[it2.name/]="[it2.value/]"[/for]>
 	[for (it2 : Property | aCharacteristicComponent.properties)]
@@ -145,7 +147,11 @@ module [cModule/]
 		[for (it3 : Characteristic | it2.characteristics) separator('\n\t\t')][it3.name/]="[it3.value/]"[/for]/>
 	[/for]
 </[cName/]>
-
+	[else]
+	[for (it2 : Attribute | aCharacteristicComponent.attributes) separator('\n')]
+	[it2.name/]="[it2.value/]"[/for] 
+	/>
+	[/if]
 [/file]
 [/for]
 
@@ -268,31 +274,30 @@ void [cName/]_impl::initialize() throw (acsErrTypeLifeCycle::acsErrTypeLifeCycle
 {
 	/*Suggested variables to be initialized
 	[for (it : DevIO | aCharacteristicComponent.usedDevIOs.devIOs)]
-	/***DevIO: [it.name/]
-	/**Auxiliary variables
-	[for (it2 : AuxiliaryVariable | it.auxiliaryVariables->select(a | a.eIsSet(a.eClass().getEStructuralFeature('value'))))]
+	 ***DevIO: [it.name/]****
+	 **Auxiliary variables:**
+	[comment Fix this, select is not working properly /]
+	[for (it2 : AuxiliaryVariable | it.auxiliaryVariables->select(a | not a.eIsSet(a.eClass().getEStructuralFeature('value'))))]
 	 *([it2.type/]) [it2.name/];
 	[/for]
-	/**Common Variables
-	[for (it2 : CommonVariable | it.commonVariables->select(a | a.eIsSet(a.eClass().getEStructuralFeature('value'))))]
+	 **Common Variables:**
+	[for (it2 : CommonVariable | it.commonVariables->select(a | not a.eIsSet(a.eClass().getEStructuralFeature('value'))))]
 	 *([it2.type/]) [it2.name/];
 	[/for]
 	[/for]
-	/***Property Specific Variables
-	[for (it : Property | aCharacteristicComponent.properties)][for (it2 : PropertySpecificVariable | it.devIO.propertySpecificVariables)][if (it2.isRead)]['\t *'/]([it2.type/]) r_[it.name/]_[it2.name/];[/if][if (it2.isWrite)]['\t *'/]([it2.type/]) w_[it.name/]_[it2.name/];[/if]
-	[/for]
-	[/for]
+	 ***Property Specific Variables:***
+	[for (it : Property | aCharacteristicComponent.properties)][for (it2 : PropertySpecificVariable | it.devIO.propertySpecificVariables)][if (it2.isRead)]['\n\t *'/]r_[it.name/]_[it2.name/];[/if][if (it2.isWrite)]['\n\t *'/]w_[it.name/]_[it2.name/];[/if][/for][/for]
 	 */
 	
 	 [for (it : DevIO | aCharacteristicComponent.usedDevIOs.devIOs)]
 	/**DevIO: [it.name/]**/
 	/*Aux variables*/
-	[for (it2 : AuxiliaryVariable | it.auxiliaryVariables)]
-	[it2.name/][if (it2.eIsSet(it2.eClass().getEStructuralFeature('value')))]= [it2.value/][/if];
+	[for (it2 : AuxiliaryVariable | it.auxiliaryVariables->select( a | a.eIsSet(a.eClass().getEStructuralFeature('value'))))]
+	[it2.name/] = [it2.value/];
 	[/for]
 	/*Common Variables*/
-	[for (it2 : CommonVariable | it.commonVariables)]
-	[it2.name/][if (it2.eIsSet(it2.eClass().getEStructuralFeature('value')))]= [it2.value/][/if];
+	[for (it2 : CommonVariable | it.commonVariables->select( a | a.eIsSet(a.eClass().getEStructuralFeature('value'))))]
+	[it2.name/] = [it2.value/];
 	[/for]
 	[/for]
 
@@ -303,12 +308,12 @@ void [cName/]_impl::initialize() throw (acsErrTypeLifeCycle::acsErrTypeLifeCycle
 	/*Property initialization*/
 	[for (it : Property | aCharacteristicComponent.properties)]
 	
-	[it.name/]_devio_m = new [it.devIO.name/]::[it.devIO.name/]_read([for(it2 : CommonVariable | it.devIO.commonVariables->select( a | a.isRead)) separator(', ')][it2.name/][/for][if(not it.devIO.commonVariables->select( a | a.isRead)->isEmpty() and  not it.devIO.propertySpecificVariables->select(a | a.isRead)->isEmpty())], [/if][for (it2 : PropertySpecificVariable | it.devIO.propertySpecificVariables->select(a | a.isRead)) separator(', ')]r_[it2.name/]_[it.name/][/for]);
+	[it.name/]_devio_m = new [it.devIO.name/]::[it.devIO.name/]_read([for(it2 : CommonVariable | it.devIO.commonVariables->select( a | a.isRead)) separator(', ')][it2.name/][/for][if(not it.devIO.commonVariables->select( a | a.isRead)->isEmpty() and  not it.devIO.propertySpecificVariables->select(a | a.isRead)->isEmpty())], [/if][for (it2 : PropertySpecificVariable | it.devIO.propertySpecificVariables->select(a | a.isRead)) separator(', ')]r_[it.name/]_[it2.name/][/for]);
 	[/for]
 
 	[for (it : Property | aCharacteristicComponent.properties)]
 	
-	[it.name/]_devio_w = new [it.devIO.name/]::[it.devIO.name/]_write([for(it2 : CommonVariable | it.devIO.commonVariables->select( a | a.isWrite)) separator(', ')][it2.name/][/for][if(not it.devIO.commonVariables->select( a | a.isWrite)->isEmpty() and  not it.devIO.propertySpecificVariables->select(a | a.isWrite)->isEmpty())], [/if][for (it2 : PropertySpecificVariable | it.devIO.propertySpecificVariables->select(a | a.isWrite)) separator(', ')]w_[it2.name/]_[it.name/][/for]);
+	[it.name/]_devio_w = new [it.devIO.name/]::[it.devIO.name/]_write([for(it2 : CommonVariable | it.devIO.commonVariables->select( a | a.isWrite)) separator(', ')][it2.name/][/for][if(not it.devIO.commonVariables->select( a | a.isWrite)->isEmpty() and  not it.devIO.propertySpecificVariables->select(a | a.isWrite)->isEmpty())], [/if][for (it2 : PropertySpecificVariable | it.devIO.propertySpecificVariables->select(a | a.isWrite)) separator(', ')]w_[it.name/]_[it2.name/][/for]);
 	[/for]
 
 	[for (it : Property | aCharacteristicComponent.properties)]

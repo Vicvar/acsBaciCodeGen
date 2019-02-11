@@ -140,7 +140,7 @@ namespace Sensors
     virtual ::ACS::ROdouble_ptr light (
       void);
 
-    virtual ::ACS::RWlong_ptr lala (
+    virtual ::ACS::ROdouble_ptr lala (
       void);
 
     virtual void on (

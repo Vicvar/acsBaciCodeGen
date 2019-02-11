@@ -197,7 +197,7 @@ Sensors::CosmeFulanito::light (
 // TAO_IDL - Generated from
 // be/be_visitor_operation/operation_cs.cpp:88
 
-::ACS::RWlong_ptr
+::ACS::ROdouble_ptr
 Sensors::CosmeFulanito::lala (
   void)
 {
@@ -206,7 +206,7 @@ Sensors::CosmeFulanito::lala (
       ::CORBA::Object::tao_object_initialize (this);
     }
   
-  TAO::Arg_Traits< ::ACS::RWlong>::ret_val _tao_retval;
+  TAO::Arg_Traits< ::ACS::ROdouble>::ret_val _tao_retval;
 
   TAO::Argument *_the_tao_operation_signature [] =
     {
@@ -429,7 +429,7 @@ Sensors::CosmeFulanito::_narrow (
   return
     TAO::Narrow_Utils<CosmeFulanito>::narrow (
         _tao_objref,
-        "IDL:alma/Sensors/CosmeFulanito:1.0");
+        "IDL:Sensors/CosmeFulanito:1.0");
 }
 
 Sensors::CosmeFulanito_ptr
@@ -481,7 +481,7 @@ Sensors::CosmeFulanito::_is_a (const char *value)
         ) == 0 ||
       ACE_OS::strcmp (
           value,
-          "IDL:alma/Sensors/CosmeFulanito:1.0"
+          "IDL:Sensors/CosmeFulanito:1.0"
         ) == 0 ||
       ACE_OS::strcmp (
           value,
@@ -499,7 +499,7 @@ Sensors::CosmeFulanito::_is_a (const char *value)
 
 const char* Sensors::CosmeFulanito::_interface_repository_id (void) const
 {
-  return "IDL:alma/Sensors/CosmeFulanito:1.0";
+  return "IDL:Sensors/CosmeFulanito:1.0";
 }
 
 ::CORBA::Boolean
@@ -515,7 +515,7 @@ static TAO::TypeCode::Objref<char const *,
                              TAO::Null_RefCount_Policy>
   _tao_tc_Sensors_CosmeFulanito (
     ::CORBA::tk_objref,
-    "IDL:alma/Sensors/CosmeFulanito:1.0",
+    "IDL:Sensors/CosmeFulanito:1.0",
     "CosmeFulanito");
   
 

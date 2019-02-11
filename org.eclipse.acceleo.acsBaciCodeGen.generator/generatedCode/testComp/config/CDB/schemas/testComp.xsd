@@ -11,7 +11,7 @@
 		<xs:complexContent>
 			<xs:extension base="baci:CharacteristicComponent">
 				<xs:sequence>
-					<xs:element name="p1" type="baci:ROboolean"/>
+					<xs:element name="testProp" type="baci:ROdouble"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>

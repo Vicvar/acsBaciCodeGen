@@ -22,6 +22,7 @@ package baciCodeGen;
 public interface AuxiliaryVariable extends DevIOVariable {
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
@@ -31,7 +32,7 @@ public interface AuxiliaryVariable extends DevIOVariable {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see baciCodeGen.BaciCodeGenPackage#getAuxiliaryVariable_Value()
-	 * @model
+	 * @model default=""
 	 * @generated
 	 */
 	String getValue();

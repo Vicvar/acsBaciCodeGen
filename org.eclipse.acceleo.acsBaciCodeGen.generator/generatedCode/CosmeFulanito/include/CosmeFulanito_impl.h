@@ -6,12 +6,8 @@
 #include <baciCharacteristicComponentImpl.h>
 #include <baciSmartPropertyPointer.h>
 #include <baciDevIO.h>
-#include <acsThread.h>
 #include <baciROdouble.h>
-#include <baciRWlong.h>
 #include <mqtt_devio.h>
-
-class CosmeFulanito_thread;
 
 class CosmeFulanito_impl : public virtual POA_Sensors::CosmeFulanito, public baci::CharacteristicComponentImpl
 {
@@ -31,7 +27,7 @@ class CosmeFulanito_impl : public virtual POA_Sensors::CosmeFulanito, public bac
 		ACS::ROdouble_ptr temperature();
 		ACS::ROdouble_ptr humidity();
 		ACS::ROdouble_ptr light();
-		ACS::RWlong_ptr lala();
+		ACS::ROdouble_ptr lala();
 
 		/*Actions*/
 		void on();
@@ -45,7 +41,7 @@ class CosmeFulanito_impl : public virtual POA_Sensors::CosmeFulanito, public bac
 		baci::SmartPropertyPointer<baci::ROdouble> m_temperature_sp;
 		baci::SmartPropertyPointer<baci::ROdouble> m_humidity_sp;
 		baci::SmartPropertyPointer<baci::ROdouble> m_light_sp;
-		baci::SmartPropertyPointer<baci::RWlong> m_lala_sp;
+		baci::SmartPropertyPointer<baci::ROdouble> m_lala_sp;
 
 		/*DevIO read*/
 		mqtt::mqtt_read * temperature_devio_m;
@@ -59,8 +55,37 @@ class CosmeFulanito_impl : public virtual POA_Sensors::CosmeFulanito, public bac
 		mqtt::mqtt_write * light_devio_w;
 		mqtt::mqtt_write * lala_devio_w;
 
+		std::string component_name; //static variable to initialize smart pointers
+		
+		/*DevIO: mqtt*/
 		/*Aux variables*/
-		std::string component_name;
+		std::string clientID;
+
+		/*Common Variables*/
+		std::string componentBroker;
+
+		/*Property Specific Variables*/
+		
+		std::string r_temperature_componentName;
+		std::string w_temperature_componentName;
+		std::string r_temperature_clientName;
+		std::string w_temperature_clientName;
+		
+		std::string r_humidity_componentName;
+		std::string w_humidity_componentName;
+		std::string r_humidity_clientName;
+		std::string w_humidity_clientName;
+		
+		std::string r_light_componentName;
+		std::string w_light_componentName;
+		std::string r_light_clientName;
+		std::string w_light_clientName;
+		
+		std::string r_lala_componentName;
+		std::string w_lala_componentName;
+		std::string r_lala_clientName;
+		std::string w_lala_clientName;
+		
 };
 
 #endif //_COSMEFULANITO_IMPL_H_

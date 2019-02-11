@@ -4,7 +4,6 @@
 	xmlns:cdb="urn:schemas-cosylab-com:CDB:1.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 >
-	<p1
+	<testProp
 		/>
 </testComp>
-

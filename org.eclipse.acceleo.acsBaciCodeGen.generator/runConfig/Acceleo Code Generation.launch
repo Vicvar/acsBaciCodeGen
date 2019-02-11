@@ -4,7 +4,7 @@
 <booleanAttribute key="org.eclipse.acceleo.ide.ui.COMPUTE_PROFILING" value="false"/>
 <booleanAttribute key="org.eclipse.acceleo.ide.ui.COMPUTE_TRACEABILITY" value="false"/>
 <stringAttribute key="org.eclipse.acceleo.ide.ui.LAUNCHING_STRATEGY_DESCRIPTION" value="Java Application"/>
-<stringAttribute key="org.eclipse.acceleo.ide.ui.MODEL_PATH" value="/baciCodeGenModel/SensorTagInstance/My.bacicodegen"/>
+<stringAttribute key="org.eclipse.acceleo.ide.ui.MODEL_PATH" value="/baciCodeGenModel/SensorTagInstance/SensorTagInstance.bacicodegen"/>
 <stringAttribute key="org.eclipse.acceleo.ide.ui.TARGET_PATH" value="/org.eclipse.acceleo.acsBaciCodeGen.generator/generatedCode"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/org.eclipse.acceleo.acsBaciCodeGen.generator/src/org/eclipse/acceleo/acsBaciCodeGen/generator/common/Generate.java"/>
@@ -17,6 +17,6 @@
 </listAttribute>
 <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.eclipse.acceleo.acsBaciCodeGen.generator.common.Generate"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="&quot;/home/vvaras/runtime-BaciCodeGen-Model/baciCodeGenModel/SensorTagInstance/My.bacicodegen&quot; &quot;/home/vvaras/acsBaciCodeGen/org.eclipse.acceleo.acsBaciCodeGen.generator/generatedCode&quot;"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="&quot;/home/vvaras/runtime-BaciCodeGen-Model/baciCodeGenModel/SensorTagInstance/SensorTagInstance.bacicodegen&quot; &quot;/home/vvaras/acsBaciCodeGen/org.eclipse.acceleo.acsBaciCodeGen.generator/generatedCode&quot;"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="org.eclipse.acceleo.acsBaciCodeGen.generator"/>
 </launchConfiguration>

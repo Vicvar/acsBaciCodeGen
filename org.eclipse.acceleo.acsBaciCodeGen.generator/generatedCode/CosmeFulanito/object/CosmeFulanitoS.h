@@ -160,7 +160,7 @@ namespace POA_Sensors
     // TAO_IDL - Generated from
     // be/be_visitor_operation/operation_sh.cpp:36
 
-    virtual ::ACS::RWlong_ptr lala (
+    virtual ::ACS::ROdouble_ptr lala (
       void) = 0;
 
     static void _get_lala_skel (

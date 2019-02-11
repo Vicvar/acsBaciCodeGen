@@ -3,8 +3,6 @@
 
 #include <baci.idl>
 
-#pragma prefix "alma"
-
 module Sensors
 {	
 	interface CosmeFulanito : ACS::CharacteristicComponent
@@ -17,7 +15,7 @@ module Sensors
 
 		readonly attribute ACS::ROdouble light;
 
-		readonly attribute ACS::RWlong lala;
+		readonly attribute ACS::ROdouble lala;
 
 		/*Actions*/
 

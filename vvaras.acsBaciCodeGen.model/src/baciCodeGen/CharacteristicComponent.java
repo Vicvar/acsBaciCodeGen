@@ -43,7 +43,7 @@ public interface CharacteristicComponent extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see baciCodeGen.BaciCodeGenPackage#getCharacteristicComponent_Name()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 * @generated
 	 */
 	String getName();
@@ -69,7 +69,7 @@ public interface CharacteristicComponent extends EObject {
 	 * @return the value of the '<em>Module</em>' attribute.
 	 * @see #setModule(String)
 	 * @see baciCodeGen.BaciCodeGenPackage#getCharacteristicComponent_Module()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getModule();
@@ -121,7 +121,7 @@ public interface CharacteristicComponent extends EObject {
 	 * @return the value of the '<em>Container</em>' attribute.
 	 * @see #setContainer(String)
 	 * @see baciCodeGen.BaciCodeGenPackage#getCharacteristicComponent_Container()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getContainer();

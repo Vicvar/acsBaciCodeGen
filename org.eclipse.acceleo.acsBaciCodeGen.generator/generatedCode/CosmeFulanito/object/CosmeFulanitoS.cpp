@@ -476,8 +476,8 @@ namespace POA_Sensors
 
     virtual void execute (void)
     {
-      TAO::SArg_Traits< ::ACS::RWlong>::ret_arg_type retval =
-        TAO::Portable_Server::get_ret_arg< ::ACS::RWlong> (
+      TAO::SArg_Traits< ::ACS::ROdouble>::ret_arg_type retval =
+        TAO::Portable_Server::get_ret_arg< ::ACS::ROdouble> (
           this->operation_details_,
           this->args_);
       
@@ -505,7 +505,7 @@ void POA_Sensors::CosmeFulanito::_get_lala_skel (
   static ::CORBA::ULong const nexceptions = 0;
 #endif /* TAO_HAS_INTERCEPTORS */
 
-  TAO::SArg_Traits< ::ACS::RWlong>::ret_val retval;
+  TAO::SArg_Traits< ::ACS::ROdouble>::ret_val retval;
 
   TAO::Argument * const args[] =
     {
@@ -935,7 +935,7 @@ void POA_Sensors::CosmeFulanito::publishHumidity_skel (
         ) == 0 ||
       ACE_OS::strcmp (
           value,
-          "IDL:alma/Sensors/CosmeFulanito:1.0"
+          "IDL:Sensors/CosmeFulanito:1.0"
         ) == 0 ||
       !ACE_OS::strcmp (
           value,
@@ -946,7 +946,7 @@ void POA_Sensors::CosmeFulanito::publishHumidity_skel (
 
 const char* POA_Sensors::CosmeFulanito::_interface_repository_id (void) const
 {
-  return "IDL:alma/Sensors/CosmeFulanito:1.0";
+  return "IDL:Sensors/CosmeFulanito:1.0";
 }
 
 // TAO_IDL - Generated from

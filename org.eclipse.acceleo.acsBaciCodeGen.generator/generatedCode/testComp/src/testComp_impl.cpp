@@ -3,7 +3,7 @@
 /*Constructor*/
 testComp_impl::testComp_impl(const ACE_CString c_name, maci::ContainerServices * containerServices):
 	CharacteristicComponentImpl(c_name, containerServices),
-	m_p1_sp(this)
+	m_testProp_sp(this)
 {
 	component_name=c_name.c_str();
 	ACS_TRACE("::testComp::testComp");
@@ -18,35 +18,45 @@ testComp_impl::~testComp_impl()
 void testComp_impl::initialize() throw (acsErrTypeLifeCycle::acsErrTypeLifeCycleExImpl)
 {
 	/*Suggested variables to be initialized
-	/***DevIO: testDevIO
-	/**Auxiliary variables
-	 *(std::string) av1;
-	/**Common Variables
-	 *(std::string) v1;
-	/***Property Specific Variables
-	 *(std::string) r_p1_clientName;
-	 *(someNs::node) w_p1_somethingElse;
+	 ***DevIO: mqtt****
+	 **Auxiliary variables:**
+	 **Common Variables:**
+	 ***DevIO: ****
+	 **Auxiliary variables:**
+	 **Common Variables:**
+	 ***Property Specific Variables:***
+	
+	 *(std::string) r_testProp_componentName;
+	 *(std::string) w_testProp_componentName;
+	 *(std::string) r_testProp_clientName;
+	 *(std::string) w_testProp_clientName;
 	 */
 	
-	/**DevIO: testDevIO**/
+	/**DevIO: mqtt**/
 	/*Aux variables*/
-	av1= "we";
+	clientID= "0";
 	/*Common Variables*/
-	v1= "123";
+	componentBroker= "tcp://localhost:1883";
+	/**DevIO: **/
+	/*Aux variables*/
+	/*Common Variables*/
 
 	//Start of user code Required Variables
-	
+	 r_testProp_componentName=(component_name + "/testProp").c_str();
+	 w_testProp_componentName=("w/"+component_name + "/testProp").c_str();
+	 r_testProp_clientName=clientID + "/testProp/r";
+	 w_testProp_clientName=clientID + "/testProp/w";
 	//End of user code
 	
 	/*Property initialization*/
 	
-	p1_devio_m = new testDevIO::testDevIO_read(v1, r_clientName_p1);
+	testProp_devio_m = new mqtt::mqtt_read(componentBroker, r_testProp_componentName, r_testProp_clientName);
 
 	
-	p1_devio_w = new testDevIO::testDevIO_write(v1, w_somethingElse_p1);
+	testProp_devio_w = new mqtt::mqtt_write(componentBroker, w_testProp_componentName, w_testProp_clientName);
 
 	
-	m_p1_sp = new baci::ROboolean((component_name+":p1").c_str(), getComponent(), p1_devio_m);
+	m_testProp_sp = new baci::ROdouble((component_name+":testProp").c_str(), getComponent(), testProp_devio_m);
 
 
 	//Start of user code initialize implementation
@@ -63,8 +73,8 @@ void testComp_impl::execute() throw (acsErrTypeLifeCycle::acsErrTypeLifeCycleExI
 
 void testComp_impl::cleanUp()
 {
-	delete p1_devio_m;
-	delete p1_devio_w;
+	delete testProp_devio_m;
+	delete testProp_devio_w;
 
 	//Start of user code cleanUp implementation
 	
@@ -80,11 +90,11 @@ void testComp_impl::aboutToAbort()
 
 /*Properties implementation*/
 
-ACS::ROboolean_ptr testComp_impl::p1()
+ACS::ROdouble_ptr testComp_impl::testProp()
 {
-	if(m_p1_sp == 0)
-		return ACS::ROboolean::_nil();
-	ACS::ROboolean_var prop = ACS::ROboolean::_narrow(m_p1_sp->getCORBAReference());
+	if(m_testProp_sp == 0)
+		return ACS::ROdouble::_nil();
+	ACS::ROdouble_var prop = ACS::ROdouble::_narrow(m_testProp_sp->getCORBAReference());
 	return prop._retn();
 }
 

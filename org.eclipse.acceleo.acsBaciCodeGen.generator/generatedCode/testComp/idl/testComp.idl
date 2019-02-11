@@ -3,15 +3,13 @@
 
 #include <baci.idl>
 
-#pragma prefix ""
-
-module 
+module TEST
 {	
 	interface testComp : ACS::CharacteristicComponent
 	{
 		/*Properties*/
 
-		readonly attribute ACS::ROboolean p1;
+		readonly attribute ACS::ROdouble testProp;
 
 		/*Actions*/
 	};

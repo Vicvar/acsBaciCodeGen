@@ -5,13 +5,13 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<_ Name="MustacheSensorTag"
 		Code="CosmeFulanitoImpl"        
-		Type="IDL:alma/Sensors/CosmeFulanito:1.0"
+		Type="IDL:Sensors/CosmeFulanito:1.0"
 		Container="bilboContainer" ImplLang="cpp"
 		Autostart="true" 
 		Default="true" />
 	<_ Name="DefinetelyNotSensorTag"
 		Code="CosmeFulanitoImpl"        
-		Type="IDL:alma/Sensors/CosmeFulanito:1.0"
+		Type="IDL:Sensors/CosmeFulanito:1.0"
 		Container="bilboContainer" ImplLang="cpp"
 		Autostart="true" 
 		Default="true" />

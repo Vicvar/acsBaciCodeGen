@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface BaciType extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
@@ -34,7 +35,7 @@ public interface BaciType extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see baciCodeGen.BaciCodeGenPackage#getBaciType_Name()
-	 * @model id="true" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model default="" id="true" required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 * @generated
 	 */
 	String getName();

@@ -3,10 +3,10 @@
 	xmlns:cdb="urn:schemas-cosylab-com:CDB:1.0" 
 	xmlns:baci="urn:schemas-cosylab-com:BACI:1.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<_ Name="testInst"
+	<_ Name="testComp1"
 		Code="testCompImpl"        
-		Type="IDL://testComp:1.0"
-		Container="" ImplLang="cpp"
+		Type="IDL:TEST/testComp:1.0"
+		Container="bilboContainer" ImplLang="cpp"
 		Autostart="true" 
 		Default="true" />
 </Components>
