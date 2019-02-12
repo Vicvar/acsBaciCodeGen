@@ -58,15 +58,6 @@ public interface BaciCodeGenFactory extends EFactory {
 	Parameter createParameter();
 
 	/**
-	 * Returns a new object of class '<em>Characteristic</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Characteristic</em>'.
-	 * @generated
-	 */
-	Characteristic createCharacteristic();
-
-	/**
 	 * Returns a new object of class '<em>Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,6 +83,15 @@ public interface BaciCodeGenFactory extends EFactory {
 	 * @generated
 	 */
 	Instance createInstance();
+
+	/**
+	 * Returns a new object of class '<em>Characteristic</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Characteristic</em>'.
+	 * @generated
+	 */
+	Characteristic createCharacteristic();
 
 	/**
 	 * Returns a new object of class '<em>Used Dev IOs</em>'.

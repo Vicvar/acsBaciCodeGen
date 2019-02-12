@@ -90,12 +90,6 @@ public class BaciCodeGenSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BaciCodeGenPackage.CHARACTERISTIC: {
-				Characteristic characteristic = (Characteristic)theEObject;
-				T result = caseCharacteristic(characteristic);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case BaciCodeGenPackage.ATTRIBUTE: {
 				Attribute attribute = (Attribute)theEObject;
 				T result = caseAttribute(attribute);
@@ -111,6 +105,12 @@ public class BaciCodeGenSwitch<T> extends Switch<T> {
 			case BaciCodeGenPackage.INSTANCE: {
 				Instance instance = (Instance)theEObject;
 				T result = caseInstance(instance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BaciCodeGenPackage.CHARACTERISTIC: {
+				Characteristic characteristic = (Characteristic)theEObject;
+				T result = caseCharacteristic(characteristic);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -230,21 +230,6 @@ public class BaciCodeGenSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Characteristic</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Characteristic</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCharacteristic(Characteristic object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -286,6 +271,21 @@ public class BaciCodeGenSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseInstance(Instance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Characteristic</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Characteristic</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCharacteristic(Characteristic object) {
 		return null;
 	}
 

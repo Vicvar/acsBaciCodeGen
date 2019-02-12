@@ -84,10 +84,6 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 				return createParameterAdapter();
 			}
 			@Override
-			public Adapter caseCharacteristic(Characteristic object) {
-				return createCharacteristicAdapter();
-			}
-			@Override
 			public Adapter caseAttribute(Attribute object) {
 				return createAttributeAdapter();
 			}
@@ -98,6 +94,10 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseInstance(Instance object) {
 				return createInstanceAdapter();
+			}
+			@Override
+			public Adapter caseCharacteristic(Characteristic object) {
+				return createCharacteristicAdapter();
 			}
 			@Override
 			public Adapter caseUsedDevIOs(UsedDevIOs object) {
@@ -208,20 +208,6 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link baciCodeGen.Characteristic <em>Characteristic</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see baciCodeGen.Characteristic
-	 * @generated
-	 */
-	public Adapter createCharacteristicAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link baciCodeGen.Attribute <em>Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -260,6 +246,20 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link baciCodeGen.Characteristic <em>Characteristic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see baciCodeGen.Characteristic
+	 * @generated
+	 */
+	public Adapter createCharacteristicAdapter() {
 		return null;
 	}
 

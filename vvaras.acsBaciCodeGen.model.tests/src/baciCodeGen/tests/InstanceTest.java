@@ -13,6 +13,13 @@ import junit.textui.TestRunner;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Instance</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are tested:
+ * <ul>
+ *   <li>{@link baciCodeGen.Instance#getContainingComponentInstances() <em>Containing Component Instances</em>}</li>
+ *   <li>{@link baciCodeGen.Instance#getInstanceCharacteristics() <em>Instance Characteristics</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class InstanceTest extends TestCase {
@@ -84,6 +91,71 @@ public class InstanceTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link baciCodeGen.Instance#getContainingComponentInstances() <em>Containing Component Instances</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.Instance#getContainingComponentInstances()
+	 * @generated
+	 */
+	public void testGetContainingComponentInstances() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link baciCodeGen.Instance#setContainingComponentInstances(baciCodeGen.ComponentInstances) <em>Containing Component Instances</em>}' feature setter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.Instance#setContainingComponentInstances(baciCodeGen.ComponentInstances)
+	 * @generated
+	 */
+	public void testSetContainingComponentInstances() {
+		// TODO: implement this feature setter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link baciCodeGen.Instance#getInstanceCharacteristics() <em>Instance Characteristics</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.Instance#getInstanceCharacteristics()
+	 * @generated
+	 */
+	public void testGetInstanceCharacteristics() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link baciCodeGen.Instance#unsetInstanceCharacteristics() <em>unsetInstanceCharacteristics()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.Instance#unsetInstanceCharacteristics()
+	 * @generated
+	 */
+	public void testUnsetInstanceCharacteristics() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link baciCodeGen.Instance#isSetInstanceCharacteristics() <em>isSetInstanceCharacteristics()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.Instance#isSetInstanceCharacteristics()
+	 * @generated
+	 */
+	public void testIsSetInstanceCharacteristics() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //InstanceTest

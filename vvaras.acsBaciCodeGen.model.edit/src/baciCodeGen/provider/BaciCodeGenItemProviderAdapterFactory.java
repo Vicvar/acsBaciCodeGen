@@ -164,29 +164,6 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link baciCodeGen.Characteristic} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CharacteristicItemProvider characteristicItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link baciCodeGen.Characteristic}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCharacteristicAdapter() {
-		if (characteristicItemProvider == null) {
-			characteristicItemProvider = new CharacteristicItemProvider(this);
-		}
-
-		return characteristicItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link baciCodeGen.Attribute} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -253,6 +230,29 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 		}
 
 		return instanceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.Characteristic} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CharacteristicItemProvider characteristicItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link baciCodeGen.Characteristic}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCharacteristicAdapter() {
+		if (characteristicItemProvider == null) {
+			characteristicItemProvider = new CharacteristicItemProvider(this);
+		}
+
+		return characteristicItemProvider;
 	}
 
 	/**
@@ -519,10 +519,10 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 		if (propertyItemProvider != null) propertyItemProvider.dispose();
 		if (actionItemProvider != null) actionItemProvider.dispose();
 		if (parameterItemProvider != null) parameterItemProvider.dispose();
-		if (characteristicItemProvider != null) characteristicItemProvider.dispose();
 		if (attributeItemProvider != null) attributeItemProvider.dispose();
 		if (componentInstancesItemProvider != null) componentInstancesItemProvider.dispose();
 		if (instanceItemProvider != null) instanceItemProvider.dispose();
+		if (characteristicItemProvider != null) characteristicItemProvider.dispose();
 		if (usedDevIOsItemProvider != null) usedDevIOsItemProvider.dispose();
 		if (devIOItemProvider != null) devIOItemProvider.dispose();
 		if (propertySpecificVariableItemProvider != null) propertySpecificVariableItemProvider.dispose();

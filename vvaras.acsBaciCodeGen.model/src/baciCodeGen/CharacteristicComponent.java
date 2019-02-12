@@ -186,6 +186,7 @@ public interface CharacteristicComponent extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Component Instances</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link baciCodeGen.ComponentInstances#getContainingCaracteristicComponent <em>Containing Caracteristic Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Component Instances</em>' containment reference isn't clear,
@@ -195,7 +196,8 @@ public interface CharacteristicComponent extends EObject {
 	 * @return the value of the '<em>Component Instances</em>' containment reference.
 	 * @see #setComponentInstances(ComponentInstances)
 	 * @see baciCodeGen.BaciCodeGenPackage#getCharacteristicComponent_ComponentInstances()
-	 * @model containment="true" required="true"
+	 * @see baciCodeGen.ComponentInstances#getContainingCaracteristicComponent
+	 * @model opposite="containingCaracteristicComponent" containment="true" required="true"
 	 * @generated
 	 */
 	ComponentInstances getComponentInstances();

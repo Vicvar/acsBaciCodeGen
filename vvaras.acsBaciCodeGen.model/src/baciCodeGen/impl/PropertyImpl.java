@@ -4,25 +4,16 @@ package baciCodeGen.impl;
 
 import baciCodeGen.BaciCodeGenPackage;
 import baciCodeGen.BaciType;
-import baciCodeGen.Characteristic;
 import baciCodeGen.DevIO;
 import baciCodeGen.Property;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +24,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link baciCodeGen.impl.PropertyImpl#getName <em>Name</em>}</li>
- *   <li>{@link baciCodeGen.impl.PropertyImpl#getCharacteristics <em>Characteristics</em>}</li>
  *   <li>{@link baciCodeGen.impl.PropertyImpl#getBaciType <em>Baci Type</em>}</li>
  *   <li>{@link baciCodeGen.impl.PropertyImpl#getDevIO <em>Dev IO</em>}</li>
  * </ul>
@@ -60,16 +50,6 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getCharacteristics() <em>Characteristics</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCharacteristics()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Characteristic> characteristics;
 
 	/**
 	 * The cached value of the '{@link #getBaciType() <em>Baci Type</em>}' reference.
@@ -129,18 +109,6 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.PROPERTY__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Characteristic> getCharacteristics() {
-		if (characteristics == null) {
-			characteristics = new EObjectContainmentEList<Characteristic>(Characteristic.class, this, BaciCodeGenPackage.PROPERTY__CHARACTERISTICS);
-		}
-		return characteristics;
 	}
 
 	/**
@@ -225,26 +193,10 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case BaciCodeGenPackage.PROPERTY__CHARACTERISTICS:
-				return ((InternalEList<?>)getCharacteristics()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BaciCodeGenPackage.PROPERTY__NAME:
 				return getName();
-			case BaciCodeGenPackage.PROPERTY__CHARACTERISTICS:
-				return getCharacteristics();
 			case BaciCodeGenPackage.PROPERTY__BACI_TYPE:
 				if (resolve) return getBaciType();
 				return basicGetBaciType();
@@ -260,16 +212,11 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BaciCodeGenPackage.PROPERTY__NAME:
 				setName((String)newValue);
-				return;
-			case BaciCodeGenPackage.PROPERTY__CHARACTERISTICS:
-				getCharacteristics().clear();
-				getCharacteristics().addAll((Collection<? extends Characteristic>)newValue);
 				return;
 			case BaciCodeGenPackage.PROPERTY__BACI_TYPE:
 				setBaciType((BaciType)newValue);
@@ -292,9 +239,6 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 			case BaciCodeGenPackage.PROPERTY__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case BaciCodeGenPackage.PROPERTY__CHARACTERISTICS:
-				getCharacteristics().clear();
-				return;
 			case BaciCodeGenPackage.PROPERTY__BACI_TYPE:
 				setBaciType((BaciType)null);
 				return;
@@ -315,8 +259,6 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 		switch (featureID) {
 			case BaciCodeGenPackage.PROPERTY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case BaciCodeGenPackage.PROPERTY__CHARACTERISTICS:
-				return characteristics != null && !characteristics.isEmpty();
 			case BaciCodeGenPackage.PROPERTY__BACI_TYPE:
 				return baciType != null;
 			case BaciCodeGenPackage.PROPERTY__DEV_IO:

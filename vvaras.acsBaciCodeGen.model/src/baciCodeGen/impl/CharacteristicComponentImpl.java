@@ -362,9 +362,9 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 		if (newComponentInstances != componentInstances) {
 			NotificationChain msgs = null;
 			if (componentInstances != null)
-				msgs = ((InternalEObject)componentInstances).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES, null, msgs);
+				msgs = ((InternalEObject)componentInstances).eInverseRemove(this, BaciCodeGenPackage.COMPONENT_INSTANCES__CONTAINING_CARACTERISTIC_COMPONENT, ComponentInstances.class, msgs);
 			if (newComponentInstances != null)
-				msgs = ((InternalEObject)newComponentInstances).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES, null, msgs);
+				msgs = ((InternalEObject)newComponentInstances).eInverseAdd(this, BaciCodeGenPackage.COMPONENT_INSTANCES__CONTAINING_CARACTERISTIC_COMPONENT, ComponentInstances.class, msgs);
 			msgs = basicSetComponentInstances(newComponentInstances, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -456,6 +456,22 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_DEV_IOS, newUsedDevIOs, newUsedDevIOs));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES:
+				if (componentInstances != null)
+					msgs = ((InternalEObject)componentInstances).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES, null, msgs);
+				return basicSetComponentInstances((ComponentInstances)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

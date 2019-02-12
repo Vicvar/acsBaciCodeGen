@@ -61,10 +61,10 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 			case BaciCodeGenPackage.PROPERTY: return createProperty();
 			case BaciCodeGenPackage.ACTION: return createAction();
 			case BaciCodeGenPackage.PARAMETER: return createParameter();
-			case BaciCodeGenPackage.CHARACTERISTIC: return createCharacteristic();
 			case BaciCodeGenPackage.ATTRIBUTE: return createAttribute();
 			case BaciCodeGenPackage.COMPONENT_INSTANCES: return createComponentInstances();
 			case BaciCodeGenPackage.INSTANCE: return createInstance();
+			case BaciCodeGenPackage.CHARACTERISTIC: return createCharacteristic();
 			case BaciCodeGenPackage.USED_DEV_IOS: return createUsedDevIOs();
 			case BaciCodeGenPackage.DEV_IO: return createDevIO();
 			case BaciCodeGenPackage.PROPERTY_SPECIFIC_VARIABLE: return createPropertySpecificVariable();
@@ -160,16 +160,6 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Characteristic createCharacteristic() {
-		CharacteristicImpl characteristic = new CharacteristicImpl();
-		return characteristic;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Attribute createAttribute() {
 		AttributeImpl attribute = new AttributeImpl();
 		return attribute;
@@ -193,6 +183,16 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 	public Instance createInstance() {
 		InstanceImpl instance = new InstanceImpl();
 		return instance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Characteristic createCharacteristic() {
+		CharacteristicImpl characteristic = new CharacteristicImpl();
+		return characteristic;
 	}
 
 	/**

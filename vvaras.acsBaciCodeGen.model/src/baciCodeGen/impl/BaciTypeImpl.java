@@ -123,6 +123,7 @@ public class BaciTypeImpl extends MinimalEObjectImpl.Container implements BaciTy
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Creates the name for the BaciType that is derived from its sub-types
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */

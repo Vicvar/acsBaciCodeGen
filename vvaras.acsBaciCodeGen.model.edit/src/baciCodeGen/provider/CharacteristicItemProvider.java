@@ -60,10 +60,33 @@ public class CharacteristicItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addIDPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the ID feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIDPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Characteristic_ID_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Characteristic_ID_feature", "_UI_Characteristic_type"),
+				 BaciCodeGenPackage.Literals.CHARACTERISTIC__ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -129,7 +152,7 @@ public class CharacteristicItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Characteristic)object).getName();
+		String label = ((Characteristic)object).getID();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Characteristic_type") :
 			getString("_UI_Characteristic_type") + " " + label;
@@ -148,6 +171,7 @@ public class CharacteristicItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Characteristic.class)) {
+			case BaciCodeGenPackage.CHARACTERISTIC__ID:
 			case BaciCodeGenPackage.CHARACTERISTIC__NAME:
 			case BaciCodeGenPackage.CHARACTERISTIC__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
