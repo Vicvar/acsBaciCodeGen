@@ -8,7 +8,7 @@ Bundle-Activator: baciCodeGen.presentation.BaciCodeGenModelEditorPlugin$Implemen
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: baciCodeGen.BACI.presentation,
+Export-Package: baciCodeGen.BACIProperties.presentation,
  baciCodeGen.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,

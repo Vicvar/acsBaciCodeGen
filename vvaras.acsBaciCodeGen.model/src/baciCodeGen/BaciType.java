@@ -139,12 +139,12 @@ public interface BaciType extends EObject {
 	 * @return the value of the '<em>Baci Characteristics</em>' containment reference.
 	 * @see #isSetBaciCharacteristics()
 	 * @see #unsetBaciCharacteristics()
-	 * @see #setBaciCharacteristics(BaciCharacteristics)
+	 * @see #setBaciCharacteristics(PropertyDefinition)
 	 * @see baciCodeGen.BaciCodeGenPackage#getBaciType_BaciCharacteristics()
 	 * @model containment="true" unsettable="true" required="true" derived="true"
 	 * @generated
 	 */
-	BaciCharacteristics getBaciCharacteristics();
+	PropertyDefinition getBaciCharacteristics();
 
 	/**
 	 * Sets the value of the '{@link baciCodeGen.BaciType#getBaciCharacteristics <em>Baci Characteristics</em>}' containment reference.
@@ -156,7 +156,7 @@ public interface BaciType extends EObject {
 	 * @see #getBaciCharacteristics()
 	 * @generated
 	 */
-	void setBaciCharacteristics(BaciCharacteristics value);
+	void setBaciCharacteristics(PropertyDefinition value);
 
 	/**
 	 * Unsets the value of the '{@link baciCodeGen.BaciType#getBaciCharacteristics <em>Baci Characteristics</em>}' containment reference.
@@ -164,7 +164,7 @@ public interface BaciType extends EObject {
 	 * <!-- end-user-doc -->
 	 * @see #isSetBaciCharacteristics()
 	 * @see #getBaciCharacteristics()
-	 * @see #setBaciCharacteristics(BaciCharacteristics)
+	 * @see #setBaciCharacteristics(PropertyDefinition)
 	 * @generated
 	 */
 	void unsetBaciCharacteristics();
@@ -176,7 +176,7 @@ public interface BaciType extends EObject {
 	 * @return whether the value of the '<em>Baci Characteristics</em>' containment reference is set.
 	 * @see #unsetBaciCharacteristics()
 	 * @see #getBaciCharacteristics()
-	 * @see #setBaciCharacteristics(BaciCharacteristics)
+	 * @see #setBaciCharacteristics(PropertyDefinition)
 	 * @generated
 	 */
 	boolean isSetBaciCharacteristics();

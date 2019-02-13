@@ -3,10 +3,13 @@
 package baciCodeGen.impl;
 
 import baciCodeGen.BaciCodeGenPackage;
+import baciCodeGen.BaciType;
 import baciCodeGen.Characteristic;
 import baciCodeGen.ComponentInstances;
 import baciCodeGen.Instance;
 import baciCodeGen.Property;
+import baciCodeGen.PropertyDefinition;
+import baciCodeGen.BACIProperties.impl.BACIPropertiesFactoryImpl;
 
 import java.util.Collection;
 
@@ -14,7 +17,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
-
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -163,16 +166,181 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 		}
 		else if(!isSetInstanceCharacteristics()){
 			EList<Property> properties = this.getContainingComponentInstances().getContainingCaracteristicComponent().getProperties();
+			PropertyDefinition pd;
+			BaciType bt;
 			Characteristic c;
 			for (Property p : properties){
-				c = new CharacteristicImpl();
-				c.setID(p.getName()+p.getBaciType().getName());
-				c.setName(p.getBaciType().getName());
-				c.setValue("0");
-				instanceCharacteristics.add(c);
+				bt = p.getBaciType();
+				pd = getBaciTypePropertyDefinition(bt.getAccessType().getValue(),bt.getBasicType().getValue(), bt.getSeqType().getValue());
+				for (EAttribute attr : pd.eClass().getEAllAttributes()){
+					c = new CharacteristicImpl();
+					c.setID(p.getName()+"_"+attr.getName());
+					c.setName(attr.getName());
+					c.setValue(attr.getDefaultValueLiteral());
+					instanceCharacteristics.add(c);
+				}
 			}
 		}
 		return instanceCharacteristics;
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	private PropertyDefinition getBaciTypePropertyDefinition(int accessType, int seqType, int basicType){
+		PropertyDefinition propertyDefinition;
+		BACIPropertiesFactoryImpl propertyFactory = new BACIPropertiesFactoryImpl();
+		switch (accessType){
+			case 0:
+				switch (seqType){
+					case 0:
+						switch (basicType){
+							case 0:
+								propertyDefinition = propertyFactory.createROboolean();
+								break;
+							case 1:
+								propertyDefinition = propertyFactory.createROdouble();
+								break;
+							case 2:
+								propertyDefinition = propertyFactory.createROfloat();
+								break;
+							case 3:
+								propertyDefinition = propertyFactory.createROlong();
+								break;
+							case 4:
+								propertyDefinition = propertyFactory.createROlongLong();
+								break;
+							case 5:
+								propertyDefinition = propertyFactory.createROuLong();
+								break;
+							case 6:
+								propertyDefinition = propertyFactory.createROuLongLong();
+								break;
+							case 7:
+								propertyDefinition = propertyFactory.createROpattern();
+								break;
+							case 8:
+								propertyDefinition = propertyFactory.createROstring();
+								break;
+							default:
+								throw new IllegalStateException("Undefined BACIType");
+						}
+						break;
+					case 1:
+						switch (basicType){
+							case 0:
+								propertyDefinition = propertyFactory.createRObooleanSeq();
+								break;
+							case 1:
+								propertyDefinition = propertyFactory.createROdoubleSeq();
+								break;
+							case 2:
+								propertyDefinition = propertyFactory.createROfloatSeq();
+								break;
+							case 3:
+								propertyDefinition = propertyFactory.createROlongSeq();
+								break;
+							case 4:
+								//propertyDefinition = propertyFactory.createROlongLongSeq();
+								throw new UnsupportedOperationException("ROlongLongSeq can't be constructed. It's not a supported BACIType");
+							case 5:
+								propertyDefinition = propertyFactory.createROuLongSeq();
+								break;
+							case 6:
+								//propertyDefinition = propertyFactory.createROuLongLongSeq();
+								throw new UnsupportedOperationException("ROuLongLongSeq can't be constructed. It's not a supported BACIType");
+							case 7:
+								//propertyDefinition = propertyFactory.createROpatternSeq();
+								throw new UnsupportedOperationException("ROpatternSeq can't be constructed. It's not a supported BACIType");
+							case 8:
+								propertyDefinition = propertyFactory.createROstringSeq();
+								break;
+							default:
+								throw new IllegalStateException("Undefined BACIType");
+						}
+						break;
+					default:
+						throw new IllegalStateException("Undefined BACIType");
+				}
+				break;
+			case 1:
+				switch (seqType){
+					case 0:
+						switch (basicType){
+							case 0:
+								propertyDefinition = propertyFactory.createRWboolean();
+								break;
+							case 1:
+								propertyDefinition = propertyFactory.createRWdouble();
+								break;
+							case 2:
+								propertyDefinition = propertyFactory.createRWfloat();
+								break;
+							case 3:
+								propertyDefinition = propertyFactory.createRWlong();
+								break;
+							case 4:
+								propertyDefinition = propertyFactory.createRWlongLong();
+								break;
+							case 5:
+								propertyDefinition = propertyFactory.createRWuLong();
+								break;
+							case 6:
+								propertyDefinition = propertyFactory.createRWuLongLong();
+								break;
+							case 7:
+								propertyDefinition = propertyFactory.createRWpattern();
+								break;
+							case 8:
+								propertyDefinition = propertyFactory.createRWstring();
+								break;
+							default:
+								throw new IllegalStateException("Undefined BACIType");
+						}
+						break;
+					case 1:
+						switch (basicType){
+							case 0:
+								propertyDefinition = propertyFactory.createRWbooleanSeq();
+								break;
+							case 1:
+								propertyDefinition = propertyFactory.createRWdoubleSeq();
+								break;
+							case 2:
+								propertyDefinition = propertyFactory.createRWfloatSeq();
+								break;
+							case 3:
+								propertyDefinition = propertyFactory.createRWlongSeq();
+								break;
+							case 4:
+								//propertyDefinition = propertyFactory.createRWlongLongSeq();
+								throw new UnsupportedOperationException("RWlongLongSeq can't be constructed. It's not a supported BACIType");
+							case 5:
+								propertyDefinition = propertyFactory.createRWuLongSeq();
+								break;
+							case 6:
+								//propertyDefinition = propertyFactory.createRWuLongLongSeq();
+								throw new UnsupportedOperationException("RWuLongLongSeq can't be constructed. It's not a supported BACIType");
+							case 7:
+								//propertyDefinition = propertyFactory.createRWpatternSeq();
+								throw new UnsupportedOperationException("RWpatternSeq can't be constructed. It's not a supported BACIType");
+							case 8:
+								//propertyDefinition = propertyFactory.createRWstringSeq();
+								throw new UnsupportedOperationException("RWstringSeq can't be constructed. It's not a supported BACIType");
+							default:
+								throw new IllegalStateException("Undefined BACIType");
+						}
+						break;
+					default:
+						throw new IllegalStateException("Undefined BACIType");
+				}
+				break;
+			default:
+				throw new IllegalStateException("Undefined BACIType");
+		}
+		return propertyDefinition;
 	}
 
 	/**

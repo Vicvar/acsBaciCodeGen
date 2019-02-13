@@ -10,25 +10,9 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: baciCodeGen;
   uses:="org.eclipse.emf.ecore,
    org.eclipse.emf.common.util",
- baciCodeGen.BACI;
-  uses:="org.eclipse.emf.ecore,
-   baciCodeGen",
- baciCodeGen.BACI.impl;
-  uses:="org.eclipse.emf.ecore,
-   org.eclipse.emf.ecore.impl,
-   baciCodeGen.BACI",
- baciCodeGen.BACI.util;
-  uses:="org.eclipse.emf.ecore,
-   org.eclipse.emf.ecore.resource.impl,
-   org.eclipse.emf.ecore.xmi.impl,
-   baciCodeGen.BACI,
-   baciCodeGen,
-   org.eclipse.emf.ecore.xmi.util,
-   org.eclipse.emf.common.util,
-   org.eclipse.emf.ecore.resource,
-   org.eclipse.emf.common.notify,
-   org.eclipse.emf.common.notify.impl,
-   org.eclipse.emf.ecore.util",
+ baciCodeGen.BACIProperties,
+ baciCodeGen.BACIProperties.impl,
+ baciCodeGen.BACIProperties.util,
  baciCodeGen.impl;
   uses:="baciCodeGen,
    org.eclipse.emf.ecore,
@@ -45,5 +29,4 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport
 Bundle-ActivationPolicy: lazy
-Import-Package: baciCodeGen,
- baciCodeGen.BACI
+Import-Package: baciCodeGen

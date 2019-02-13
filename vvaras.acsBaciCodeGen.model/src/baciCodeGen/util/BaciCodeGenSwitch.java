@@ -165,9 +165,9 @@ public class BaciCodeGenSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BaciCodeGenPackage.BACI_CHARACTERISTICS: {
-				BaciCharacteristics baciCharacteristics = (BaciCharacteristics)theEObject;
-				T result = caseBaciCharacteristics(baciCharacteristics);
+			case BaciCodeGenPackage.PROPERTY_DEFINITION: {
+				PropertyDefinition propertyDefinition = (PropertyDefinition)theEObject;
+				T result = casePropertyDefinition(propertyDefinition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -416,17 +416,17 @@ public class BaciCodeGenSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Baci Characteristics</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Property Definition</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Baci Characteristics</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Property Definition</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseBaciCharacteristics(BaciCharacteristics object) {
+	public T casePropertyDefinition(PropertyDefinition object) {
 		return null;
 	}
 

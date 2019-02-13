@@ -155,9 +155,7 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import baciCodeGen.provider.BaciCodeGenItemProviderAdapterFactory;
-
-import baciCodeGen.BACI.provider.BACIItemProviderAdapterFactory;
-
+import baciCodeGen.BACIProperties.provider.BACIPropertiesItemProviderAdapterFactory;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 
@@ -704,7 +702,7 @@ public class BaciCodeGenEditor
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new BaciCodeGenItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new BACIItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new BACIPropertiesItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

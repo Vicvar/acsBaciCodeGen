@@ -23,7 +23,7 @@
       <!-- @generated baciCodeGenModel -->
       <factory
             uri="urn:schemas-cosylab-com:BACI:1.0"
-            class="baciCodeGen.BACI.provider.BACIItemProviderAdapterFactory"
+            class="baciCodeGen.BACIProperties.provider.BACIPropertiesItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

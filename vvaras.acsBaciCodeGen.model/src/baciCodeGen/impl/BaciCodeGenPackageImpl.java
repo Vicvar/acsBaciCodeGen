@@ -6,12 +6,8 @@ import baciCodeGen.AccessType;
 import baciCodeGen.Action;
 import baciCodeGen.Attribute;
 import baciCodeGen.AuxiliaryVariable;
-
-import baciCodeGen.BACI.BACIPackage;
-
-import baciCodeGen.BACI.impl.BACIPackageImpl;
-
-import baciCodeGen.BaciCharacteristics;
+import baciCodeGen.BACIProperties.BACIPropertiesPackage;
+import baciCodeGen.BACIProperties.impl.BACIPropertiesPackageImpl;
 import baciCodeGen.BaciCodeGenFactory;
 import baciCodeGen.BaciCodeGenPackage;
 import baciCodeGen.BaciType;
@@ -25,6 +21,7 @@ import baciCodeGen.DevIOVariable;
 import baciCodeGen.Instance;
 import baciCodeGen.Parameter;
 import baciCodeGen.Property;
+import baciCodeGen.PropertyDefinition;
 import baciCodeGen.PropertySpecificVariable;
 import baciCodeGen.SeqType;
 import baciCodeGen.UsedBaciTypes;
@@ -162,7 +159,7 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass baciCharacteristicsEClass = null;
+	private EClass propertyDefinitionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -232,15 +229,15 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		BACIPackageImpl theBACIPackage = (BACIPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BACIPackage.eNS_URI) instanceof BACIPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BACIPackage.eNS_URI) : BACIPackage.eINSTANCE);
+		BACIPropertiesPackageImpl theBACIPropertiesPackage = (BACIPropertiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BACIPropertiesPackage.eNS_URI) instanceof BACIPropertiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BACIPropertiesPackage.eNS_URI) : BACIPropertiesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theBaciCodeGenPackage.createPackageContents();
-		theBACIPackage.createPackageContents();
+		theBACIPropertiesPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theBaciCodeGenPackage.initializePackageContents();
-		theBACIPackage.initializePackageContents();
+		theBACIPropertiesPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theBaciCodeGenPackage.freeze();
@@ -850,8 +847,8 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBaciCharacteristics() {
-		return baciCharacteristicsEClass;
+	public EClass getPropertyDefinition() {
+		return propertyDefinitionEClass;
 	}
 
 	/**
@@ -991,7 +988,7 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		createEAttribute(baciTypeEClass, BACI_TYPE__SEQ_TYPE);
 		createEReference(baciTypeEClass, BACI_TYPE__BACI_CHARACTERISTICS);
 
-		baciCharacteristicsEClass = createEClass(BACI_CHARACTERISTICS);
+		propertyDefinitionEClass = createEClass(PROPERTY_DEFINITION);
 
 		// Create enums
 		accessTypeEEnum = createEEnum(ACCESS_TYPE);
@@ -1023,10 +1020,10 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		BACIPackage theBACIPackage = (BACIPackage)EPackage.Registry.INSTANCE.getEPackage(BACIPackage.eNS_URI);
+		BACIPropertiesPackage theBACIPropertiesPackage = (BACIPropertiesPackage)EPackage.Registry.INSTANCE.getEPackage(BACIPropertiesPackage.eNS_URI);
 
 		// Add subpackages
-		getESubpackages().add(theBACIPackage);
+		getESubpackages().add(theBACIPropertiesPackage);
 
 		// Create type parameters
 
@@ -1118,9 +1115,9 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		initEAttribute(getBaciType_AccessType(), this.getAccessType(), "accessType", null, 0, 1, BaciType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBaciType_BasicType(), this.getBasicType(), "basicType", null, 0, 1, BaciType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBaciType_SeqType(), this.getSeqType(), "seqType", null, 0, 1, BaciType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBaciType_BaciCharacteristics(), this.getBaciCharacteristics(), null, "baciCharacteristics", null, 1, 1, BaciType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getBaciType_BaciCharacteristics(), this.getPropertyDefinition(), null, "baciCharacteristics", null, 1, 1, BaciType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
-		initEClass(baciCharacteristicsEClass, BaciCharacteristics.class, "BaciCharacteristics", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(propertyDefinitionEClass, PropertyDefinition.class, "PropertyDefinition", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(accessTypeEEnum, AccessType.class, "AccessType");

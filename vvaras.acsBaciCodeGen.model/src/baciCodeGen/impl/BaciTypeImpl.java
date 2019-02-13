@@ -3,12 +3,11 @@
 package baciCodeGen.impl;
 
 import baciCodeGen.AccessType;
-import baciCodeGen.BaciCharacteristics;
 import baciCodeGen.BaciCodeGenPackage;
 import baciCodeGen.BaciType;
 import baciCodeGen.BasicType;
+import baciCodeGen.PropertyDefinition;
 import baciCodeGen.SeqType;
-import baciCodeGen.BACI.impl.BACIFactoryImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -115,7 +114,7 @@ public class BaciTypeImpl extends MinimalEObjectImpl.Container implements BaciTy
 	 * @generated
 	 * @ordered
 	 */
-	protected BaciCharacteristics baciCharacteristics;
+	protected PropertyDefinition baciCharacteristics;
 
 	/**
 	 * This is true if the Baci Characteristics containment reference has been set.
@@ -227,159 +226,7 @@ public class BaciTypeImpl extends MinimalEObjectImpl.Container implements BaciTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BaciCharacteristics getBaciCharacteristics() {
-		if (!isSetBaciCharacteristics()){
-			BACIFactoryImpl bf = new BACIFactoryImpl();
-			switch (this.accessType.getValue()){
-				case 0:
-					switch (this.seqType.getValue()){
-						case 0:
-							switch (this.basicType.getValue()){
-								case 0:
-									baciCharacteristics = bf.createROboolean();
-									break;
-								case 1:
-									baciCharacteristics = bf.createROdouble();
-									break;
-								case 2:
-									baciCharacteristics = bf.createROfloat();
-									break;
-								case 3:
-									baciCharacteristics = bf.createROlong();
-									break;
-								case 4:
-									baciCharacteristics = bf.createROlongLong();
-									break;
-								case 5:
-									baciCharacteristics = bf.createROuLong();
-									break;
-								case 6:
-									baciCharacteristics = bf.createROuLongLong();
-									break;
-								case 7:
-									baciCharacteristics = bf.createROpattern();
-									break;
-								case 8:
-									baciCharacteristics = bf.createROstring();
-									break;
-								default:
-									throw new IllegalStateException("Undefined BACIType");
-							}
-							break;
-						case 1:
-							switch (this.basicType.getValue()){
-								case 0:
-									baciCharacteristics = bf.createRObooleanSeq();
-									break;
-								case 1:
-									baciCharacteristics = bf.createROdoubleSeq();
-									break;
-								case 2:
-									baciCharacteristics = bf.createROfloatSeq();
-									break;
-								case 3:
-									baciCharacteristics = bf.createROlongSeq();
-									break;
-								case 4:
-									//baciCharacteristics = bf.createROlongLongSeq();
-									throw new UnsupportedOperationException("ROlongLongSeq can't be constructed. It's not a supported BACIType");
-								case 5:
-									baciCharacteristics = bf.createROuLongSeq();
-									break;
-								case 6:
-									//baciCharacteristics = bf.createROuLongLongSeq();
-									throw new UnsupportedOperationException("ROuLongLongSeq can't be constructed. It's not a supported BACIType");
-								case 7:
-									//baciCharacteristics = bf.createROpatternSeq();
-									throw new UnsupportedOperationException("ROpatternSeq can't be constructed. It's not a supported BACIType");
-								case 8:
-									baciCharacteristics = bf.createROstringSeq();
-									break;
-								default:
-									throw new IllegalStateException("Undefined BACIType");
-							}
-							break;
-						default:
-							throw new IllegalStateException("Undefined BACIType");
-					}
-					break;
-				case 1:
-					switch (this.seqType.getValue()){
-						case 0:
-							switch (this.basicType.getValue()){
-								case 0:
-									baciCharacteristics = bf.createRWboolean();
-									break;
-								case 1:
-									baciCharacteristics = bf.createRWdouble();
-									break;
-								case 2:
-									baciCharacteristics = bf.createRWfloat();
-									break;
-								case 3:
-									baciCharacteristics = bf.createRWlong();
-									break;
-								case 4:
-									baciCharacteristics = bf.createRWlongLong();
-									break;
-								case 5:
-									baciCharacteristics = bf.createRWuLong();
-									break;
-								case 6:
-									baciCharacteristics = bf.createRWuLongLong();
-									break;
-								case 7:
-									baciCharacteristics = bf.createRWpattern();
-									break;
-								case 8:
-									baciCharacteristics = bf.createRWstring();
-									break;
-								default:
-									throw new IllegalStateException("Undefined BACIType");
-							}
-							break;
-						case 1:
-							switch (this.basicType.getValue()){
-								case 0:
-									baciCharacteristics = bf.createRWbooleanSeq();
-									break;
-								case 1:
-									baciCharacteristics = bf.createRWdoubleSeq();
-									break;
-								case 2:
-									baciCharacteristics = bf.createRWfloatSeq();
-									break;
-								case 3:
-									baciCharacteristics = bf.createRWlongSeq();
-									break;
-								case 4:
-									//baciCharacteristics = bf.createRWlongLongSeq();
-									throw new UnsupportedOperationException("RWlongLongSeq can't be constructed. It's not a supported BACIType");
-								case 5:
-									baciCharacteristics = bf.createRWuLongSeq();
-									break;
-								case 6:
-									//baciCharacteristics = bf.createRWuLongLongSeq();
-									throw new UnsupportedOperationException("RWuLongLongSeq can't be constructed. It's not a supported BACIType");
-								case 7:
-									//baciCharacteristics = bf.createRWpatternSeq();
-									throw new UnsupportedOperationException("RWpatternSeq can't be constructed. It's not a supported BACIType");
-								case 8:
-									//baciCharacteristics = bf.createRWstringSeq();
-									throw new UnsupportedOperationException("RWstringSeq can't be constructed. It's not a supported BACIType");
-								default:
-									throw new IllegalStateException("Undefined BACIType");
-							}
-							break;
-						default:
-							throw new IllegalStateException("Undefined BACIType");
-					}
-					break;
-				default:
-					throw new IllegalStateException("Undefined BACIType");
-			}
-		}
-		System.out.println(baciCharacteristics);
+	public PropertyDefinition getBaciCharacteristics() {
 		return baciCharacteristics;
 	}
 
@@ -388,8 +235,8 @@ public class BaciTypeImpl extends MinimalEObjectImpl.Container implements BaciTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetBaciCharacteristics(BaciCharacteristics newBaciCharacteristics, NotificationChain msgs) {
-		BaciCharacteristics oldBaciCharacteristics = baciCharacteristics;
+	public NotificationChain basicSetBaciCharacteristics(PropertyDefinition newBaciCharacteristics, NotificationChain msgs) {
+		PropertyDefinition oldBaciCharacteristics = baciCharacteristics;
 		baciCharacteristics = newBaciCharacteristics;
 		boolean oldBaciCharacteristicsESet = baciCharacteristicsESet;
 		baciCharacteristicsESet = true;
@@ -405,7 +252,7 @@ public class BaciTypeImpl extends MinimalEObjectImpl.Container implements BaciTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBaciCharacteristics(BaciCharacteristics newBaciCharacteristics) {
+	public void setBaciCharacteristics(PropertyDefinition newBaciCharacteristics) {
 		if (newBaciCharacteristics != baciCharacteristics) {
 			NotificationChain msgs = null;
 			if (baciCharacteristics != null)
@@ -429,7 +276,7 @@ public class BaciTypeImpl extends MinimalEObjectImpl.Container implements BaciTy
 	 * @generated
 	 */
 	public NotificationChain basicUnsetBaciCharacteristics(NotificationChain msgs) {
-		BaciCharacteristics oldBaciCharacteristics = baciCharacteristics;
+		PropertyDefinition oldBaciCharacteristics = baciCharacteristics;
 		baciCharacteristics = null;
 		boolean oldBaciCharacteristicsESet = baciCharacteristicsESet;
 		baciCharacteristicsESet = false;
@@ -523,7 +370,7 @@ public class BaciTypeImpl extends MinimalEObjectImpl.Container implements BaciTy
 				setSeqType((SeqType)newValue);
 				return;
 			case BaciCodeGenPackage.BACI_TYPE__BACI_CHARACTERISTICS:
-				setBaciCharacteristics((BaciCharacteristics)newValue);
+				setBaciCharacteristics((PropertyDefinition)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

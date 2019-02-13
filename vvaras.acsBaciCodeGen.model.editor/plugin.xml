@@ -40,12 +40,12 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="baciCodeGen.BACI.presentation.BACIModelWizardID"
-            name="%_UI_BACIModelWizard_label"
-            class="baciCodeGen.BACI.presentation.BACIModelWizard"
+            id="baciCodeGen.BACIProperties.presentation.BACIPropertiesModelWizardID"
+            name="%_UI_BACIPropertiesModelWizard_label"
+            class="baciCodeGen.BACIProperties.presentation.BACIPropertiesModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/BACIModelFile.gif">
-         <description>%_UI_BACIModelWizard_description</description>
+            icon="icons/full/obj16/BACIPropertiesModelFile.gif">
+         <description>%_UI_BACIPropertiesModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
@@ -53,12 +53,12 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated baciCodeGenModel -->
       <editor
-            id="baciCodeGen.BACI.presentation.BACIEditorID"
-            name="%_UI_BACIEditor_label"
-            icon="icons/full/obj16/BACIModelFile.gif"
-            extensions="baci"
-            class="baciCodeGen.BACI.presentation.BACIEditor"
-            contributorClass="baciCodeGen.BACI.presentation.BACIActionBarContributor">
+            id="baciCodeGen.BACIProperties.presentation.BACIPropertiesEditorID"
+            name="%_UI_BACIPropertiesEditor_label"
+            icon="icons/full/obj16/BACIPropertiesModelFile.gif"
+            extensions="baciproperties"
+            class="baciCodeGen.BACIProperties.presentation.BACIPropertiesEditor"
+            contributorClass="baciCodeGen.BACIProperties.presentation.BACIPropertiesActionBarContributor">
       </editor>
    </extension>
 

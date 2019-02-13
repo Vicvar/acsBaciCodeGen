@@ -66,7 +66,7 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//Instance/containingComponentInstances"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//Instance/instanceCharacteristics"/>
     </genClasses>
-    <genClasses ecoreClass="baciCodeGenModel.ecore#//Characteristic">
+    <genClasses ecoreClass="baciCodeGenModel.ecore#//Characteristic" labelFeature="#//baciCodeGen/Characteristic/ID">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Characteristic/ID"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Characteristic/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Characteristic/value"/>
@@ -107,373 +107,373 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BaciType/seqType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//BaciType/baciCharacteristics"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="baciCodeGenModel.ecore#//BaciCharacteristics"/>
-    <nestedGenPackages prefix="BACI" resource="XML" disposableProviderFactory="true"
-        ecorePackage="baciCodeGenModel.ecore#//BACI">
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/CharacteristicComponent">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/CharacteristicComponent/actionThreadStackSize"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/CharacteristicComponent/monitoringThreadStackSize"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/CharacteristicComponent/recentCommand"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/CharacteristicComponent/recentTimeStamp"/>
+    <genClasses image="false" ecoreClass="baciCodeGenModel.ecore#//PropertyDefinition"/>
+    <nestedGenPackages prefix="BACIProperties" resource="XML" disposableProviderFactory="true"
+        ecorePackage="baciCodeGenModel.ecore#//BACIProperties">
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/CharacteristicComponent">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/CharacteristicComponent/actionThreadStackSize"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/CharacteristicComponent/monitoringThreadStackSize"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/CharacteristicComponent/recentCommand"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/CharacteristicComponent/recentTimeStamp"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/CharacteristicModel"/>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/Pboolean"/>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/Pboolean1">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pboolean1/archiveDelta"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pboolean1/archiveDeltaPercent"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pboolean1/defaultValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pboolean1/graphMax"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pboolean1/graphMin"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pboolean1/minDeltaTrig"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pboolean1/minStep"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/CharacteristicModel"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/Pboolean"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/Pboolean1">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pboolean1/archiveDelta"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pboolean1/archiveDeltaPercent"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pboolean1/defaultValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pboolean1/graphMax"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pboolean1/graphMin"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pboolean1/minDeltaTrig"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pboolean1/minStep"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/PbooleanSeq"/>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/PbooleanSeq1">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PbooleanSeq1/archiveDelta"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PbooleanSeq1/archiveDeltaPercent"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PbooleanSeq1/defaultValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PbooleanSeq1/graphMax"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PbooleanSeq1/graphMin"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PbooleanSeq1/minDeltaTrig"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PbooleanSeq1/minStep"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/PbooleanSeq"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/PbooleanSeq1">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PbooleanSeq1/archiveDelta"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PbooleanSeq1/archiveDeltaPercent"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PbooleanSeq1/defaultValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PbooleanSeq1/graphMax"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PbooleanSeq1/graphMin"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PbooleanSeq1/minDeltaTrig"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PbooleanSeq1/minStep"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/Pdouble"/>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/Pdouble1">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pdouble1/archiveDelta"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pdouble1/archiveDeltaPercent"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pdouble1/defaultValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pdouble1/graphMax"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pdouble1/graphMin"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pdouble1/minDeltaTrig"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pdouble1/minStep"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/Pdouble"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/Pdouble1">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pdouble1/archiveDelta"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pdouble1/archiveDeltaPercent"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pdouble1/defaultValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pdouble1/graphMax"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pdouble1/graphMin"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pdouble1/minDeltaTrig"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pdouble1/minStep"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/PdoubleSeq"/>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/PdoubleSeq1">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PdoubleSeq1/archiveDelta"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PdoubleSeq1/archiveDeltaPercent"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PdoubleSeq1/defaultValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PdoubleSeq1/graphMax"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PdoubleSeq1/graphMin"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PdoubleSeq1/minDeltaTrig"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PdoubleSeq1/minStep"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/PdoubleSeq"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/PdoubleSeq1">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PdoubleSeq1/archiveDelta"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PdoubleSeq1/archiveDeltaPercent"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PdoubleSeq1/defaultValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PdoubleSeq1/graphMax"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PdoubleSeq1/graphMin"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PdoubleSeq1/minDeltaTrig"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PdoubleSeq1/minStep"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/PEnum"/>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/PEnum1">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PEnum1/archiveDelta"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PEnum1/archiveDeltaPercent"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PEnum1/condition"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PEnum1/defaultValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PEnum1/graphMax"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PEnum1/graphMin"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PEnum1/statesDescription"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/PEnum"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/PEnum1">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PEnum1/archiveDelta"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PEnum1/archiveDeltaPercent"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PEnum1/condition"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PEnum1/defaultValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PEnum1/graphMax"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PEnum1/graphMin"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PEnum1/statesDescription"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/Pfloat"/>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/Pfloat1">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pfloat1/archiveDelta"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pfloat1/archiveDeltaPercent"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pfloat1/defaultValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pfloat1/graphMax"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pfloat1/graphMin"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pfloat1/minDeltaTrig"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pfloat1/minStep"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/Pfloat"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/Pfloat1">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pfloat1/archiveDelta"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pfloat1/archiveDeltaPercent"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pfloat1/defaultValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pfloat1/graphMax"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pfloat1/graphMin"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pfloat1/minDeltaTrig"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pfloat1/minStep"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/PfloatSeq"/>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/PfloatSeq1">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PfloatSeq1/archiveDelta"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PfloatSeq1/archiveDeltaPercent"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PfloatSeq1/defaultValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PfloatSeq1/graphMax"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PfloatSeq1/graphMin"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PfloatSeq1/minDeltaTrig"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PfloatSeq1/minStep"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/PfloatSeq"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/PfloatSeq1">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PfloatSeq1/archiveDelta"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PfloatSeq1/archiveDeltaPercent"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PfloatSeq1/defaultValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PfloatSeq1/graphMax"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PfloatSeq1/graphMin"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PfloatSeq1/minDeltaTrig"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PfloatSeq1/minStep"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/Plong"/>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/Plong1">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Plong1/archiveDelta"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Plong1/archiveDeltaPercent"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Plong1/defaultValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Plong1/graphMax"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Plong1/graphMin"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Plong1/minDeltaTrig"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Plong1/minStep"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/Plong"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/Plong1">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Plong1/archiveDelta"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Plong1/archiveDeltaPercent"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Plong1/defaultValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Plong1/graphMax"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Plong1/graphMin"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Plong1/minDeltaTrig"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Plong1/minStep"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/PlongLong"/>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/PlongLong1">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PlongLong1/archiveDelta"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PlongLong1/archiveDeltaPercent"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PlongLong1/defaultValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PlongLong1/graphMax"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PlongLong1/graphMin"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PlongLong1/minDeltaTrig"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PlongLong1/minStep"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/PlongLong"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/PlongLong1">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PlongLong1/archiveDelta"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PlongLong1/archiveDeltaPercent"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PlongLong1/defaultValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PlongLong1/graphMax"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PlongLong1/graphMin"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PlongLong1/minDeltaTrig"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PlongLong1/minStep"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/PlongSeq"/>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/PlongSeq1">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PlongSeq1/archiveDelta"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PlongSeq1/archiveDeltaPercent"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PlongSeq1/defaultValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PlongSeq1/graphMax"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PlongSeq1/graphMin"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PlongSeq1/minDeltaTrig"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PlongSeq1/minStep"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/PlongSeq"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/PlongSeq1">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PlongSeq1/archiveDelta"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PlongSeq1/archiveDeltaPercent"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PlongSeq1/defaultValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PlongSeq1/graphMax"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PlongSeq1/graphMin"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PlongSeq1/minDeltaTrig"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PlongSeq1/minStep"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/Ppattern"/>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/Ppattern1">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Ppattern1/archiveDelta"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Ppattern1/archiveDeltaPercent"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Ppattern1/bitDescription"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Ppattern1/defaultValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Ppattern1/minStep"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Ppattern1/whenCleared"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Ppattern1/whenSet"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/Ppattern"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/Ppattern1">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Ppattern1/archiveDelta"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Ppattern1/archiveDeltaPercent"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Ppattern1/bitDescription"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Ppattern1/defaultValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Ppattern1/minStep"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Ppattern1/whenCleared"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Ppattern1/whenSet"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/Property"/>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/Pstring"/>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/Pstring1">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pstring1/archiveDelta"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pstring1/archiveDeltaPercent"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/Pstring1/defaultValue"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/Property"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/Pstring"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/Pstring1">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pstring1/archiveDelta"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pstring1/archiveDeltaPercent"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/Pstring1/defaultValue"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/PstringSeq"/>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/PstringSeq1">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PstringSeq1/archiveDelta"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PstringSeq1/archiveDeltaPercent"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PstringSeq1/defaultValue"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/PstringSeq"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/PstringSeq1">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PstringSeq1/archiveDelta"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PstringSeq1/archiveDeltaPercent"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PstringSeq1/defaultValue"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/PuLong"/>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/PuLong1">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PuLong1/archiveDelta"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PuLong1/archiveDeltaPercent"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PuLong1/defaultValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PuLong1/graphMax"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PuLong1/graphMin"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PuLong1/minDeltaTrig"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PuLong1/minStep"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/PuLong"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/PuLong1">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PuLong1/archiveDelta"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PuLong1/archiveDeltaPercent"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PuLong1/defaultValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PuLong1/graphMax"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PuLong1/graphMin"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PuLong1/minDeltaTrig"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PuLong1/minStep"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/PuLongLong"/>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/PuLongLong1">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PuLongLong1/archiveDelta"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PuLongLong1/archiveDeltaPercent"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PuLongLong1/defaultValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PuLongLong1/graphMax"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PuLongLong1/graphMin"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PuLongLong1/minDeltaTrig"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PuLongLong1/minStep"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/PuLongLong"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/PuLongLong1">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PuLongLong1/archiveDelta"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PuLongLong1/archiveDeltaPercent"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PuLongLong1/defaultValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PuLongLong1/graphMax"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PuLongLong1/graphMin"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PuLongLong1/minDeltaTrig"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PuLongLong1/minStep"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/PuLongSeq"/>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/PuLongSeq1">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PuLongSeq1/archiveDelta"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PuLongSeq1/archiveDeltaPercent"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PuLongSeq1/defaultValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PuLongSeq1/graphMax"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PuLongSeq1/graphMin"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PuLongSeq1/minDeltaTrig"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/PuLongSeq1/minStep"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/PuLongSeq"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/PuLongSeq1">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PuLongSeq1/archiveDelta"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PuLongSeq1/archiveDeltaPercent"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PuLongSeq1/defaultValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PuLongSeq1/graphMax"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PuLongSeq1/graphMin"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PuLongSeq1/minDeltaTrig"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/PuLongSeq1/minStep"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/ROboolean">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROboolean/alarmFaultFamily"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROboolean/alarmFaultMember"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROboolean/alarmLevel"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROboolean/alarmOn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROboolean/alarmTimerTrig"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/ROboolean">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROboolean/alarmFaultFamily"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROboolean/alarmFaultMember"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROboolean/alarmLevel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROboolean/alarmOn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROboolean/alarmTimerTrig"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/RObooleanSeq">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RObooleanSeq/alarmFaultFamily"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RObooleanSeq/alarmFaultMember"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RObooleanSeq/alarmLevel"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RObooleanSeq/alarmOn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RObooleanSeq/alarmTimerTrig"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/RObooleanSeq">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RObooleanSeq/alarmFaultFamily"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RObooleanSeq/alarmFaultMember"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RObooleanSeq/alarmLevel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RObooleanSeq/alarmOn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RObooleanSeq/alarmTimerTrig"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/ROdouble">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROdouble/alarmFaultFamily"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROdouble/alarmFaultMember"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROdouble/alarmHighOff"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROdouble/alarmHighOn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROdouble/alarmLevel"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROdouble/alarmLowOff"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROdouble/alarmLowOn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROdouble/alarmTimerTrig"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/ROdouble">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROdouble/alarmFaultFamily"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROdouble/alarmFaultMember"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROdouble/alarmHighOff"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROdouble/alarmHighOn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROdouble/alarmLevel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROdouble/alarmLowOff"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROdouble/alarmLowOn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROdouble/alarmTimerTrig"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/ROdoubleSeq">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROdoubleSeq/alarmFaultFamily"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROdoubleSeq/alarmFaultMember"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROdoubleSeq/alarmHighOff"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROdoubleSeq/alarmHighOn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROdoubleSeq/alarmLevel"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROdoubleSeq/alarmLowOff"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROdoubleSeq/alarmLowOn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROdoubleSeq/alarmTimerTrig"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/ROdoubleSeq">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROdoubleSeq/alarmFaultFamily"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROdoubleSeq/alarmFaultMember"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROdoubleSeq/alarmHighOff"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROdoubleSeq/alarmHighOn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROdoubleSeq/alarmLevel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROdoubleSeq/alarmLowOff"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROdoubleSeq/alarmLowOn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROdoubleSeq/alarmTimerTrig"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/ROEnum">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROEnum/alarmFaultFamily"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROEnum/alarmFaultMember"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROEnum/alarmLevel"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROEnum/alarmOff"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROEnum/alarmOn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROEnum/alarmTimerTrig"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/ROEnum">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROEnum/alarmFaultFamily"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROEnum/alarmFaultMember"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROEnum/alarmLevel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROEnum/alarmOff"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROEnum/alarmOn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROEnum/alarmTimerTrig"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/ROfloat">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROfloat/alarmFaultFamily"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROfloat/alarmFaultMember"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROfloat/alarmHighOff"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROfloat/alarmHighOn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROfloat/alarmLevel"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROfloat/alarmLowOff"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROfloat/alarmLowOn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROfloat/alarmTimerTrig"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/ROfloat">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROfloat/alarmFaultFamily"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROfloat/alarmFaultMember"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROfloat/alarmHighOff"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROfloat/alarmHighOn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROfloat/alarmLevel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROfloat/alarmLowOff"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROfloat/alarmLowOn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROfloat/alarmTimerTrig"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/ROfloatSeq">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROfloatSeq/alarmFaultFamily"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROfloatSeq/alarmFaultMember"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROfloatSeq/alarmHighOff"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROfloatSeq/alarmHighOn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROfloatSeq/alarmLevel"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROfloatSeq/alarmLowOff"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROfloatSeq/alarmLowOn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROfloatSeq/alarmTimerTrig"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/ROfloatSeq">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROfloatSeq/alarmFaultFamily"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROfloatSeq/alarmFaultMember"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROfloatSeq/alarmHighOff"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROfloatSeq/alarmHighOn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROfloatSeq/alarmLevel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROfloatSeq/alarmLowOff"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROfloatSeq/alarmLowOn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROfloatSeq/alarmTimerTrig"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/ROlong">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlong/alarmFaultFamily"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlong/alarmFaultMember"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlong/alarmHighOff"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlong/alarmHighOn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlong/alarmLevel"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlong/alarmLowOff"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlong/alarmLowOn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlong/alarmTimerTrig"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/ROlong">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlong/alarmFaultFamily"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlong/alarmFaultMember"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlong/alarmHighOff"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlong/alarmHighOn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlong/alarmLevel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlong/alarmLowOff"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlong/alarmLowOn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlong/alarmTimerTrig"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/ROlongLong">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlongLong/alarmFaultFamily"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlongLong/alarmFaultMember"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlongLong/alarmHighOff"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlongLong/alarmHighOn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlongLong/alarmLevel"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlongLong/alarmLowOff"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlongLong/alarmLowOn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlongLong/alarmTimerTrig"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/ROlongLong">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlongLong/alarmFaultFamily"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlongLong/alarmFaultMember"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlongLong/alarmHighOff"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlongLong/alarmHighOn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlongLong/alarmLevel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlongLong/alarmLowOff"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlongLong/alarmLowOn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlongLong/alarmTimerTrig"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/ROlongSeq">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlongSeq/alarmFaultFamily"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlongSeq/alarmFaultMember"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlongSeq/alarmHighOff"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlongSeq/alarmHighOn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlongSeq/alarmLevel"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlongSeq/alarmLowOff"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlongSeq/alarmLowOn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROlongSeq/alarmTimerTrig"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/ROlongSeq">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlongSeq/alarmFaultFamily"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlongSeq/alarmFaultMember"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlongSeq/alarmHighOff"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlongSeq/alarmHighOn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlongSeq/alarmLevel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlongSeq/alarmLowOff"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlongSeq/alarmLowOn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROlongSeq/alarmTimerTrig"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/ROpattern">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROpattern/alarmFaultFamily"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROpattern/alarmFaultMember"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROpattern/alarmLevel"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROpattern/alarmMask"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROpattern/alarmTimerTrig"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROpattern/alarmTrigger"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/ROpattern">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROpattern/alarmFaultFamily"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROpattern/alarmFaultMember"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROpattern/alarmLevel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROpattern/alarmMask"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROpattern/alarmTimerTrig"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROpattern/alarmTrigger"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/ROstring">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROstring/alarmFaultFamily"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROstring/alarmFaultMember"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROstring/alarmLevel"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROstring/alarmTimerTrig"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/ROstring">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROstring/alarmFaultFamily"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROstring/alarmFaultMember"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROstring/alarmLevel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROstring/alarmTimerTrig"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/ROstringSeq"/>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/ROuLong">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLong/alarmFaultFamily"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLong/alarmFaultMember"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLong/alarmHighOff"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLong/alarmHighOn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLong/alarmLevel"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLong/alarmLowOff"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLong/alarmLowOn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLong/alarmTimerTrig"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/ROstringSeq"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/ROuLong">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLong/alarmFaultFamily"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLong/alarmFaultMember"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLong/alarmHighOff"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLong/alarmHighOn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLong/alarmLevel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLong/alarmLowOff"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLong/alarmLowOn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLong/alarmTimerTrig"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/ROuLongLong">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLongLong/alarmFaultFamily"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLongLong/alarmFaultMember"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLongLong/alarmHighOff"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLongLong/alarmHighOn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLongLong/alarmLevel"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLongLong/alarmLowOff"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLongLong/alarmLowOn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLongLong/alarmTimerTrig"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/ROuLongLong">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLongLong/alarmFaultFamily"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLongLong/alarmFaultMember"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLongLong/alarmHighOff"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLongLong/alarmHighOn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLongLong/alarmLevel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLongLong/alarmLowOff"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLongLong/alarmLowOn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLongLong/alarmTimerTrig"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/ROuLongSeq">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLongSeq/alarmFaultFamily"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLongSeq/alarmFaultMember"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLongSeq/alarmHighOff"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLongSeq/alarmHighOn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLongSeq/alarmLevel"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLongSeq/alarmLowOff"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLongSeq/alarmLowOn"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/ROuLongSeq/alarmTimerTrig"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/ROuLongSeq">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLongSeq/alarmFaultFamily"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLongSeq/alarmFaultMember"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLongSeq/alarmHighOff"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLongSeq/alarmHighOn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLongSeq/alarmLevel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLongSeq/alarmLowOff"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLongSeq/alarmLowOn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/ROuLongSeq/alarmTimerTrig"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/RWboolean">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWboolean/maxValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWboolean/minValue"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/RWboolean">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWboolean/maxValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWboolean/minValue"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/RWbooleanSeq">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWbooleanSeq/maxValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWbooleanSeq/minValue"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/RWbooleanSeq">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWbooleanSeq/maxValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWbooleanSeq/minValue"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/RWdouble">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWdouble/maxValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWdouble/minValue"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/RWdouble">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWdouble/maxValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWdouble/minValue"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/RWdoubleSeq">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWdoubleSeq/maxValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWdoubleSeq/minValue"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/RWdoubleSeq">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWdoubleSeq/maxValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWdoubleSeq/minValue"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/RWEnum">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWEnum/maxValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWEnum/minValue"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/RWEnum">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWEnum/maxValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWEnum/minValue"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/RWfloat">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWfloat/maxValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWfloat/minValue"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/RWfloat">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWfloat/maxValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWfloat/minValue"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/RWfloatSeq">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWfloatSeq/maxValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWfloatSeq/minValue"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/RWfloatSeq">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWfloatSeq/maxValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWfloatSeq/minValue"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/RWlong">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWlong/maxValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWlong/minValue"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/RWlong">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWlong/maxValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWlong/minValue"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/RWlongLong">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWlongLong/maxValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWlongLong/minValue"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/RWlongLong">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWlongLong/maxValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWlongLong/minValue"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/RWlongSeq">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWlongSeq/maxValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWlongSeq/minValue"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/RWlongSeq">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWlongSeq/maxValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWlongSeq/minValue"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/RWpattern"/>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/RWstring"/>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/RWuLong">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWuLong/maxValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWuLong/minValue"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/RWpattern"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/RWstring"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/RWuLong">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWuLong/maxValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWuLong/minValue"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/RWuLongLong">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWuLongLong/maxValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWuLongLong/minValue"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/RWuLongLong">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWuLongLong/maxValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWuLongLong/minValue"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/RWuLongSeq">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWuLongSeq/maxValue"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/RWuLongSeq/minValue"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/RWuLongSeq">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWuLongSeq/maxValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/RWuLongSeq/minValue"/>
       </genClasses>
-      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACI/TypelessProperty">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/TypelessProperty/archiveMaxInt"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/TypelessProperty/archiveMechanism"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/TypelessProperty/archiveMinInt"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/TypelessProperty/archivePriority"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/TypelessProperty/archiveSuppress"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/TypelessProperty/defaultTimerTrig"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/TypelessProperty/description"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/TypelessProperty/format"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/TypelessProperty/initializeDevio"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/TypelessProperty/minTimerTrig"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/TypelessProperty/resolution"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACI/TypelessProperty/units"/>
+      <genClasses ecoreClass="baciCodeGenModel.ecore#//BACIProperties/TypelessProperty">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/TypelessProperty/archiveMaxInt"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/TypelessProperty/archiveMechanism"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/TypelessProperty/archiveMinInt"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/TypelessProperty/archivePriority"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/TypelessProperty/archiveSuppress"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/TypelessProperty/defaultTimerTrig"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/TypelessProperty/description"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/TypelessProperty/format"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/TypelessProperty/initializeDevio"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/TypelessProperty/minTimerTrig"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/TypelessProperty/resolution"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//BACIProperties/TypelessProperty/units"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

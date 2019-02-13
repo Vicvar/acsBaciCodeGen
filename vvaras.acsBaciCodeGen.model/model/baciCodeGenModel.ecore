@@ -118,7 +118,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="basicType" eType="#//BasicType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="seqType" eType="#//SeqType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="baciCharacteristics" lowerBound="1"
-        eType="#//BaciCharacteristics" unsettable="true" derived="true" containment="true"/>
+        eType="#//PropertyDefinition" unsettable="true" derived="true" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="AccessType">
     <eLiterals name="RO"/>
@@ -139,14 +139,13 @@
     <eLiterals name="notSeq"/>
     <eLiterals name="Seq" value="1"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BaciCharacteristics" abstract="true"
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyDefinition" abstract="true"
       interface="true"/>
-  <eSubpackages name="BACICharacteristics" nsURI="urn:schemas-cosylab-com:BACI:1.0"
-      nsPrefix="vvaras.acsBaciCodeGen.model">
+  <eSubpackages name="BACIProperties" nsURI="urn:schemas-cosylab-com:BACI:1.0" nsPrefix="vvaras.acsBaciCodeGen.model">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&#xA;This schema describes the Configuration Database types for the Component/Property/Characteristic design patterns (BACI).&#xA;It contains the definitions for the Characteristic Component types and for all defined Property types.&#xA;&#xA;To keep the documentation easier to maintain and avoiding replication of documentation, the schemas for the Long Property are fully documented.&#xA;The other Properties only document their differences with respect to the Long Property.&#xA;&#x9;&#x9;"/>
     </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="CharacteristicComponent" eSuperTypes="#//BACICharacteristics/CharacteristicModel">
+    <eClassifiers xsi:type="ecore:EClass" name="CharacteristicComponent" eSuperTypes="#//BACIProperties/CharacteristicModel">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Schema for CharacteristicComponents. !!! To be renamed. Obsolete name !!!"/>
       </eAnnotations>
@@ -206,7 +205,7 @@
         <details key="kind" value="empty"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Pboolean" eSuperTypes="#//BACICharacteristics/TypelessProperty">
+    <eClassifiers xsi:type="ecore:EClass" name="Pboolean" eSuperTypes="#//BACIProperties/TypelessProperty">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Restriction step of Unsigned Long Property definition.&#xA;Since it is not possible to restrict and extend a base schema at the same time,&#xA;we do always first a restriction derivation followed by an extension derivation."/>
       </eAnnotations>
@@ -215,7 +214,7 @@
         <details key="kind" value="empty"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Pboolean1" eSuperTypes="#//BACICharacteristics/Pboolean">
+    <eClassifiers xsi:type="ecore:EClass" name="Pboolean1" eSuperTypes="#//BACIProperties/Pboolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Base schema for Boolean Properties"/>
       </eAnnotations>
@@ -295,7 +294,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PbooleanSeq" eSuperTypes="#//BACICharacteristics/TypelessProperty">
+    <eClassifiers xsi:type="ecore:EClass" name="PbooleanSeq" eSuperTypes="#//BACIProperties/TypelessProperty">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Restriction step of boolean Sequence Property definition.&#xA;Since it is not possible to restrict and extend a base schema at the same time,&#xA;we do always first a restriction derivation followed by an extension derivation.&#xA;The values defined for the Characteristics apply to each single element of the sequence."/>
       </eAnnotations>
@@ -304,7 +303,7 @@
         <details key="kind" value="empty"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PbooleanSeq1" eSuperTypes="#//BACICharacteristics/PbooleanSeq">
+    <eClassifiers xsi:type="ecore:EClass" name="PbooleanSeq1" eSuperTypes="#//BACIProperties/PbooleanSeq">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Base schema for a property representing a sequence of boolean values.&#xA;The values defined for the Characteristics apply to each single element of the sequence."/>
       </eAnnotations>
@@ -384,7 +383,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Pdouble" eSuperTypes="#//BACICharacteristics/TypelessProperty">
+    <eClassifiers xsi:type="ecore:EClass" name="Pdouble" eSuperTypes="#//BACIProperties/TypelessProperty">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Restriction step of Double Property definition.&#xA;Since it is not possible to restrict and extend a base schema at the same time,&#xA;we do always first a restriction derivation followed by an extension derivation."/>
       </eAnnotations>
@@ -393,7 +392,7 @@
         <details key="kind" value="empty"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Pdouble1" eSuperTypes="#//BACICharacteristics/Pdouble">
+    <eClassifiers xsi:type="ecore:EClass" name="Pdouble1" eSuperTypes="#//BACIProperties/Pdouble">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Base schema for Double Properties"/>
       </eAnnotations>
@@ -473,7 +472,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PdoubleSeq" eSuperTypes="#//BACICharacteristics/TypelessProperty">
+    <eClassifiers xsi:type="ecore:EClass" name="PdoubleSeq" eSuperTypes="#//BACIProperties/TypelessProperty">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Restriction step of Double Sequence Property definition.&#xA;Since it is not possible to restrict and extend a base schema at the same time,&#xA;we do always first a restriction derivation followed by an extension derivation."/>
       </eAnnotations>
@@ -482,7 +481,7 @@
         <details key="kind" value="empty"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PdoubleSeq1" eSuperTypes="#//BACICharacteristics/PdoubleSeq">
+    <eClassifiers xsi:type="ecore:EClass" name="PdoubleSeq1" eSuperTypes="#//BACIProperties/PdoubleSeq">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Base schema for a property representing a sequence of Double values.&#xA;The values defined for the Characteristics apply to each single element of the sequence."/>
       </eAnnotations>
@@ -562,7 +561,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PEnum" eSuperTypes="#//BACICharacteristics/TypelessProperty">
+    <eClassifiers xsi:type="ecore:EClass" name="PEnum" eSuperTypes="#//BACIProperties/TypelessProperty">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Restriction step of Enum Property definition.&#xA;Since it is not possible to restrict and extend a base schema at the same time,&#xA;we do always first a restriction derivation followed by an extension derivation."/>
       </eAnnotations>
@@ -571,7 +570,7 @@
         <details key="kind" value="empty"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PEnum1" eSuperTypes="#//BACICharacteristics/PEnum">
+    <eClassifiers xsi:type="ecore:EClass" name="PEnum1" eSuperTypes="#//BACIProperties/PEnum">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Base schema for Enumeration Properties"/>
       </eAnnotations>
@@ -645,7 +644,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Pfloat" eSuperTypes="#//BACICharacteristics/TypelessProperty">
+    <eClassifiers xsi:type="ecore:EClass" name="Pfloat" eSuperTypes="#//BACIProperties/TypelessProperty">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Restriction step of Float Property definition.&#xA;Since it is not possible to restrict and extend a base schema at the same time,&#xA;we do always first a restriction derivation followed by an extension derivation."/>
       </eAnnotations>
@@ -654,7 +653,7 @@
         <details key="kind" value="empty"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Pfloat1" eSuperTypes="#//BACICharacteristics/Pfloat">
+    <eClassifiers xsi:type="ecore:EClass" name="Pfloat1" eSuperTypes="#//BACIProperties/Pfloat">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Base schema for Float Properties"/>
       </eAnnotations>
@@ -734,7 +733,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PfloatSeq" eSuperTypes="#//BACICharacteristics/TypelessProperty">
+    <eClassifiers xsi:type="ecore:EClass" name="PfloatSeq" eSuperTypes="#//BACIProperties/TypelessProperty">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Restriction step of Float Sequence Property definition.&#xA;Since it is not possible to restrict and extend a base schema at the same time,&#xA;we do always first a restriction derivation followed by an extension derivation."/>
       </eAnnotations>
@@ -743,7 +742,7 @@
         <details key="kind" value="empty"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PfloatSeq1" eSuperTypes="#//BACICharacteristics/PfloatSeq">
+    <eClassifiers xsi:type="ecore:EClass" name="PfloatSeq1" eSuperTypes="#//BACIProperties/PfloatSeq">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Base schema for a property representing a sequence of Float values.&#xA;The values defined for the Characteristics apply to each single element of the sequence."/>
       </eAnnotations>
@@ -823,7 +822,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Plong" eSuperTypes="#//BACICharacteristics/TypelessProperty">
+    <eClassifiers xsi:type="ecore:EClass" name="Plong" eSuperTypes="#//BACIProperties/TypelessProperty">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Restriction step of Long Property definition.&#xA;Since it is not possible to restrict and extend a base schema at the same time,&#xA;we do always first a restriction derivation followed by an extension derivation."/>
       </eAnnotations>
@@ -832,7 +831,7 @@
         <details key="kind" value="empty"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Plong1" eSuperTypes="#//BACICharacteristics/Plong">
+    <eClassifiers xsi:type="ecore:EClass" name="Plong1" eSuperTypes="#//BACIProperties/Plong">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Base schema for Long Properties"/>
       </eAnnotations>
@@ -912,7 +911,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PlongLong" eSuperTypes="#//BACICharacteristics/TypelessProperty">
+    <eClassifiers xsi:type="ecore:EClass" name="PlongLong" eSuperTypes="#//BACIProperties/TypelessProperty">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Restriction step of Long Long Property definition.&#xA;Since it is not possible to restrict and extend a base schema at the same time,&#xA;we do always first a restriction derivation followed by an extension derivation."/>
       </eAnnotations>
@@ -921,7 +920,7 @@
         <details key="kind" value="empty"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PlongLong1" eSuperTypes="#//BACICharacteristics/PlongLong">
+    <eClassifiers xsi:type="ecore:EClass" name="PlongLong1" eSuperTypes="#//BACIProperties/PlongLong">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Base schema for Long Long Property"/>
       </eAnnotations>
@@ -1001,7 +1000,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PlongSeq" eSuperTypes="#//BACICharacteristics/TypelessProperty">
+    <eClassifiers xsi:type="ecore:EClass" name="PlongSeq" eSuperTypes="#//BACIProperties/TypelessProperty">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Restriction step of Long Sequence Property definition.&#xA;Since it is not possible to restrict and extend a base schema at the same time,&#xA;we do always first a restriction derivation followed by an extension derivation.&#xA;The values defined for the Characteristics apply to each single element of the sequence."/>
       </eAnnotations>
@@ -1010,7 +1009,7 @@
         <details key="kind" value="empty"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PlongSeq1" eSuperTypes="#//BACICharacteristics/PlongSeq">
+    <eClassifiers xsi:type="ecore:EClass" name="PlongSeq1" eSuperTypes="#//BACIProperties/PlongSeq">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Base schema for a property representing a sequence of Long values.&#xA;The values defined for the Characteristics apply to each single element of the sequence."/>
       </eAnnotations>
@@ -1090,7 +1089,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Ppattern" eSuperTypes="#//BACICharacteristics/TypelessProperty">
+    <eClassifiers xsi:type="ecore:EClass" name="Ppattern" eSuperTypes="#//BACIProperties/TypelessProperty">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Restriction step of Pattern Property definition.&#xA;Since it is not possible to restrict and extend a base schema at the same time,&#xA;we do always first a restriction derivation followed by an extension derivation."/>
       </eAnnotations>
@@ -1099,7 +1098,7 @@
         <details key="kind" value="empty"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Ppattern1" eSuperTypes="#//BACICharacteristics/Ppattern">
+    <eClassifiers xsi:type="ecore:EClass" name="Ppattern1" eSuperTypes="#//BACIProperties/Ppattern">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="pattern stands for an unsigned long long. The typedef pattern is used because this type will mostly be used to encode a pattern of status bits. The type pattern can be used also for raw binary data. "/>
       </eAnnotations>
@@ -1179,7 +1178,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Property" eSuperTypes="#//BACICharacteristics/CharacteristicModel">
+    <eClassifiers xsi:type="ecore:EClass" name="Property" eSuperTypes="#//BACIProperties/CharacteristicModel">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Base schema for the configuration database of all properties"/>
       </eAnnotations>
@@ -1188,7 +1187,7 @@
         <details key="kind" value="empty"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Pstring" eSuperTypes="#//BACICharacteristics/TypelessProperty">
+    <eClassifiers xsi:type="ecore:EClass" name="Pstring" eSuperTypes="#//BACIProperties/TypelessProperty">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Restriction step of String Property definition.&#xA;Since it is not possible to restrict and extend a base schema at the same time,&#xA;we do always first a restriction derivation followed by an extension derivation."/>
       </eAnnotations>
@@ -1197,7 +1196,7 @@
         <details key="kind" value="empty"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Pstring1" eSuperTypes="#//BACICharacteristics/Pstring">
+    <eClassifiers xsi:type="ecore:EClass" name="Pstring1" eSuperTypes="#//BACIProperties/Pstring">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Base schema for String Properties"/>
       </eAnnotations>
@@ -1237,7 +1236,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PstringSeq" eSuperTypes="#//BACICharacteristics/TypelessProperty">
+    <eClassifiers xsi:type="ecore:EClass" name="PstringSeq" eSuperTypes="#//BACIProperties/TypelessProperty">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Restriction step of String Sequence Property definition.&#xA;Since it is not possible to restrict and extend a base schema at the same time,&#xA;we do always first a restriction derivation followed by an extension derivation.&#xA;The values defined for the Characteristics apply to each single element of the sequence."/>
       </eAnnotations>
@@ -1246,7 +1245,7 @@
         <details key="kind" value="empty"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PstringSeq1" eSuperTypes="#//BACICharacteristics/PstringSeq">
+    <eClassifiers xsi:type="ecore:EClass" name="PstringSeq1" eSuperTypes="#//BACIProperties/PstringSeq">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Base schema for a property representing a sequence of String values.&#xA;The values defined for the Characteristics apply to each single element of the sequence."/>
       </eAnnotations>
@@ -1286,7 +1285,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PuLong" eSuperTypes="#//BACICharacteristics/TypelessProperty">
+    <eClassifiers xsi:type="ecore:EClass" name="PuLong" eSuperTypes="#//BACIProperties/TypelessProperty">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Restriction step of Unsigned Long Property definition.&#xA;Since it is not possible to restrict and extend a base schema at the same time,&#xA;we do always first a restriction derivation followed by an extension derivation."/>
       </eAnnotations>
@@ -1295,7 +1294,7 @@
         <details key="kind" value="empty"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PuLong1" eSuperTypes="#//BACICharacteristics/PuLong">
+    <eClassifiers xsi:type="ecore:EClass" name="PuLong1" eSuperTypes="#//BACIProperties/PuLong">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Base schema for Unsigned Long Properties"/>
       </eAnnotations>
@@ -1375,7 +1374,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PuLongLong" eSuperTypes="#//BACICharacteristics/TypelessProperty">
+    <eClassifiers xsi:type="ecore:EClass" name="PuLongLong" eSuperTypes="#//BACIProperties/TypelessProperty">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Restriction step of Unsigned Long Long Property definition.&#xA;Since it is not possible to restrict and extend a base schema at the same time,&#xA;we do always first a restriction derivation followed by an extension derivation."/>
       </eAnnotations>
@@ -1384,7 +1383,7 @@
         <details key="kind" value="empty"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PuLongLong1" eSuperTypes="#//BACICharacteristics/PuLongLong">
+    <eClassifiers xsi:type="ecore:EClass" name="PuLongLong1" eSuperTypes="#//BACIProperties/PuLongLong">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Base schema for Unsigned Long Long Properties"/>
       </eAnnotations>
@@ -1464,7 +1463,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PuLongSeq" eSuperTypes="#//BACICharacteristics/TypelessProperty">
+    <eClassifiers xsi:type="ecore:EClass" name="PuLongSeq" eSuperTypes="#//BACIProperties/TypelessProperty">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Restriction step of Unsigned Long Sequence Property definition.&#xA;Since it is not possible to restrict and extend a base schema at the same time,&#xA;we do always first a restriction derivation followed by an extension derivation.&#xA;The values defined for the Characteristics apply to each single element of the sequence."/>
       </eAnnotations>
@@ -1473,7 +1472,7 @@
         <details key="kind" value="empty"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PuLongSeq1" eSuperTypes="#//BACICharacteristics/PuLongSeq">
+    <eClassifiers xsi:type="ecore:EClass" name="PuLongSeq1" eSuperTypes="#//BACIProperties/PuLongSeq">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Base schema for a property representing a sequence of Unsigned Long values.&#xA;The values defined for the Characteristics apply to each single element of the sequence."/>
       </eAnnotations>
@@ -1553,7 +1552,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ROboolean" eSuperTypes="#//BACICharacteristics/Pboolean1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="ROboolean" eSuperTypes="#//BACIProperties/Pboolean1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Only Boolean Property"/>
       </eAnnotations>
@@ -1612,7 +1611,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RObooleanSeq" eSuperTypes="#//BACICharacteristics/PbooleanSeq1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="RObooleanSeq" eSuperTypes="#//BACIProperties/PbooleanSeq1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Only sequence of boolean values.&#xA;The values defined for the Characteristics apply to each single element of the sequence. "/>
       </eAnnotations>
@@ -1671,7 +1670,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ROdouble" eSuperTypes="#//BACICharacteristics/Pdouble1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="ROdouble" eSuperTypes="#//BACIProperties/Pdouble1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Only Double Property"/>
       </eAnnotations>
@@ -1760,7 +1759,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ROdoubleSeq" eSuperTypes="#//BACICharacteristics/PdoubleSeq1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="ROdoubleSeq" eSuperTypes="#//BACIProperties/PdoubleSeq1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Only sequence of Double values.&#xA;The values defined for the Characteristics apply to each single element of the sequence."/>
       </eAnnotations>
@@ -1849,7 +1848,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ROEnum" eSuperTypes="#//BACICharacteristics/PEnum1">
+    <eClassifiers xsi:type="ecore:EClass" name="ROEnum" eSuperTypes="#//BACIProperties/PEnum1">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Only Enumeration Property. Used to handle enumerations of values defined by the user."/>
       </eAnnotations>
@@ -1918,7 +1917,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ROfloat" eSuperTypes="#//BACICharacteristics/Pfloat1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="ROfloat" eSuperTypes="#//BACIProperties/Pfloat1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Only Float Property"/>
       </eAnnotations>
@@ -2007,7 +2006,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ROfloatSeq" eSuperTypes="#//BACICharacteristics/PfloatSeq1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="ROfloatSeq" eSuperTypes="#//BACIProperties/PfloatSeq1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="&#xA;&#x9;&#x9;&#x9;&#x9;Read Only sequence of Float values. The values defined&#xA;&#x9;&#x9;&#x9;&#x9;for the Characteristics apply to each single element of&#xA;&#x9;&#x9;&#x9;&#x9;the sequence.&#xA;&#x9;&#x9;&#x9;"/>
       </eAnnotations>
@@ -2096,7 +2095,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ROlong" eSuperTypes="#//BACICharacteristics/Plong1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="ROlong" eSuperTypes="#//BACIProperties/Plong1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Only Long Property"/>
       </eAnnotations>
@@ -2185,7 +2184,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ROlongLong" eSuperTypes="#//BACICharacteristics/PlongLong1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="ROlongLong" eSuperTypes="#//BACIProperties/PlongLong1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Only Long Long Property"/>
       </eAnnotations>
@@ -2274,7 +2273,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ROlongSeq" eSuperTypes="#//BACICharacteristics/PlongSeq1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="ROlongSeq" eSuperTypes="#//BACIProperties/PlongSeq1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Only sequence of Long values.&#xA;The values defined for the Characteristics apply to each single element of the sequence. "/>
       </eAnnotations>
@@ -2363,7 +2362,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ROpattern" eSuperTypes="#//BACICharacteristics/Ppattern1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="ROpattern" eSuperTypes="#//BACIProperties/Ppattern1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Only pattern property"/>
       </eAnnotations>
@@ -2432,7 +2431,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ROstring" eSuperTypes="#//BACICharacteristics/Pstring1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="ROstring" eSuperTypes="#//BACIProperties/Pstring1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Only String Property"/>
       </eAnnotations>
@@ -2481,7 +2480,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ROstringSeq" eSuperTypes="#//BACICharacteristics/PstringSeq1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="ROstringSeq" eSuperTypes="#//BACIProperties/PstringSeq1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Only sequence of String values.&#xA;The values defined for the Characteristics apply to each single element of the sequence."/>
       </eAnnotations>
@@ -2490,7 +2489,7 @@
         <details key="kind" value="empty"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ROuLong" eSuperTypes="#//BACICharacteristics/PuLong1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="ROuLong" eSuperTypes="#//BACIProperties/PuLong1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Only Unsigned Long Property"/>
       </eAnnotations>
@@ -2579,7 +2578,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ROuLongLong" eSuperTypes="#//BACICharacteristics/PuLongLong1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="ROuLongLong" eSuperTypes="#//BACIProperties/PuLongLong1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Only Unsigned Long Long Property"/>
       </eAnnotations>
@@ -2668,7 +2667,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ROuLongSeq" eSuperTypes="#//BACICharacteristics/PuLongSeq1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="ROuLongSeq" eSuperTypes="#//BACIProperties/PuLongSeq1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Only sequence of Unsigned Long values.&#xA;The values defined for the Characteristics apply to each single element of the sequence. "/>
       </eAnnotations>
@@ -2757,7 +2756,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RWboolean" eSuperTypes="#//BACICharacteristics/Pboolean1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="RWboolean" eSuperTypes="#//BACIProperties/Pboolean1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Write Boolean Property"/>
       </eAnnotations>
@@ -2786,7 +2785,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RWbooleanSeq" eSuperTypes="#//BACICharacteristics/PbooleanSeq1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="RWbooleanSeq" eSuperTypes="#//BACIProperties/PbooleanSeq1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Write sequence of boolean values.&#xA;The values defined for the Characteristics apply to each single element of the sequence. "/>
       </eAnnotations>
@@ -2815,7 +2814,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RWdouble" eSuperTypes="#//BACICharacteristics/Pdouble1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="RWdouble" eSuperTypes="#//BACIProperties/Pdouble1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Write Double Property"/>
       </eAnnotations>
@@ -2844,7 +2843,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RWdoubleSeq" eSuperTypes="#//BACICharacteristics/PdoubleSeq1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="RWdoubleSeq" eSuperTypes="#//BACIProperties/PdoubleSeq1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Write sequence of Double values.&#xA;The values defined for the Characteristics apply to each single element of the sequence. "/>
       </eAnnotations>
@@ -2873,7 +2872,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RWEnum" eSuperTypes="#//BACICharacteristics/PEnum1">
+    <eClassifiers xsi:type="ecore:EClass" name="RWEnum" eSuperTypes="#//BACIProperties/PEnum1">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Write Enumeration Property. Used to handle enumerations of values defined by the user."/>
       </eAnnotations>
@@ -2896,7 +2895,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RWfloat" eSuperTypes="#//BACICharacteristics/Pfloat1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="RWfloat" eSuperTypes="#//BACIProperties/Pfloat1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Write Float Property"/>
       </eAnnotations>
@@ -2925,7 +2924,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RWfloatSeq" eSuperTypes="#//BACICharacteristics/PfloatSeq1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="RWfloatSeq" eSuperTypes="#//BACIProperties/PfloatSeq1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Write sequence of Float values.&#xA;The values defined for the Characteristics apply to each single element of the sequence. "/>
       </eAnnotations>
@@ -2954,7 +2953,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RWlong" eSuperTypes="#//BACICharacteristics/Plong1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="RWlong" eSuperTypes="#//BACIProperties/Plong1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Write Long Property"/>
       </eAnnotations>
@@ -2983,7 +2982,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RWlongLong" eSuperTypes="#//BACICharacteristics/PlongLong1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="RWlongLong" eSuperTypes="#//BACIProperties/PlongLong1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Write Long Long Property"/>
       </eAnnotations>
@@ -3012,7 +3011,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RWlongSeq" eSuperTypes="#//BACICharacteristics/PlongSeq1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="RWlongSeq" eSuperTypes="#//BACIProperties/PlongSeq1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Write sequence of Long values.&#xA;The values defined for the Characteristics apply to each single element of the sequence. "/>
       </eAnnotations>
@@ -3041,7 +3040,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RWpattern" eSuperTypes="#//BACICharacteristics/Ppattern1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="RWpattern" eSuperTypes="#//BACIProperties/Ppattern1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Write Pattern Property"/>
       </eAnnotations>
@@ -3050,7 +3049,7 @@
         <details key="kind" value="empty"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RWstring" eSuperTypes="#//BACICharacteristics/Pstring1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="RWstring" eSuperTypes="#//BACIProperties/Pstring1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Write String Property"/>
       </eAnnotations>
@@ -3059,7 +3058,7 @@
         <details key="kind" value="empty"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RWuLong" eSuperTypes="#//BACICharacteristics/PuLong1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="RWuLong" eSuperTypes="#//BACIProperties/PuLong1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Write Unsigned Long Property"/>
       </eAnnotations>
@@ -3088,7 +3087,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RWuLongLong" eSuperTypes="#//BACICharacteristics/PuLongLong1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="RWuLongLong" eSuperTypes="#//BACIProperties/PuLongLong1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Write Unsigned Long Long Property"/>
       </eAnnotations>
@@ -3117,7 +3116,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RWuLongSeq" eSuperTypes="#//BACICharacteristics/PuLongSeq1 #//BaciCharacteristics">
+    <eClassifiers xsi:type="ecore:EClass" name="RWuLongSeq" eSuperTypes="#//BACIProperties/PuLongSeq1 #//PropertyDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Read Write sequence of Unsigned Long values.&#xA;The values defined for the Characteristics apply to each single element of the sequence. "/>
       </eAnnotations>
@@ -3146,7 +3145,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TypelessProperty" eSuperTypes="#//BACICharacteristics/Property">
+    <eClassifiers xsi:type="ecore:EClass" name="TypelessProperty" eSuperTypes="#//BACIProperties/Property">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Defines Characteristics common to all properties, independently from their type"/>
       </eAnnotations>
