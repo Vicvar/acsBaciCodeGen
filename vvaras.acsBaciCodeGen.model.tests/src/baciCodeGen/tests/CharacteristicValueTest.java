@@ -3,7 +3,7 @@
 package baciCodeGen.tests;
 
 import baciCodeGen.BaciCodeGenFactory;
-import baciCodeGen.Characteristic;
+import baciCodeGen.CharacteristicValue;
 
 import junit.framework.TestCase;
 
@@ -11,26 +11,26 @@ import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Characteristic</b></em>'.
+ * A test case for the model object '<em><b>Characteristic Value</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link baciCodeGen.Characteristic#getName() <em>Name</em>}</li>
- *   <li>{@link baciCodeGen.Characteristic#getValue() <em>Value</em>}</li>
+ *   <li>{@link baciCodeGen.CharacteristicValue#getName() <em>Name</em>}</li>
+ *   <li>{@link baciCodeGen.CharacteristicValue#getValue() <em>Value</em>}</li>
  * </ul>
  * </p>
  * @generated
  */
-public class CharacteristicTest extends TestCase {
+public class CharacteristicValueTest extends TestCase {
 
 	/**
-	 * The fixture for this Characteristic test case.
+	 * The fixture for this Characteristic Value test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Characteristic fixture = null;
+	protected CharacteristicValue fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -38,36 +38,36 @@ public class CharacteristicTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(CharacteristicTest.class);
+		TestRunner.run(CharacteristicValueTest.class);
 	}
 
 	/**
-	 * Constructs a new Characteristic test case with the given name.
+	 * Constructs a new Characteristic Value test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CharacteristicTest(String name) {
+	public CharacteristicValueTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this Characteristic test case.
+	 * Sets the fixture for this Characteristic Value test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Characteristic fixture) {
+	protected void setFixture(CharacteristicValue fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this Characteristic test case.
+	 * Returns the fixture for this Characteristic Value test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Characteristic getFixture() {
+	protected CharacteristicValue getFixture() {
 		return fixture;
 	}
 
@@ -79,7 +79,7 @@ public class CharacteristicTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(BaciCodeGenFactory.eINSTANCE.createCharacteristic());
+		setFixture(BaciCodeGenFactory.eINSTANCE.createCharacteristicValue());
 	}
 
 	/**
@@ -94,10 +94,10 @@ public class CharacteristicTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link baciCodeGen.Characteristic#getName() <em>Name</em>}' feature getter.
+	 * Tests the '{@link baciCodeGen.CharacteristicValue#getName() <em>Name</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.Characteristic#getName()
+	 * @see baciCodeGen.CharacteristicValue#getName()
 	 * @generated
 	 */
 	public void testGetName() {
@@ -107,10 +107,10 @@ public class CharacteristicTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link baciCodeGen.Characteristic#setName(java.lang.String) <em>Name</em>}' feature setter.
+	 * Tests the '{@link baciCodeGen.CharacteristicValue#setName(java.lang.String) <em>Name</em>}' feature setter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.Characteristic#setName(java.lang.String)
+	 * @see baciCodeGen.CharacteristicValue#setName(java.lang.String)
 	 * @generated
 	 */
 	public void testSetName() {
@@ -120,10 +120,10 @@ public class CharacteristicTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link baciCodeGen.Characteristic#getValue() <em>Value</em>}' feature getter.
+	 * Tests the '{@link baciCodeGen.CharacteristicValue#getValue() <em>Value</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.Characteristic#getValue()
+	 * @see baciCodeGen.CharacteristicValue#getValue()
 	 * @generated
 	 */
 	public void testGetValue() {
@@ -133,10 +133,10 @@ public class CharacteristicTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link baciCodeGen.Characteristic#setValue(java.lang.String) <em>Value</em>}' feature setter.
+	 * Tests the '{@link baciCodeGen.CharacteristicValue#setValue(java.lang.String) <em>Value</em>}' feature setter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.Characteristic#setValue(java.lang.String)
+	 * @see baciCodeGen.CharacteristicValue#setValue(java.lang.String)
 	 * @generated
 	 */
 	public void testSetValue() {
@@ -145,4 +145,4 @@ public class CharacteristicTest extends TestCase {
 		fail();
 	}
 
-} //CharacteristicTest
+} //CharacteristicValueTest

@@ -17,7 +17,6 @@ import junit.textui.TestRunner;
  * The following features are tested:
  * <ul>
  *   <li>{@link baciCodeGen.BaciType#getName() <em>Name</em>}</li>
- *   <li>{@link baciCodeGen.BaciType#getBaciCharacteristics() <em>Baci Characteristics</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -102,58 +101,6 @@ public class BaciTypeTest extends TestCase {
 	 */
 	public void testGetName() {
 		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link baciCodeGen.BaciType#getBaciCharacteristics() <em>Baci Characteristics</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.BaciType#getBaciCharacteristics()
-	 * @generated
-	 */
-	public void testGetBaciCharacteristics() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link baciCodeGen.BaciType#setBaciCharacteristics(baciCodeGen.PropertyDefinition) <em>Baci Characteristics</em>}' feature setter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.BaciType#setBaciCharacteristics(baciCodeGen.PropertyDefinition)
-	 * @generated
-	 */
-	public void testSetBaciCharacteristics() {
-		// TODO: implement this feature setter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link baciCodeGen.BaciType#unsetBaciCharacteristics() <em>unsetBaciCharacteristics()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.BaciType#unsetBaciCharacteristics()
-	 * @generated
-	 */
-	public void testUnsetBaciCharacteristics() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link baciCodeGen.BaciType#isSetBaciCharacteristics() <em>isSetBaciCharacteristics()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.BaciType#isSetBaciCharacteristics()
-	 * @generated
-	 */
-	public void testIsSetBaciCharacteristics() {
-		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

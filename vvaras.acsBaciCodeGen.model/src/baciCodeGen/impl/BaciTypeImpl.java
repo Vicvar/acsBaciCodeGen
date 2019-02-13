@@ -6,15 +6,10 @@ import baciCodeGen.AccessType;
 import baciCodeGen.BaciCodeGenPackage;
 import baciCodeGen.BaciType;
 import baciCodeGen.BasicType;
-import baciCodeGen.PropertyDefinition;
 import baciCodeGen.SeqType;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -30,7 +25,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link baciCodeGen.impl.BaciTypeImpl#getAccessType <em>Access Type</em>}</li>
  *   <li>{@link baciCodeGen.impl.BaciTypeImpl#getBasicType <em>Basic Type</em>}</li>
  *   <li>{@link baciCodeGen.impl.BaciTypeImpl#getSeqType <em>Seq Type</em>}</li>
- *   <li>{@link baciCodeGen.impl.BaciTypeImpl#getBaciCharacteristics <em>Baci Characteristics</em>}</li>
  * </ul>
  *
  * @generated
@@ -105,25 +99,6 @@ public class BaciTypeImpl extends MinimalEObjectImpl.Container implements BaciTy
 	 * @ordered
 	 */
 	protected SeqType seqType = SEQ_TYPE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getBaciCharacteristics() <em>Baci Characteristics</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBaciCharacteristics()
-	 * @generated
-	 * @ordered
-	 */
-	protected PropertyDefinition baciCharacteristics;
-
-	/**
-	 * This is true if the Baci Characteristics containment reference has been set.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean baciCharacteristicsESet;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,115 +201,6 @@ public class BaciTypeImpl extends MinimalEObjectImpl.Container implements BaciTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertyDefinition getBaciCharacteristics() {
-		return baciCharacteristics;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetBaciCharacteristics(PropertyDefinition newBaciCharacteristics, NotificationChain msgs) {
-		PropertyDefinition oldBaciCharacteristics = baciCharacteristics;
-		baciCharacteristics = newBaciCharacteristics;
-		boolean oldBaciCharacteristicsESet = baciCharacteristicsESet;
-		baciCharacteristicsESet = true;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.BACI_TYPE__BACI_CHARACTERISTICS, oldBaciCharacteristics, newBaciCharacteristics, !oldBaciCharacteristicsESet);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setBaciCharacteristics(PropertyDefinition newBaciCharacteristics) {
-		if (newBaciCharacteristics != baciCharacteristics) {
-			NotificationChain msgs = null;
-			if (baciCharacteristics != null)
-				msgs = ((InternalEObject)baciCharacteristics).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BaciCodeGenPackage.BACI_TYPE__BACI_CHARACTERISTICS, null, msgs);
-			if (newBaciCharacteristics != null)
-				msgs = ((InternalEObject)newBaciCharacteristics).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BaciCodeGenPackage.BACI_TYPE__BACI_CHARACTERISTICS, null, msgs);
-			msgs = basicSetBaciCharacteristics(newBaciCharacteristics, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else {
-			boolean oldBaciCharacteristicsESet = baciCharacteristicsESet;
-			baciCharacteristicsESet = true;
-			if (eNotificationRequired())
-				eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.BACI_TYPE__BACI_CHARACTERISTICS, newBaciCharacteristics, newBaciCharacteristics, !oldBaciCharacteristicsESet));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicUnsetBaciCharacteristics(NotificationChain msgs) {
-		PropertyDefinition oldBaciCharacteristics = baciCharacteristics;
-		baciCharacteristics = null;
-		boolean oldBaciCharacteristicsESet = baciCharacteristicsESet;
-		baciCharacteristicsESet = false;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, BaciCodeGenPackage.BACI_TYPE__BACI_CHARACTERISTICS, oldBaciCharacteristics, null, oldBaciCharacteristicsESet);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void unsetBaciCharacteristics() {
-		if (baciCharacteristics != null) {
-			NotificationChain msgs = null;
-			msgs = ((InternalEObject)baciCharacteristics).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BaciCodeGenPackage.BACI_TYPE__BACI_CHARACTERISTICS, null, msgs);
-			msgs = basicUnsetBaciCharacteristics(msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else {
-			boolean oldBaciCharacteristicsESet = baciCharacteristicsESet;
-			baciCharacteristicsESet = false;
-			if (eNotificationRequired())
-				eNotify(new ENotificationImpl(this, Notification.UNSET, BaciCodeGenPackage.BACI_TYPE__BACI_CHARACTERISTICS, null, null, oldBaciCharacteristicsESet));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetBaciCharacteristics() {
-		return baciCharacteristicsESet;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case BaciCodeGenPackage.BACI_TYPE__BACI_CHARACTERISTICS:
-				return basicUnsetBaciCharacteristics(msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -346,8 +212,6 @@ public class BaciTypeImpl extends MinimalEObjectImpl.Container implements BaciTy
 				return getBasicType();
 			case BaciCodeGenPackage.BACI_TYPE__SEQ_TYPE:
 				return getSeqType();
-			case BaciCodeGenPackage.BACI_TYPE__BACI_CHARACTERISTICS:
-				return getBaciCharacteristics();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -368,9 +232,6 @@ public class BaciTypeImpl extends MinimalEObjectImpl.Container implements BaciTy
 				return;
 			case BaciCodeGenPackage.BACI_TYPE__SEQ_TYPE:
 				setSeqType((SeqType)newValue);
-				return;
-			case BaciCodeGenPackage.BACI_TYPE__BACI_CHARACTERISTICS:
-				setBaciCharacteristics((PropertyDefinition)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -393,9 +254,6 @@ public class BaciTypeImpl extends MinimalEObjectImpl.Container implements BaciTy
 			case BaciCodeGenPackage.BACI_TYPE__SEQ_TYPE:
 				setSeqType(SEQ_TYPE_EDEFAULT);
 				return;
-			case BaciCodeGenPackage.BACI_TYPE__BACI_CHARACTERISTICS:
-				unsetBaciCharacteristics();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -416,8 +274,6 @@ public class BaciTypeImpl extends MinimalEObjectImpl.Container implements BaciTy
 				return basicType != BASIC_TYPE_EDEFAULT;
 			case BaciCodeGenPackage.BACI_TYPE__SEQ_TYPE:
 				return seqType != SEQ_TYPE_EDEFAULT;
-			case BaciCodeGenPackage.BACI_TYPE__BACI_CHARACTERISTICS:
-				return isSetBaciCharacteristics();
 		}
 		return super.eIsSet(featureID);
 	}

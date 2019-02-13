@@ -15,19 +15,12 @@
         eType="#//Attribute" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
         eType="#//Property" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstances" lowerBound="1"
-        eType="#//ComponentInstances" containment="true" eOpposite="#//ComponentInstances/containingCaracteristicComponent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="usedBaciTypes" lowerBound="1"
         eType="#//UsedBaciTypes" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="usedDevIOs" lowerBound="1"
         eType="#//UsedDevIOs" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Property">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="baciType" lowerBound="1"
-        eType="#//BaciType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="devIO" lowerBound="1" eType="#//DevIO"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstances" lowerBound="1"
+        eType="#//ComponentInstances" containment="true" eOpposite="#//ComponentInstances/containingCaracteristicComponent"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -40,37 +33,21 @@
   <eClassifiers xsi:type="ecore:EClass" name="Parameter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="required" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ComponentInstances">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instances" lowerBound="1"
-        upperBound="-1" eType="#//Instance" containment="true" eOpposite="#//Instance/containingComponentInstances"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="containingCaracteristicComponent"
-        lowerBound="1" eType="#//CharacteristicComponent" eOpposite="#//CharacteristicComponent/componentInstances"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Instance">
+  <eClassifiers xsi:type="ecore:EClass" name="Property">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="containingComponentInstances"
-        lowerBound="1" eType="#//ComponentInstances" eOpposite="#//ComponentInstances/instances"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instanceCharacteristics"
-        upperBound="-1" eType="#//Characteristic" unsettable="true" derived="true"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Characteristic">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        derived="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baciType" lowerBound="1"
+        eType="#//BaciType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="devIO" lowerBound="1" eType="#//DevIO"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UsedDevIOs">
     <eStructuralFeatures xsi:type="ecore:EReference" name="devIOs" upperBound="-1"
@@ -87,6 +64,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="auxiliaryVariables" upperBound="-1"
         eType="#//AuxiliaryVariable" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DevIOVariable" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PropertySpecificVariable" eSuperTypes="#//DevIOVariable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRead" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isWrite" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -101,11 +83,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral=""/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DevIOVariable" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UsedBaciTypes">
     <eStructuralFeatures xsi:type="ecore:EReference" name="baciTypes" upperBound="-1"
         eType="#//BaciType" containment="true"/>
@@ -117,8 +94,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessType" eType="#//AccessType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="basicType" eType="#//BasicType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="seqType" eType="#//SeqType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="baciCharacteristics" lowerBound="1"
-        eType="#//PropertyDefinition" unsettable="true" derived="true" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="AccessType">
     <eLiterals name="RO"/>
@@ -138,6 +113,34 @@
   <eClassifiers xsi:type="ecore:EEnum" name="SeqType">
     <eLiterals name="notSeq"/>
     <eLiterals name="Seq" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentInstances">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instances" lowerBound="1"
+        upperBound="-1" eType="#//Instance" containment="true" eOpposite="#//Instance/containingComponentInstances"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containingCaracteristicComponent"
+        lowerBound="1" eType="#//CharacteristicComponent" eOpposite="#//CharacteristicComponent/componentInstances"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Instance">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containingComponentInstances"
+        lowerBound="1" eType="#//ComponentInstances" eOpposite="#//ComponentInstances/instances"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instanceAttributes" upperBound="-1"
+        eType="#//AttributeValue" unsettable="true" derived="true" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instanceCharacteristics"
+        upperBound="-1" eType="#//CharacteristicValue" unsettable="true" derived="true"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CharacteristicValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PropertyDefinition" abstract="true"
       interface="true"/>

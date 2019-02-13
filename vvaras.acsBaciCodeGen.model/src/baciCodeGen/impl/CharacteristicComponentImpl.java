@@ -42,9 +42,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link baciCodeGen.impl.CharacteristicComponentImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link baciCodeGen.impl.CharacteristicComponentImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link baciCodeGen.impl.CharacteristicComponentImpl#getProperties <em>Properties</em>}</li>
- *   <li>{@link baciCodeGen.impl.CharacteristicComponentImpl#getComponentInstances <em>Component Instances</em>}</li>
  *   <li>{@link baciCodeGen.impl.CharacteristicComponentImpl#getUsedBaciTypes <em>Used Baci Types</em>}</li>
  *   <li>{@link baciCodeGen.impl.CharacteristicComponentImpl#getUsedDevIOs <em>Used Dev IOs</em>}</li>
+ *   <li>{@link baciCodeGen.impl.CharacteristicComponentImpl#getComponentInstances <em>Component Instances</em>}</li>
  * </ul>
  *
  * @generated
@@ -161,16 +161,6 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 	protected EList<Property> properties;
 
 	/**
-	 * The cached value of the '{@link #getComponentInstances() <em>Component Instances</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComponentInstances()
-	 * @generated
-	 * @ordered
-	 */
-	protected ComponentInstances componentInstances;
-
-	/**
 	 * The cached value of the '{@link #getUsedBaciTypes() <em>Used Baci Types</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -189,6 +179,16 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 	 * @ordered
 	 */
 	protected UsedDevIOs usedDevIOs;
+
+	/**
+	 * The cached value of the '{@link #getComponentInstances() <em>Component Instances</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComponentInstances()
+	 * @generated
+	 * @ordered
+	 */
+	protected ComponentInstances componentInstances;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -488,12 +488,12 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 				return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__PROPERTIES:
 				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
-			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES:
-				return basicSetComponentInstances(null, msgs);
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_BACI_TYPES:
 				return basicSetUsedBaciTypes(null, msgs);
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_DEV_IOS:
 				return basicSetUsedDevIOs(null, msgs);
+			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES:
+				return basicSetComponentInstances(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -520,12 +520,12 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 				return getAttributes();
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__PROPERTIES:
 				return getProperties();
-			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES:
-				return getComponentInstances();
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_BACI_TYPES:
 				return getUsedBaciTypes();
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_DEV_IOS:
 				return getUsedDevIOs();
+			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES:
+				return getComponentInstances();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -563,14 +563,14 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 				getProperties().clear();
 				getProperties().addAll((Collection<? extends Property>)newValue);
 				return;
-			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES:
-				setComponentInstances((ComponentInstances)newValue);
-				return;
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_BACI_TYPES:
 				setUsedBaciTypes((UsedBaciTypes)newValue);
 				return;
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_DEV_IOS:
 				setUsedDevIOs((UsedDevIOs)newValue);
+				return;
+			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES:
+				setComponentInstances((ComponentInstances)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -605,14 +605,14 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__PROPERTIES:
 				getProperties().clear();
 				return;
-			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES:
-				setComponentInstances((ComponentInstances)null);
-				return;
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_BACI_TYPES:
 				setUsedBaciTypes((UsedBaciTypes)null);
 				return;
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_DEV_IOS:
 				setUsedDevIOs((UsedDevIOs)null);
+				return;
+			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES:
+				setComponentInstances((ComponentInstances)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -640,12 +640,12 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 				return attributes != null && !attributes.isEmpty();
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__PROPERTIES:
 				return properties != null && !properties.isEmpty();
-			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES:
-				return componentInstances != null;
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_BACI_TYPES:
 				return usedBaciTypes != null;
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_DEV_IOS:
 				return usedDevIOs != null;
+			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES:
+				return componentInstances != null;
 		}
 		return super.eIsSet(featureID);
 	}

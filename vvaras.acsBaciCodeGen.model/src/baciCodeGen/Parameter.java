@@ -59,7 +59,7 @@ public interface Parameter extends EObject {
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see #setType(String)
 	 * @see baciCodeGen.BaciCodeGenPackage#getParameter_Type()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getType();

@@ -5,6 +5,7 @@ package baciCodeGen.impl;
 import baciCodeGen.AccessType;
 import baciCodeGen.Action;
 import baciCodeGen.Attribute;
+import baciCodeGen.AttributeValue;
 import baciCodeGen.AuxiliaryVariable;
 import baciCodeGen.BACIProperties.BACIPropertiesPackage;
 import baciCodeGen.BACIProperties.impl.BACIPropertiesPackageImpl;
@@ -12,8 +13,8 @@ import baciCodeGen.BaciCodeGenFactory;
 import baciCodeGen.BaciCodeGenPackage;
 import baciCodeGen.BaciType;
 import baciCodeGen.BasicType;
-import baciCodeGen.Characteristic;
 import baciCodeGen.CharacteristicComponent;
+import baciCodeGen.CharacteristicValue;
 import baciCodeGen.CommonVariable;
 import baciCodeGen.ComponentInstances;
 import baciCodeGen.DevIO;
@@ -96,7 +97,14 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass characteristicEClass = null;
+	private EClass attributeValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass characteristicValueEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -326,7 +334,7 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * @generated
 	 */
 	public EReference getCharacteristicComponent_ComponentInstances() {
-		return (EReference)characteristicComponentEClass.getEStructuralFeatures().get(7);
+		return (EReference)characteristicComponentEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -335,7 +343,7 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * @generated
 	 */
 	public EReference getCharacteristicComponent_UsedBaciTypes() {
-		return (EReference)characteristicComponentEClass.getEStructuralFeatures().get(8);
+		return (EReference)characteristicComponentEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -344,7 +352,7 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * @generated
 	 */
 	public EReference getCharacteristicComponent_UsedDevIOs() {
-		return (EReference)characteristicComponentEClass.getEStructuralFeatures().get(9);
+		return (EReference)characteristicComponentEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -487,7 +495,7 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAttribute_Value() {
+	public EAttribute getAttribute_DefaultValue() {
 		return (EAttribute)attributeEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -550,7 +558,7 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInstance_InstanceCharacteristics() {
+	public EReference getInstance_InstanceAttributes() {
 		return (EReference)instanceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -559,8 +567,8 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCharacteristic() {
-		return characteristicEClass;
+	public EReference getInstance_InstanceCharacteristics() {
+		return (EReference)instanceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -568,8 +576,8 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCharacteristic_ID() {
-		return (EAttribute)characteristicEClass.getEStructuralFeatures().get(0);
+	public EClass getAttributeValue() {
+		return attributeValueEClass;
 	}
 
 	/**
@@ -577,8 +585,8 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCharacteristic_Name() {
-		return (EAttribute)characteristicEClass.getEStructuralFeatures().get(1);
+	public EAttribute getAttributeValue_Name() {
+		return (EAttribute)attributeValueEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -586,8 +594,44 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCharacteristic_Value() {
-		return (EAttribute)characteristicEClass.getEStructuralFeatures().get(2);
+	public EAttribute getAttributeValue_Value() {
+		return (EAttribute)attributeValueEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCharacteristicValue() {
+		return characteristicValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCharacteristicValue_ID() {
+		return (EAttribute)characteristicValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCharacteristicValue_Name() {
+		return (EAttribute)characteristicValueEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCharacteristicValue_Value() {
+		return (EAttribute)characteristicValueEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -838,15 +882,6 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBaciType_BaciCharacteristics() {
-		return (EReference)baciTypeEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getPropertyDefinition() {
 		return propertyDefinitionEClass;
 	}
@@ -914,14 +949,9 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		createEReference(characteristicComponentEClass, CHARACTERISTIC_COMPONENT__ACTIONS);
 		createEReference(characteristicComponentEClass, CHARACTERISTIC_COMPONENT__ATTRIBUTES);
 		createEReference(characteristicComponentEClass, CHARACTERISTIC_COMPONENT__PROPERTIES);
-		createEReference(characteristicComponentEClass, CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES);
 		createEReference(characteristicComponentEClass, CHARACTERISTIC_COMPONENT__USED_BACI_TYPES);
 		createEReference(characteristicComponentEClass, CHARACTERISTIC_COMPONENT__USED_DEV_IOS);
-
-		propertyEClass = createEClass(PROPERTY);
-		createEAttribute(propertyEClass, PROPERTY__NAME);
-		createEReference(propertyEClass, PROPERTY__BACI_TYPE);
-		createEReference(propertyEClass, PROPERTY__DEV_IO);
+		createEReference(characteristicComponentEClass, CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES);
 
 		actionEClass = createEClass(ACTION);
 		createEAttribute(actionEClass, ACTION__NAME);
@@ -936,21 +966,12 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		createEAttribute(attributeEClass, ATTRIBUTE__NAME);
 		createEAttribute(attributeEClass, ATTRIBUTE__TYPE);
 		createEAttribute(attributeEClass, ATTRIBUTE__REQUIRED);
-		createEAttribute(attributeEClass, ATTRIBUTE__VALUE);
+		createEAttribute(attributeEClass, ATTRIBUTE__DEFAULT_VALUE);
 
-		componentInstancesEClass = createEClass(COMPONENT_INSTANCES);
-		createEReference(componentInstancesEClass, COMPONENT_INSTANCES__INSTANCES);
-		createEReference(componentInstancesEClass, COMPONENT_INSTANCES__CONTAINING_CARACTERISTIC_COMPONENT);
-
-		instanceEClass = createEClass(INSTANCE);
-		createEAttribute(instanceEClass, INSTANCE__NAME);
-		createEReference(instanceEClass, INSTANCE__CONTAINING_COMPONENT_INSTANCES);
-		createEReference(instanceEClass, INSTANCE__INSTANCE_CHARACTERISTICS);
-
-		characteristicEClass = createEClass(CHARACTERISTIC);
-		createEAttribute(characteristicEClass, CHARACTERISTIC__ID);
-		createEAttribute(characteristicEClass, CHARACTERISTIC__NAME);
-		createEAttribute(characteristicEClass, CHARACTERISTIC__VALUE);
+		propertyEClass = createEClass(PROPERTY);
+		createEAttribute(propertyEClass, PROPERTY__NAME);
+		createEReference(propertyEClass, PROPERTY__BACI_TYPE);
+		createEReference(propertyEClass, PROPERTY__DEV_IO);
 
 		usedDevIOsEClass = createEClass(USED_DEV_IOS);
 		createEReference(usedDevIOsEClass, USED_DEV_IOS__DEV_IOS);
@@ -961,6 +982,10 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		createEReference(devIOEClass, DEV_IO__PROPERTY_SPECIFIC_VARIABLES);
 		createEReference(devIOEClass, DEV_IO__COMMON_VARIABLES);
 		createEReference(devIOEClass, DEV_IO__AUXILIARY_VARIABLES);
+
+		devIOVariableEClass = createEClass(DEV_IO_VARIABLE);
+		createEAttribute(devIOVariableEClass, DEV_IO_VARIABLE__NAME);
+		createEAttribute(devIOVariableEClass, DEV_IO_VARIABLE__TYPE);
 
 		propertySpecificVariableEClass = createEClass(PROPERTY_SPECIFIC_VARIABLE);
 		createEAttribute(propertySpecificVariableEClass, PROPERTY_SPECIFIC_VARIABLE__IS_READ);
@@ -974,10 +999,6 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		auxiliaryVariableEClass = createEClass(AUXILIARY_VARIABLE);
 		createEAttribute(auxiliaryVariableEClass, AUXILIARY_VARIABLE__VALUE);
 
-		devIOVariableEClass = createEClass(DEV_IO_VARIABLE);
-		createEAttribute(devIOVariableEClass, DEV_IO_VARIABLE__NAME);
-		createEAttribute(devIOVariableEClass, DEV_IO_VARIABLE__TYPE);
-
 		usedBaciTypesEClass = createEClass(USED_BACI_TYPES);
 		createEReference(usedBaciTypesEClass, USED_BACI_TYPES__BACI_TYPES);
 
@@ -986,7 +1007,25 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		createEAttribute(baciTypeEClass, BACI_TYPE__ACCESS_TYPE);
 		createEAttribute(baciTypeEClass, BACI_TYPE__BASIC_TYPE);
 		createEAttribute(baciTypeEClass, BACI_TYPE__SEQ_TYPE);
-		createEReference(baciTypeEClass, BACI_TYPE__BACI_CHARACTERISTICS);
+
+		componentInstancesEClass = createEClass(COMPONENT_INSTANCES);
+		createEReference(componentInstancesEClass, COMPONENT_INSTANCES__INSTANCES);
+		createEReference(componentInstancesEClass, COMPONENT_INSTANCES__CONTAINING_CARACTERISTIC_COMPONENT);
+
+		instanceEClass = createEClass(INSTANCE);
+		createEAttribute(instanceEClass, INSTANCE__NAME);
+		createEReference(instanceEClass, INSTANCE__CONTAINING_COMPONENT_INSTANCES);
+		createEReference(instanceEClass, INSTANCE__INSTANCE_ATTRIBUTES);
+		createEReference(instanceEClass, INSTANCE__INSTANCE_CHARACTERISTICS);
+
+		attributeValueEClass = createEClass(ATTRIBUTE_VALUE);
+		createEAttribute(attributeValueEClass, ATTRIBUTE_VALUE__NAME);
+		createEAttribute(attributeValueEClass, ATTRIBUTE_VALUE__VALUE);
+
+		characteristicValueEClass = createEClass(CHARACTERISTIC_VALUE);
+		createEAttribute(characteristicValueEClass, CHARACTERISTIC_VALUE__ID);
+		createEAttribute(characteristicValueEClass, CHARACTERISTIC_VALUE__NAME);
+		createEAttribute(characteristicValueEClass, CHARACTERISTIC_VALUE__VALUE);
 
 		propertyDefinitionEClass = createEClass(PROPERTY_DEFINITION);
 
@@ -1043,14 +1082,9 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		initEReference(getCharacteristicComponent_Actions(), this.getAction(), null, "actions", null, 0, -1, CharacteristicComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCharacteristicComponent_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, CharacteristicComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCharacteristicComponent_Properties(), this.getProperty(), null, "properties", null, 0, -1, CharacteristicComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCharacteristicComponent_ComponentInstances(), this.getComponentInstances(), this.getComponentInstances_ContainingCaracteristicComponent(), "componentInstances", null, 1, 1, CharacteristicComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCharacteristicComponent_UsedBaciTypes(), this.getUsedBaciTypes(), null, "usedBaciTypes", null, 1, 1, CharacteristicComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCharacteristicComponent_UsedDevIOs(), this.getUsedDevIOs(), null, "usedDevIOs", null, 1, 1, CharacteristicComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProperty_Name(), ecorePackage.getEString(), "name", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProperty_BaciType(), this.getBaciType(), null, "baciType", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProperty_DevIO(), this.getDevIO(), null, "devIO", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCharacteristicComponent_ComponentInstances(), this.getComponentInstances(), this.getComponentInstances_ContainingCaracteristicComponent(), "componentInstances", null, 1, 1, CharacteristicComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 1, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1059,27 +1093,18 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 
 		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 1, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getParameter_Type(), ecorePackage.getEString(), "type", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getParameter_Type(), ecorePackage.getEString(), "type", null, 1, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttribute_Type(), ecorePackage.getEString(), "type", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttribute_Required(), ecorePackage.getEBoolean(), "required", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAttribute_Value(), ecorePackage.getEString(), "value", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAttribute_DefaultValue(), ecorePackage.getEString(), "defaultValue", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(componentInstancesEClass, ComponentInstances.class, "ComponentInstances", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComponentInstances_Instances(), this.getInstance(), this.getInstance_ContainingComponentInstances(), "instances", null, 1, -1, ComponentInstances.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentInstances_ContainingCaracteristicComponent(), this.getCharacteristicComponent(), this.getCharacteristicComponent_ComponentInstances(), "containingCaracteristicComponent", null, 1, 1, ComponentInstances.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(instanceEClass, Instance.class, "Instance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInstance_Name(), ecorePackage.getEString(), "name", null, 1, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInstance_ContainingComponentInstances(), this.getComponentInstances(), this.getComponentInstances_Instances(), "containingComponentInstances", null, 1, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInstance_InstanceCharacteristics(), this.getCharacteristic(), null, "instanceCharacteristics", null, 0, -1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-
-		initEClass(characteristicEClass, Characteristic.class, "Characteristic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCharacteristic_ID(), ecorePackage.getEString(), "ID", null, 1, 1, Characteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCharacteristic_Name(), ecorePackage.getEString(), "name", null, 0, 1, Characteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCharacteristic_Value(), ecorePackage.getEString(), "value", null, 0, 1, Characteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getProperty_Name(), ecorePackage.getEString(), "name", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProperty_BaciType(), this.getBaciType(), null, "baciType", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProperty_DevIO(), this.getDevIO(), null, "devIO", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(usedDevIOsEClass, UsedDevIOs.class, "UsedDevIOs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUsedDevIOs_DevIOs(), this.getDevIO(), null, "devIOs", null, 0, -1, UsedDevIOs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1090,6 +1115,10 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		initEReference(getDevIO_PropertySpecificVariables(), this.getPropertySpecificVariable(), null, "propertySpecificVariables", null, 0, -1, DevIO.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDevIO_CommonVariables(), this.getCommonVariable(), null, "commonVariables", null, 0, -1, DevIO.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDevIO_AuxiliaryVariables(), this.getAuxiliaryVariable(), null, "auxiliaryVariables", null, 0, -1, DevIO.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(devIOVariableEClass, DevIOVariable.class, "DevIOVariable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDevIOVariable_Name(), ecorePackage.getEString(), "name", null, 1, 1, DevIOVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDevIOVariable_Type(), ecorePackage.getEString(), "type", null, 0, 1, DevIOVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertySpecificVariableEClass, PropertySpecificVariable.class, "PropertySpecificVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPropertySpecificVariable_IsRead(), ecorePackage.getEBoolean(), "isRead", null, 0, 1, PropertySpecificVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1103,10 +1132,6 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		initEClass(auxiliaryVariableEClass, AuxiliaryVariable.class, "AuxiliaryVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAuxiliaryVariable_Value(), ecorePackage.getEString(), "value", "", 0, 1, AuxiliaryVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(devIOVariableEClass, DevIOVariable.class, "DevIOVariable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDevIOVariable_Name(), ecorePackage.getEString(), "name", null, 1, 1, DevIOVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDevIOVariable_Type(), ecorePackage.getEString(), "type", null, 0, 1, DevIOVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(usedBaciTypesEClass, UsedBaciTypes.class, "UsedBaciTypes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUsedBaciTypes_BaciTypes(), this.getBaciType(), null, "baciTypes", null, 0, -1, UsedBaciTypes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1115,7 +1140,25 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		initEAttribute(getBaciType_AccessType(), this.getAccessType(), "accessType", null, 0, 1, BaciType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBaciType_BasicType(), this.getBasicType(), "basicType", null, 0, 1, BaciType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBaciType_SeqType(), this.getSeqType(), "seqType", null, 0, 1, BaciType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBaciType_BaciCharacteristics(), this.getPropertyDefinition(), null, "baciCharacteristics", null, 1, 1, BaciType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		initEClass(componentInstancesEClass, ComponentInstances.class, "ComponentInstances", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getComponentInstances_Instances(), this.getInstance(), this.getInstance_ContainingComponentInstances(), "instances", null, 1, -1, ComponentInstances.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInstances_ContainingCaracteristicComponent(), this.getCharacteristicComponent(), this.getCharacteristicComponent_ComponentInstances(), "containingCaracteristicComponent", null, 1, 1, ComponentInstances.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(instanceEClass, Instance.class, "Instance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getInstance_Name(), ecorePackage.getEString(), "name", null, 1, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInstance_ContainingComponentInstances(), this.getComponentInstances(), this.getComponentInstances_Instances(), "containingComponentInstances", null, 1, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInstance_InstanceAttributes(), this.getAttributeValue(), null, "instanceAttributes", null, 0, -1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInstance_InstanceCharacteristics(), this.getCharacteristicValue(), null, "instanceCharacteristics", null, 0, -1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		initEClass(attributeValueEClass, AttributeValue.class, "AttributeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAttributeValue_Name(), ecorePackage.getEString(), "name", null, 0, 1, AttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAttributeValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, AttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(characteristicValueEClass, CharacteristicValue.class, "CharacteristicValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCharacteristicValue_ID(), ecorePackage.getEString(), "ID", null, 1, 1, CharacteristicValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCharacteristicValue_Name(), ecorePackage.getEString(), "name", null, 0, 1, CharacteristicValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCharacteristicValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, CharacteristicValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertyDefinitionEClass, PropertyDefinition.class, "PropertyDefinition", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -63,7 +63,7 @@ public class AttributeItemProvider
 			addNamePropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addRequiredPropertyDescriptor(object);
-			addValuePropertyDescriptor(object);
+			addDefaultValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -135,19 +135,19 @@ public class AttributeItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Value feature.
+	 * This adds a property descriptor for the Default Value feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addValuePropertyDescriptor(Object object) {
+	protected void addDefaultValuePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Attribute_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_value_feature", "_UI_Attribute_type"),
-				 BaciCodeGenPackage.Literals.ATTRIBUTE__VALUE,
+				 getString("_UI_Attribute_defaultValue_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_defaultValue_feature", "_UI_Attribute_type"),
+				 BaciCodeGenPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 true,
 				 false,
 				 false,
@@ -197,7 +197,7 @@ public class AttributeItemProvider
 			case BaciCodeGenPackage.ATTRIBUTE__NAME:
 			case BaciCodeGenPackage.ATTRIBUTE__TYPE:
 			case BaciCodeGenPackage.ATTRIBUTE__REQUIRED:
-			case BaciCodeGenPackage.ATTRIBUTE__VALUE:
+			case BaciCodeGenPackage.ATTRIBUTE__DEFAULT_VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

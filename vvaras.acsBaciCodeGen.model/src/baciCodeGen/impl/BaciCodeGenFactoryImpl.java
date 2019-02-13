@@ -58,13 +58,10 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT: return createCharacteristicComponent();
-			case BaciCodeGenPackage.PROPERTY: return createProperty();
 			case BaciCodeGenPackage.ACTION: return createAction();
 			case BaciCodeGenPackage.PARAMETER: return createParameter();
 			case BaciCodeGenPackage.ATTRIBUTE: return createAttribute();
-			case BaciCodeGenPackage.COMPONENT_INSTANCES: return createComponentInstances();
-			case BaciCodeGenPackage.INSTANCE: return createInstance();
-			case BaciCodeGenPackage.CHARACTERISTIC: return createCharacteristic();
+			case BaciCodeGenPackage.PROPERTY: return createProperty();
 			case BaciCodeGenPackage.USED_DEV_IOS: return createUsedDevIOs();
 			case BaciCodeGenPackage.DEV_IO: return createDevIO();
 			case BaciCodeGenPackage.PROPERTY_SPECIFIC_VARIABLE: return createPropertySpecificVariable();
@@ -72,6 +69,10 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 			case BaciCodeGenPackage.AUXILIARY_VARIABLE: return createAuxiliaryVariable();
 			case BaciCodeGenPackage.USED_BACI_TYPES: return createUsedBaciTypes();
 			case BaciCodeGenPackage.BACI_TYPE: return createBaciType();
+			case BaciCodeGenPackage.COMPONENT_INSTANCES: return createComponentInstances();
+			case BaciCodeGenPackage.INSTANCE: return createInstance();
+			case BaciCodeGenPackage.ATTRIBUTE_VALUE: return createAttributeValue();
+			case BaciCodeGenPackage.CHARACTERISTIC_VALUE: return createCharacteristicValue();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -190,9 +191,19 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Characteristic createCharacteristic() {
-		CharacteristicImpl characteristic = new CharacteristicImpl();
-		return characteristic;
+	public AttributeValue createAttributeValue() {
+		AttributeValueImpl attributeValue = new AttributeValueImpl();
+		return attributeValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CharacteristicValue createCharacteristicValue() {
+		CharacteristicValueImpl characteristicValue = new CharacteristicValueImpl();
+		return characteristicValue;
 	}
 
 	/**

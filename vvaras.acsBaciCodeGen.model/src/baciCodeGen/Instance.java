@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link baciCodeGen.Instance#getName <em>Name</em>}</li>
  *   <li>{@link baciCodeGen.Instance#getContainingComponentInstances <em>Containing Component Instances</em>}</li>
+ *   <li>{@link baciCodeGen.Instance#getInstanceAttributes <em>Instance Attributes</em>}</li>
  *   <li>{@link baciCodeGen.Instance#getInstanceCharacteristics <em>Instance Characteristics</em>}</li>
  * </ul>
  *
@@ -80,8 +81,47 @@ public interface Instance extends EObject {
 	void setContainingComponentInstances(ComponentInstances value);
 
 	/**
+	 * Returns the value of the '<em><b>Instance Attributes</b></em>' containment reference list.
+	 * The list contents are of type {@link baciCodeGen.AttributeValue}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Instance Attributes</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Instance Attributes</em>' containment reference list.
+	 * @see #isSetInstanceAttributes()
+	 * @see #unsetInstanceAttributes()
+	 * @see baciCodeGen.BaciCodeGenPackage#getInstance_InstanceAttributes()
+	 * @model containment="true" unsettable="true" derived="true"
+	 * @generated
+	 */
+	EList<AttributeValue> getInstanceAttributes();
+
+	/**
+	 * Unsets the value of the '{@link baciCodeGen.Instance#getInstanceAttributes <em>Instance Attributes</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetInstanceAttributes()
+	 * @see #getInstanceAttributes()
+	 * @generated
+	 */
+	void unsetInstanceAttributes();
+
+	/**
+	 * Returns whether the value of the '{@link baciCodeGen.Instance#getInstanceAttributes <em>Instance Attributes</em>}' containment reference list is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Instance Attributes</em>' containment reference list is set.
+	 * @see #unsetInstanceAttributes()
+	 * @see #getInstanceAttributes()
+	 * @generated
+	 */
+	boolean isSetInstanceAttributes();
+
+	/**
 	 * Returns the value of the '<em><b>Instance Characteristics</b></em>' containment reference list.
-	 * The list contents are of type {@link baciCodeGen.Characteristic}.
+	 * The list contents are of type {@link baciCodeGen.CharacteristicValue}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Instance Characteristics</em>' containment reference list isn't clear,
@@ -95,7 +135,7 @@ public interface Instance extends EObject {
 	 * @model containment="true" unsettable="true" derived="true"
 	 * @generated
 	 */
-	EList<Characteristic> getInstanceCharacteristics();
+	EList<CharacteristicValue> getInstanceCharacteristics();
 
 	/**
 	 * Unsets the value of the '{@link baciCodeGen.Instance#getInstanceCharacteristics <em>Instance Characteristics</em>}' containment reference list.

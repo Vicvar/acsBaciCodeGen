@@ -2,9 +2,11 @@
  */
 package baciCodeGen.impl;
 
+import baciCodeGen.Attribute;
+import baciCodeGen.AttributeValue;
 import baciCodeGen.BaciCodeGenPackage;
 import baciCodeGen.BaciType;
-import baciCodeGen.Characteristic;
+import baciCodeGen.CharacteristicValue;
 import baciCodeGen.ComponentInstances;
 import baciCodeGen.Instance;
 import baciCodeGen.Property;
@@ -38,6 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link baciCodeGen.impl.InstanceImpl#getName <em>Name</em>}</li>
  *   <li>{@link baciCodeGen.impl.InstanceImpl#getContainingComponentInstances <em>Containing Component Instances</em>}</li>
+ *   <li>{@link baciCodeGen.impl.InstanceImpl#getInstanceAttributes <em>Instance Attributes</em>}</li>
  *   <li>{@link baciCodeGen.impl.InstanceImpl#getInstanceCharacteristics <em>Instance Characteristics</em>}</li>
  * </ul>
  *
@@ -65,6 +68,16 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getInstanceAttributes() <em>Instance Attributes</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInstanceAttributes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AttributeValue> instanceAttributes;
+
+	/**
 	 * The cached value of the '{@link #getInstanceCharacteristics() <em>Instance Characteristics</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -72,7 +85,7 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Characteristic> instanceCharacteristics;
+	protected EList<CharacteristicValue> instanceCharacteristics;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -160,20 +173,60 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public EList<Characteristic> getInstanceCharacteristics() {
+	public EList<AttributeValue> getInstanceAttributes() {
+		if (instanceAttributes == null) {
+			instanceAttributes = new EObjectContainmentEList.Unsettable<AttributeValue>(AttributeValue.class, this, BaciCodeGenPackage.INSTANCE__INSTANCE_ATTRIBUTES);
+		}
+		else if(!isSetInstanceAttributes()){
+			EList<Attribute> attributes = this.getContainingComponentInstances().getContainingCaracteristicComponent().getAttributes();
+			AttributeValue av;
+			for (Attribute a : attributes){
+				av = new AttributeValueImpl();
+				av.setName(a.getName());
+				av.setValue(a.getDefaultValue());
+				instanceAttributes.add(av);
+			}
+		}
+		return instanceAttributes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetInstanceAttributes() {
+		if (instanceAttributes != null) ((InternalEList.Unsettable<?>)instanceAttributes).unset();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetInstanceAttributes() {
+		return instanceAttributes != null && ((InternalEList.Unsettable<?>)instanceAttributes).isSet();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<CharacteristicValue> getInstanceCharacteristics() {
 		if (instanceCharacteristics == null) {
-			instanceCharacteristics = new EObjectContainmentEList.Unsettable<Characteristic>(Characteristic.class, this, BaciCodeGenPackage.INSTANCE__INSTANCE_CHARACTERISTICS);
+			instanceCharacteristics = new EObjectContainmentEList.Unsettable<CharacteristicValue>(CharacteristicValue.class, this, BaciCodeGenPackage.INSTANCE__INSTANCE_CHARACTERISTICS);
 		}
 		else if(!isSetInstanceCharacteristics()){
 			EList<Property> properties = this.getContainingComponentInstances().getContainingCaracteristicComponent().getProperties();
 			PropertyDefinition pd;
 			BaciType bt;
-			Characteristic c;
+			CharacteristicValue c;
 			for (Property p : properties){
 				bt = p.getBaciType();
 				pd = getBaciTypePropertyDefinition(bt.getAccessType().getValue(),bt.getBasicType().getValue(), bt.getSeqType().getValue());
 				for (EAttribute attr : pd.eClass().getEAllAttributes()){
-					c = new CharacteristicImpl();
+					c = new CharacteristicValueImpl();
 					c.setID(p.getName()+"_"+attr.getName());
 					c.setName(attr.getName());
 					c.setValue(attr.getDefaultValueLiteral());
@@ -387,6 +440,8 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 		switch (featureID) {
 			case BaciCodeGenPackage.INSTANCE__CONTAINING_COMPONENT_INSTANCES:
 				return basicSetContainingComponentInstances(null, msgs);
+			case BaciCodeGenPackage.INSTANCE__INSTANCE_ATTRIBUTES:
+				return ((InternalEList<?>)getInstanceAttributes()).basicRemove(otherEnd, msgs);
 			case BaciCodeGenPackage.INSTANCE__INSTANCE_CHARACTERISTICS:
 				return ((InternalEList<?>)getInstanceCharacteristics()).basicRemove(otherEnd, msgs);
 		}
@@ -419,6 +474,8 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 				return getName();
 			case BaciCodeGenPackage.INSTANCE__CONTAINING_COMPONENT_INSTANCES:
 				return getContainingComponentInstances();
+			case BaciCodeGenPackage.INSTANCE__INSTANCE_ATTRIBUTES:
+				return getInstanceAttributes();
 			case BaciCodeGenPackage.INSTANCE__INSTANCE_CHARACTERISTICS:
 				return getInstanceCharacteristics();
 		}
@@ -440,9 +497,13 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 			case BaciCodeGenPackage.INSTANCE__CONTAINING_COMPONENT_INSTANCES:
 				setContainingComponentInstances((ComponentInstances)newValue);
 				return;
+			case BaciCodeGenPackage.INSTANCE__INSTANCE_ATTRIBUTES:
+				getInstanceAttributes().clear();
+				getInstanceAttributes().addAll((Collection<? extends AttributeValue>)newValue);
+				return;
 			case BaciCodeGenPackage.INSTANCE__INSTANCE_CHARACTERISTICS:
 				getInstanceCharacteristics().clear();
-				getInstanceCharacteristics().addAll((Collection<? extends Characteristic>)newValue);
+				getInstanceCharacteristics().addAll((Collection<? extends CharacteristicValue>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -461,6 +522,9 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 				return;
 			case BaciCodeGenPackage.INSTANCE__CONTAINING_COMPONENT_INSTANCES:
 				setContainingComponentInstances((ComponentInstances)null);
+				return;
+			case BaciCodeGenPackage.INSTANCE__INSTANCE_ATTRIBUTES:
+				unsetInstanceAttributes();
 				return;
 			case BaciCodeGenPackage.INSTANCE__INSTANCE_CHARACTERISTICS:
 				unsetInstanceCharacteristics();
@@ -481,6 +545,8 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case BaciCodeGenPackage.INSTANCE__CONTAINING_COMPONENT_INSTANCES:
 				return getContainingComponentInstances() != null;
+			case BaciCodeGenPackage.INSTANCE__INSTANCE_ATTRIBUTES:
+				return isSetInstanceAttributes();
 			case BaciCodeGenPackage.INSTANCE__INSTANCE_CHARACTERISTICS:
 				return isSetInstanceCharacteristics();
 		}

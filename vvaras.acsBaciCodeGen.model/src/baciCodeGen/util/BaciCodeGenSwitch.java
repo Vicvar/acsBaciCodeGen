@@ -72,12 +72,6 @@ public class BaciCodeGenSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BaciCodeGenPackage.PROPERTY: {
-				Property property = (Property)theEObject;
-				T result = caseProperty(property);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case BaciCodeGenPackage.ACTION: {
 				Action action = (Action)theEObject;
 				T result = caseAction(action);
@@ -96,21 +90,9 @@ public class BaciCodeGenSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BaciCodeGenPackage.COMPONENT_INSTANCES: {
-				ComponentInstances componentInstances = (ComponentInstances)theEObject;
-				T result = caseComponentInstances(componentInstances);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case BaciCodeGenPackage.INSTANCE: {
-				Instance instance = (Instance)theEObject;
-				T result = caseInstance(instance);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case BaciCodeGenPackage.CHARACTERISTIC: {
-				Characteristic characteristic = (Characteristic)theEObject;
-				T result = caseCharacteristic(characteristic);
+			case BaciCodeGenPackage.PROPERTY: {
+				Property property = (Property)theEObject;
+				T result = caseProperty(property);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -123,6 +105,12 @@ public class BaciCodeGenSwitch<T> extends Switch<T> {
 			case BaciCodeGenPackage.DEV_IO: {
 				DevIO devIO = (DevIO)theEObject;
 				T result = caseDevIO(devIO);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BaciCodeGenPackage.DEV_IO_VARIABLE: {
+				DevIOVariable devIOVariable = (DevIOVariable)theEObject;
+				T result = caseDevIOVariable(devIOVariable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -147,12 +135,6 @@ public class BaciCodeGenSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BaciCodeGenPackage.DEV_IO_VARIABLE: {
-				DevIOVariable devIOVariable = (DevIOVariable)theEObject;
-				T result = caseDevIOVariable(devIOVariable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case BaciCodeGenPackage.USED_BACI_TYPES: {
 				UsedBaciTypes usedBaciTypes = (UsedBaciTypes)theEObject;
 				T result = caseUsedBaciTypes(usedBaciTypes);
@@ -162,6 +144,30 @@ public class BaciCodeGenSwitch<T> extends Switch<T> {
 			case BaciCodeGenPackage.BACI_TYPE: {
 				BaciType baciType = (BaciType)theEObject;
 				T result = caseBaciType(baciType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BaciCodeGenPackage.COMPONENT_INSTANCES: {
+				ComponentInstances componentInstances = (ComponentInstances)theEObject;
+				T result = caseComponentInstances(componentInstances);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BaciCodeGenPackage.INSTANCE: {
+				Instance instance = (Instance)theEObject;
+				T result = caseInstance(instance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BaciCodeGenPackage.ATTRIBUTE_VALUE: {
+				AttributeValue attributeValue = (AttributeValue)theEObject;
+				T result = caseAttributeValue(attributeValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BaciCodeGenPackage.CHARACTERISTIC_VALUE: {
+				CharacteristicValue characteristicValue = (CharacteristicValue)theEObject;
+				T result = caseCharacteristicValue(characteristicValue);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -281,17 +287,32 @@ public class BaciCodeGenSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Characteristic</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Attribute Value</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Characteristic</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Attribute Value</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCharacteristic(Characteristic object) {
+	public T caseAttributeValue(AttributeValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Characteristic Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Characteristic Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCharacteristicValue(CharacteristicValue object) {
 		return null;
 	}
 

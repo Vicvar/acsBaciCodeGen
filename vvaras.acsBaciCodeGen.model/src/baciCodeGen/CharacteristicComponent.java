@@ -22,9 +22,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link baciCodeGen.CharacteristicComponent#getActions <em>Actions</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getProperties <em>Properties</em>}</li>
- *   <li>{@link baciCodeGen.CharacteristicComponent#getComponentInstances <em>Component Instances</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getUsedBaciTypes <em>Used Baci Types</em>}</li>
  *   <li>{@link baciCodeGen.CharacteristicComponent#getUsedDevIOs <em>Used Dev IOs</em>}</li>
+ *   <li>{@link baciCodeGen.CharacteristicComponent#getComponentInstances <em>Component Instances</em>}</li>
  * </ul>
  *
  * @see baciCodeGen.BaciCodeGenPackage#getCharacteristicComponent()

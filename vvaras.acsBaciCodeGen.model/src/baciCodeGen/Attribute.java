@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link baciCodeGen.Attribute#getName <em>Name</em>}</li>
  *   <li>{@link baciCodeGen.Attribute#getType <em>Type</em>}</li>
  *   <li>{@link baciCodeGen.Attribute#isRequired <em>Required</em>}</li>
- *   <li>{@link baciCodeGen.Attribute#getValue <em>Value</em>}</li>
+ *   <li>{@link baciCodeGen.Attribute#getDefaultValue <em>Default Value</em>}</li>
  * </ul>
  *
  * @see baciCodeGen.BaciCodeGenPackage#getAttribute()
@@ -103,29 +103,29 @@ public interface Attribute extends EObject {
 	void setRequired(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute.
+	 * Returns the value of the '<em><b>Default Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Default Value</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(String)
-	 * @see baciCodeGen.BaciCodeGenPackage#getAttribute_Value()
+	 * @return the value of the '<em>Default Value</em>' attribute.
+	 * @see #setDefaultValue(String)
+	 * @see baciCodeGen.BaciCodeGenPackage#getAttribute_DefaultValue()
 	 * @model
 	 * @generated
 	 */
-	String getValue();
+	String getDefaultValue();
 
 	/**
-	 * Sets the value of the '{@link baciCodeGen.Attribute#getValue <em>Value</em>}' attribute.
+	 * Sets the value of the '{@link baciCodeGen.Attribute#getDefaultValue <em>Default Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
-	 * @see #getValue()
+	 * @param value the new value of the '<em>Default Value</em>' attribute.
+	 * @see #getDefaultValue()
 	 * @generated
 	 */
-	void setValue(String value);
+	void setDefaultValue(String value);
 
 } // Attribute

@@ -3,7 +3,7 @@
 package baciCodeGen.impl;
 
 import baciCodeGen.BaciCodeGenPackage;
-import baciCodeGen.Characteristic;
+import baciCodeGen.CharacteristicValue;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,20 +14,20 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Characteristic</b></em>'.
+ * An implementation of the model object '<em><b>Characteristic Value</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link baciCodeGen.impl.CharacteristicImpl#getID <em>ID</em>}</li>
- *   <li>{@link baciCodeGen.impl.CharacteristicImpl#getName <em>Name</em>}</li>
- *   <li>{@link baciCodeGen.impl.CharacteristicImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link baciCodeGen.impl.CharacteristicValueImpl#getID <em>ID</em>}</li>
+ *   <li>{@link baciCodeGen.impl.CharacteristicValueImpl#getName <em>Name</em>}</li>
+ *   <li>{@link baciCodeGen.impl.CharacteristicValueImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CharacteristicImpl extends MinimalEObjectImpl.Container implements Characteristic {
+public class CharacteristicValueImpl extends MinimalEObjectImpl.Container implements CharacteristicValue {
 	/**
 	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -93,7 +93,7 @@ public class CharacteristicImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CharacteristicImpl() {
+	protected CharacteristicValueImpl() {
 		super();
 	}
 
@@ -104,7 +104,7 @@ public class CharacteristicImpl extends MinimalEObjectImpl.Container implements 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return BaciCodeGenPackage.Literals.CHARACTERISTIC;
+		return BaciCodeGenPackage.Literals.CHARACTERISTIC_VALUE;
 	}
 
 	/**
@@ -125,7 +125,7 @@ public class CharacteristicImpl extends MinimalEObjectImpl.Container implements 
 		String oldID = id;
 		id = newID;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.CHARACTERISTIC__ID, oldID, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.CHARACTERISTIC_VALUE__ID, oldID, id));
 	}
 
 	/**
@@ -146,7 +146,7 @@ public class CharacteristicImpl extends MinimalEObjectImpl.Container implements 
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.CHARACTERISTIC__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.CHARACTERISTIC_VALUE__NAME, oldName, name));
 	}
 
 	/**
@@ -167,7 +167,7 @@ public class CharacteristicImpl extends MinimalEObjectImpl.Container implements 
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.CHARACTERISTIC__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.CHARACTERISTIC_VALUE__VALUE, oldValue, value));
 	}
 
 	/**
@@ -178,11 +178,11 @@ public class CharacteristicImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BaciCodeGenPackage.CHARACTERISTIC__ID:
+			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__ID:
 				return getID();
-			case BaciCodeGenPackage.CHARACTERISTIC__NAME:
+			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__NAME:
 				return getName();
-			case BaciCodeGenPackage.CHARACTERISTIC__VALUE:
+			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -196,13 +196,13 @@ public class CharacteristicImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BaciCodeGenPackage.CHARACTERISTIC__ID:
+			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__ID:
 				setID((String)newValue);
 				return;
-			case BaciCodeGenPackage.CHARACTERISTIC__NAME:
+			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__NAME:
 				setName((String)newValue);
 				return;
-			case BaciCodeGenPackage.CHARACTERISTIC__VALUE:
+			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__VALUE:
 				setValue((String)newValue);
 				return;
 		}
@@ -217,13 +217,13 @@ public class CharacteristicImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BaciCodeGenPackage.CHARACTERISTIC__ID:
+			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__ID:
 				setID(ID_EDEFAULT);
 				return;
-			case BaciCodeGenPackage.CHARACTERISTIC__NAME:
+			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case BaciCodeGenPackage.CHARACTERISTIC__VALUE:
+			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -238,11 +238,11 @@ public class CharacteristicImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BaciCodeGenPackage.CHARACTERISTIC__ID:
+			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case BaciCodeGenPackage.CHARACTERISTIC__NAME:
+			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case BaciCodeGenPackage.CHARACTERISTIC__VALUE:
+			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
@@ -268,4 +268,4 @@ public class CharacteristicImpl extends MinimalEObjectImpl.Container implements 
 		return result.toString();
 	}
 
-} //CharacteristicImpl
+} //CharacteristicValueImpl

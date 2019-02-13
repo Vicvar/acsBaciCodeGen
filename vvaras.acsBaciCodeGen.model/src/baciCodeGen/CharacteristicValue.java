@@ -6,23 +6,23 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Characteristic</b></em>'.
+ * A representation of the model object '<em><b>Characteristic Value</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link baciCodeGen.Characteristic#getID <em>ID</em>}</li>
- *   <li>{@link baciCodeGen.Characteristic#getName <em>Name</em>}</li>
- *   <li>{@link baciCodeGen.Characteristic#getValue <em>Value</em>}</li>
+ *   <li>{@link baciCodeGen.CharacteristicValue#getID <em>ID</em>}</li>
+ *   <li>{@link baciCodeGen.CharacteristicValue#getName <em>Name</em>}</li>
+ *   <li>{@link baciCodeGen.CharacteristicValue#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see baciCodeGen.BaciCodeGenPackage#getCharacteristic()
+ * @see baciCodeGen.BaciCodeGenPackage#getCharacteristicValue()
  * @model
  * @generated
  */
-public interface Characteristic extends EObject {
+public interface CharacteristicValue extends EObject {
 	/**
 	 * Returns the value of the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -33,14 +33,14 @@ public interface Characteristic extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>ID</em>' attribute.
 	 * @see #setID(String)
-	 * @see baciCodeGen.BaciCodeGenPackage#getCharacteristic_ID()
-	 * @model id="true" required="true"
+	 * @see baciCodeGen.BaciCodeGenPackage#getCharacteristicValue_ID()
+	 * @model required="true"
 	 * @generated
 	 */
 	String getID();
 
 	/**
-	 * Sets the value of the '{@link baciCodeGen.Characteristic#getID <em>ID</em>}' attribute.
+	 * Sets the value of the '{@link baciCodeGen.CharacteristicValue#getID <em>ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>ID</em>' attribute.
@@ -59,14 +59,14 @@ public interface Characteristic extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see baciCodeGen.BaciCodeGenPackage#getCharacteristic_Name()
+	 * @see baciCodeGen.BaciCodeGenPackage#getCharacteristicValue_Name()
 	 * @model derived="true"
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link baciCodeGen.Characteristic#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link baciCodeGen.CharacteristicValue#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -85,14 +85,14 @@ public interface Characteristic extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
-	 * @see baciCodeGen.BaciCodeGenPackage#getCharacteristic_Value()
+	 * @see baciCodeGen.BaciCodeGenPackage#getCharacteristicValue_Value()
 	 * @model derived="true"
 	 * @generated
 	 */
 	String getValue();
 
 	/**
-	 * Sets the value of the '{@link baciCodeGen.Characteristic#getValue <em>Value</em>}' attribute.
+	 * Sets the value of the '{@link baciCodeGen.CharacteristicValue#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Value</em>' attribute.
@@ -101,4 +101,4 @@ public interface Characteristic extends EObject {
 	 */
 	void setValue(String value);
 
-} // Characteristic
+} // CharacteristicValue

@@ -233,26 +233,49 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link baciCodeGen.Characteristic} instances.
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.AttributeValue} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CharacteristicItemProvider characteristicItemProvider;
+	protected AttributeValueItemProvider attributeValueItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link baciCodeGen.Characteristic}.
+	 * This creates an adapter for a {@link baciCodeGen.AttributeValue}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createCharacteristicAdapter() {
-		if (characteristicItemProvider == null) {
-			characteristicItemProvider = new CharacteristicItemProvider(this);
+	public Adapter createAttributeValueAdapter() {
+		if (attributeValueItemProvider == null) {
+			attributeValueItemProvider = new AttributeValueItemProvider(this);
 		}
 
-		return characteristicItemProvider;
+		return attributeValueItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.CharacteristicValue} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CharacteristicValueItemProvider characteristicValueItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link baciCodeGen.CharacteristicValue}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCharacteristicValueAdapter() {
+		if (characteristicValueItemProvider == null) {
+			characteristicValueItemProvider = new CharacteristicValueItemProvider(this);
+		}
+
+		return characteristicValueItemProvider;
 	}
 
 	/**
@@ -516,13 +539,10 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 	 */
 	public void dispose() {
 		if (characteristicComponentItemProvider != null) characteristicComponentItemProvider.dispose();
-		if (propertyItemProvider != null) propertyItemProvider.dispose();
 		if (actionItemProvider != null) actionItemProvider.dispose();
 		if (parameterItemProvider != null) parameterItemProvider.dispose();
 		if (attributeItemProvider != null) attributeItemProvider.dispose();
-		if (componentInstancesItemProvider != null) componentInstancesItemProvider.dispose();
-		if (instanceItemProvider != null) instanceItemProvider.dispose();
-		if (characteristicItemProvider != null) characteristicItemProvider.dispose();
+		if (propertyItemProvider != null) propertyItemProvider.dispose();
 		if (usedDevIOsItemProvider != null) usedDevIOsItemProvider.dispose();
 		if (devIOItemProvider != null) devIOItemProvider.dispose();
 		if (propertySpecificVariableItemProvider != null) propertySpecificVariableItemProvider.dispose();
@@ -530,6 +550,10 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 		if (auxiliaryVariableItemProvider != null) auxiliaryVariableItemProvider.dispose();
 		if (usedBaciTypesItemProvider != null) usedBaciTypesItemProvider.dispose();
 		if (baciTypeItemProvider != null) baciTypeItemProvider.dispose();
+		if (componentInstancesItemProvider != null) componentInstancesItemProvider.dispose();
+		if (instanceItemProvider != null) instanceItemProvider.dispose();
+		if (attributeValueItemProvider != null) attributeValueItemProvider.dispose();
+		if (characteristicValueItemProvider != null) characteristicValueItemProvider.dispose();
 	}
 
 }

@@ -16,6 +16,7 @@ import junit.textui.TestRunner;
  * <p>
  * The following features are tested:
  * <ul>
+ *   <li>{@link baciCodeGen.Instance#getInstanceAttributes() <em>Instance Attributes</em>}</li>
  *   <li>{@link baciCodeGen.Instance#getInstanceCharacteristics() <em>Instance Characteristics</em>}</li>
  * </ul>
  * </p>
@@ -90,6 +91,45 @@ public class InstanceTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link baciCodeGen.Instance#getInstanceAttributes() <em>Instance Attributes</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.Instance#getInstanceAttributes()
+	 * @generated
+	 */
+	public void testGetInstanceAttributes() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link baciCodeGen.Instance#unsetInstanceAttributes() <em>unsetInstanceAttributes()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.Instance#unsetInstanceAttributes()
+	 * @generated
+	 */
+	public void testUnsetInstanceAttributes() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link baciCodeGen.Instance#isSetInstanceAttributes() <em>isSetInstanceAttributes()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.Instance#isSetInstanceAttributes()
+	 * @generated
+	 */
+	public void testIsSetInstanceAttributes() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 	/**

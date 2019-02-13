@@ -4,7 +4,7 @@ package baciCodeGen.provider;
 
 
 import baciCodeGen.BaciCodeGenPackage;
-import baciCodeGen.Characteristic;
+import baciCodeGen.CharacteristicValue;
 
 import java.util.Collection;
 import java.util.List;
@@ -26,12 +26,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link baciCodeGen.Characteristic} object.
+ * This is the item provider adapter for a {@link baciCodeGen.CharacteristicValue} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class CharacteristicItemProvider 
+public class CharacteristicValueItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +45,7 @@ public class CharacteristicItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CharacteristicItemProvider(AdapterFactory adapterFactory) {
+	public CharacteristicValueItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -78,9 +78,9 @@ public class CharacteristicItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Characteristic_ID_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Characteristic_ID_feature", "_UI_Characteristic_type"),
-				 BaciCodeGenPackage.Literals.CHARACTERISTIC__ID,
+				 getString("_UI_CharacteristicValue_ID_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CharacteristicValue_ID_feature", "_UI_CharacteristicValue_type"),
+				 BaciCodeGenPackage.Literals.CHARACTERISTIC_VALUE__ID,
 				 true,
 				 false,
 				 false,
@@ -100,9 +100,9 @@ public class CharacteristicItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Characteristic_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Characteristic_name_feature", "_UI_Characteristic_type"),
-				 BaciCodeGenPackage.Literals.CHARACTERISTIC__NAME,
+				 getString("_UI_CharacteristicValue_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CharacteristicValue_name_feature", "_UI_CharacteristicValue_type"),
+				 BaciCodeGenPackage.Literals.CHARACTERISTIC_VALUE__NAME,
 				 true,
 				 false,
 				 false,
@@ -122,9 +122,9 @@ public class CharacteristicItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Characteristic_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Characteristic_value_feature", "_UI_Characteristic_type"),
-				 BaciCodeGenPackage.Literals.CHARACTERISTIC__VALUE,
+				 getString("_UI_CharacteristicValue_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CharacteristicValue_value_feature", "_UI_CharacteristicValue_type"),
+				 BaciCodeGenPackage.Literals.CHARACTERISTIC_VALUE__VALUE,
 				 true,
 				 false,
 				 false,
@@ -134,14 +134,14 @@ public class CharacteristicItemProvider
 	}
 
 	/**
-	 * This returns Characteristic.gif.
+	 * This returns CharacteristicValue.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Characteristic"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/CharacteristicValue"));
 	}
 
 	/**
@@ -152,10 +152,10 @@ public class CharacteristicItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Characteristic)object).getID();
+		String label = ((CharacteristicValue)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Characteristic_type") :
-			getString("_UI_Characteristic_type") + " " + label;
+			getString("_UI_CharacteristicValue_type") :
+			getString("_UI_CharacteristicValue_type") + " " + label;
 	}
 	
 
@@ -170,10 +170,10 @@ public class CharacteristicItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Characteristic.class)) {
-			case BaciCodeGenPackage.CHARACTERISTIC__ID:
-			case BaciCodeGenPackage.CHARACTERISTIC__NAME:
-			case BaciCodeGenPackage.CHARACTERISTIC__VALUE:
+		switch (notification.getFeatureID(CharacteristicValue.class)) {
+			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__ID:
+			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__NAME:
+			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

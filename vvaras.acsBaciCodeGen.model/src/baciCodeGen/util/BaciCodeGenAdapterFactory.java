@@ -72,10 +72,6 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 				return createCharacteristicComponentAdapter();
 			}
 			@Override
-			public Adapter caseProperty(Property object) {
-				return createPropertyAdapter();
-			}
-			@Override
 			public Adapter caseAction(Action object) {
 				return createActionAdapter();
 			}
@@ -88,16 +84,8 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 				return createAttributeAdapter();
 			}
 			@Override
-			public Adapter caseComponentInstances(ComponentInstances object) {
-				return createComponentInstancesAdapter();
-			}
-			@Override
-			public Adapter caseInstance(Instance object) {
-				return createInstanceAdapter();
-			}
-			@Override
-			public Adapter caseCharacteristic(Characteristic object) {
-				return createCharacteristicAdapter();
+			public Adapter caseProperty(Property object) {
+				return createPropertyAdapter();
 			}
 			@Override
 			public Adapter caseUsedDevIOs(UsedDevIOs object) {
@@ -106,6 +94,10 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseDevIO(DevIO object) {
 				return createDevIOAdapter();
+			}
+			@Override
+			public Adapter caseDevIOVariable(DevIOVariable object) {
+				return createDevIOVariableAdapter();
 			}
 			@Override
 			public Adapter casePropertySpecificVariable(PropertySpecificVariable object) {
@@ -120,16 +112,28 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 				return createAuxiliaryVariableAdapter();
 			}
 			@Override
-			public Adapter caseDevIOVariable(DevIOVariable object) {
-				return createDevIOVariableAdapter();
-			}
-			@Override
 			public Adapter caseUsedBaciTypes(UsedBaciTypes object) {
 				return createUsedBaciTypesAdapter();
 			}
 			@Override
 			public Adapter caseBaciType(BaciType object) {
 				return createBaciTypeAdapter();
+			}
+			@Override
+			public Adapter caseComponentInstances(ComponentInstances object) {
+				return createComponentInstancesAdapter();
+			}
+			@Override
+			public Adapter caseInstance(Instance object) {
+				return createInstanceAdapter();
+			}
+			@Override
+			public Adapter caseAttributeValue(AttributeValue object) {
+				return createAttributeValueAdapter();
+			}
+			@Override
+			public Adapter caseCharacteristicValue(CharacteristicValue object) {
+				return createCharacteristicValueAdapter();
 			}
 			@Override
 			public Adapter casePropertyDefinition(PropertyDefinition object) {
@@ -254,16 +258,30 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link baciCodeGen.Characteristic <em>Characteristic</em>}'.
+	 * Creates a new adapter for an object of class '{@link baciCodeGen.AttributeValue <em>Attribute Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see baciCodeGen.Characteristic
+	 * @see baciCodeGen.AttributeValue
 	 * @generated
 	 */
-	public Adapter createCharacteristicAdapter() {
+	public Adapter createAttributeValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link baciCodeGen.CharacteristicValue <em>Characteristic Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see baciCodeGen.CharacteristicValue
+	 * @generated
+	 */
+	public Adapter createCharacteristicValueAdapter() {
 		return null;
 	}
 

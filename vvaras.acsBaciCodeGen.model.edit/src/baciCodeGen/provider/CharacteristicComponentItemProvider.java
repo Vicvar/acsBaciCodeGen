@@ -174,9 +174,9 @@ public class CharacteristicComponentItemProvider
 			childrenFeatures.add(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__ACTIONS);
 			childrenFeatures.add(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__ATTRIBUTES);
 			childrenFeatures.add(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__PROPERTIES);
-			childrenFeatures.add(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES);
 			childrenFeatures.add(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__USED_BACI_TYPES);
 			childrenFeatures.add(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__USED_DEV_IOS);
+			childrenFeatures.add(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES);
 		}
 		return childrenFeatures;
 	}
@@ -241,9 +241,9 @@ public class CharacteristicComponentItemProvider
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__ACTIONS:
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__ATTRIBUTES:
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__PROPERTIES:
-			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES:
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_BACI_TYPES:
 			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_DEV_IOS:
+			case BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -278,11 +278,6 @@ public class CharacteristicComponentItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES,
-				 BaciCodeGenFactory.eINSTANCE.createComponentInstances()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__USED_BACI_TYPES,
 				 BaciCodeGenFactory.eINSTANCE.createUsedBaciTypes()));
 
@@ -290,6 +285,11 @@ public class CharacteristicComponentItemProvider
 			(createChildParameter
 				(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__USED_DEV_IOS,
 				 BaciCodeGenFactory.eINSTANCE.createUsedDevIOs()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES,
+				 BaciCodeGenFactory.eINSTANCE.createComponentInstances()));
 	}
 
 	/**

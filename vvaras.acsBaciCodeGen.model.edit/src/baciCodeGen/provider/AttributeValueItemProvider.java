@@ -3,8 +3,8 @@
 package baciCodeGen.provider;
 
 
+import baciCodeGen.AttributeValue;
 import baciCodeGen.BaciCodeGenPackage;
-import baciCodeGen.BaciType;
 
 import java.util.Collection;
 import java.util.List;
@@ -13,6 +13,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -25,12 +26,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link baciCodeGen.BaciType} object.
+ * This is the item provider adapter for a {@link baciCodeGen.AttributeValue} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class BaciTypeItemProvider 
+public class AttributeValueItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -44,7 +45,7 @@ public class BaciTypeItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BaciTypeItemProvider(AdapterFactory adapterFactory) {
+	public AttributeValueItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,9 +61,7 @@ public class BaciTypeItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addAccessTypePropertyDescriptor(object);
-			addBasicTypePropertyDescriptor(object);
-			addSeqTypePropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -78,31 +77,9 @@ public class BaciTypeItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_BaciType_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BaciType_name_feature", "_UI_BaciType_type"),
-				 BaciCodeGenPackage.Literals.BACI_TYPE__NAME,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Access Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAccessTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_BaciType_accessType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BaciType_accessType_feature", "_UI_BaciType_type"),
-				 BaciCodeGenPackage.Literals.BACI_TYPE__ACCESS_TYPE,
+				 getString("_UI_AttributeValue_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AttributeValue_name_feature", "_UI_AttributeValue_type"),
+				 BaciCodeGenPackage.Literals.ATTRIBUTE_VALUE__NAME,
 				 true,
 				 false,
 				 false,
@@ -112,19 +89,19 @@ public class BaciTypeItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Basic Type feature.
+	 * This adds a property descriptor for the Value feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addBasicTypePropertyDescriptor(Object object) {
+	protected void addValuePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_BaciType_basicType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BaciType_basicType_feature", "_UI_BaciType_type"),
-				 BaciCodeGenPackage.Literals.BACI_TYPE__BASIC_TYPE,
+				 getString("_UI_AttributeValue_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AttributeValue_value_feature", "_UI_AttributeValue_type"),
+				 BaciCodeGenPackage.Literals.ATTRIBUTE_VALUE__VALUE,
 				 true,
 				 false,
 				 false,
@@ -134,36 +111,14 @@ public class BaciTypeItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Seq Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSeqTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_BaciType_seqType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BaciType_seqType_feature", "_UI_BaciType_type"),
-				 BaciCodeGenPackage.Literals.BACI_TYPE__SEQ_TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns BaciType.gif.
+	 * This returns AttributeValue.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/BaciType"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/AttributeValue"));
 	}
 
 	/**
@@ -174,10 +129,10 @@ public class BaciTypeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((BaciType)object).getName();
+		String label = ((AttributeValue)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_BaciType_type") :
-			getString("_UI_BaciType_type") + " " + label;
+			getString("_UI_AttributeValue_type") :
+			getString("_UI_AttributeValue_type") + " " + label;
 	}
 	
 
@@ -192,11 +147,9 @@ public class BaciTypeItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(BaciType.class)) {
-			case BaciCodeGenPackage.BACI_TYPE__NAME:
-			case BaciCodeGenPackage.BACI_TYPE__ACCESS_TYPE:
-			case BaciCodeGenPackage.BACI_TYPE__BASIC_TYPE:
-			case BaciCodeGenPackage.BACI_TYPE__SEQ_TYPE:
+		switch (notification.getFeatureID(AttributeValue.class)) {
+			case BaciCodeGenPackage.ATTRIBUTE_VALUE__NAME:
+			case BaciCodeGenPackage.ATTRIBUTE_VALUE__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -102,6 +102,7 @@ public class InstanceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(BaciCodeGenPackage.Literals.INSTANCE__INSTANCE_ATTRIBUTES);
 			childrenFeatures.add(BaciCodeGenPackage.Literals.INSTANCE__INSTANCE_CHARACTERISTICS);
 		}
 		return childrenFeatures;
@@ -161,6 +162,7 @@ public class InstanceItemProvider
 			case BaciCodeGenPackage.INSTANCE__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case BaciCodeGenPackage.INSTANCE__INSTANCE_ATTRIBUTES:
 			case BaciCodeGenPackage.INSTANCE__INSTANCE_CHARACTERISTICS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -181,8 +183,13 @@ public class InstanceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(BaciCodeGenPackage.Literals.INSTANCE__INSTANCE_ATTRIBUTES,
+				 BaciCodeGenFactory.eINSTANCE.createAttributeValue()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(BaciCodeGenPackage.Literals.INSTANCE__INSTANCE_CHARACTERISTICS,
-				 BaciCodeGenFactory.eINSTANCE.createCharacteristic()));
+				 BaciCodeGenFactory.eINSTANCE.createCharacteristicValue()));
 	}
 
 	/**
