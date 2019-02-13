@@ -1,0 +1,360 @@
+/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<Characteristic> getInstanceCharacteristics() {
+		if (instanceCharacteristics == null) {
+			instanceCharacteristics = new EObjectContainmentEList.Unsettable<Characteristic>(Characteristic.class, this, BaciCodeGenPackage.INSTANCE__INSTANCE_CHARACTERISTICS);
+		}
+		else if(!isSetInstanceCharacteristics()){
+			EList<Property> properties = this.getContainingComponentInstances().getContainingCaracteristicComponent().getProperties();
+			Characteristic c;
+			for (Property p : properties){
+				//if hardcoded, here would be some ifs according to baci subtypes
+				c = new CharacteristicImpl();
+				c.setID(p.getName()+p.getBaciType().getName());
+				c.setName(p.getBaciType().getName());
+				c.setValue("0");
+				instanceCharacteristics.add(c);
+			}
+		}
+		return instanceCharacteristics;
+	}
+
+/**
+	 * <!-- begin-user-doc -->
+	 * Creates the name for the BaciType that is derived from its sub-types
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String getName() {
+		String res = accessType.getLiteral() + basicType.getLiteral();
+		if(seqType.getValue()==1)
+			res+= "Seq";
+		return res;
+	}
+
+
+
+/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public BaciCharacteristics getBaciCharacteristics() {
+		if (baciCharacteristics != null && baciCharacteristics.eIsProxy()) {
+			InternalEObject oldBaciCharacteristics = (InternalEObject)baciCharacteristics;
+			baciCharacteristics = (BaciCharacteristics)eResolveProxy(oldBaciCharacteristics);
+			if (baciCharacteristics != oldBaciCharacteristics) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BaciCodeGenPackage.BACI_TYPE__BACI_CHARACTERISTICS, oldBaciCharacteristics, baciCharacteristics));
+			}
+		}
+		if (!isSetBaciCharacteristics()){
+			BACIFactoryImpl bf = new BACIFactoryImpl();
+			switch (this.accessType.getValue()){
+				case 0:
+					switch (this.seqType.getValue()){
+						case 0:
+							switch (this.basicType.getValue()){
+								case 0:
+									baciCharacteristics = bf.createROboolean();
+									break;
+								case 1:
+									baciCharacteristics = bf.createROdouble();
+									break;
+								case 2:
+									baciCharacteristics = bf.createROfloat();
+									break;
+								case 3:
+									baciCharacteristics = bf.createROlong();
+									break;
+								case 4:
+									baciCharacteristics = bf.createROlongLong();
+									break;
+								case 5:
+									baciCharacteristics = bf.createROuLong();
+									break;
+								case 6:
+									baciCharacteristics = bf.createROuLongLong();
+									break;
+								case 7:
+									baciCharacteristics = bf.createROpattern();
+									break;
+								case 8:
+									baciCharacteristics = bf.createROstring();
+									break;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public BaciCharacteristics getBaciCharacteristics() {
+		if (baciCharacteristics != null && baciCharacteristics.eIsProxy()) {
+			InternalEObject oldBaciCharacteristics = (InternalEObject)baciCharacteristics;
+			baciCharacteristics = (BaciCharacteristics)eResolveProxy(oldBaciCharacteristics);
+			if (baciCharacteristics != oldBaciCharacteristics) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BaciCodeGenPackage.BACI_TYPE__BACI_CHARACTERISTICS, oldBaciCharacteristics, baciCharacteristics));
+			}
+		}
+		if (!isSetBaciCharacteristics()){
+			BACIFactoryImpl bf = new BACIFactoryImpl();
+			switch (this.accessType.getValue()){
+				case 0:
+					switch (this.seqType.getValue()){
+						case 0:
+							switch (this.basicType.getValue()){
+								case 0:
+									baciCharacteristics = bf.createROboolean();
+									break;
+								case 1:
+									baciCharacteristics = bf.createROdouble();
+									break;
+								case 2:
+									baciCharacteristics = bf.createROfloat();
+									break;
+								case 3:
+									baciCharacteristics = bf.createROlong();
+									break;
+								case 4:
+									baciCharacteristics = bf.createROlongLong();
+									break;
+								case 5:
+									baciCharacteristics = bf.createROuLong();
+									break;
+								case 6:
+									baciCharacteristics = bf.createROuLongLong();
+									break;
+								case 7:
+									baciCharacteristics = bf.createROpattern();
+									break;
+								case 8:
+									baciCharacteristics = bf.createROstring();
+									break;
+								default:
+									throw new IllegalStateException("Undefined BACIType");
+							}
+						case 1:
+							switch (this.basicType.getValue()){
+								case 0:
+									baciCharacteristics = bf.createRObooleanSeq();
+									break;
+								case 1:
+									baciCharacteristics = bf.createROdoubleSeq();
+									break;
+								case 2:
+									baciCharacteristics = bf.createROfloatSeq();
+									break;
+								case 3:
+									baciCharacteristics = bf.createROlongSeq();
+									break;
+								case 4:
+									//baciCharacteristics = bf.createROlongLongSeq();
+									throw new UnsupportedOperationException("ROlongLongSeq can't be constructed. It's not a supported BACIType");
+								case 5:
+									baciCharacteristics = bf.createROuLongSeq();
+									break;
+								case 6:
+									//baciCharacteristics = bf.createROuLongLongSeq();
+									throw new UnsupportedOperationException("ROuLongLongSeq can't be constructed. It's not a supported BACIType");
+								case 7:
+									//baciCharacteristics = bf.createROpatternSeq();
+									throw new UnsupportedOperationException("ROpatternSeq can't be constructed. It's not a supported BACIType");
+								case 8:
+									baciCharacteristics = bf.createROstringSeq();
+									break;
+								default:
+									throw new IllegalStateException("Undefined BACIType");
+							}
+						default:
+							throw new IllegalStateException("Undefined BACIType");
+					}
+				case 1:
+					switch (this.seqType.getValue()){
+						case 0:
+							switch (this.basicType.getValue()){
+								case 0:
+									baciCharacteristics = bf.createRWboolean();
+									break;
+								case 1:
+									baciCharacteristics = bf.createRWdouble();
+									break;
+								case 2:
+									baciCharacteristics = bf.createRWfloat();
+									break;
+								case 3:
+									baciCharacteristics = bf.createRWlong();
+									break;
+								case 4:
+									baciCharacteristics = bf.createRWlongLong();
+									break;
+								case 5:
+									baciCharacteristics = bf.createRWuLong();
+									break;
+								case 6:
+									baciCharacteristics = bf.createRWuLongLong();
+									break;
+								case 7:
+									baciCharacteristics = bf.createRWpattern();
+									break;
+								case 8:
+									baciCharacteristics = bf.createRWstring();
+									break;
+								default:
+									throw new IllegalStateException("Undefined BACIType");
+							}
+						case 1:
+							switch (this.basicType.getValue()){
+								case 0:
+									baciCharacteristics = bf.createRWbooleanSeq();
+									break;
+								case 1:
+									baciCharacteristics = bf.createRWdoubleSeq();
+									break;
+								case 2:
+									baciCharacteristics = bf.createRWfloatSeq();
+									break;
+								case 3:
+									baciCharacteristics = bf.createRWlongSeq();
+									break;
+								case 4:
+									//baciCharacteristics = bf.createRWlongLongSeq();
+									throw new UnsupportedOperationException("RWlongLongSeq can't be constructed. It's not a supported BACIType");
+								case 5:
+									baciCharacteristics = bf.createRWuLongSeq();
+									break;
+								case 6:
+									//baciCharacteristics = bf.createRWuLongLongSeq();
+									throw new UnsupportedOperationException("RWuLongLongSeq can't be constructed. It's not a supported BACIType");
+								case 7:
+									//baciCharacteristics = bf.createRWpatternSeq();
+									throw new UnsupportedOperationException("RWpatternSeq can't be constructed. It's not a supported BACIType");
+								case 8:
+									//baciCharacteristics = bf.createRWstringSeq();
+									throw new UnsupportedOperationException("RWstringSeq can't be constructed. It's not a supported BACIType");
+								default:
+									throw new IllegalStateException("Undefined BACIType");
+							}
+						default:
+							throw new IllegalStateException("Undefined BACIType");
+					}
+				default:
+					throw new IllegalStateException("Undefined BACIType");
+			}
+		}
+		return baciCharacteristics;
+	}							default:
+									throw new IllegalStateException("Undefined BACIType");
+							}
+						case 1:
+							switch (this.basicType.getValue()){
+								case 0:
+									baciCharacteristics = bf.createRObooleanSeq();
+									break;
+								case 1:
+									baciCharacteristics = bf.createROdoubleSeq();
+									break;
+								case 2:
+									baciCharacteristics = bf.createROfloatSeq();
+									break;
+								case 3:
+									baciCharacteristics = bf.createROlongSeq();
+									break;
+								case 4:
+									//baciCharacteristics = bf.createROlongLongSeq();
+									throw new UnsupportedOperationException("ROlongLongSeq can't be constructed. It's not a supported BACIType");
+								case 5:
+									baciCharacteristics = bf.createROuLongSeq();
+									break;
+								case 6:
+									//baciCharacteristics = bf.createROuLongLongSeq();
+									throw new UnsupportedOperationException("ROuLongLongSeq can't be constructed. It's not a supported BACIType");
+								case 7:
+									//baciCharacteristics = bf.createROpatternSeq();
+									throw new UnsupportedOperationException("ROpatternSeq can't be constructed. It's not a supported BACIType");
+								case 8:
+									baciCharacteristics = bf.createROstringSeq();
+									break;
+								default:
+									throw new IllegalStateException("Undefined BACIType");
+							}
+						default:
+							throw new IllegalStateException("Undefined BACIType");
+					}
+				case 1:
+					switch (this.seqType.getValue()){
+						case 0:
+							switch (this.basicType.getValue()){
+								case 0:
+									baciCharacteristics = bf.createRWboolean();
+									break;
+								case 1:
+									baciCharacteristics = bf.createRWdouble();
+									break;
+								case 2:
+									baciCharacteristics = bf.createRWfloat();
+									break;
+								case 3:
+									baciCharacteristics = bf.createRWlong();
+									break;
+								case 4:
+									baciCharacteristics = bf.createRWlongLong();
+									break;
+								case 5:
+									baciCharacteristics = bf.createRWuLong();
+									break;
+								case 6:
+									baciCharacteristics = bf.createRWuLongLong();
+									break;
+								case 7:
+									baciCharacteristics = bf.createRWpattern();
+									break;
+								case 8:
+									baciCharacteristics = bf.createRWstring();
+									break;
+								default:
+									throw new IllegalStateException("Undefined BACIType");
+							}
+						case 1:
+							switch (this.basicType.getValue()){
+								case 0:
+									baciCharacteristics = bf.createRWbooleanSeq();
+									break;
+								case 1:
+									baciCharacteristics = bf.createRWdoubleSeq();
+									break;
+								case 2:
+									baciCharacteristics = bf.createRWfloatSeq();
+									break;
+								case 3:
+									baciCharacteristics = bf.createRWlongSeq();
+									break;
+								case 4:
+									//baciCharacteristics = bf.createRWlongLongSeq();
+									throw new UnsupportedOperationException("RWlongLongSeq can't be constructed. It's not a supported BACIType");
+								case 5:
+									baciCharacteristics = bf.createRWuLongSeq();
+									break;
+								case 6:
+									//baciCharacteristics = bf.createRWuLongLongSeq();
+									throw new UnsupportedOperationException("RWuLongLongSeq can't be constructed. It's not a supported BACIType");
+								case 7:
+									//baciCharacteristics = bf.createRWpatternSeq();
+									throw new UnsupportedOperationException("RWpatternSeq can't be constructed. It's not a supported BACIType");
+								case 8:
+									//baciCharacteristics = bf.createRWstringSeq();
+									throw new UnsupportedOperationException("RWstringSeq can't be constructed. It's not a supported BACIType");
+								default:
+									throw new IllegalStateException("Undefined BACIType");
+							}
+						default:
+							throw new IllegalStateException("Undefined BACIType");
+					}
+				default:
+					throw new IllegalStateException("Undefined BACIType");
+			}
+		}
+		return baciCharacteristics;
+	}

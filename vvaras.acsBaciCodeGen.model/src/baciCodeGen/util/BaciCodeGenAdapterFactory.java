@@ -132,6 +132,10 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 				return createBaciTypeAdapter();
 			}
 			@Override
+			public Adapter caseBaciCharacteristics(BaciCharacteristics object) {
+				return createBaciCharacteristicsAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -372,6 +376,20 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBaciTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link baciCodeGen.BaciCharacteristics <em>Baci Characteristics</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see baciCodeGen.BaciCharacteristics
+	 * @generated
+	 */
+	public Adapter createBaciCharacteristicsAdapter() {
 		return null;
 	}
 

@@ -64,7 +64,7 @@ public interface Instance extends EObject {
 	 * @see #setContainingComponentInstances(ComponentInstances)
 	 * @see baciCodeGen.BaciCodeGenPackage#getInstance_ContainingComponentInstances()
 	 * @see baciCodeGen.ComponentInstances#getInstances
-	 * @model opposite="instances" unsettable="true" required="true" transient="false" derived="true"
+	 * @model opposite="instances" required="true" transient="false"
 	 * @generated
 	 */
 	ComponentInstances getContainingComponentInstances();

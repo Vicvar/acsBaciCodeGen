@@ -34,4 +34,32 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated baciCodeGenModel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="baciCodeGen.BACI.presentation.BACIModelWizardID"
+            name="%_UI_BACIModelWizard_label"
+            class="baciCodeGen.BACI.presentation.BACIModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/BACIModelFile.gif">
+         <description>%_UI_BACIModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated baciCodeGenModel -->
+      <editor
+            id="baciCodeGen.BACI.presentation.BACIEditorID"
+            name="%_UI_BACIEditor_label"
+            icon="icons/full/obj16/BACIModelFile.gif"
+            extensions="baci"
+            class="baciCodeGen.BACI.presentation.BACIEditor"
+            contributorClass="baciCodeGen.BACI.presentation.BACIActionBarContributor">
+      </editor>
+   </extension>
+
 </plugin>

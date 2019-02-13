@@ -16,7 +16,6 @@ import junit.textui.TestRunner;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link baciCodeGen.Instance#getContainingComponentInstances() <em>Containing Component Instances</em>}</li>
  *   <li>{@link baciCodeGen.Instance#getInstanceCharacteristics() <em>Instance Characteristics</em>}</li>
  * </ul>
  * </p>
@@ -91,32 +90,6 @@ public class InstanceTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
-	}
-
-	/**
-	 * Tests the '{@link baciCodeGen.Instance#getContainingComponentInstances() <em>Containing Component Instances</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.Instance#getContainingComponentInstances()
-	 * @generated
-	 */
-	public void testGetContainingComponentInstances() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link baciCodeGen.Instance#setContainingComponentInstances(baciCodeGen.ComponentInstances) <em>Containing Component Instances</em>}' feature setter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.Instance#setContainingComponentInstances(baciCodeGen.ComponentInstances)
-	 * @generated
-	 */
-	public void testSetContainingComponentInstances() {
-		// TODO: implement this feature setter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
 	}
 
 	/**

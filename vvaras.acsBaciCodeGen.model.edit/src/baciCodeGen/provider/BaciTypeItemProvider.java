@@ -3,6 +3,7 @@
 package baciCodeGen.provider;
 
 
+import baciCodeGen.BACI.BACIFactory;
 import baciCodeGen.BaciCodeGenPackage;
 import baciCodeGen.BaciType;
 
@@ -14,6 +15,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -157,6 +159,36 @@ public class BaciTypeItemProvider
 	}
 
 	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
 	 * This returns BaciType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -200,6 +232,9 @@ public class BaciTypeItemProvider
 			case BaciCodeGenPackage.BACI_TYPE__SEQ_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case BaciCodeGenPackage.BACI_TYPE__BACI_CHARACTERISTICS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -214,6 +249,151 @@ public class BaciTypeItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createROboolean()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createRObooleanSeq()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createROdouble()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createROdoubleSeq()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createROfloat()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createROfloatSeq()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createROlong()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createROlongLong()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createROlongSeq()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createROpattern()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createROstring()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createROstringSeq()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createROuLong()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createROuLongLong()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createROuLongSeq()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createRWboolean()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createRWbooleanSeq()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createRWdouble()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createRWdoubleSeq()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createRWfloat()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createRWfloatSeq()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createRWlong()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createRWlongLong()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createRWlongSeq()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createRWpattern()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createRWstring()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createRWuLong()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createRWuLongLong()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.BACI_TYPE__BACI_CHARACTERISTICS,
+				 BACIFactory.eINSTANCE.createRWuLongSeq()));
 	}
 
 	/**

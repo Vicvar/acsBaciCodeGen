@@ -983,13 +983,22 @@ public interface BaciCodeGenPackage extends EPackage {
 	int BACI_TYPE__SEQ_TYPE = 3;
 
 	/**
+	 * The feature id for the '<em><b>Baci Characteristics</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BACI_TYPE__BACI_CHARACTERISTICS = 4;
+
+	/**
 	 * The number of structural features of the '<em>Baci Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BACI_TYPE_FEATURE_COUNT = 4;
+	int BACI_TYPE_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Baci Type</em>' class.
@@ -1001,6 +1010,34 @@ public interface BaciCodeGenPackage extends EPackage {
 	int BACI_TYPE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link baciCodeGen.BaciCharacteristics <em>Baci Characteristics</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.BaciCharacteristics
+	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getBaciCharacteristics()
+	 * @generated
+	 */
+	int BACI_CHARACTERISTICS = 16;
+
+	/**
+	 * The number of structural features of the '<em>Baci Characteristics</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BACI_CHARACTERISTICS_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Baci Characteristics</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BACI_CHARACTERISTICS_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link baciCodeGen.AccessType <em>Access Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1008,7 +1045,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getAccessType()
 	 * @generated
 	 */
-	int ACCESS_TYPE = 16;
+	int ACCESS_TYPE = 17;
 
 	/**
 	 * The meta object id for the '{@link baciCodeGen.BasicType <em>Basic Type</em>}' enum.
@@ -1018,7 +1055,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getBasicType()
 	 * @generated
 	 */
-	int BASIC_TYPE = 17;
+	int BASIC_TYPE = 18;
 
 	/**
 	 * The meta object id for the '{@link baciCodeGen.SeqType <em>Seq Type</em>}' enum.
@@ -1028,7 +1065,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getSeqType()
 	 * @generated
 	 */
-	int SEQ_TYPE = 18;
+	int SEQ_TYPE = 19;
 
 
 	/**
@@ -1731,6 +1768,27 @@ public interface BaciCodeGenPackage extends EPackage {
 	EAttribute getBaciType_SeqType();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link baciCodeGen.BaciType#getBaciCharacteristics <em>Baci Characteristics</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Baci Characteristics</em>'.
+	 * @see baciCodeGen.BaciType#getBaciCharacteristics()
+	 * @see #getBaciType()
+	 * @generated
+	 */
+	EReference getBaciType_BaciCharacteristics();
+
+	/**
+	 * Returns the meta object for class '{@link baciCodeGen.BaciCharacteristics <em>Baci Characteristics</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Baci Characteristics</em>'.
+	 * @see baciCodeGen.BaciCharacteristics
+	 * @generated
+	 */
+	EClass getBaciCharacteristics();
+
+	/**
 	 * Returns the meta object for enum '{@link baciCodeGen.AccessType <em>Access Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2334,6 +2392,24 @@ public interface BaciCodeGenPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BACI_TYPE__SEQ_TYPE = eINSTANCE.getBaciType_SeqType();
+
+		/**
+		 * The meta object literal for the '<em><b>Baci Characteristics</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BACI_TYPE__BACI_CHARACTERISTICS = eINSTANCE.getBaciType_BaciCharacteristics();
+
+		/**
+		 * The meta object literal for the '{@link baciCodeGen.BaciCharacteristics <em>Baci Characteristics</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see baciCodeGen.BaciCharacteristics
+		 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getBaciCharacteristics()
+		 * @generated
+		 */
+		EClass BACI_CHARACTERISTICS = eINSTANCE.getBaciCharacteristics();
 
 		/**
 		 * The meta object literal for the '{@link baciCodeGen.AccessType <em>Access Type</em>}' enum.

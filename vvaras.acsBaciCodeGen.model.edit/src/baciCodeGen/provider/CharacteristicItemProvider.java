@@ -152,7 +152,7 @@ public class CharacteristicItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Characteristic)object).getID();
+		String label = ((Characteristic)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Characteristic_type") :
 			getString("_UI_Characteristic_type") + " " + label;

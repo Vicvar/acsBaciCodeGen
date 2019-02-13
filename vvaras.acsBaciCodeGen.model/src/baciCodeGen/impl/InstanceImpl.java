@@ -165,7 +165,6 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 			EList<Property> properties = this.getContainingComponentInstances().getContainingCaracteristicComponent().getProperties();
 			Characteristic c;
 			for (Property p : properties){
-				//if hardcoded, here would be some ifs according to baci subtypes
 				c = new CharacteristicImpl();
 				c.setID(p.getName()+p.getBaciType().getName());
 				c.setName(p.getBaciType().getName());

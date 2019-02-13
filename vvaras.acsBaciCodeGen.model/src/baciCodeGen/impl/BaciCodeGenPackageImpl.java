@@ -6,6 +6,12 @@ import baciCodeGen.AccessType;
 import baciCodeGen.Action;
 import baciCodeGen.Attribute;
 import baciCodeGen.AuxiliaryVariable;
+
+import baciCodeGen.BACI.BACIPackage;
+
+import baciCodeGen.BACI.impl.BACIPackageImpl;
+
+import baciCodeGen.BaciCharacteristics;
 import baciCodeGen.BaciCodeGenFactory;
 import baciCodeGen.BaciCodeGenPackage;
 import baciCodeGen.BaciType;
@@ -156,6 +162,13 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass baciCharacteristicsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum accessTypeEEnum = null;
 
 	/**
@@ -218,11 +231,16 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 
 		isInited = true;
 
+		// Obtain or create and register interdependencies
+		BACIPackageImpl theBACIPackage = (BACIPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BACIPackage.eNS_URI) instanceof BACIPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BACIPackage.eNS_URI) : BACIPackage.eINSTANCE);
+
 		// Create package meta-data objects
 		theBaciCodeGenPackage.createPackageContents();
+		theBACIPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theBaciCodeGenPackage.initializePackageContents();
+		theBACIPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theBaciCodeGenPackage.freeze();
@@ -823,6 +841,24 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getBaciType_BaciCharacteristics() {
+		return (EReference)baciTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBaciCharacteristics() {
+		return baciCharacteristicsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getAccessType() {
 		return accessTypeEEnum;
 	}
@@ -953,6 +989,9 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		createEAttribute(baciTypeEClass, BACI_TYPE__ACCESS_TYPE);
 		createEAttribute(baciTypeEClass, BACI_TYPE__BASIC_TYPE);
 		createEAttribute(baciTypeEClass, BACI_TYPE__SEQ_TYPE);
+		createEReference(baciTypeEClass, BACI_TYPE__BACI_CHARACTERISTICS);
+
+		baciCharacteristicsEClass = createEClass(BACI_CHARACTERISTICS);
 
 		// Create enums
 		accessTypeEEnum = createEEnum(ACCESS_TYPE);
@@ -982,6 +1021,12 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		setName(eNAME);
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
+
+		// Obtain other dependent packages
+		BACIPackage theBACIPackage = (BACIPackage)EPackage.Registry.INSTANCE.getEPackage(BACIPackage.eNS_URI);
+
+		// Add subpackages
+		getESubpackages().add(theBACIPackage);
 
 		// Create type parameters
 
@@ -1031,7 +1076,7 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 
 		initEClass(instanceEClass, Instance.class, "Instance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInstance_Name(), ecorePackage.getEString(), "name", null, 1, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInstance_ContainingComponentInstances(), this.getComponentInstances(), this.getComponentInstances_Instances(), "containingComponentInstances", null, 1, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInstance_ContainingComponentInstances(), this.getComponentInstances(), this.getComponentInstances_Instances(), "containingComponentInstances", null, 1, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInstance_InstanceCharacteristics(), this.getCharacteristic(), null, "instanceCharacteristics", null, 0, -1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(characteristicEClass, Characteristic.class, "Characteristic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1073,6 +1118,9 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		initEAttribute(getBaciType_AccessType(), this.getAccessType(), "accessType", null, 0, 1, BaciType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBaciType_BasicType(), this.getBasicType(), "basicType", null, 0, 1, BaciType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBaciType_SeqType(), this.getSeqType(), "seqType", null, 0, 1, BaciType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBaciType_BaciCharacteristics(), this.getBaciCharacteristics(), null, "baciCharacteristics", null, 1, 1, BaciType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		initEClass(baciCharacteristicsEClass, BaciCharacteristics.class, "BaciCharacteristics", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(accessTypeEEnum, AccessType.class, "AccessType");

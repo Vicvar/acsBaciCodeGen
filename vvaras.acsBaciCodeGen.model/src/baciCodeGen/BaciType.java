@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link baciCodeGen.BaciType#getAccessType <em>Access Type</em>}</li>
  *   <li>{@link baciCodeGen.BaciType#getBasicType <em>Basic Type</em>}</li>
  *   <li>{@link baciCodeGen.BaciType#getSeqType <em>Seq Type</em>}</li>
+ *   <li>{@link baciCodeGen.BaciType#getBaciCharacteristics <em>Baci Characteristics</em>}</li>
  * </ul>
  *
  * @see baciCodeGen.BaciCodeGenPackage#getBaciType()
@@ -126,5 +127,58 @@ public interface BaciType extends EObject {
 	 * @generated
 	 */
 	void setSeqType(SeqType value);
+
+	/**
+	 * Returns the value of the '<em><b>Baci Characteristics</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Baci Characteristics</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Baci Characteristics</em>' containment reference.
+	 * @see #isSetBaciCharacteristics()
+	 * @see #unsetBaciCharacteristics()
+	 * @see #setBaciCharacteristics(BaciCharacteristics)
+	 * @see baciCodeGen.BaciCodeGenPackage#getBaciType_BaciCharacteristics()
+	 * @model containment="true" unsettable="true" required="true" derived="true"
+	 * @generated
+	 */
+	BaciCharacteristics getBaciCharacteristics();
+
+	/**
+	 * Sets the value of the '{@link baciCodeGen.BaciType#getBaciCharacteristics <em>Baci Characteristics</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Baci Characteristics</em>' containment reference.
+	 * @see #isSetBaciCharacteristics()
+	 * @see #unsetBaciCharacteristics()
+	 * @see #getBaciCharacteristics()
+	 * @generated
+	 */
+	void setBaciCharacteristics(BaciCharacteristics value);
+
+	/**
+	 * Unsets the value of the '{@link baciCodeGen.BaciType#getBaciCharacteristics <em>Baci Characteristics</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetBaciCharacteristics()
+	 * @see #getBaciCharacteristics()
+	 * @see #setBaciCharacteristics(BaciCharacteristics)
+	 * @generated
+	 */
+	void unsetBaciCharacteristics();
+
+	/**
+	 * Returns whether the value of the '{@link baciCodeGen.BaciType#getBaciCharacteristics <em>Baci Characteristics</em>}' containment reference is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Baci Characteristics</em>' containment reference is set.
+	 * @see #unsetBaciCharacteristics()
+	 * @see #getBaciCharacteristics()
+	 * @see #setBaciCharacteristics(BaciCharacteristics)
+	 * @generated
+	 */
+	boolean isSetBaciCharacteristics();
 
 } // BaciType

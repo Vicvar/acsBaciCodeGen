@@ -14,4 +14,19 @@
             genModel="model/baciCodeGenModel.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated baciCodeGenModel -->
+      <package
+            uri="urn:schemas-cosylab-com:BACI:1.0"
+            class="baciCodeGen.BACI.BACIPackage"
+            genModel="model/baciCodeGenModel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated baciCodeGenModel -->
+      <parser
+            type="baci"
+            class="baciCodeGen.BACI.util.BACIResourceFactoryImpl"/>
+   </extension>
+
 </plugin>
