@@ -233,6 +233,29 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.AttributeValues} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AttributeValuesItemProvider attributeValuesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link baciCodeGen.AttributeValues}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAttributeValuesAdapter() {
+		if (attributeValuesItemProvider == null) {
+			attributeValuesItemProvider = new AttributeValuesItemProvider(this);
+		}
+
+		return attributeValuesItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link baciCodeGen.AttributeValue} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -253,6 +276,29 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 		}
 
 		return attributeValueItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.CharacteristicValues} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CharacteristicValuesItemProvider characteristicValuesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link baciCodeGen.CharacteristicValues}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCharacteristicValuesAdapter() {
+		if (characteristicValuesItemProvider == null) {
+			characteristicValuesItemProvider = new CharacteristicValuesItemProvider(this);
+		}
+
+		return characteristicValuesItemProvider;
 	}
 
 	/**
@@ -552,7 +598,9 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 		if (baciTypeItemProvider != null) baciTypeItemProvider.dispose();
 		if (componentInstancesItemProvider != null) componentInstancesItemProvider.dispose();
 		if (instanceItemProvider != null) instanceItemProvider.dispose();
+		if (attributeValuesItemProvider != null) attributeValuesItemProvider.dispose();
 		if (attributeValueItemProvider != null) attributeValueItemProvider.dispose();
+		if (characteristicValuesItemProvider != null) characteristicValuesItemProvider.dispose();
 		if (characteristicValueItemProvider != null) characteristicValueItemProvider.dispose();
 	}
 

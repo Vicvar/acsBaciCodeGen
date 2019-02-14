@@ -128,8 +128,16 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 				return createInstanceAdapter();
 			}
 			@Override
+			public Adapter caseAttributeValues(AttributeValues object) {
+				return createAttributeValuesAdapter();
+			}
+			@Override
 			public Adapter caseAttributeValue(AttributeValue object) {
 				return createAttributeValueAdapter();
+			}
+			@Override
+			public Adapter caseCharacteristicValues(CharacteristicValues object) {
+				return createCharacteristicValuesAdapter();
 			}
 			@Override
 			public Adapter caseCharacteristicValue(CharacteristicValue object) {
@@ -258,6 +266,20 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link baciCodeGen.AttributeValues <em>Attribute Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see baciCodeGen.AttributeValues
+	 * @generated
+	 */
+	public Adapter createAttributeValuesAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link baciCodeGen.AttributeValue <em>Attribute Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -268,6 +290,20 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAttributeValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link baciCodeGen.CharacteristicValues <em>Characteristic Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see baciCodeGen.CharacteristicValues
+	 * @generated
+	 */
+	public Adapter createCharacteristicValuesAdapter() {
 		return null;
 	}
 

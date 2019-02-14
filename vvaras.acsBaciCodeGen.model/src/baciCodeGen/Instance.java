@@ -17,8 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link baciCodeGen.Instance#getName <em>Name</em>}</li>
  *   <li>{@link baciCodeGen.Instance#getContainingComponentInstances <em>Containing Component Instances</em>}</li>
- *   <li>{@link baciCodeGen.Instance#getInstanceAttributes <em>Instance Attributes</em>}</li>
- *   <li>{@link baciCodeGen.Instance#getInstanceCharacteristics <em>Instance Characteristics</em>}</li>
+ *   <li>{@link baciCodeGen.Instance#getAttributeValuesContainer <em>Attribute Values Container</em>}</li>
+ *   <li>{@link baciCodeGen.Instance#getCharacteristicValuesContainer <em>Characteristic Values Container</em>}</li>
  * </ul>
  *
  * @see baciCodeGen.BaciCodeGenPackage#getInstance()
@@ -81,81 +81,99 @@ public interface Instance extends EObject {
 	void setContainingComponentInstances(ComponentInstances value);
 
 	/**
-	 * Returns the value of the '<em><b>Instance Attributes</b></em>' containment reference list.
-	 * The list contents are of type {@link baciCodeGen.AttributeValue}.
+	 * Returns the value of the '<em><b>Attribute Values Container</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link baciCodeGen.AttributeValues#getContainingInstance <em>Containing Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Instance Attributes</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Attribute Values Container</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Instance Attributes</em>' containment reference list.
-	 * @see #isSetInstanceAttributes()
-	 * @see #unsetInstanceAttributes()
-	 * @see baciCodeGen.BaciCodeGenPackage#getInstance_InstanceAttributes()
-	 * @model containment="true" unsettable="true" derived="true"
+	 * @return the value of the '<em>Attribute Values Container</em>' containment reference.
+	 * @see #isSetAttributeValuesContainer()
+	 * @see #unsetAttributeValuesContainer()
+	 * @see #setAttributeValuesContainer(AttributeValues)
+	 * @see baciCodeGen.BaciCodeGenPackage#getInstance_AttributeValuesContainer()
+	 * @see baciCodeGen.AttributeValues#getContainingInstance
+	 * @model opposite="containingInstance" containment="true" unsettable="true" required="true" derived="true"
 	 * @generated
 	 */
-	EList<AttributeValue> getInstanceAttributes();
+	AttributeValues getAttributeValuesContainer();
 
 	/**
-	 * Unsets the value of the '{@link baciCodeGen.Instance#getInstanceAttributes <em>Instance Attributes</em>}' containment reference list.
+	 * Sets the value of the '{@link baciCodeGen.Instance#getAttributeValuesContainer <em>Attribute Values Container</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSetInstanceAttributes()
-	 * @see #getInstanceAttributes()
+	 * @param value the new value of the '<em>Attribute Values Container</em>' containment reference.
+	 * @see #isSetAttributeValuesContainer()
+	 * @see #unsetAttributeValuesContainer()
+	 * @see #getAttributeValuesContainer()
 	 * @generated
 	 */
-	void unsetInstanceAttributes();
+	void setAttributeValuesContainer(AttributeValues value);
 
 	/**
-	 * Returns whether the value of the '{@link baciCodeGen.Instance#getInstanceAttributes <em>Instance Attributes</em>}' containment reference list is set.
+	 * Unsets the value of the '{@link baciCodeGen.Instance#getAttributeValuesContainer <em>Attribute Values Container</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Instance Attributes</em>' containment reference list is set.
-	 * @see #unsetInstanceAttributes()
-	 * @see #getInstanceAttributes()
+	 * @see #isSetAttributeValuesContainer()
+	 * @see #getAttributeValuesContainer()
+	 * @see #setAttributeValuesContainer(AttributeValues)
 	 * @generated
 	 */
-	boolean isSetInstanceAttributes();
+	void unsetAttributeValuesContainer();
 
 	/**
-	 * Returns the value of the '<em><b>Instance Characteristics</b></em>' containment reference list.
-	 * The list contents are of type {@link baciCodeGen.CharacteristicValue}.
+	 * Returns whether the value of the '{@link baciCodeGen.Instance#getAttributeValuesContainer <em>Attribute Values Container</em>}' containment reference is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Attribute Values Container</em>' containment reference is set.
+	 * @see #unsetAttributeValuesContainer()
+	 * @see #getAttributeValuesContainer()
+	 * @see #setAttributeValuesContainer(AttributeValues)
+	 * @generated
+	 */
+	boolean isSetAttributeValuesContainer();
+
+	/**
+	 * Returns the value of the '<em><b>Characteristic Values Container</b></em>' containment reference list.
+	 * The list contents are of type {@link baciCodeGen.CharacteristicValues}.
+	 * It is bidirectional and its opposite is '{@link baciCodeGen.CharacteristicValues#getContainingInstance <em>Containing Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Instance Characteristics</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Characteristic Values Container</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Instance Characteristics</em>' containment reference list.
-	 * @see #isSetInstanceCharacteristics()
-	 * @see #unsetInstanceCharacteristics()
-	 * @see baciCodeGen.BaciCodeGenPackage#getInstance_InstanceCharacteristics()
-	 * @model containment="true" unsettable="true" derived="true"
+	 * @return the value of the '<em>Characteristic Values Container</em>' containment reference list.
+	 * @see #isSetCharacteristicValuesContainer()
+	 * @see #unsetCharacteristicValuesContainer()
+	 * @see baciCodeGen.BaciCodeGenPackage#getInstance_CharacteristicValuesContainer()
+	 * @see baciCodeGen.CharacteristicValues#getContainingInstance
+	 * @model opposite="containingInstance" containment="true" unsettable="true" derived="true"
 	 * @generated
 	 */
-	EList<CharacteristicValue> getInstanceCharacteristics();
+	EList<CharacteristicValues> getCharacteristicValuesContainer();
 
 	/**
-	 * Unsets the value of the '{@link baciCodeGen.Instance#getInstanceCharacteristics <em>Instance Characteristics</em>}' containment reference list.
+	 * Unsets the value of the '{@link baciCodeGen.Instance#getCharacteristicValuesContainer <em>Characteristic Values Container</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSetInstanceCharacteristics()
-	 * @see #getInstanceCharacteristics()
+	 * @see #isSetCharacteristicValuesContainer()
+	 * @see #getCharacteristicValuesContainer()
 	 * @generated
 	 */
-	void unsetInstanceCharacteristics();
+	void unsetCharacteristicValuesContainer();
 
 	/**
-	 * Returns whether the value of the '{@link baciCodeGen.Instance#getInstanceCharacteristics <em>Instance Characteristics</em>}' containment reference list is set.
+	 * Returns whether the value of the '{@link baciCodeGen.Instance#getCharacteristicValuesContainer <em>Characteristic Values Container</em>}' containment reference list is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Instance Characteristics</em>' containment reference list is set.
-	 * @see #unsetInstanceCharacteristics()
-	 * @see #getInstanceCharacteristics()
+	 * @return whether the value of the '<em>Characteristic Values Container</em>' containment reference list is set.
+	 * @see #unsetCharacteristicValuesContainer()
+	 * @see #getCharacteristicValuesContainer()
 	 * @generated
 	 */
-	boolean isSetInstanceCharacteristics();
+	boolean isSetCharacteristicValuesContainer();
 
 } // Instance

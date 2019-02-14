@@ -3,10 +3,9 @@
 package baciCodeGen.provider;
 
 
+import baciCodeGen.AttributeValues;
 import baciCodeGen.BaciCodeGenFactory;
 import baciCodeGen.BaciCodeGenPackage;
-import baciCodeGen.Instance;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -16,25 +15,22 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link baciCodeGen.Instance} object.
+ * This is the item provider adapter for a {@link baciCodeGen.AttributeValues} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class InstanceItemProvider 
+public class AttributeValuesItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -48,7 +44,7 @@ public class InstanceItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InstanceItemProvider(AdapterFactory adapterFactory) {
+	public AttributeValuesItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -63,54 +59,8 @@ public class InstanceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
-			addCharacteristicValuesContainerPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Instance_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Instance_name_feature", "_UI_Instance_type"),
-				 BaciCodeGenPackage.Literals.INSTANCE__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Characteristic Values Container feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCharacteristicValuesContainerPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Instance_characteristicValuesContainer_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Instance_characteristicValuesContainer_feature", "_UI_Instance_type"),
-				 BaciCodeGenPackage.Literals.INSTANCE__CHARACTERISTIC_VALUES_CONTAINER,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -125,7 +75,7 @@ public class InstanceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(BaciCodeGenPackage.Literals.INSTANCE__ATTRIBUTE_VALUES_CONTAINER);
+			childrenFeatures.add(BaciCodeGenPackage.Literals.ATTRIBUTE_VALUES__INSTANCE_ATTRIBUTES);
 		}
 		return childrenFeatures;
 	}
@@ -144,14 +94,14 @@ public class InstanceItemProvider
 	}
 
 	/**
-	 * This returns Instance.gif.
+	 * This returns AttributeValues.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Instance"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/AttributeValues"));
 	}
 
 	/**
@@ -162,10 +112,7 @@ public class InstanceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Instance)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Instance_type") :
-			getString("_UI_Instance_type") + " " + label;
+		return getString("_UI_AttributeValues_type");
 	}
 	
 
@@ -180,11 +127,8 @@ public class InstanceItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Instance.class)) {
-			case BaciCodeGenPackage.INSTANCE__NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case BaciCodeGenPackage.INSTANCE__ATTRIBUTE_VALUES_CONTAINER:
+		switch (notification.getFeatureID(AttributeValues.class)) {
+			case BaciCodeGenPackage.ATTRIBUTE_VALUES__INSTANCE_ATTRIBUTES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -204,8 +148,8 @@ public class InstanceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(BaciCodeGenPackage.Literals.INSTANCE__ATTRIBUTE_VALUES_CONTAINER,
-				 BaciCodeGenFactory.eINSTANCE.createAttributeValues()));
+				(BaciCodeGenPackage.Literals.ATTRIBUTE_VALUES__INSTANCE_ATTRIBUTES,
+				 BaciCodeGenFactory.eINSTANCE.createAttributeValue()));
 	}
 
 	/**

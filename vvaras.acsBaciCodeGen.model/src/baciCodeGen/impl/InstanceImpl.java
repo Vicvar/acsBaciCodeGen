@@ -2,16 +2,12 @@
  */
 package baciCodeGen.impl;
 
-import baciCodeGen.Attribute;
-import baciCodeGen.AttributeValue;
+import baciCodeGen.AttributeValues;
 import baciCodeGen.BaciCodeGenPackage;
-import baciCodeGen.BaciType;
-import baciCodeGen.CharacteristicValue;
+import baciCodeGen.CharacteristicValues;
 import baciCodeGen.ComponentInstances;
 import baciCodeGen.Instance;
 import baciCodeGen.Property;
-import baciCodeGen.PropertyDefinition;
-import baciCodeGen.BACIProperties.impl.BACIPropertiesFactoryImpl;
 
 import java.util.Collection;
 
@@ -19,14 +15,12 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -40,8 +34,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link baciCodeGen.impl.InstanceImpl#getName <em>Name</em>}</li>
  *   <li>{@link baciCodeGen.impl.InstanceImpl#getContainingComponentInstances <em>Containing Component Instances</em>}</li>
- *   <li>{@link baciCodeGen.impl.InstanceImpl#getInstanceAttributes <em>Instance Attributes</em>}</li>
- *   <li>{@link baciCodeGen.impl.InstanceImpl#getInstanceCharacteristics <em>Instance Characteristics</em>}</li>
+ *   <li>{@link baciCodeGen.impl.InstanceImpl#getAttributeValuesContainer <em>Attribute Values Container</em>}</li>
+ *   <li>{@link baciCodeGen.impl.InstanceImpl#getCharacteristicValuesContainer <em>Characteristic Values Container</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,24 +62,33 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getInstanceAttributes() <em>Instance Attributes</em>}' containment reference list.
+	 * The cached value of the '{@link #getAttributeValuesContainer() <em>Attribute Values Container</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInstanceAttributes()
+	 * @see #getAttributeValuesContainer()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AttributeValue> instanceAttributes;
+	protected AttributeValues attributeValuesContainer;
 
 	/**
-	 * The cached value of the '{@link #getInstanceCharacteristics() <em>Instance Characteristics</em>}' containment reference list.
+	 * This is true if the Attribute Values Container containment reference has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInstanceCharacteristics()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CharacteristicValue> instanceCharacteristics;
+	protected boolean attributeValuesContainerESet;
+
+	/**
+	 * The cached value of the '{@link #getCharacteristicValuesContainer() <em>Characteristic Values Container</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCharacteristicValuesContainer()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<CharacteristicValues> characteristicValuesContainer;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -173,21 +176,13 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public EList<AttributeValue> getInstanceAttributes() {
-		if (instanceAttributes == null) {
-			instanceAttributes = new EObjectContainmentEList.Unsettable<AttributeValue>(AttributeValue.class, this, BaciCodeGenPackage.INSTANCE__INSTANCE_ATTRIBUTES);
+	public AttributeValues getAttributeValuesContainer() {
+		if(!isSetAttributeValuesContainer()){
+			attributeValuesContainer = new AttributeValuesImpl();
+			attributeValuesContainer.setContainingInstance(this);
+			attributeValuesContainer.getInstanceAttributes();
 		}
-		else if(!isSetInstanceAttributes()){
-			EList<Attribute> attributes = this.getContainingComponentInstances().getContainingCaracteristicComponent().getAttributes();
-			AttributeValue av;
-			for (Attribute a : attributes){
-				av = new AttributeValueImpl();
-				av.setName(a.getName());
-				av.setValue(a.getDefaultValue());
-				instanceAttributes.add(av);
-			}
-		}
-		return instanceAttributes;
+		return attributeValuesContainer;
 	}
 
 	/**
@@ -195,8 +190,16 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void unsetInstanceAttributes() {
-		if (instanceAttributes != null) ((InternalEList.Unsettable<?>)instanceAttributes).unset();
+	public NotificationChain basicSetAttributeValuesContainer(AttributeValues newAttributeValuesContainer, NotificationChain msgs) {
+		AttributeValues oldAttributeValuesContainer = attributeValuesContainer;
+		attributeValuesContainer = newAttributeValuesContainer;
+		boolean oldAttributeValuesContainerESet = attributeValuesContainerESet;
+		attributeValuesContainerESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.INSTANCE__ATTRIBUTE_VALUES_CONTAINER, oldAttributeValuesContainer, newAttributeValuesContainer, !oldAttributeValuesContainerESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -204,221 +207,117 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSetInstanceAttributes() {
-		return instanceAttributes != null && ((InternalEList.Unsettable<?>)instanceAttributes).isSet();
+	public void setAttributeValuesContainer(AttributeValues newAttributeValuesContainer) {
+		if (newAttributeValuesContainer != attributeValuesContainer) {
+			NotificationChain msgs = null;
+			if (attributeValuesContainer != null)
+				msgs = ((InternalEObject)attributeValuesContainer).eInverseRemove(this, BaciCodeGenPackage.ATTRIBUTE_VALUES__CONTAINING_INSTANCE, AttributeValues.class, msgs);
+			if (newAttributeValuesContainer != null)
+				msgs = ((InternalEObject)newAttributeValuesContainer).eInverseAdd(this, BaciCodeGenPackage.ATTRIBUTE_VALUES__CONTAINING_INSTANCE, AttributeValues.class, msgs);
+			msgs = basicSetAttributeValuesContainer(newAttributeValuesContainer, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldAttributeValuesContainerESet = attributeValuesContainerESet;
+			attributeValuesContainerESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.INSTANCE__ATTRIBUTE_VALUES_CONTAINER, newAttributeValuesContainer, newAttributeValuesContainer, !oldAttributeValuesContainerESet));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
-	public EList<CharacteristicValue> getInstanceCharacteristics() {
-		if (instanceCharacteristics == null) {
-			instanceCharacteristics = new EObjectContainmentEList.Unsettable<CharacteristicValue>(CharacteristicValue.class, this, BaciCodeGenPackage.INSTANCE__INSTANCE_CHARACTERISTICS);
+	public NotificationChain basicUnsetAttributeValuesContainer(NotificationChain msgs) {
+		AttributeValues oldAttributeValuesContainer = attributeValuesContainer;
+		attributeValuesContainer = null;
+		boolean oldAttributeValuesContainerESet = attributeValuesContainerESet;
+		attributeValuesContainerESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, BaciCodeGenPackage.INSTANCE__ATTRIBUTE_VALUES_CONTAINER, oldAttributeValuesContainer, null, oldAttributeValuesContainerESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		else if(!isSetInstanceCharacteristics()){
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetAttributeValuesContainer() {
+		if (attributeValuesContainer != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)attributeValuesContainer).eInverseRemove(this, BaciCodeGenPackage.ATTRIBUTE_VALUES__CONTAINING_INSTANCE, AttributeValues.class, msgs);
+			msgs = basicUnsetAttributeValuesContainer(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldAttributeValuesContainerESet = attributeValuesContainerESet;
+			attributeValuesContainerESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, BaciCodeGenPackage.INSTANCE__ATTRIBUTE_VALUES_CONTAINER, null, null, oldAttributeValuesContainerESet));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetAttributeValuesContainer() {
+		return attributeValuesContainerESet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<CharacteristicValues> getCharacteristicValuesContainer() {
+		if (characteristicValuesContainer == null) {
+			characteristicValuesContainer = new EObjectContainmentWithInverseEList.Unsettable<CharacteristicValues>(CharacteristicValues.class, this, BaciCodeGenPackage.INSTANCE__CHARACTERISTIC_VALUES_CONTAINER, BaciCodeGenPackage.CHARACTERISTIC_VALUES__CONTAINING_INSTANCE);
+		}
+		else if(!isSetCharacteristicValuesContainer()){
 			EList<Property> properties = this.getContainingComponentInstances().getContainingCaracteristicComponent().getProperties();
-			PropertyDefinition pd;
-			BaciType bt;
-			CharacteristicValue c;
+			System.out.println(properties);
+			CharacteristicValues c;
 			for (Property p : properties){
-				bt = p.getBaciType();
-				pd = getBaciTypePropertyDefinition(bt.getAccessType().getValue(),bt.getBasicType().getValue(), bt.getSeqType().getValue());
-				for (EAttribute attr : pd.eClass().getEAllAttributes()){
-					c = new CharacteristicValueImpl();
-					c.setID(p.getName()+"_"+attr.getName());
-					c.setName(attr.getName());
-					c.setValue(attr.getDefaultValueLiteral());
-					instanceCharacteristics.add(c);
-				}
+				c = new CharacteristicValuesImpl();
+				c.setPropertyName(p.getName());
+				c.getInstanceCharacteristics(p);
+				characteristicValuesContainer.add(c);
 			}
 		}
-		return instanceCharacteristics;
+		return characteristicValuesContainer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetCharacteristicValuesContainer() {
+		if (characteristicValuesContainer != null) ((InternalEList.Unsettable<?>)characteristicValuesContainer).unset();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetCharacteristicValuesContainer() {
+		return characteristicValuesContainer != null && ((InternalEList.Unsettable<?>)characteristicValuesContainer).isSet();
 	}
 	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	private PropertyDefinition getBaciTypePropertyDefinition(int accessType, int seqType, int basicType){
-		PropertyDefinition propertyDefinition;
-		BACIPropertiesFactoryImpl propertyFactory = new BACIPropertiesFactoryImpl();
-		switch (accessType){
-			case 0:
-				switch (seqType){
-					case 0:
-						switch (basicType){
-							case 0:
-								propertyDefinition = propertyFactory.createROboolean();
-								break;
-							case 1:
-								propertyDefinition = propertyFactory.createROdouble();
-								break;
-							case 2:
-								propertyDefinition = propertyFactory.createROfloat();
-								break;
-							case 3:
-								propertyDefinition = propertyFactory.createROlong();
-								break;
-							case 4:
-								propertyDefinition = propertyFactory.createROlongLong();
-								break;
-							case 5:
-								propertyDefinition = propertyFactory.createROuLong();
-								break;
-							case 6:
-								propertyDefinition = propertyFactory.createROuLongLong();
-								break;
-							case 7:
-								propertyDefinition = propertyFactory.createROpattern();
-								break;
-							case 8:
-								propertyDefinition = propertyFactory.createROstring();
-								break;
-							default:
-								throw new IllegalStateException("Undefined BACIType");
-						}
-						break;
-					case 1:
-						switch (basicType){
-							case 0:
-								propertyDefinition = propertyFactory.createRObooleanSeq();
-								break;
-							case 1:
-								propertyDefinition = propertyFactory.createROdoubleSeq();
-								break;
-							case 2:
-								propertyDefinition = propertyFactory.createROfloatSeq();
-								break;
-							case 3:
-								propertyDefinition = propertyFactory.createROlongSeq();
-								break;
-							case 4:
-								//propertyDefinition = propertyFactory.createROlongLongSeq();
-								throw new UnsupportedOperationException("ROlongLongSeq can't be constructed. It's not a supported BACIType");
-							case 5:
-								propertyDefinition = propertyFactory.createROuLongSeq();
-								break;
-							case 6:
-								//propertyDefinition = propertyFactory.createROuLongLongSeq();
-								throw new UnsupportedOperationException("ROuLongLongSeq can't be constructed. It's not a supported BACIType");
-							case 7:
-								//propertyDefinition = propertyFactory.createROpatternSeq();
-								throw new UnsupportedOperationException("ROpatternSeq can't be constructed. It's not a supported BACIType");
-							case 8:
-								propertyDefinition = propertyFactory.createROstringSeq();
-								break;
-							default:
-								throw new IllegalStateException("Undefined BACIType");
-						}
-						break;
-					default:
-						throw new IllegalStateException("Undefined BACIType");
-				}
-				break;
-			case 1:
-				switch (seqType){
-					case 0:
-						switch (basicType){
-							case 0:
-								propertyDefinition = propertyFactory.createRWboolean();
-								break;
-							case 1:
-								propertyDefinition = propertyFactory.createRWdouble();
-								break;
-							case 2:
-								propertyDefinition = propertyFactory.createRWfloat();
-								break;
-							case 3:
-								propertyDefinition = propertyFactory.createRWlong();
-								break;
-							case 4:
-								propertyDefinition = propertyFactory.createRWlongLong();
-								break;
-							case 5:
-								propertyDefinition = propertyFactory.createRWuLong();
-								break;
-							case 6:
-								propertyDefinition = propertyFactory.createRWuLongLong();
-								break;
-							case 7:
-								propertyDefinition = propertyFactory.createRWpattern();
-								break;
-							case 8:
-								propertyDefinition = propertyFactory.createRWstring();
-								break;
-							default:
-								throw new IllegalStateException("Undefined BACIType");
-						}
-						break;
-					case 1:
-						switch (basicType){
-							case 0:
-								propertyDefinition = propertyFactory.createRWbooleanSeq();
-								break;
-							case 1:
-								propertyDefinition = propertyFactory.createRWdoubleSeq();
-								break;
-							case 2:
-								propertyDefinition = propertyFactory.createRWfloatSeq();
-								break;
-							case 3:
-								propertyDefinition = propertyFactory.createRWlongSeq();
-								break;
-							case 4:
-								//propertyDefinition = propertyFactory.createRWlongLongSeq();
-								throw new UnsupportedOperationException("RWlongLongSeq can't be constructed. It's not a supported BACIType");
-							case 5:
-								propertyDefinition = propertyFactory.createRWuLongSeq();
-								break;
-							case 6:
-								//propertyDefinition = propertyFactory.createRWuLongLongSeq();
-								throw new UnsupportedOperationException("RWuLongLongSeq can't be constructed. It's not a supported BACIType");
-							case 7:
-								//propertyDefinition = propertyFactory.createRWpatternSeq();
-								throw new UnsupportedOperationException("RWpatternSeq can't be constructed. It's not a supported BACIType");
-							case 8:
-								//propertyDefinition = propertyFactory.createRWstringSeq();
-								throw new UnsupportedOperationException("RWstringSeq can't be constructed. It's not a supported BACIType");
-							default:
-								throw new IllegalStateException("Undefined BACIType");
-						}
-						break;
-					default:
-						throw new IllegalStateException("Undefined BACIType");
-				}
-				break;
-			default:
-				throw new IllegalStateException("Undefined BACIType");
-		}
-		return propertyDefinition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void unsetInstanceCharacteristics() {
-		if (instanceCharacteristics != null) ((InternalEList.Unsettable<?>)instanceCharacteristics).unset();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetInstanceCharacteristics() {
-		return instanceCharacteristics != null && ((InternalEList.Unsettable<?>)instanceCharacteristics).isSet();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -426,6 +325,12 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetContainingComponentInstances((ComponentInstances)otherEnd, msgs);
+			case BaciCodeGenPackage.INSTANCE__ATTRIBUTE_VALUES_CONTAINER:
+				if (attributeValuesContainer != null)
+					msgs = ((InternalEObject)attributeValuesContainer).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BaciCodeGenPackage.INSTANCE__ATTRIBUTE_VALUES_CONTAINER, null, msgs);
+				return basicSetAttributeValuesContainer((AttributeValues)otherEnd, msgs);
+			case BaciCodeGenPackage.INSTANCE__CHARACTERISTIC_VALUES_CONTAINER:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCharacteristicValuesContainer()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -440,10 +345,10 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 		switch (featureID) {
 			case BaciCodeGenPackage.INSTANCE__CONTAINING_COMPONENT_INSTANCES:
 				return basicSetContainingComponentInstances(null, msgs);
-			case BaciCodeGenPackage.INSTANCE__INSTANCE_ATTRIBUTES:
-				return ((InternalEList<?>)getInstanceAttributes()).basicRemove(otherEnd, msgs);
-			case BaciCodeGenPackage.INSTANCE__INSTANCE_CHARACTERISTICS:
-				return ((InternalEList<?>)getInstanceCharacteristics()).basicRemove(otherEnd, msgs);
+			case BaciCodeGenPackage.INSTANCE__ATTRIBUTE_VALUES_CONTAINER:
+				return basicUnsetAttributeValuesContainer(msgs);
+			case BaciCodeGenPackage.INSTANCE__CHARACTERISTIC_VALUES_CONTAINER:
+				return ((InternalEList<?>)getCharacteristicValuesContainer()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -474,10 +379,10 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 				return getName();
 			case BaciCodeGenPackage.INSTANCE__CONTAINING_COMPONENT_INSTANCES:
 				return getContainingComponentInstances();
-			case BaciCodeGenPackage.INSTANCE__INSTANCE_ATTRIBUTES:
-				return getInstanceAttributes();
-			case BaciCodeGenPackage.INSTANCE__INSTANCE_CHARACTERISTICS:
-				return getInstanceCharacteristics();
+			case BaciCodeGenPackage.INSTANCE__ATTRIBUTE_VALUES_CONTAINER:
+				return getAttributeValuesContainer();
+			case BaciCodeGenPackage.INSTANCE__CHARACTERISTIC_VALUES_CONTAINER:
+				return getCharacteristicValuesContainer();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -497,13 +402,12 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 			case BaciCodeGenPackage.INSTANCE__CONTAINING_COMPONENT_INSTANCES:
 				setContainingComponentInstances((ComponentInstances)newValue);
 				return;
-			case BaciCodeGenPackage.INSTANCE__INSTANCE_ATTRIBUTES:
-				getInstanceAttributes().clear();
-				getInstanceAttributes().addAll((Collection<? extends AttributeValue>)newValue);
+			case BaciCodeGenPackage.INSTANCE__ATTRIBUTE_VALUES_CONTAINER:
+				setAttributeValuesContainer((AttributeValues)newValue);
 				return;
-			case BaciCodeGenPackage.INSTANCE__INSTANCE_CHARACTERISTICS:
-				getInstanceCharacteristics().clear();
-				getInstanceCharacteristics().addAll((Collection<? extends CharacteristicValue>)newValue);
+			case BaciCodeGenPackage.INSTANCE__CHARACTERISTIC_VALUES_CONTAINER:
+				getCharacteristicValuesContainer().clear();
+				getCharacteristicValuesContainer().addAll((Collection<? extends CharacteristicValues>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -523,11 +427,11 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 			case BaciCodeGenPackage.INSTANCE__CONTAINING_COMPONENT_INSTANCES:
 				setContainingComponentInstances((ComponentInstances)null);
 				return;
-			case BaciCodeGenPackage.INSTANCE__INSTANCE_ATTRIBUTES:
-				unsetInstanceAttributes();
+			case BaciCodeGenPackage.INSTANCE__ATTRIBUTE_VALUES_CONTAINER:
+				unsetAttributeValuesContainer();
 				return;
-			case BaciCodeGenPackage.INSTANCE__INSTANCE_CHARACTERISTICS:
-				unsetInstanceCharacteristics();
+			case BaciCodeGenPackage.INSTANCE__CHARACTERISTIC_VALUES_CONTAINER:
+				unsetCharacteristicValuesContainer();
 				return;
 		}
 		super.eUnset(featureID);
@@ -545,10 +449,10 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case BaciCodeGenPackage.INSTANCE__CONTAINING_COMPONENT_INSTANCES:
 				return getContainingComponentInstances() != null;
-			case BaciCodeGenPackage.INSTANCE__INSTANCE_ATTRIBUTES:
-				return isSetInstanceAttributes();
-			case BaciCodeGenPackage.INSTANCE__INSTANCE_CHARACTERISTICS:
-				return isSetInstanceCharacteristics();
+			case BaciCodeGenPackage.INSTANCE__ATTRIBUTE_VALUES_CONTAINER:
+				return isSetAttributeValuesContainer();
+			case BaciCodeGenPackage.INSTANCE__CHARACTERISTIC_VALUES_CONTAINER:
+				return isSetCharacteristicValuesContainer();
 		}
 		return super.eIsSet(featureID);
 	}

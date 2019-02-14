@@ -16,8 +16,7 @@ import junit.textui.TestRunner;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link baciCodeGen.Instance#getInstanceAttributes() <em>Instance Attributes</em>}</li>
- *   <li>{@link baciCodeGen.Instance#getInstanceCharacteristics() <em>Instance Characteristics</em>}</li>
+ *   <li>{@link baciCodeGen.Instance#getAttributeValuesContainer() <em>Attribute Values Container</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -94,78 +93,52 @@ public class InstanceTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link baciCodeGen.Instance#getInstanceAttributes() <em>Instance Attributes</em>}' feature getter.
+	 * Tests the '{@link baciCodeGen.Instance#getAttributeValuesContainer() <em>Attribute Values Container</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.Instance#getInstanceAttributes()
+	 * @see baciCodeGen.Instance#getAttributeValuesContainer()
 	 * @generated
 	 */
-	public void testGetInstanceAttributes() {
+	public void testGetAttributeValuesContainer() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link baciCodeGen.Instance#unsetInstanceAttributes() <em>unsetInstanceAttributes()</em>}' method.
+	 * Tests the '{@link baciCodeGen.Instance#setAttributeValuesContainer(baciCodeGen.AttributeValues) <em>Attribute Values Container</em>}' feature setter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.Instance#unsetInstanceAttributes()
+	 * @see baciCodeGen.Instance#setAttributeValuesContainer(baciCodeGen.AttributeValues)
 	 * @generated
 	 */
-	public void testUnsetInstanceAttributes() {
+	public void testSetAttributeValuesContainer() {
+		// TODO: implement this feature setter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link baciCodeGen.Instance#unsetAttributeValuesContainer() <em>unsetAttributeValuesContainer()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.Instance#unsetAttributeValuesContainer()
+	 * @generated
+	 */
+	public void testUnsetAttributeValuesContainer() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link baciCodeGen.Instance#isSetInstanceAttributes() <em>isSetInstanceAttributes()</em>}' method.
+	 * Tests the '{@link baciCodeGen.Instance#isSetAttributeValuesContainer() <em>isSetAttributeValuesContainer()</em>}' method.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.Instance#isSetInstanceAttributes()
+	 * @see baciCodeGen.Instance#isSetAttributeValuesContainer()
 	 * @generated
 	 */
-	public void testIsSetInstanceAttributes() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link baciCodeGen.Instance#getInstanceCharacteristics() <em>Instance Characteristics</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.Instance#getInstanceCharacteristics()
-	 * @generated
-	 */
-	public void testGetInstanceCharacteristics() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link baciCodeGen.Instance#unsetInstanceCharacteristics() <em>unsetInstanceCharacteristics()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.Instance#unsetInstanceCharacteristics()
-	 * @generated
-	 */
-	public void testUnsetInstanceCharacteristics() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link baciCodeGen.Instance#isSetInstanceCharacteristics() <em>isSetInstanceCharacteristics()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.Instance#isSetInstanceCharacteristics()
-	 * @generated
-	 */
-	public void testIsSetInstanceCharacteristics() {
+	public void testIsSetAttributeValuesContainer() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

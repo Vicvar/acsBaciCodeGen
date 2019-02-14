@@ -71,7 +71,9 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 			case BaciCodeGenPackage.BACI_TYPE: return createBaciType();
 			case BaciCodeGenPackage.COMPONENT_INSTANCES: return createComponentInstances();
 			case BaciCodeGenPackage.INSTANCE: return createInstance();
+			case BaciCodeGenPackage.ATTRIBUTE_VALUES: return createAttributeValues();
 			case BaciCodeGenPackage.ATTRIBUTE_VALUE: return createAttributeValue();
+			case BaciCodeGenPackage.CHARACTERISTIC_VALUES: return createCharacteristicValues();
 			case BaciCodeGenPackage.CHARACTERISTIC_VALUE: return createCharacteristicValue();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -191,9 +193,29 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public AttributeValues createAttributeValues() {
+		AttributeValuesImpl attributeValues = new AttributeValuesImpl();
+		return attributeValues;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public AttributeValue createAttributeValue() {
 		AttributeValueImpl attributeValue = new AttributeValueImpl();
 		return attributeValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CharacteristicValues createCharacteristicValues() {
+		CharacteristicValuesImpl characteristicValues = new CharacteristicValuesImpl();
+		return characteristicValues;
 	}
 
 	/**
