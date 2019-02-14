@@ -17,7 +17,6 @@ import junit.textui.TestRunner;
  * The following features are tested:
  * <ul>
  *   <li>{@link baciCodeGen.CharacteristicValues#getPropertyName() <em>Property Name</em>}</li>
- *   <li>{@link baciCodeGen.CharacteristicValues#getInstanceCharacteristics() <em>Instance Characteristics</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -115,45 +114,6 @@ public class CharacteristicValuesTest extends TestCase {
 	 */
 	public void testSetPropertyName() {
 		// TODO: implement this feature setter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link baciCodeGen.CharacteristicValues#getInstanceCharacteristics() <em>Instance Characteristics</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.CharacteristicValues#getInstanceCharacteristics()
-	 * @generated
-	 */
-	public void testGetInstanceCharacteristics() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link baciCodeGen.CharacteristicValues#unsetInstanceCharacteristics() <em>unsetInstanceCharacteristics()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.CharacteristicValues#unsetInstanceCharacteristics()
-	 * @generated
-	 */
-	public void testUnsetInstanceCharacteristics() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link baciCodeGen.CharacteristicValues#isSetInstanceCharacteristics() <em>isSetInstanceCharacteristics()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.CharacteristicValues#isSetInstanceCharacteristics()
-	 * @generated
-	 */
-	public void testIsSetInstanceCharacteristics() {
-		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

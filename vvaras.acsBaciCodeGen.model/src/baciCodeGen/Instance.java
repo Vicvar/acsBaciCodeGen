@@ -141,7 +141,7 @@ public interface Instance extends EObject {
 	 * It is bidirectional and its opposite is '{@link baciCodeGen.CharacteristicValues#getContainingInstance <em>Containing Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Characteristic Values Container</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Characteristic Values Container</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->

@@ -131,11 +131,8 @@ public class CharacteristicValuesImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public EList<CharacteristicValue> getInstanceCharacteristics(Property p){
-		if (instanceCharacteristics == null) {
-			instanceCharacteristics = new EObjectContainmentEList.Unsettable<CharacteristicValue>(CharacteristicValue.class, this, BaciCodeGenPackage.CHARACTERISTIC_VALUES__INSTANCE_CHARACTERISTICS);
-		}
-		else if(!isSetInstanceCharacteristics()){
+	public EList<CharacteristicValue> setInstanceCharacteristics(Property p){
+
 			PropertyDefinition pd;
 			BaciType bt;
 			CharacteristicValue c;
@@ -143,12 +140,11 @@ public class CharacteristicValuesImpl extends MinimalEObjectImpl.Container imple
 			pd = getBaciTypePropertyDefinition(bt.getAccessType().getValue(),bt.getBasicType().getValue(), bt.getSeqType().getValue());
 			for (EAttribute attr : pd.eClass().getEAllAttributes()){
 				c = new CharacteristicValueImpl();
-				c.setID(p.getName()+"_"+attr.getName());
 				c.setName(attr.getName());
 				c.setValue(attr.getDefaultValueLiteral());
 				instanceCharacteristics.add(c);
 			}
-		}
+		
 		return instanceCharacteristics;
 	}
 	
@@ -310,6 +306,7 @@ public class CharacteristicValuesImpl extends MinimalEObjectImpl.Container imple
 		}
 		return propertyDefinition;
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->

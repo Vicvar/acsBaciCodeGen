@@ -3,6 +3,7 @@
 package baciCodeGen;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -23,7 +24,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface AttributeValues extends EObject {
-
 	/**
 	 * Returns the value of the '<em><b>Instance Attributes</b></em>' containment reference list.
 	 * The list contents are of type {@link baciCodeGen.AttributeValue}.
@@ -90,4 +90,5 @@ public interface AttributeValues extends EObject {
 	 * @generated
 	 */
 	void setContainingInstance(Instance value);
+
 } // AttributeValues

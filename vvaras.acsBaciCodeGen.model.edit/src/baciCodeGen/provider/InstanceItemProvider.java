@@ -64,7 +64,6 @@ public class InstanceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addCharacteristicValuesContainerPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -92,28 +91,6 @@ public class InstanceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Characteristic Values Container feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCharacteristicValuesContainerPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Instance_characteristicValuesContainer_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Instance_characteristicValuesContainer_feature", "_UI_Instance_type"),
-				 BaciCodeGenPackage.Literals.INSTANCE__CHARACTERISTIC_VALUES_CONTAINER,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -126,6 +103,7 @@ public class InstanceItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(BaciCodeGenPackage.Literals.INSTANCE__ATTRIBUTE_VALUES_CONTAINER);
+			childrenFeatures.add(BaciCodeGenPackage.Literals.INSTANCE__CHARACTERISTIC_VALUES_CONTAINER);
 		}
 		return childrenFeatures;
 	}
@@ -185,6 +163,7 @@ public class InstanceItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case BaciCodeGenPackage.INSTANCE__ATTRIBUTE_VALUES_CONTAINER:
+			case BaciCodeGenPackage.INSTANCE__CHARACTERISTIC_VALUES_CONTAINER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -206,6 +185,11 @@ public class InstanceItemProvider
 			(createChildParameter
 				(BaciCodeGenPackage.Literals.INSTANCE__ATTRIBUTE_VALUES_CONTAINER,
 				 BaciCodeGenFactory.eINSTANCE.createAttributeValues()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BaciCodeGenPackage.Literals.INSTANCE__CHARACTERISTIC_VALUES_CONTAINER,
+				 BaciCodeGenFactory.eINSTANCE.createCharacteristicValues()));
 	}
 
 	/**

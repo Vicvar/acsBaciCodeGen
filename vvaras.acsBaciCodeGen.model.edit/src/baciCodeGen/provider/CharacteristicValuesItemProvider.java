@@ -64,7 +64,6 @@ public class CharacteristicValuesItemProvider
 			super.getPropertyDescriptors(object);
 
 			addPropertyNamePropertyDescriptor(object);
-			addContainingInstancePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -87,28 +86,6 @@ public class CharacteristicValuesItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Containing Instance feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContainingInstancePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CharacteristicValues_containingInstance_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CharacteristicValues_containingInstance_feature", "_UI_CharacteristicValues_type"),
-				 BaciCodeGenPackage.Literals.CHARACTERISTIC_VALUES__CONTAINING_INSTANCE,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}

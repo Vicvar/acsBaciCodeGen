@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link baciCodeGen.impl.CharacteristicValueImpl#getID <em>ID</em>}</li>
  *   <li>{@link baciCodeGen.impl.CharacteristicValueImpl#getName <em>Name</em>}</li>
  *   <li>{@link baciCodeGen.impl.CharacteristicValueImpl#getValue <em>Value</em>}</li>
  * </ul>
@@ -28,26 +27,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class CharacteristicValueImpl extends MinimalEObjectImpl.Container implements CharacteristicValue {
-	/**
-	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getID()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getID()
-	 * @generated
-	 * @ordered
-	 */
-	protected String id = ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -112,27 +91,6 @@ public class CharacteristicValueImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getID() {
-		return id;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setID(String newID) {
-		String oldID = id;
-		id = newID;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.CHARACTERISTIC_VALUE__ID, oldID, id));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getName() {
 		return name;
 	}
@@ -178,8 +136,6 @@ public class CharacteristicValueImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__ID:
-				return getID();
 			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__NAME:
 				return getName();
 			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__VALUE:
@@ -196,9 +152,6 @@ public class CharacteristicValueImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__ID:
-				setID((String)newValue);
-				return;
 			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__NAME:
 				setName((String)newValue);
 				return;
@@ -217,9 +170,6 @@ public class CharacteristicValueImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__ID:
-				setID(ID_EDEFAULT);
-				return;
 			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -238,8 +188,6 @@ public class CharacteristicValueImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case BaciCodeGenPackage.CHARACTERISTIC_VALUE__VALUE:
@@ -258,9 +206,7 @@ public class CharacteristicValueImpl extends MinimalEObjectImpl.Container implem
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (ID: ");
-		result.append(id);
-		result.append(", name: ");
+		result.append(" (name: ");
 		result.append(name);
 		result.append(", value: ");
 		result.append(value);

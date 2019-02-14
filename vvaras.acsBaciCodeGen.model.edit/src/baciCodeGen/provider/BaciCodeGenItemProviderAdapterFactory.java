@@ -95,29 +95,6 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link baciCodeGen.Property} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PropertyItemProvider propertyItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link baciCodeGen.Property}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPropertyAdapter() {
-		if (propertyItemProvider == null) {
-			propertyItemProvider = new PropertyItemProvider(this);
-		}
-
-		return propertyItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link baciCodeGen.Action} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -187,141 +164,26 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link baciCodeGen.ComponentInstances} instances.
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.Property} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComponentInstancesItemProvider componentInstancesItemProvider;
+	protected PropertyItemProvider propertyItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link baciCodeGen.ComponentInstances}.
+	 * This creates an adapter for a {@link baciCodeGen.Property}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createComponentInstancesAdapter() {
-		if (componentInstancesItemProvider == null) {
-			componentInstancesItemProvider = new ComponentInstancesItemProvider(this);
+	public Adapter createPropertyAdapter() {
+		if (propertyItemProvider == null) {
+			propertyItemProvider = new PropertyItemProvider(this);
 		}
 
-		return componentInstancesItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link baciCodeGen.Instance} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected InstanceItemProvider instanceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link baciCodeGen.Instance}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createInstanceAdapter() {
-		if (instanceItemProvider == null) {
-			instanceItemProvider = new InstanceItemProvider(this);
-		}
-
-		return instanceItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link baciCodeGen.AttributeValues} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AttributeValuesItemProvider attributeValuesItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link baciCodeGen.AttributeValues}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAttributeValuesAdapter() {
-		if (attributeValuesItemProvider == null) {
-			attributeValuesItemProvider = new AttributeValuesItemProvider(this);
-		}
-
-		return attributeValuesItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link baciCodeGen.AttributeValue} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AttributeValueItemProvider attributeValueItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link baciCodeGen.AttributeValue}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAttributeValueAdapter() {
-		if (attributeValueItemProvider == null) {
-			attributeValueItemProvider = new AttributeValueItemProvider(this);
-		}
-
-		return attributeValueItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link baciCodeGen.CharacteristicValues} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CharacteristicValuesItemProvider characteristicValuesItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link baciCodeGen.CharacteristicValues}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCharacteristicValuesAdapter() {
-		if (characteristicValuesItemProvider == null) {
-			characteristicValuesItemProvider = new CharacteristicValuesItemProvider(this);
-		}
-
-		return characteristicValuesItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link baciCodeGen.CharacteristicValue} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CharacteristicValueItemProvider characteristicValueItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link baciCodeGen.CharacteristicValue}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCharacteristicValueAdapter() {
-		if (characteristicValueItemProvider == null) {
-			characteristicValueItemProvider = new CharacteristicValueItemProvider(this);
-		}
-
-		return characteristicValueItemProvider;
+		return propertyItemProvider;
 	}
 
 	/**
@@ -483,6 +345,144 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 		}
 
 		return baciTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.ComponentInstances} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComponentInstancesItemProvider componentInstancesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link baciCodeGen.ComponentInstances}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createComponentInstancesAdapter() {
+		if (componentInstancesItemProvider == null) {
+			componentInstancesItemProvider = new ComponentInstancesItemProvider(this);
+		}
+
+		return componentInstancesItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.Instance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InstanceItemProvider instanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link baciCodeGen.Instance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createInstanceAdapter() {
+		if (instanceItemProvider == null) {
+			instanceItemProvider = new InstanceItemProvider(this);
+		}
+
+		return instanceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.AttributeValues} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AttributeValuesItemProvider attributeValuesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link baciCodeGen.AttributeValues}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAttributeValuesAdapter() {
+		if (attributeValuesItemProvider == null) {
+			attributeValuesItemProvider = new AttributeValuesItemProvider(this);
+		}
+
+		return attributeValuesItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.AttributeValue} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AttributeValueItemProvider attributeValueItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link baciCodeGen.AttributeValue}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAttributeValueAdapter() {
+		if (attributeValueItemProvider == null) {
+			attributeValueItemProvider = new AttributeValueItemProvider(this);
+		}
+
+		return attributeValueItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.CharacteristicValues} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CharacteristicValuesItemProvider characteristicValuesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link baciCodeGen.CharacteristicValues}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCharacteristicValuesAdapter() {
+		if (characteristicValuesItemProvider == null) {
+			characteristicValuesItemProvider = new CharacteristicValuesItemProvider(this);
+		}
+
+		return characteristicValuesItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.CharacteristicValue} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CharacteristicValueItemProvider characteristicValueItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link baciCodeGen.CharacteristicValue}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCharacteristicValueAdapter() {
+		if (characteristicValueItemProvider == null) {
+			characteristicValueItemProvider = new CharacteristicValueItemProvider(this);
+		}
+
+		return characteristicValueItemProvider;
 	}
 
 	/**

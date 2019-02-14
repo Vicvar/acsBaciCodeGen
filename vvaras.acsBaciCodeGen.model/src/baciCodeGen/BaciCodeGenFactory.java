@@ -31,15 +31,6 @@ public interface BaciCodeGenFactory extends EFactory {
 	CharacteristicComponent createCharacteristicComponent();
 
 	/**
-	 * Returns a new object of class '<em>Property</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Property</em>'.
-	 * @generated
-	 */
-	Property createProperty();
-
-	/**
 	 * Returns a new object of class '<em>Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,58 +58,13 @@ public interface BaciCodeGenFactory extends EFactory {
 	Attribute createAttribute();
 
 	/**
-	 * Returns a new object of class '<em>Component Instances</em>'.
+	 * Returns a new object of class '<em>Property</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Component Instances</em>'.
+	 * @return a new object of class '<em>Property</em>'.
 	 * @generated
 	 */
-	ComponentInstances createComponentInstances();
-
-	/**
-	 * Returns a new object of class '<em>Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Instance</em>'.
-	 * @generated
-	 */
-	Instance createInstance();
-
-	/**
-	 * Returns a new object of class '<em>Attribute Values</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Attribute Values</em>'.
-	 * @generated
-	 */
-	AttributeValues createAttributeValues();
-
-	/**
-	 * Returns a new object of class '<em>Attribute Value</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Attribute Value</em>'.
-	 * @generated
-	 */
-	AttributeValue createAttributeValue();
-
-	/**
-	 * Returns a new object of class '<em>Characteristic Values</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Characteristic Values</em>'.
-	 * @generated
-	 */
-	CharacteristicValues createCharacteristicValues();
-
-	/**
-	 * Returns a new object of class '<em>Characteristic Value</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Characteristic Value</em>'.
-	 * @generated
-	 */
-	CharacteristicValue createCharacteristicValue();
+	Property createProperty();
 
 	/**
 	 * Returns a new object of class '<em>Used Dev IOs</em>'.
@@ -182,6 +128,60 @@ public interface BaciCodeGenFactory extends EFactory {
 	 * @generated
 	 */
 	BaciType createBaciType();
+
+	/**
+	 * Returns a new object of class '<em>Component Instances</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Component Instances</em>'.
+	 * @generated
+	 */
+	ComponentInstances createComponentInstances();
+
+	/**
+	 * Returns a new object of class '<em>Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Instance</em>'.
+	 * @generated
+	 */
+	Instance createInstance();
+
+	/**
+	 * Returns a new object of class '<em>Attribute Values</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Attribute Values</em>'.
+	 * @generated
+	 */
+	AttributeValues createAttributeValues();
+
+	/**
+	 * Returns a new object of class '<em>Attribute Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Attribute Value</em>'.
+	 * @generated
+	 */
+	AttributeValue createAttributeValue();
+
+	/**
+	 * Returns a new object of class '<em>Characteristic Values</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Characteristic Values</em>'.
+	 * @generated
+	 */
+	CharacteristicValues createCharacteristicValues();
+
+	/**
+	 * Returns a new object of class '<em>Characteristic Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Characteristic Value</em>'.
+	 * @generated
+	 */
+	CharacteristicValue createCharacteristicValue();
 
 	/**
 	 * Returns the package supported by this factory.

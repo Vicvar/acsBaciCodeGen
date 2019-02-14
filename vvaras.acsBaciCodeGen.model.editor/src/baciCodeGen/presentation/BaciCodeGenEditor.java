@@ -155,7 +155,9 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import baciCodeGen.provider.BaciCodeGenItemProviderAdapterFactory;
+
 import baciCodeGen.BACIProperties.provider.BACIPropertiesItemProviderAdapterFactory;
+
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 

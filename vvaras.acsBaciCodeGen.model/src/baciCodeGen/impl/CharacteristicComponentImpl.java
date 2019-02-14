@@ -334,49 +334,6 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentInstances getComponentInstances() {
-		return componentInstances;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetComponentInstances(ComponentInstances newComponentInstances, NotificationChain msgs) {
-		ComponentInstances oldComponentInstances = componentInstances;
-		componentInstances = newComponentInstances;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES, oldComponentInstances, newComponentInstances);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setComponentInstances(ComponentInstances newComponentInstances) {
-		if (newComponentInstances != componentInstances) {
-			NotificationChain msgs = null;
-			if (componentInstances != null)
-				msgs = ((InternalEObject)componentInstances).eInverseRemove(this, BaciCodeGenPackage.COMPONENT_INSTANCES__CONTAINING_CARACTERISTIC_COMPONENT, ComponentInstances.class, msgs);
-			if (newComponentInstances != null)
-				msgs = ((InternalEObject)newComponentInstances).eInverseAdd(this, BaciCodeGenPackage.COMPONENT_INSTANCES__CONTAINING_CARACTERISTIC_COMPONENT, ComponentInstances.class, msgs);
-			msgs = basicSetComponentInstances(newComponentInstances, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES, newComponentInstances, newComponentInstances));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public UsedBaciTypes getUsedBaciTypes() {
 		return usedBaciTypes;
 	}
@@ -456,6 +413,49 @@ public class CharacteristicComponentImpl extends MinimalEObjectImpl.Container im
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__USED_DEV_IOS, newUsedDevIOs, newUsedDevIOs));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentInstances getComponentInstances() {
+		return componentInstances;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetComponentInstances(ComponentInstances newComponentInstances, NotificationChain msgs) {
+		ComponentInstances oldComponentInstances = componentInstances;
+		componentInstances = newComponentInstances;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES, oldComponentInstances, newComponentInstances);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComponentInstances(ComponentInstances newComponentInstances) {
+		if (newComponentInstances != componentInstances) {
+			NotificationChain msgs = null;
+			if (componentInstances != null)
+				msgs = ((InternalEObject)componentInstances).eInverseRemove(this, BaciCodeGenPackage.COMPONENT_INSTANCES__CONTAINING_CARACTERISTIC_COMPONENT, ComponentInstances.class, msgs);
+			if (newComponentInstances != null)
+				msgs = ((InternalEObject)newComponentInstances).eInverseAdd(this, BaciCodeGenPackage.COMPONENT_INSTANCES__CONTAINING_CARACTERISTIC_COMPONENT, ComponentInstances.class, msgs);
+			msgs = basicSetComponentInstances(newComponentInstances, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.CHARACTERISTIC_COMPONENT__COMPONENT_INSTANCES, newComponentInstances, newComponentInstances));
 	}
 
 	/**

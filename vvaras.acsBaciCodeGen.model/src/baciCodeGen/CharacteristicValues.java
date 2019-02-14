@@ -70,10 +70,12 @@ public interface CharacteristicValues extends EObject {
 	EList<CharacteristicValue> getInstanceCharacteristics();
 	
 	/**
-	 * Overloads getInstanceCaracteristics() to generate Characteristics based on each property.
+	 * Used by InstanceImpl to set the instance characterstics for each property
+	 * @param p
+	 * @return
 	 * @generated NOT
 	 */
-	EList<CharacteristicValue> getInstanceCharacteristics(Property p);
+	EList<CharacteristicValue> setInstanceCharacteristics(Property p);
 
 	/**
 	 * Unsets the value of the '{@link baciCodeGen.CharacteristicValues#getInstanceCharacteristics <em>Instance Characteristics</em>}' containment reference list.
@@ -101,7 +103,7 @@ public interface CharacteristicValues extends EObject {
 	 * It is bidirectional and its opposite is '{@link baciCodeGen.Instance#getCharacteristicValuesContainer <em>Characteristic Values Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Containing Instance</em>' reference isn't clear,
+	 * If the meaning of the '<em>Containing Instance</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->

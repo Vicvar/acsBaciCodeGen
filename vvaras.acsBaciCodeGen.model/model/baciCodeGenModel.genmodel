@@ -100,15 +100,20 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//Instance/name"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//Instance/containingComponentInstances"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//Instance/attributeValuesContainer"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//Instance/instanceAttributes"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//Instance/instanceCharacteristics"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//Instance/characteristicValuesContainer"/>
     </genClasses>
     <genClasses ecoreClass="baciCodeGenModel.ecore#//AttributeValues">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//AttributeValues/instanceAttributes"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//AttributeValues/containingInstance"/>
     </genClasses>
     <genClasses ecoreClass="baciCodeGenModel.ecore#//AttributeValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//AttributeValue/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//AttributeValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="baciCodeGenModel.ecore#//CharacteristicValues">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//CharacteristicValues/propertyName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//CharacteristicValues/instanceCharacteristics"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference baciCodeGenModel.ecore#//CharacteristicValues/containingInstance"/>
     </genClasses>
     <genClasses ecoreClass="baciCodeGenModel.ecore#//CharacteristicValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute baciCodeGenModel.ecore#//CharacteristicValue/ID"/>

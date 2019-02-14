@@ -17,6 +17,7 @@ import junit.textui.TestRunner;
  * The following features are tested:
  * <ul>
  *   <li>{@link baciCodeGen.Instance#getAttributeValuesContainer() <em>Attribute Values Container</em>}</li>
+ *   <li>{@link baciCodeGen.Instance#getCharacteristicValuesContainer() <em>Characteristic Values Container</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -139,6 +140,45 @@ public class InstanceTest extends TestCase {
 	 * @generated
 	 */
 	public void testIsSetAttributeValuesContainer() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link baciCodeGen.Instance#getCharacteristicValuesContainer() <em>Characteristic Values Container</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.Instance#getCharacteristicValuesContainer()
+	 * @generated
+	 */
+	public void testGetCharacteristicValuesContainer() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link baciCodeGen.Instance#unsetCharacteristicValuesContainer() <em>unsetCharacteristicValuesContainer()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.Instance#unsetCharacteristicValuesContainer()
+	 * @generated
+	 */
+	public void testUnsetCharacteristicValuesContainer() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link baciCodeGen.Instance#isSetCharacteristicValuesContainer() <em>isSetCharacteristicValuesContainer()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.Instance#isSetCharacteristicValuesContainer()
+	 * @generated
+	 */
+	public void testIsSetCharacteristicValuesContainer() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

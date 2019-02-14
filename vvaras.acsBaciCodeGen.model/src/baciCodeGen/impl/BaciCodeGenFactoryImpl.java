@@ -133,16 +133,6 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Property createProperty() {
-		PropertyImpl property = new PropertyImpl();
-		return property;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Action createAction() {
 		ActionImpl action = new ActionImpl();
 		return action;
@@ -173,59 +163,9 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentInstances createComponentInstances() {
-		ComponentInstancesImpl componentInstances = new ComponentInstancesImpl();
-		return componentInstances;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Instance createInstance() {
-		InstanceImpl instance = new InstanceImpl();
-		return instance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AttributeValues createAttributeValues() {
-		AttributeValuesImpl attributeValues = new AttributeValuesImpl();
-		return attributeValues;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AttributeValue createAttributeValue() {
-		AttributeValueImpl attributeValue = new AttributeValueImpl();
-		return attributeValue;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CharacteristicValues createCharacteristicValues() {
-		CharacteristicValuesImpl characteristicValues = new CharacteristicValuesImpl();
-		return characteristicValues;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CharacteristicValue createCharacteristicValue() {
-		CharacteristicValueImpl characteristicValue = new CharacteristicValueImpl();
-		return characteristicValue;
+	public Property createProperty() {
+		PropertyImpl property = new PropertyImpl();
+		return property;
 	}
 
 	/**
@@ -296,6 +236,66 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 	public BaciType createBaciType() {
 		BaciTypeImpl baciType = new BaciTypeImpl();
 		return baciType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentInstances createComponentInstances() {
+		ComponentInstancesImpl componentInstances = new ComponentInstancesImpl();
+		return componentInstances;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Instance createInstance() {
+		InstanceImpl instance = new InstanceImpl();
+		return instance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AttributeValues createAttributeValues() {
+		AttributeValuesImpl attributeValues = new AttributeValuesImpl();
+		return attributeValues;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AttributeValue createAttributeValue() {
+		AttributeValueImpl attributeValue = new AttributeValueImpl();
+		return attributeValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CharacteristicValues createCharacteristicValues() {
+		CharacteristicValuesImpl characteristicValues = new CharacteristicValuesImpl();
+		return characteristicValues;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CharacteristicValue createCharacteristicValue() {
+		CharacteristicValueImpl characteristicValue = new CharacteristicValueImpl();
+		return characteristicValue;
 	}
 
 	/**

@@ -185,34 +185,6 @@ public interface CharacteristicComponent extends EObject {
 	EList<Property> getProperties();
 
 	/**
-	 * Returns the value of the '<em><b>Component Instances</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link baciCodeGen.ComponentInstances#getContainingCaracteristicComponent <em>Containing Caracteristic Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Component Instances</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Component Instances</em>' containment reference.
-	 * @see #setComponentInstances(ComponentInstances)
-	 * @see baciCodeGen.BaciCodeGenPackage#getCharacteristicComponent_ComponentInstances()
-	 * @see baciCodeGen.ComponentInstances#getContainingCaracteristicComponent
-	 * @model opposite="containingCaracteristicComponent" containment="true" required="true"
-	 * @generated
-	 */
-	ComponentInstances getComponentInstances();
-
-	/**
-	 * Sets the value of the '{@link baciCodeGen.CharacteristicComponent#getComponentInstances <em>Component Instances</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Component Instances</em>' containment reference.
-	 * @see #getComponentInstances()
-	 * @generated
-	 */
-	void setComponentInstances(ComponentInstances value);
-
-	/**
 	 * Returns the value of the '<em><b>Used Baci Types</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -263,5 +235,33 @@ public interface CharacteristicComponent extends EObject {
 	 * @generated
 	 */
 	void setUsedDevIOs(UsedDevIOs value);
+
+	/**
+	 * Returns the value of the '<em><b>Component Instances</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link baciCodeGen.ComponentInstances#getContainingCaracteristicComponent <em>Containing Caracteristic Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Component Instances</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Component Instances</em>' containment reference.
+	 * @see #setComponentInstances(ComponentInstances)
+	 * @see baciCodeGen.BaciCodeGenPackage#getCharacteristicComponent_ComponentInstances()
+	 * @see baciCodeGen.ComponentInstances#getContainingCaracteristicComponent
+	 * @model opposite="containingCaracteristicComponent" containment="true" required="true"
+	 * @generated
+	 */
+	ComponentInstances getComponentInstances();
+
+	/**
+	 * Sets the value of the '{@link baciCodeGen.CharacteristicComponent#getComponentInstances <em>Component Instances</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Component Instances</em>' containment reference.
+	 * @see #getComponentInstances()
+	 * @generated
+	 */
+	void setComponentInstances(ComponentInstances value);
 
 } // CharacteristicComponent
