@@ -127,24 +127,26 @@ public class CharacteristicValuesImpl extends MinimalEObjectImpl.Container imple
 	}
 	
 	/**
+	 * Sets the Instance's CharacteristicValues automatically from the given property
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public EList<CharacteristicValue> setInstanceCharacteristics(Property p){
-
-			PropertyDefinition pd;
-			BaciType bt;
-			CharacteristicValue c;
-			bt = p.getBaciType();
-			pd = getBaciTypePropertyDefinition(bt.getAccessType().getValue(),bt.getBasicType().getValue(), bt.getSeqType().getValue());
-			for (EAttribute attr : pd.eClass().getEAllAttributes()){
-				c = new CharacteristicValueImpl();
-				c.setName(attr.getName());
-				c.setValue(attr.getDefaultValueLiteral());
-				instanceCharacteristics.add(c);
-			}
-		
+		if (instanceCharacteristics == null) {
+			instanceCharacteristics = new EObjectContainmentEList.Unsettable<CharacteristicValue>(CharacteristicValue.class, this, BaciCodeGenPackage.CHARACTERISTIC_VALUES__INSTANCE_CHARACTERISTICS);
+		}
+		PropertyDefinition pd;
+		BaciType bt;
+		CharacteristicValue c;
+		bt = p.getBaciType();
+		pd = getBaciTypePropertyDefinition(bt.getAccessType().getValue(),bt.getBasicType().getValue(), bt.getSeqType().getValue());
+		for (EAttribute attr : pd.eClass().getEAllAttributes()){
+			c = new CharacteristicValueImpl();
+			c.setName(attr.getName().replaceAll("(.)(\\p{Upper})", "$1_$2").toLowerCase());
+			c.setValue(attr.getDefaultValueLiteral());
+			instanceCharacteristics.add(c);
+		}
 		return instanceCharacteristics;
 	}
 	
@@ -153,7 +155,7 @@ public class CharacteristicValuesImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected PropertyDefinition getBaciTypePropertyDefinition(int accessType, int seqType, int basicType){
+	private PropertyDefinition getBaciTypePropertyDefinition(int accessType, int seqType, int basicType){
 		PropertyDefinition propertyDefinition;
 		BACIPropertiesFactoryImpl propertyFactory = new BACIPropertiesFactoryImpl();
 		switch (accessType){

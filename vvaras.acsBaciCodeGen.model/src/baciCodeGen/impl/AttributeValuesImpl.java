@@ -72,24 +72,34 @@ public class AttributeValuesImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public EList<AttributeValue> getInstanceAttributes() {
 		if (instanceAttributes == null) {
 			instanceAttributes = new EObjectContainmentEList.Unsettable<AttributeValue>(AttributeValue.class, this, BaciCodeGenPackage.ATTRIBUTE_VALUES__INSTANCE_ATTRIBUTES);
 		}
-		else if(!isSetInstanceAttributes()){
-			EList<Attribute> attributes = this.getContainingInstance().getContainingComponentInstances().getContainingCaracteristicComponent().getAttributes();
-			AttributeValue av;
-			for (Attribute a : attributes){
-				av = new AttributeValueImpl();
-				av.setName(a.getName());
-				av.setValue(a.getDefaultValue());
-				instanceAttributes.add(av);
-			}
+		return instanceAttributes;
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<AttributeValue> setInstanceAttributes() {
+		if (instanceAttributes == null) {
+			instanceAttributes = new EObjectContainmentEList.Unsettable<AttributeValue>(AttributeValue.class, this, BaciCodeGenPackage.ATTRIBUTE_VALUES__INSTANCE_ATTRIBUTES);
+		}
+		EList<Attribute> attributes = this.getContainingInstance().getContainingComponentInstances().getContainingCaracteristicComponent().getAttributes();
+		AttributeValue av;
+		for (Attribute a : attributes){
+			av = new AttributeValueImpl();
+			av.setName(a.getName());
+			av.setValue(a.getDefaultValue());
+			instanceAttributes.add(av);
 		}
 		return instanceAttributes;
-}
+	}
 
 	/**
 	 * <!-- begin-user-doc -->

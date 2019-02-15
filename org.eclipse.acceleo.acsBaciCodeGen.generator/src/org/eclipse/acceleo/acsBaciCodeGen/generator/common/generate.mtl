@@ -140,17 +140,16 @@ module [cModule/]
 	xmlns:cdb="urn:schemas-cosylab-com:CDB:1.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	[if (not aCharacteristicComponent.properties->isEmpty())]
-	[for (it2 : Attribute | aCharacteristicComponent.attributes) separator('\n')]
+	[for (it2 : AttributeValue | it.attributeValuesContainer.instanceAttributes) separator('\n')]
 	[it2.name/]="[it2.value/]"[/for]>
 	[for (it2 : Property | aCharacteristicComponent.properties)]
 	<[it2.name/]
-		[for (it3 : Characteristic | it2.characteristics) separator('\n\t\t')][it3.name/]="[it3.value/]"[/for]/>
+		[for (it3 : CharacteristicValues | it.characteristicValuesContainer)][if(it2.name=it3.propertyName)][for (it4 : CharacteristicValue | it3.instanceCharacteristics) separator('\n\t\t')][it4.name/] = "[it4.value/]"[/for][/if][/for]/>
 	[/for]
 </[cName/]>
 	[else]
-	[for (it2 : Attribute | aCharacteristicComponent.attributes) separator('\n')]
-	[it2.name/]="[it2.value/]"[/for] 
-	/>
+	[for (it2 : AttributeValue | it.attributeValuesContainer.instanceAttributes) separator('\n')]
+	[it2.name/]="[it2.value/]"[/for]/>
 	[/if]
 [/file]
 [/for]
@@ -274,17 +273,21 @@ void [cName/]_impl::initialize() throw (acsErrTypeLifeCycle::acsErrTypeLifeCycle
 {
 	/*Suggested variables to be initialized
 	[for (it : DevIO | aCharacteristicComponent.usedDevIOs.devIOs)]
-	 ***DevIO: [it.name/]****
-	 **Auxiliary variables:**
-	[comment Fix this, select is not working properly /]
+	 ***DevIO: [it.name/]
+
+	 **Auxiliary variables:
+
 	[for (it2 : AuxiliaryVariable | it.auxiliaryVariables->select(a | not a.eIsSet(a.eClass().getEStructuralFeature('value'))))]
 	 *([it2.type/]) [it2.name/];
 	[/for]
+
 	 **Common Variables:**
+
 	[for (it2 : CommonVariable | it.commonVariables->select(a | not a.eIsSet(a.eClass().getEStructuralFeature('value'))))]
 	 *([it2.type/]) [it2.name/];
 	[/for]
 	[/for]
+
 	 ***Property Specific Variables:***
 	[for (it : Property | aCharacteristicComponent.properties)][for (it2 : PropertySpecificVariable | it.devIO.propertySpecificVariables)][if (it2.isRead)]['\n\t *'/]r_[it.name/]_[it2.name/];[/if][if (it2.isWrite)]['\n\t *'/]w_[it.name/]_[it2.name/];[/if][/for][/for]
 	 */
@@ -295,6 +298,7 @@ void [cName/]_impl::initialize() throw (acsErrTypeLifeCycle::acsErrTypeLifeCycle
 	[for (it2 : AuxiliaryVariable | it.auxiliaryVariables->select( a | a.eIsSet(a.eClass().getEStructuralFeature('value'))))]
 	[it2.name/] = [it2.value/];
 	[/for]
+
 	/*Common Variables*/
 	[for (it2 : CommonVariable | it.commonVariables->select( a | a.eIsSet(a.eClass().getEStructuralFeature('value'))))]
 	[it2.name/] = [it2.value/];
@@ -320,6 +324,7 @@ void [cName/]_impl::initialize() throw (acsErrTypeLifeCycle::acsErrTypeLifeCycle
 	
 	m_[it.name/]_sp = new baci::[it.baciType.name/]((component_name+":[it.name/]").c_str(), getComponent(), [it.name/]_devio_m);
 	[/for]
+
 
 
 	//[protected ('initialize implementation')]

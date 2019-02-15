@@ -182,7 +182,7 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 		if(!isSetAttributeValuesContainer()){
 			attributeValuesContainer = new AttributeValuesImpl();
 			attributeValuesContainer.setContainingInstance(this);
-			attributeValuesContainer.getInstanceAttributes();
+			attributeValuesContainer.setInstanceAttributes();
 		}
 		return attributeValuesContainer;
 	}
@@ -284,12 +284,10 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 		}
 		else if(!isSetCharacteristicValuesContainer()){
 			EList<Property> properties = this.getContainingComponentInstances().getContainingCaracteristicComponent().getProperties();
-			System.out.println(properties);
 			CharacteristicValues c;
 			for (Property p : properties){
 				c = new CharacteristicValuesImpl();
 				c.setPropertyName(p.getName());
-				c.getInstanceCharacteristics();
 				c.setInstanceCharacteristics(p);
 				characteristicValuesContainer.add(c);
 			}

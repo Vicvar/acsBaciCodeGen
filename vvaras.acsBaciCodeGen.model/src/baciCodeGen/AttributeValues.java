@@ -41,6 +41,14 @@ public interface AttributeValues extends EObject {
 	 * @generated
 	 */
 	EList<AttributeValue> getInstanceAttributes();
+	
+	/**
+	 * Used by InstanceImpl to set the instance Attributes when initializing the container
+	 * @param p
+	 * @return
+	 * @generated NOT
+	 */
+	EList<AttributeValue> setInstanceAttributes();
 
 	/**
 	 * Unsets the value of the '{@link baciCodeGen.AttributeValues#getInstanceAttributes <em>Instance Attributes</em>}' containment reference list.
