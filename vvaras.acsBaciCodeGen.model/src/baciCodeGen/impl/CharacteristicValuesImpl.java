@@ -155,7 +155,7 @@ public class CharacteristicValuesImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	private PropertyDefinition getBaciTypePropertyDefinition(int accessType, int seqType, int basicType){
+	private PropertyDefinition getBaciTypePropertyDefinition(int accessType, int basicType, int seqType){
 		PropertyDefinition propertyDefinition;
 		BACIPropertiesFactoryImpl propertyFactory = new BACIPropertiesFactoryImpl();
 		switch (accessType){

@@ -2,7 +2,7 @@
 [module generate('http://www.eclipse.org/emf/2002/Ecore', 'http://vvaras/acsBaciCodeGen/model')]
 
 
-[template public generateElement(aCharacteristicComponent : CharacteristicComponent)]
+[template public generateComponent(aCharacteristicComponent : CharacteristicComponent)]
 [comment @main /]
 [testGen()/]
 [generateIDL()/]
@@ -37,8 +37,8 @@
 #define _[cName.toUpperCase()/]_IDL_
 
 #include <baci.idl>
-[if (aCharacteristicComponent.eClass().eIsSet(aCharacteristicComponent.eClass().getEStructuralFeature('prefix')))]
-#pragma prefix "[cPrefix/]"	
+[if (aCharacteristicComponent.eIsSet(aCharacteristicComponent.eClass().getEStructuralFeature('prefix')))]
+#pragma prefix "[cPrefix/]"
 [/if]
 
 module [cModule/]
@@ -115,7 +115,7 @@ module [cModule/]
 	[for (it : Instance | aCharacteristicComponent.componentInstances.instances)]
 	<_ Name="[it.name/]"
 		Code="[cName/]Impl"        
-		Type="IDL:[if(aCharacteristicComponent.eClass().eIsSet(aCharacteristicComponent.eClass().getEStructuralFeature('prefix')))][cPrefix/]/[/if][cModule/]/[cName/]:1.0"
+		Type="IDL:[if(aCharacteristicComponent.eIsSet(aCharacteristicComponent.eClass().getEStructuralFeature('prefix')))][cPrefix/]/[/if][cModule/]/[cName/]:1.0"
 		[comment Templates are laguaje specific, so container ImplLang is not modeled /]
 		Container="[cContainerName/]" ImplLang="cpp"
 		[comment Check when does this go/]
@@ -169,7 +169,7 @@ module [cModule/]
 
 #include <baciCharacteristicComponentImpl.h>
 #include <baciSmartPropertyPointer.h>
-#include <baciDevIO.h>[comment not necessary if no Properties/]
+#include <baciDevIO.h>[comment not necessary if there are no Properties/]
 [for (it : BaciType | aCharacteristicComponent.usedBaciTypes.baciTypes)]
 #include <baci[it.name/].h>
 [/for]
@@ -218,7 +218,7 @@ class [cName/]_impl : public virtual POA_[cModule/]::[cName/], public baci::Char
 		[it.devIO.name/]::[it.devIO.name/]_write * [it.name/]_devio_w;
 		[/for]
 
-		[comment this could be done better/]
+		[comment this could be done better(?)/]
 		std::string component_name; //static variable to initialize smart pointers
 		
 		[for (it : DevIO | aCharacteristicComponent.usedDevIOs.devIOs)]
@@ -305,6 +305,28 @@ void [cName/]_impl::initialize() throw (acsErrTypeLifeCycle::acsErrTypeLifeCycle
 	[/for]
 	[/for]
 
+	/*Getting Attribute values from CDB*/
+	
+	[comment Maybe should't always be string/]
+	[for (it : Attribute | aCharacteristicComponent.attributes)]
+	std::string [it.name/]_from_cdb;
+	[/for]
+	
+	[for (it : Attribute | aCharacteristicComponent.attributes)]
+	try
+	{
+		CORBA::Any* characteristic = get_characteristic_by_name("[it.name/]");
+		if (!(*characteristic>>=[it.name/]_from_cdb))
+		{
+			ACS_SHORT_LOG((LM_ERROR,"Error getting [it.name/] by the CORBA::Any object"));
+		}
+	}
+	catch (...)
+	{
+		ACS_SHORT_LOG((LM_ERROR,"Error reading the characteristic [it.name/] by its name"));
+	}
+	[/for]
+
 	//[protected ('Required Variables')]
 	
 	//[/protected]
@@ -324,8 +346,6 @@ void [cName/]_impl::initialize() throw (acsErrTypeLifeCycle::acsErrTypeLifeCycle
 	
 	m_[it.name/]_sp = new baci::[it.baciType.name/]((component_name+":[it.name/]").c_str(), getComponent(), [it.name/]_devio_m);
 	[/for]
-
-
 
 	//[protected ('initialize implementation')]
 	
