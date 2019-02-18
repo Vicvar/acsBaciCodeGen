@@ -14,7 +14,6 @@ package baciCodeGen;
  * <ul>
  *   <li>{@link baciCodeGen.CommonVariable#isIsRead <em>Is Read</em>}</li>
  *   <li>{@link baciCodeGen.CommonVariable#isIsWrite <em>Is Write</em>}</li>
- *   <li>{@link baciCodeGen.CommonVariable#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see baciCodeGen.BaciCodeGenPackage#getCommonVariable()
@@ -73,32 +72,5 @@ public interface CommonVariable extends DevIOVariable {
 	 * @generated
 	 */
 	void setIsWrite(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute.
-	 * The default value is <code>""</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(String)
-	 * @see baciCodeGen.BaciCodeGenPackage#getCommonVariable_Value()
-	 * @model default=""
-	 * @generated
-	 */
-	String getValue();
-
-	/**
-	 * Sets the value of the '{@link baciCodeGen.CommonVariable#getValue <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
-	 * @see #getValue()
-	 * @generated
-	 */
-	void setValue(String value);
 
 } // CommonVariable

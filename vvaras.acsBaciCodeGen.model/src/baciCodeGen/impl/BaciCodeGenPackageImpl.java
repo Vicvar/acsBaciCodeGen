@@ -676,26 +676,8 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCommonVariable_Value() {
-		return (EAttribute)commonVariableEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getAuxiliaryVariable() {
 		return auxiliaryVariableEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAuxiliaryVariable_Value() {
-		return (EAttribute)auxiliaryVariableEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -831,6 +813,24 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 	 */
 	public EReference getInstance_CharacteristicValuesContainer() {
 		return (EReference)instanceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstance_AutoStart() {
+		return (EAttribute)instanceEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstance_Default() {
+		return (EAttribute)instanceEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1067,10 +1067,8 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		commonVariableEClass = createEClass(COMMON_VARIABLE);
 		createEAttribute(commonVariableEClass, COMMON_VARIABLE__IS_READ);
 		createEAttribute(commonVariableEClass, COMMON_VARIABLE__IS_WRITE);
-		createEAttribute(commonVariableEClass, COMMON_VARIABLE__VALUE);
 
 		auxiliaryVariableEClass = createEClass(AUXILIARY_VARIABLE);
-		createEAttribute(auxiliaryVariableEClass, AUXILIARY_VARIABLE__VALUE);
 
 		usedBaciTypesEClass = createEClass(USED_BACI_TYPES);
 		createEReference(usedBaciTypesEClass, USED_BACI_TYPES__BACI_TYPES);
@@ -1090,6 +1088,8 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		createEReference(instanceEClass, INSTANCE__CONTAINING_COMPONENT_INSTANCES);
 		createEReference(instanceEClass, INSTANCE__ATTRIBUTE_VALUES_CONTAINER);
 		createEReference(instanceEClass, INSTANCE__CHARACTERISTIC_VALUES_CONTAINER);
+		createEAttribute(instanceEClass, INSTANCE__AUTO_START);
+		createEAttribute(instanceEClass, INSTANCE__DEFAULT);
 
 		attributeValuesEClass = createEClass(ATTRIBUTE_VALUES);
 		createEReference(attributeValuesEClass, ATTRIBUTE_VALUES__INSTANCE_ATTRIBUTES);
@@ -1208,10 +1208,8 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		initEClass(commonVariableEClass, CommonVariable.class, "CommonVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCommonVariable_IsRead(), ecorePackage.getEBoolean(), "isRead", null, 0, 1, CommonVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCommonVariable_IsWrite(), ecorePackage.getEBoolean(), "isWrite", null, 0, 1, CommonVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCommonVariable_Value(), ecorePackage.getEString(), "value", "", 0, 1, CommonVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(auxiliaryVariableEClass, AuxiliaryVariable.class, "AuxiliaryVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAuxiliaryVariable_Value(), ecorePackage.getEString(), "value", "", 0, 1, AuxiliaryVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(usedBaciTypesEClass, UsedBaciTypes.class, "UsedBaciTypes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUsedBaciTypes_BaciTypes(), this.getBaciType(), null, "baciTypes", null, 0, -1, UsedBaciTypes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1231,6 +1229,8 @@ public class BaciCodeGenPackageImpl extends EPackageImpl implements BaciCodeGenP
 		initEReference(getInstance_ContainingComponentInstances(), this.getComponentInstances(), this.getComponentInstances_Instances(), "containingComponentInstances", null, 1, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInstance_AttributeValuesContainer(), this.getAttributeValues(), this.getAttributeValues_ContainingInstance(), "attributeValuesContainer", null, 1, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getInstance_CharacteristicValuesContainer(), this.getCharacteristicValues(), this.getCharacteristicValues_ContainingInstance(), "characteristicValuesContainer", null, 0, -1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstance_AutoStart(), ecorePackage.getEBoolean(), "autoStart", null, 0, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstance_Default(), ecorePackage.getEBoolean(), "default", null, 0, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attributeValuesEClass, AttributeValues.class, "AttributeValues", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAttributeValues_InstanceAttributes(), this.getAttributeValue(), null, "instanceAttributes", null, 0, -1, AttributeValues.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -76,13 +76,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="CommonVariable" eSuperTypes="#//DevIOVariable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRead" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isWrite" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral=""/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AuxiliaryVariable" eSuperTypes="#//DevIOVariable">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral=""/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AuxiliaryVariable" eSuperTypes="#//DevIOVariable"/>
   <eClassifiers xsi:type="ecore:EClass" name="UsedBaciTypes">
     <eStructuralFeatures xsi:type="ecore:EReference" name="baciTypes" upperBound="-1"
         eType="#//BaciType" containment="true"/>
@@ -131,6 +126,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="characteristicValuesContainer"
         upperBound="-1" eType="#//CharacteristicValues" unsettable="true" derived="true"
         containment="true" eOpposite="#//CharacteristicValues/containingInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoStart" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeValues">
     <eStructuralFeatures xsi:type="ecore:EReference" name="instanceAttributes" upperBound="-1"

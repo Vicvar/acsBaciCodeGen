@@ -662,22 +662,13 @@ public interface BaciCodeGenPackage extends EPackage {
 	int COMMON_VARIABLE__IS_WRITE = DEV_IO_VARIABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMON_VARIABLE__VALUE = DEV_IO_VARIABLE_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Common Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMON_VARIABLE_FEATURE_COUNT = DEV_IO_VARIABLE_FEATURE_COUNT + 3;
+	int COMMON_VARIABLE_FEATURE_COUNT = DEV_IO_VARIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Common Variable</em>' class.
@@ -717,22 +708,13 @@ public interface BaciCodeGenPackage extends EPackage {
 	int AUXILIARY_VARIABLE__TYPE = DEV_IO_VARIABLE__TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUXILIARY_VARIABLE__VALUE = DEV_IO_VARIABLE_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Auxiliary Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUXILIARY_VARIABLE_FEATURE_COUNT = DEV_IO_VARIABLE_FEATURE_COUNT + 1;
+	int AUXILIARY_VARIABLE_FEATURE_COUNT = DEV_IO_VARIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Auxiliary Variable</em>' class.
@@ -937,13 +919,31 @@ public interface BaciCodeGenPackage extends EPackage {
 	int INSTANCE__CHARACTERISTIC_VALUES_CONTAINER = 3;
 
 	/**
+	 * The feature id for the '<em><b>Auto Start</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTANCE__AUTO_START = 4;
+
+	/**
+	 * The feature id for the '<em><b>Default</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTANCE__DEFAULT = 5;
+
+	/**
 	 * The number of structural features of the '<em>Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCE_FEATURE_COUNT = 4;
+	int INSTANCE_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Instance</em>' class.
@@ -1681,17 +1681,6 @@ public interface BaciCodeGenPackage extends EPackage {
 	EAttribute getCommonVariable_IsWrite();
 
 	/**
-	 * Returns the meta object for the attribute '{@link baciCodeGen.CommonVariable#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see baciCodeGen.CommonVariable#getValue()
-	 * @see #getCommonVariable()
-	 * @generated
-	 */
-	EAttribute getCommonVariable_Value();
-
-	/**
 	 * Returns the meta object for class '{@link baciCodeGen.AuxiliaryVariable <em>Auxiliary Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1700,17 +1689,6 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAuxiliaryVariable();
-
-	/**
-	 * Returns the meta object for the attribute '{@link baciCodeGen.AuxiliaryVariable#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see baciCodeGen.AuxiliaryVariable#getValue()
-	 * @see #getAuxiliaryVariable()
-	 * @generated
-	 */
-	EAttribute getAuxiliaryVariable_Value();
 
 	/**
 	 * Returns the meta object for class '{@link baciCodeGen.UsedBaciTypes <em>Used Baci Types</em>}'.
@@ -1872,6 +1850,28 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInstance_CharacteristicValuesContainer();
+
+	/**
+	 * Returns the meta object for the attribute '{@link baciCodeGen.Instance#isAutoStart <em>Auto Start</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Auto Start</em>'.
+	 * @see baciCodeGen.Instance#isAutoStart()
+	 * @see #getInstance()
+	 * @generated
+	 */
+	EAttribute getInstance_AutoStart();
+
+	/**
+	 * Returns the meta object for the attribute '{@link baciCodeGen.Instance#isDefault <em>Default</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Default</em>'.
+	 * @see baciCodeGen.Instance#isDefault()
+	 * @see #getInstance()
+	 * @generated
+	 */
+	EAttribute getInstance_Default();
 
 	/**
 	 * Returns the meta object for class '{@link baciCodeGen.AttributeValues <em>Attribute Values</em>}'.
@@ -2448,14 +2448,6 @@ public interface BaciCodeGenPackage extends EPackage {
 		EAttribute COMMON_VARIABLE__IS_WRITE = eINSTANCE.getCommonVariable_IsWrite();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMMON_VARIABLE__VALUE = eINSTANCE.getCommonVariable_Value();
-
-		/**
 		 * The meta object literal for the '{@link baciCodeGen.impl.AuxiliaryVariableImpl <em>Auxiliary Variable</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2464,14 +2456,6 @@ public interface BaciCodeGenPackage extends EPackage {
 		 * @generated
 		 */
 		EClass AUXILIARY_VARIABLE = eINSTANCE.getAuxiliaryVariable();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute AUXILIARY_VARIABLE__VALUE = eINSTANCE.getAuxiliaryVariable_Value();
 
 		/**
 		 * The meta object literal for the '{@link baciCodeGen.impl.UsedBaciTypesImpl <em>Used Baci Types</em>}' class.
@@ -2600,6 +2584,22 @@ public interface BaciCodeGenPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INSTANCE__CHARACTERISTIC_VALUES_CONTAINER = eINSTANCE.getInstance_CharacteristicValuesContainer();
+
+		/**
+		 * The meta object literal for the '<em><b>Auto Start</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INSTANCE__AUTO_START = eINSTANCE.getInstance_AutoStart();
+
+		/**
+		 * The meta object literal for the '<em><b>Default</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INSTANCE__DEFAULT = eINSTANCE.getInstance_Default();
 
 		/**
 		 * The meta object literal for the '{@link baciCodeGen.impl.AttributeValuesImpl <em>Attribute Values</em>}' class.

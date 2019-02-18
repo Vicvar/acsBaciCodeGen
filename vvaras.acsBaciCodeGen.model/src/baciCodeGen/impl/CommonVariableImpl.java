@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link baciCodeGen.impl.CommonVariableImpl#isIsRead <em>Is Read</em>}</li>
  *   <li>{@link baciCodeGen.impl.CommonVariableImpl#isIsWrite <em>Is Write</em>}</li>
- *   <li>{@link baciCodeGen.impl.CommonVariableImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,26 +65,6 @@ public class CommonVariableImpl extends DevIOVariableImpl implements CommonVaria
 	 * @ordered
 	 */
 	protected boolean isWrite = IS_WRITE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VALUE_EDEFAULT = "";
-
-	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected String value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,27 +132,6 @@ public class CommonVariableImpl extends DevIOVariableImpl implements CommonVaria
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getValue() {
-		return value;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setValue(String newValue) {
-		String oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.COMMON_VARIABLE__VALUE, oldValue, value));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -181,8 +139,6 @@ public class CommonVariableImpl extends DevIOVariableImpl implements CommonVaria
 				return isIsRead();
 			case BaciCodeGenPackage.COMMON_VARIABLE__IS_WRITE:
 				return isIsWrite();
-			case BaciCodeGenPackage.COMMON_VARIABLE__VALUE:
-				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -200,9 +156,6 @@ public class CommonVariableImpl extends DevIOVariableImpl implements CommonVaria
 				return;
 			case BaciCodeGenPackage.COMMON_VARIABLE__IS_WRITE:
 				setIsWrite((Boolean)newValue);
-				return;
-			case BaciCodeGenPackage.COMMON_VARIABLE__VALUE:
-				setValue((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -222,9 +175,6 @@ public class CommonVariableImpl extends DevIOVariableImpl implements CommonVaria
 			case BaciCodeGenPackage.COMMON_VARIABLE__IS_WRITE:
 				setIsWrite(IS_WRITE_EDEFAULT);
 				return;
-			case BaciCodeGenPackage.COMMON_VARIABLE__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -241,8 +191,6 @@ public class CommonVariableImpl extends DevIOVariableImpl implements CommonVaria
 				return isRead != IS_READ_EDEFAULT;
 			case BaciCodeGenPackage.COMMON_VARIABLE__IS_WRITE:
 				return isWrite != IS_WRITE_EDEFAULT;
-			case BaciCodeGenPackage.COMMON_VARIABLE__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -261,8 +209,6 @@ public class CommonVariableImpl extends DevIOVariableImpl implements CommonVaria
 		result.append(isRead);
 		result.append(", isWrite: ");
 		result.append(isWrite);
-		result.append(", value: ");
-		result.append(value);
 		result.append(')');
 		return result.toString();
 	}

@@ -19,6 +19,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link baciCodeGen.Instance#getContainingComponentInstances <em>Containing Component Instances</em>}</li>
  *   <li>{@link baciCodeGen.Instance#getAttributeValuesContainer <em>Attribute Values Container</em>}</li>
  *   <li>{@link baciCodeGen.Instance#getCharacteristicValuesContainer <em>Characteristic Values Container</em>}</li>
+ *   <li>{@link baciCodeGen.Instance#isAutoStart <em>Auto Start</em>}</li>
+ *   <li>{@link baciCodeGen.Instance#isDefault <em>Default</em>}</li>
  * </ul>
  *
  * @see baciCodeGen.BaciCodeGenPackage#getInstance()
@@ -175,5 +177,57 @@ public interface Instance extends EObject {
 	 * @generated
 	 */
 	boolean isSetCharacteristicValuesContainer();
+
+	/**
+	 * Returns the value of the '<em><b>Auto Start</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Auto Start</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Auto Start</em>' attribute.
+	 * @see #setAutoStart(boolean)
+	 * @see baciCodeGen.BaciCodeGenPackage#getInstance_AutoStart()
+	 * @model
+	 * @generated
+	 */
+	boolean isAutoStart();
+
+	/**
+	 * Sets the value of the '{@link baciCodeGen.Instance#isAutoStart <em>Auto Start</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Auto Start</em>' attribute.
+	 * @see #isAutoStart()
+	 * @generated
+	 */
+	void setAutoStart(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Default</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Default</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Default</em>' attribute.
+	 * @see #setDefault(boolean)
+	 * @see baciCodeGen.BaciCodeGenPackage#getInstance_Default()
+	 * @model
+	 * @generated
+	 */
+	boolean isDefault();
+
+	/**
+	 * Sets the value of the '{@link baciCodeGen.Instance#isDefault <em>Default</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Default</em>' attribute.
+	 * @see #isDefault()
+	 * @generated
+	 */
+	void setDefault(boolean value);
 
 } // Instance

@@ -47,7 +47,6 @@ public class CommonVariableItemProvider extends DevIOVariableItemProvider {
 
 			addIsReadPropertyDescriptor(object);
 			addIsWritePropertyDescriptor(object);
-			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -97,28 +96,6 @@ public class CommonVariableItemProvider extends DevIOVariableItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Value feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CommonVariable_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CommonVariable_value_feature", "_UI_CommonVariable_type"),
-				 BaciCodeGenPackage.Literals.COMMON_VARIABLE__VALUE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This returns CommonVariable.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -158,7 +135,6 @@ public class CommonVariableItemProvider extends DevIOVariableItemProvider {
 		switch (notification.getFeatureID(CommonVariable.class)) {
 			case BaciCodeGenPackage.COMMON_VARIABLE__IS_READ:
 			case BaciCodeGenPackage.COMMON_VARIABLE__IS_WRITE:
-			case BaciCodeGenPackage.COMMON_VARIABLE__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

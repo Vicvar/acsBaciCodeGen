@@ -64,6 +64,8 @@ public class InstanceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addAutoStartPropertyDescriptor(object);
+			addDefaultPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -86,6 +88,50 @@ public class InstanceItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Auto Start feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAutoStartPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Instance_autoStart_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Instance_autoStart_feature", "_UI_Instance_type"),
+				 BaciCodeGenPackage.Literals.INSTANCE__AUTO_START,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Default feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Instance_default_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Instance_default_feature", "_UI_Instance_type"),
+				 BaciCodeGenPackage.Literals.INSTANCE__DEFAULT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -160,6 +206,8 @@ public class InstanceItemProvider
 
 		switch (notification.getFeatureID(Instance.class)) {
 			case BaciCodeGenPackage.INSTANCE__NAME:
+			case BaciCodeGenPackage.INSTANCE__AUTO_START:
+			case BaciCodeGenPackage.INSTANCE__DEFAULT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case BaciCodeGenPackage.INSTANCE__ATTRIBUTE_VALUES_CONTAINER:

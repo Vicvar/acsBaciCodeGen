@@ -38,6 +38,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link baciCodeGen.impl.InstanceImpl#getContainingComponentInstances <em>Containing Component Instances</em>}</li>
  *   <li>{@link baciCodeGen.impl.InstanceImpl#getAttributeValuesContainer <em>Attribute Values Container</em>}</li>
  *   <li>{@link baciCodeGen.impl.InstanceImpl#getCharacteristicValuesContainer <em>Characteristic Values Container</em>}</li>
+ *   <li>{@link baciCodeGen.impl.InstanceImpl#isAutoStart <em>Auto Start</em>}</li>
+ *   <li>{@link baciCodeGen.impl.InstanceImpl#isDefault <em>Default</em>}</li>
  * </ul>
  *
  * @generated
@@ -91,6 +93,46 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 	 * @ordered
 	 */
 	protected EList<CharacteristicValues> characteristicValuesContainer;
+
+	/**
+	 * The default value of the '{@link #isAutoStart() <em>Auto Start</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAutoStart()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean AUTO_START_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isAutoStart() <em>Auto Start</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAutoStart()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean autoStart = AUTO_START_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isDefault() <em>Default</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDefault()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean DEFAULT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isDefault() <em>Default</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDefault()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean default_ = DEFAULT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -318,6 +360,48 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isAutoStart() {
+		return autoStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAutoStart(boolean newAutoStart) {
+		boolean oldAutoStart = autoStart;
+		autoStart = newAutoStart;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.INSTANCE__AUTO_START, oldAutoStart, autoStart));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isDefault() {
+		return default_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDefault(boolean newDefault) {
+		boolean oldDefault = default_;
+		default_ = newDefault;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BaciCodeGenPackage.INSTANCE__DEFAULT, oldDefault, default_));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -384,6 +468,10 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 				return getAttributeValuesContainer();
 			case BaciCodeGenPackage.INSTANCE__CHARACTERISTIC_VALUES_CONTAINER:
 				return getCharacteristicValuesContainer();
+			case BaciCodeGenPackage.INSTANCE__AUTO_START:
+				return isAutoStart();
+			case BaciCodeGenPackage.INSTANCE__DEFAULT:
+				return isDefault();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -410,6 +498,12 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 				getCharacteristicValuesContainer().clear();
 				getCharacteristicValuesContainer().addAll((Collection<? extends CharacteristicValues>)newValue);
 				return;
+			case BaciCodeGenPackage.INSTANCE__AUTO_START:
+				setAutoStart((Boolean)newValue);
+				return;
+			case BaciCodeGenPackage.INSTANCE__DEFAULT:
+				setDefault((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -434,6 +528,12 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 			case BaciCodeGenPackage.INSTANCE__CHARACTERISTIC_VALUES_CONTAINER:
 				unsetCharacteristicValuesContainer();
 				return;
+			case BaciCodeGenPackage.INSTANCE__AUTO_START:
+				setAutoStart(AUTO_START_EDEFAULT);
+				return;
+			case BaciCodeGenPackage.INSTANCE__DEFAULT:
+				setDefault(DEFAULT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -454,6 +554,10 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 				return isSetAttributeValuesContainer();
 			case BaciCodeGenPackage.INSTANCE__CHARACTERISTIC_VALUES_CONTAINER:
 				return isSetCharacteristicValuesContainer();
+			case BaciCodeGenPackage.INSTANCE__AUTO_START:
+				return autoStart != AUTO_START_EDEFAULT;
+			case BaciCodeGenPackage.INSTANCE__DEFAULT:
+				return default_ != DEFAULT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -470,6 +574,10 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", autoStart: ");
+		result.append(autoStart);
+		result.append(", default: ");
+		result.append(default_);
 		result.append(')');
 		return result.toString();
 	}
