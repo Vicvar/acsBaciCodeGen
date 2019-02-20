@@ -100,18 +100,6 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 				return createDevIOVariableAdapter();
 			}
 			@Override
-			public Adapter casePropertySpecificVariable(PropertySpecificVariable object) {
-				return createPropertySpecificVariableAdapter();
-			}
-			@Override
-			public Adapter caseCommonVariable(CommonVariable object) {
-				return createCommonVariableAdapter();
-			}
-			@Override
-			public Adapter caseAuxiliaryVariable(AuxiliaryVariable object) {
-				return createAuxiliaryVariableAdapter();
-			}
-			@Override
 			public Adapter caseUsedBaciTypes(UsedBaciTypes object) {
 				return createUsedBaciTypesAdapter();
 			}
@@ -276,48 +264,6 @@ public class BaciCodeGenAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDevIOVariableAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link baciCodeGen.PropertySpecificVariable <em>Property Specific Variable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see baciCodeGen.PropertySpecificVariable
-	 * @generated
-	 */
-	public Adapter createPropertySpecificVariableAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link baciCodeGen.CommonVariable <em>Common Variable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see baciCodeGen.CommonVariable
-	 * @generated
-	 */
-	public Adapter createCommonVariableAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link baciCodeGen.AuxiliaryVariable <em>Auxiliary Variable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see baciCodeGen.AuxiliaryVariable
-	 * @generated
-	 */
-	public Adapter createAuxiliaryVariableAdapter() {
 		return null;
 	}
 

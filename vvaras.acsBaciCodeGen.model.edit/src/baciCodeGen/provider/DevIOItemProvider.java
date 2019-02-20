@@ -14,9 +14,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -125,9 +123,7 @@ public class DevIOItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(BaciCodeGenPackage.Literals.DEV_IO__PROPERTY_SPECIFIC_VARIABLES);
-			childrenFeatures.add(BaciCodeGenPackage.Literals.DEV_IO__COMMON_VARIABLES);
-			childrenFeatures.add(BaciCodeGenPackage.Literals.DEV_IO__AUXILIARY_VARIABLES);
+			childrenFeatures.add(BaciCodeGenPackage.Literals.DEV_IO__DEV_IO_VARIABLES);
 		}
 		return childrenFeatures;
 	}
@@ -187,9 +183,7 @@ public class DevIOItemProvider
 			case BaciCodeGenPackage.DEV_IO__REQUIRED_LIBRARIES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case BaciCodeGenPackage.DEV_IO__PROPERTY_SPECIFIC_VARIABLES:
-			case BaciCodeGenPackage.DEV_IO__COMMON_VARIABLES:
-			case BaciCodeGenPackage.DEV_IO__AUXILIARY_VARIABLES:
+			case BaciCodeGenPackage.DEV_IO__DEV_IO_VARIABLES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -209,18 +203,8 @@ public class DevIOItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(BaciCodeGenPackage.Literals.DEV_IO__PROPERTY_SPECIFIC_VARIABLES,
-				 BaciCodeGenFactory.eINSTANCE.createPropertySpecificVariable()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BaciCodeGenPackage.Literals.DEV_IO__COMMON_VARIABLES,
-				 BaciCodeGenFactory.eINSTANCE.createCommonVariable()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BaciCodeGenPackage.Literals.DEV_IO__AUXILIARY_VARIABLES,
-				 BaciCodeGenFactory.eINSTANCE.createAuxiliaryVariable()));
+				(BaciCodeGenPackage.Literals.DEV_IO__DEV_IO_VARIABLES,
+				 BaciCodeGenFactory.eINSTANCE.createDevIOVariable()));
 	}
 
 	/**

@@ -82,7 +82,7 @@ public class CharacteristicValuesItemProvider
 				 getString("_UI_CharacteristicValues_propertyName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CharacteristicValues_propertyName_feature", "_UI_CharacteristicValues_type"),
 				 BaciCodeGenPackage.Literals.CHARACTERISTIC_VALUES__PROPERTY_NAME,
-				 true,
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,

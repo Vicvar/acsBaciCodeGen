@@ -17,9 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link baciCodeGen.DevIO#getName <em>Name</em>}</li>
  *   <li>{@link baciCodeGen.DevIO#getRequiredLibraries <em>Required Libraries</em>}</li>
- *   <li>{@link baciCodeGen.DevIO#getPropertySpecificVariables <em>Property Specific Variables</em>}</li>
- *   <li>{@link baciCodeGen.DevIO#getCommonVariables <em>Common Variables</em>}</li>
- *   <li>{@link baciCodeGen.DevIO#getAuxiliaryVariables <em>Auxiliary Variables</em>}</li>
+ *   <li>{@link baciCodeGen.DevIO#getDevIOVariables <em>Dev IO Variables</em>}</li>
  * </ul>
  *
  * @see baciCodeGen.BaciCodeGenPackage#getDevIO()
@@ -80,51 +78,19 @@ public interface DevIO extends EObject {
 	void setRequiredLibraries(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Property Specific Variables</b></em>' containment reference list.
-	 * The list contents are of type {@link baciCodeGen.PropertySpecificVariable}.
+	 * Returns the value of the '<em><b>Dev IO Variables</b></em>' containment reference list.
+	 * The list contents are of type {@link baciCodeGen.DevIOVariable}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Property Specific Variables</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Dev IO Variables</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Property Specific Variables</em>' containment reference list.
-	 * @see baciCodeGen.BaciCodeGenPackage#getDevIO_PropertySpecificVariables()
+	 * @return the value of the '<em>Dev IO Variables</em>' containment reference list.
+	 * @see baciCodeGen.BaciCodeGenPackage#getDevIO_DevIOVariables()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<PropertySpecificVariable> getPropertySpecificVariables();
-
-	/**
-	 * Returns the value of the '<em><b>Common Variables</b></em>' containment reference list.
-	 * The list contents are of type {@link baciCodeGen.CommonVariable}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Common Variables</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Common Variables</em>' containment reference list.
-	 * @see baciCodeGen.BaciCodeGenPackage#getDevIO_CommonVariables()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<CommonVariable> getCommonVariables();
-
-	/**
-	 * Returns the value of the '<em><b>Auxiliary Variables</b></em>' containment reference list.
-	 * The list contents are of type {@link baciCodeGen.AuxiliaryVariable}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Auxiliary Variables</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Auxiliary Variables</em>' containment reference list.
-	 * @see baciCodeGen.BaciCodeGenPackage#getDevIO_AuxiliaryVariables()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<AuxiliaryVariable> getAuxiliaryVariables();
+	EList<DevIOVariable> getDevIOVariables();
 
 } // DevIO

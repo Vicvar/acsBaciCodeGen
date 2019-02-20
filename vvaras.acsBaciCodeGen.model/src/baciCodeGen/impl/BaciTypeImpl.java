@@ -128,10 +128,10 @@ public class BaciTypeImpl extends MinimalEObjectImpl.Container implements BaciTy
      * @generated NOT
      */
     public String getName() {
-            String res = accessType.getLiteral() + basicType.getLiteral();
-            if(seqType.getValue()==1)
-                    res+= "Seq";
-            return res;
+        String res = accessType.getLiteral() + basicType.getLiteral();
+        if(seqType.getValue()==1)
+                res+= "Seq";
+        return res;
     }
 
 	/**

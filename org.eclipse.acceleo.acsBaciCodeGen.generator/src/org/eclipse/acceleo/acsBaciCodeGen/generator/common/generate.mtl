@@ -219,33 +219,36 @@ class [cName/]_impl : public virtual POA_[cModule/]::[cName/], public baci::Char
 		[/for]
 
 		[comment this could be done better(?)/]
-		std::string component_name; //static variable to initialize smart pointers
-		
+		std::string component_name; //static variable to initialize smart pointers		
 		[for (it : DevIO | aCharacteristicComponent.usedDevIOs.devIOs)]
+
 		/*DevIO: [it.name/]*/
-		/*Aux variables*/
-		[for (it2 : AuxiliaryVariable | it.auxiliaryVariables)]
-		[it2.type/] [it2.name/];
-		[/for]
 
 		/*Common Variables*/
-		[for (it2 : CommonVariable | it.commonVariables)]
+		[for (it2 : DevIOVariable | it.devIOVariables->select(diov | not diov.isPropertySpecific and diov.isRead and diov.isWrite))]
 		[it2.type/] [it2.name/];
 		[/for]
+		[for (it2 : DevIOVariable | it.devIOVariables->select(diov | not diov.isPropertySpecific and diov.isRead and not diov.isWrite))]
+		[it2.type/] [it2.name/];
+		[/for]
+		[for (it2 : DevIOVariable | it.devIOVariables->select(diov | not diov.isPropertySpecific and not diov.isRead and diov.isWrite))]
+		[it2.type/] [it2.name/];
 		[/for]
 
 		/*Property Specific Variables*/
-		[for (it : Property | aCharacteristicComponent.properties->select(p | p.baciType.accessType.toString().strstr('RO')))]
-		[for (it2 : PropertySpecificVariable | it.devIO.propertySpecificVariables->select(psv | psv.isRead))]
-		[it2.type/] r_[it.name/]_[it2.name/];
+		/*Read Only Properties*/
+		[for (it2 : Property | aCharacteristicComponent.properties->select(p | p.devIO = it and p.baciType.accessType.toString().strstr('RO') ))]
+		[for (it3 : DevIOVariable | it.devIOVariables->select(diov | diov.isPropertySpecific and diov.isRead))]
+		[it3.type/] r_[it2.name/]_[it3.name/];
 		[/for]
 		[/for]
-		[for (it : Property | aCharacteristicComponent.properties->select(p | p.baciType.accessType.toString().strstr('RW')))]
-		[for (it2 : PropertySpecificVariable | it.devIO.propertySpecificVariables->select(psv | psv.isWrite))]
-		[it2.type/] w_[it.name/]_[it2.name/];
+		/*Read Write Properties*/
+		[for (it2 : Property | aCharacteristicComponent.properties->select(p | p.devIO = it and p.baciType.accessType.toString().strstr('RW') ))]
+		[for (it3 : DevIOVariable | it.devIOVariables->select(diov | diov.isPropertySpecific and diov.isWrite))]
+		[it3.type/] w_[it2.name/]_[it3.name/];
 		[/for]
 		[/for]
-		
+		[/for]
 };
 
 #endif //_[cName.toUpperCase()/]_IMPL_H_
@@ -280,30 +283,34 @@ void [cName/]_impl::initialize() throw (acsErrTypeLifeCycle::acsErrTypeLifeCycle
 {
 	/*Suggested variables to be initialized
 	[for (it : DevIO | aCharacteristicComponent.usedDevIOs.devIOs)]
-	 ***DevIO: [it.name/]
 
-	 **Auxiliary variables:
+	DevIO: [it.name/]
 
-	[for (it2 : AuxiliaryVariable | it.auxiliaryVariables)]
-	 *([it2.type/]) [it2.name/];
+	Common Variables:
+	[for (it2 : DevIOVariable | it.devIOVariables->select(diov | not diov.isPropertySpecific and diov.isRead and diov.isWrite))]
+	[it2.name/]
+	[/for]
+	[for (it2 : DevIOVariable | it.devIOVariables->select(diov | not diov.isPropertySpecific and diov.isRead and not diov.isWrite))]
+	[it2.name/]
+	[/for]
+	[for (it2 : DevIOVariable | it.devIOVariables->select(diov | not diov.isPropertySpecific and not diov.isRead and diov.isWrite))]
+	[it2.name/]
 	[/for]
 
-	 **Common Variables:**
+	Property Specific Variables:
 
-	[for (it2 : CommonVariable | it.commonVariables)]
-	 *([it2.type/]) [it2.name/];
+	Read Only Properties
+	[for (it2 : Property | aCharacteristicComponent.properties->select(p | p.devIO = it and p.baciType.accessType.toString().strstr('RO') ))]
+	[for (it3 : DevIOVariable | it.devIOVariables->select(diov | diov.isPropertySpecific and diov.isRead))]
+	[it3.type/] r_[it2.name/]_[it3.name/];
 	[/for]
 	[/for]
 
-	 ***Property Specific Variables:***
-	[for (it : Property | aCharacteristicComponent.properties->select(p | p.baciType.accessType.toString().strstr('RO')))]
-	[for (it2 : PropertySpecificVariable | it.devIO.propertySpecificVariables)]
-	 *r_[it.name/]_[it2.name/];
+	Read Write Properties
+	[for (it2 : Property | aCharacteristicComponent.properties->select(p | p.devIO = it and p.baciType.accessType.toString().strstr('RW') ))]
+	[for (it3 : DevIOVariable | it.devIOVariables->select(diov | diov.isPropertySpecific and diov.isWrite))]
+	[it3.type/] w_[it2.name/]_[it3.name/];
 	[/for]
-	[/for]
-	[for (it : Property | aCharacteristicComponent.properties->select(p | p.baciType.accessType.toString().strstr('RW')))]
-	[for (it2 : PropertySpecificVariable | it.devIO.propertySpecificVariables)]
-	 *w_[it.name/]_[it2.name/];
 	[/for]
 	[/for]
 	 */
@@ -337,11 +344,11 @@ void [cName/]_impl::initialize() throw (acsErrTypeLifeCycle::acsErrTypeLifeCycle
 	/*Property initialization*/
 	[for (it : Property | aCharacteristicComponent.properties->select(p | p.baciType.accessType.toString().strstr('RO')))]
 	
-	[it.name/]_devio_m = new [it.devIO.name/]::[it.devIO.name/]_read([for(it2 : CommonVariable | it.devIO.commonVariables->select( a | a.isRead)) separator(', ')][it2.name/][/for][if(not it.devIO.commonVariables->select( a | a.isRead)->isEmpty() and  not it.devIO.propertySpecificVariables->select(a | a.isRead)->isEmpty())], [/if][for (it2 : PropertySpecificVariable | it.devIO.propertySpecificVariables->select(a | a.isRead)) separator(', ')]r_[it.name/]_[it2.name/][/for]);
+	[it.name/]_devio_m = new [it.devIO.name/]::[it.devIO.name/]_read([for(it2 : DevIOVariable | it.devIO.devIOVariables->select( a | not a.isPropertySpecific and a.isRead)) separator(', ')][it2.name/][/for][if(not it.devIO.devIOVariables->select( a | not a.isPropertySpecific and a.isRead)->isEmpty() and  not it.devIO.devIOVariables->select(a | a.isPropertySpecific and a.isRead)->isEmpty())], [/if][for (it2 : DevIOVariable | it.devIO.devIOVariables->select(a | a.isPropertySpecific and a.isRead)) separator(', ')]r_[it.name/]_[it2.name/][/for]);
 	[/for]
 	[for (it : Property | aCharacteristicComponent.properties->select(p | p.baciType.accessType.toString().strstr('RW')))]
 	
-	[it.name/]_devio_w = new [it.devIO.name/]::[it.devIO.name/]_readWrite([for(it2 : CommonVariable | it.devIO.commonVariables->select( a | a.isWrite)) separator(', ')][it2.name/][/for][if(not it.devIO.commonVariables->select( a | a.isWrite)->isEmpty() and  not it.devIO.propertySpecificVariables->select(a | a.isWrite)->isEmpty())], [/if][for (it2 : PropertySpecificVariable | it.devIO.propertySpecificVariables->select(a | a.isWrite)) separator(', ')]w_[it.name/]_[it2.name/][/for]);
+	[it.name/]_devio_w = new [it.devIO.name/]::[it.devIO.name/]_readWrite([for(it2 : DevIOVariable | it.devIO.devIOVariables->select( a | not a.isPropertySpecific and a.isWrite)) separator(', ')][it2.name/][/for][if(not it.devIO.devIOVariables->select( a | not a.isPropertySpecific and a.isWrite)->isEmpty() and  not it.devIO.devIOVariables->select(a | a.isPropertySpecific and a.isWrite)->isEmpty())], [/if][for (it2 : DevIOVariable | it.devIO.devIOVariables->select(a | a.isPropertySpecific and a.isWrite)) separator(', ')]r_[it.name/]_[it2.name/][/for]);
 	[/for]
 	[for (it : Property | aCharacteristicComponent.properties->select(p | p.baciType.accessType.toString().strstr('RO')))]
 		

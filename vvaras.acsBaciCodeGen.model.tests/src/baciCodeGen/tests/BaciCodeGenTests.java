@@ -33,6 +33,7 @@ public class BaciCodeGenTests extends TestSuite {
 		TestSuite suite = new BaciCodeGenTests("baciCodeGen Tests");
 		suite.addTestSuite(BaciTypeTest.class);
 		suite.addTestSuite(InstanceTest.class);
+		suite.addTestSuite(AttributeValueTest.class);
 		suite.addTestSuite(CharacteristicValuesTest.class);
 		suite.addTestSuite(CharacteristicValueTest.class);
 		return suite;

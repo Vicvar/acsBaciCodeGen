@@ -13,6 +13,12 @@ import junit.textui.TestRunner;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Attribute Value</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are tested:
+ * <ul>
+ *   <li>{@link baciCodeGen.AttributeValue#getName() <em>Name</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class AttributeValueTest extends TestCase {
@@ -84,6 +90,32 @@ public class AttributeValueTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link baciCodeGen.AttributeValue#getName() <em>Name</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.AttributeValue#getName()
+	 * @generated
+	 */
+	public void testGetName() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link baciCodeGen.AttributeValue#setName(java.lang.String) <em>Name</em>}' feature setter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see baciCodeGen.AttributeValue#setName(java.lang.String)
+	 * @generated
+	 */
+	public void testSetName() {
+		// TODO: implement this feature setter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //AttributeValueTest

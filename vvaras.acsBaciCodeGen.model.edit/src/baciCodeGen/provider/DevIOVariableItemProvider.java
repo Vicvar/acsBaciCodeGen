@@ -62,6 +62,9 @@ public class DevIOVariableItemProvider
 
 			addNamePropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
+			addIsReadPropertyDescriptor(object);
+			addIsWritePropertyDescriptor(object);
+			addIsPropertySpecificPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -111,6 +114,72 @@ public class DevIOVariableItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Is Read feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsReadPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DevIOVariable_isRead_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DevIOVariable_isRead_feature", "_UI_DevIOVariable_type"),
+				 BaciCodeGenPackage.Literals.DEV_IO_VARIABLE__IS_READ,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Write feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsWritePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DevIOVariable_isWrite_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DevIOVariable_isWrite_feature", "_UI_DevIOVariable_type"),
+				 BaciCodeGenPackage.Literals.DEV_IO_VARIABLE__IS_WRITE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Property Specific feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsPropertySpecificPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DevIOVariable_isPropertySpecific_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DevIOVariable_isPropertySpecific_feature", "_UI_DevIOVariable_type"),
+				 BaciCodeGenPackage.Literals.DEV_IO_VARIABLE__IS_PROPERTY_SPECIFIC,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -139,6 +208,9 @@ public class DevIOVariableItemProvider
 		switch (notification.getFeatureID(DevIOVariable.class)) {
 			case BaciCodeGenPackage.DEV_IO_VARIABLE__NAME:
 			case BaciCodeGenPackage.DEV_IO_VARIABLE__TYPE:
+			case BaciCodeGenPackage.DEV_IO_VARIABLE__IS_READ:
+			case BaciCodeGenPackage.DEV_IO_VARIABLE__IS_WRITE:
+			case BaciCodeGenPackage.DEV_IO_VARIABLE__IS_PROPERTY_SPECIFIC:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

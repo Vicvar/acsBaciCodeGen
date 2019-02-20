@@ -57,27 +57,17 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiredLibraries" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="propertySpecificVariables"
-        upperBound="-1" eType="#//PropertySpecificVariable" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="commonVariables" upperBound="-1"
-        eType="#//CommonVariable" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="auxiliaryVariables" upperBound="-1"
-        eType="#//AuxiliaryVariable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="devIOVariables" upperBound="-1"
+        eType="#//DevIOVariable" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DevIOVariable" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="DevIOVariable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PropertySpecificVariable" eSuperTypes="#//DevIOVariable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRead" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isWrite" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPropertySpecific" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CommonVariable" eSuperTypes="#//DevIOVariable">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRead" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isWrite" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AuxiliaryVariable" eSuperTypes="#//DevIOVariable"/>
   <eClassifiers xsi:type="ecore:EClass" name="UsedBaciTypes">
     <eStructuralFeatures xsi:type="ecore:EReference" name="baciTypes" upperBound="-1"
         eType="#//BaciType" containment="true"/>
@@ -136,7 +126,8 @@
         eOpposite="#//Instance/attributeValuesContainer"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeValue">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CharacteristicValues">

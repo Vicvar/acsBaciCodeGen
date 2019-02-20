@@ -2,25 +2,19 @@
  */
 package baciCodeGen.impl;
 
-import baciCodeGen.AuxiliaryVariable;
 import baciCodeGen.BaciCodeGenPackage;
-import baciCodeGen.CommonVariable;
 import baciCodeGen.DevIO;
-import baciCodeGen.PropertySpecificVariable;
-
+import baciCodeGen.DevIOVariable;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -34,9 +28,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link baciCodeGen.impl.DevIOImpl#getName <em>Name</em>}</li>
  *   <li>{@link baciCodeGen.impl.DevIOImpl#getRequiredLibraries <em>Required Libraries</em>}</li>
- *   <li>{@link baciCodeGen.impl.DevIOImpl#getPropertySpecificVariables <em>Property Specific Variables</em>}</li>
- *   <li>{@link baciCodeGen.impl.DevIOImpl#getCommonVariables <em>Common Variables</em>}</li>
- *   <li>{@link baciCodeGen.impl.DevIOImpl#getAuxiliaryVariables <em>Auxiliary Variables</em>}</li>
+ *   <li>{@link baciCodeGen.impl.DevIOImpl#getDevIOVariables <em>Dev IO Variables</em>}</li>
  * </ul>
  *
  * @generated
@@ -83,34 +75,14 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 	protected String requiredLibraries = REQUIRED_LIBRARIES_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getPropertySpecificVariables() <em>Property Specific Variables</em>}' containment reference list.
+	 * The cached value of the '{@link #getDevIOVariables() <em>Dev IO Variables</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPropertySpecificVariables()
+	 * @see #getDevIOVariables()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<PropertySpecificVariable> propertySpecificVariables;
-
-	/**
-	 * The cached value of the '{@link #getCommonVariables() <em>Common Variables</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommonVariables()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<CommonVariable> commonVariables;
-
-	/**
-	 * The cached value of the '{@link #getAuxiliaryVariables() <em>Auxiliary Variables</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAuxiliaryVariables()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<AuxiliaryVariable> auxiliaryVariables;
+	protected EList<DevIOVariable> devIOVariables;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,35 +150,11 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<PropertySpecificVariable> getPropertySpecificVariables() {
-		if (propertySpecificVariables == null) {
-			propertySpecificVariables = new EObjectContainmentEList<PropertySpecificVariable>(PropertySpecificVariable.class, this, BaciCodeGenPackage.DEV_IO__PROPERTY_SPECIFIC_VARIABLES);
+	public EList<DevIOVariable> getDevIOVariables() {
+		if (devIOVariables == null) {
+			devIOVariables = new EObjectContainmentEList<DevIOVariable>(DevIOVariable.class, this, BaciCodeGenPackage.DEV_IO__DEV_IO_VARIABLES);
 		}
-		return propertySpecificVariables;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<CommonVariable> getCommonVariables() {
-		if (commonVariables == null) {
-			commonVariables = new EObjectContainmentEList<CommonVariable>(CommonVariable.class, this, BaciCodeGenPackage.DEV_IO__COMMON_VARIABLES);
-		}
-		return commonVariables;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<AuxiliaryVariable> getAuxiliaryVariables() {
-		if (auxiliaryVariables == null) {
-			auxiliaryVariables = new EObjectContainmentEList<AuxiliaryVariable>(AuxiliaryVariable.class, this, BaciCodeGenPackage.DEV_IO__AUXILIARY_VARIABLES);
-		}
-		return auxiliaryVariables;
+		return devIOVariables;
 	}
 
 	/**
@@ -217,12 +165,8 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BaciCodeGenPackage.DEV_IO__PROPERTY_SPECIFIC_VARIABLES:
-				return ((InternalEList<?>)getPropertySpecificVariables()).basicRemove(otherEnd, msgs);
-			case BaciCodeGenPackage.DEV_IO__COMMON_VARIABLES:
-				return ((InternalEList<?>)getCommonVariables()).basicRemove(otherEnd, msgs);
-			case BaciCodeGenPackage.DEV_IO__AUXILIARY_VARIABLES:
-				return ((InternalEList<?>)getAuxiliaryVariables()).basicRemove(otherEnd, msgs);
+			case BaciCodeGenPackage.DEV_IO__DEV_IO_VARIABLES:
+				return ((InternalEList<?>)getDevIOVariables()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -239,12 +183,8 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 				return getName();
 			case BaciCodeGenPackage.DEV_IO__REQUIRED_LIBRARIES:
 				return getRequiredLibraries();
-			case BaciCodeGenPackage.DEV_IO__PROPERTY_SPECIFIC_VARIABLES:
-				return getPropertySpecificVariables();
-			case BaciCodeGenPackage.DEV_IO__COMMON_VARIABLES:
-				return getCommonVariables();
-			case BaciCodeGenPackage.DEV_IO__AUXILIARY_VARIABLES:
-				return getAuxiliaryVariables();
+			case BaciCodeGenPackage.DEV_IO__DEV_IO_VARIABLES:
+				return getDevIOVariables();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -264,17 +204,9 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 			case BaciCodeGenPackage.DEV_IO__REQUIRED_LIBRARIES:
 				setRequiredLibraries((String)newValue);
 				return;
-			case BaciCodeGenPackage.DEV_IO__PROPERTY_SPECIFIC_VARIABLES:
-				getPropertySpecificVariables().clear();
-				getPropertySpecificVariables().addAll((Collection<? extends PropertySpecificVariable>)newValue);
-				return;
-			case BaciCodeGenPackage.DEV_IO__COMMON_VARIABLES:
-				getCommonVariables().clear();
-				getCommonVariables().addAll((Collection<? extends CommonVariable>)newValue);
-				return;
-			case BaciCodeGenPackage.DEV_IO__AUXILIARY_VARIABLES:
-				getAuxiliaryVariables().clear();
-				getAuxiliaryVariables().addAll((Collection<? extends AuxiliaryVariable>)newValue);
+			case BaciCodeGenPackage.DEV_IO__DEV_IO_VARIABLES:
+				getDevIOVariables().clear();
+				getDevIOVariables().addAll((Collection<? extends DevIOVariable>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -294,14 +226,8 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 			case BaciCodeGenPackage.DEV_IO__REQUIRED_LIBRARIES:
 				setRequiredLibraries(REQUIRED_LIBRARIES_EDEFAULT);
 				return;
-			case BaciCodeGenPackage.DEV_IO__PROPERTY_SPECIFIC_VARIABLES:
-				getPropertySpecificVariables().clear();
-				return;
-			case BaciCodeGenPackage.DEV_IO__COMMON_VARIABLES:
-				getCommonVariables().clear();
-				return;
-			case BaciCodeGenPackage.DEV_IO__AUXILIARY_VARIABLES:
-				getAuxiliaryVariables().clear();
+			case BaciCodeGenPackage.DEV_IO__DEV_IO_VARIABLES:
+				getDevIOVariables().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -319,12 +245,8 @@ public class DevIOImpl extends MinimalEObjectImpl.Container implements DevIO {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case BaciCodeGenPackage.DEV_IO__REQUIRED_LIBRARIES:
 				return REQUIRED_LIBRARIES_EDEFAULT == null ? requiredLibraries != null : !REQUIRED_LIBRARIES_EDEFAULT.equals(requiredLibraries);
-			case BaciCodeGenPackage.DEV_IO__PROPERTY_SPECIFIC_VARIABLES:
-				return propertySpecificVariables != null && !propertySpecificVariables.isEmpty();
-			case BaciCodeGenPackage.DEV_IO__COMMON_VARIABLES:
-				return commonVariables != null && !commonVariables.isEmpty();
-			case BaciCodeGenPackage.DEV_IO__AUXILIARY_VARIABLES:
-				return auxiliaryVariables != null && !auxiliaryVariables.isEmpty();
+			case BaciCodeGenPackage.DEV_IO__DEV_IO_VARIABLES:
+				return devIOVariables != null && !devIOVariables.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

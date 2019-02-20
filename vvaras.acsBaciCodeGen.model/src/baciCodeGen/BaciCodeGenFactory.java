@@ -85,31 +85,13 @@ public interface BaciCodeGenFactory extends EFactory {
 	DevIO createDevIO();
 
 	/**
-	 * Returns a new object of class '<em>Property Specific Variable</em>'.
+	 * Returns a new object of class '<em>Dev IO Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Property Specific Variable</em>'.
+	 * @return a new object of class '<em>Dev IO Variable</em>'.
 	 * @generated
 	 */
-	PropertySpecificVariable createPropertySpecificVariable();
-
-	/**
-	 * Returns a new object of class '<em>Common Variable</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Common Variable</em>'.
-	 * @generated
-	 */
-	CommonVariable createCommonVariable();
-
-	/**
-	 * Returns a new object of class '<em>Auxiliary Variable</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Auxiliary Variable</em>'.
-	 * @generated
-	 */
-	AuxiliaryVariable createAuxiliaryVariable();
+	DevIOVariable createDevIOVariable();
 
 	/**
 	 * Returns a new object of class '<em>Used Baci Types</em>'.

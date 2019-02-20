@@ -64,9 +64,7 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 			case BaciCodeGenPackage.PROPERTY: return createProperty();
 			case BaciCodeGenPackage.USED_DEV_IOS: return createUsedDevIOs();
 			case BaciCodeGenPackage.DEV_IO: return createDevIO();
-			case BaciCodeGenPackage.PROPERTY_SPECIFIC_VARIABLE: return createPropertySpecificVariable();
-			case BaciCodeGenPackage.COMMON_VARIABLE: return createCommonVariable();
-			case BaciCodeGenPackage.AUXILIARY_VARIABLE: return createAuxiliaryVariable();
+			case BaciCodeGenPackage.DEV_IO_VARIABLE: return createDevIOVariable();
 			case BaciCodeGenPackage.USED_BACI_TYPES: return createUsedBaciTypes();
 			case BaciCodeGenPackage.BACI_TYPE: return createBaciType();
 			case BaciCodeGenPackage.COMPONENT_INSTANCES: return createComponentInstances();
@@ -193,29 +191,9 @@ public class BaciCodeGenFactoryImpl extends EFactoryImpl implements BaciCodeGenF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertySpecificVariable createPropertySpecificVariable() {
-		PropertySpecificVariableImpl propertySpecificVariable = new PropertySpecificVariableImpl();
-		return propertySpecificVariable;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CommonVariable createCommonVariable() {
-		CommonVariableImpl commonVariable = new CommonVariableImpl();
-		return commonVariable;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AuxiliaryVariable createAuxiliaryVariable() {
-		AuxiliaryVariableImpl auxiliaryVariable = new AuxiliaryVariableImpl();
-		return auxiliaryVariable;
+	public DevIOVariable createDevIOVariable() {
+		DevIOVariableImpl devIOVariable = new DevIOVariableImpl();
+		return devIOVariable;
 	}
 
 	/**

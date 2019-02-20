@@ -233,72 +233,26 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link baciCodeGen.PropertySpecificVariable} instances.
+	 * This keeps track of the one adapter used for all {@link baciCodeGen.DevIOVariable} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PropertySpecificVariableItemProvider propertySpecificVariableItemProvider;
+	protected DevIOVariableItemProvider devIOVariableItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link baciCodeGen.PropertySpecificVariable}.
+	 * This creates an adapter for a {@link baciCodeGen.DevIOVariable}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPropertySpecificVariableAdapter() {
-		if (propertySpecificVariableItemProvider == null) {
-			propertySpecificVariableItemProvider = new PropertySpecificVariableItemProvider(this);
+	public Adapter createDevIOVariableAdapter() {
+		if (devIOVariableItemProvider == null) {
+			devIOVariableItemProvider = new DevIOVariableItemProvider(this);
 		}
 
-		return propertySpecificVariableItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link baciCodeGen.CommonVariable} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CommonVariableItemProvider commonVariableItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link baciCodeGen.CommonVariable}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCommonVariableAdapter() {
-		if (commonVariableItemProvider == null) {
-			commonVariableItemProvider = new CommonVariableItemProvider(this);
-		}
-
-		return commonVariableItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link baciCodeGen.AuxiliaryVariable} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AuxiliaryVariableItemProvider auxiliaryVariableItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link baciCodeGen.AuxiliaryVariable}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAuxiliaryVariableAdapter() {
-		if (auxiliaryVariableItemProvider == null) {
-			auxiliaryVariableItemProvider = new AuxiliaryVariableItemProvider(this);
-		}
-
-		return auxiliaryVariableItemProvider;
+		return devIOVariableItemProvider;
 	}
 
 	/**
@@ -591,9 +545,7 @@ public class BaciCodeGenItemProviderAdapterFactory extends BaciCodeGenAdapterFac
 		if (propertyItemProvider != null) propertyItemProvider.dispose();
 		if (usedDevIOsItemProvider != null) usedDevIOsItemProvider.dispose();
 		if (devIOItemProvider != null) devIOItemProvider.dispose();
-		if (propertySpecificVariableItemProvider != null) propertySpecificVariableItemProvider.dispose();
-		if (commonVariableItemProvider != null) commonVariableItemProvider.dispose();
-		if (auxiliaryVariableItemProvider != null) auxiliaryVariableItemProvider.dispose();
+		if (devIOVariableItemProvider != null) devIOVariableItemProvider.dispose();
 		if (usedBaciTypesItemProvider != null) usedBaciTypesItemProvider.dispose();
 		if (baciTypeItemProvider != null) baciTypeItemProvider.dispose();
 		if (componentInstancesItemProvider != null) componentInstancesItemProvider.dispose();

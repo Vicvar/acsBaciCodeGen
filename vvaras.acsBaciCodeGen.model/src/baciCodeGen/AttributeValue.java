@@ -33,7 +33,7 @@ public interface AttributeValue extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see baciCodeGen.BaciCodeGenPackage#getAttributeValue_Name()
-	 * @model
+	 * @model derived="true"
 	 * @generated
 	 */
 	String getName();

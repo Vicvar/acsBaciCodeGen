@@ -114,27 +114,6 @@ public class BaciCodeGenSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BaciCodeGenPackage.PROPERTY_SPECIFIC_VARIABLE: {
-				PropertySpecificVariable propertySpecificVariable = (PropertySpecificVariable)theEObject;
-				T result = casePropertySpecificVariable(propertySpecificVariable);
-				if (result == null) result = caseDevIOVariable(propertySpecificVariable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case BaciCodeGenPackage.COMMON_VARIABLE: {
-				CommonVariable commonVariable = (CommonVariable)theEObject;
-				T result = caseCommonVariable(commonVariable);
-				if (result == null) result = caseDevIOVariable(commonVariable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case BaciCodeGenPackage.AUXILIARY_VARIABLE: {
-				AuxiliaryVariable auxiliaryVariable = (AuxiliaryVariable)theEObject;
-				T result = caseAuxiliaryVariable(auxiliaryVariable);
-				if (result == null) result = caseDevIOVariable(auxiliaryVariable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case BaciCodeGenPackage.USED_BACI_TYPES: {
 				UsedBaciTypes usedBaciTypes = (UsedBaciTypes)theEObject;
 				T result = caseUsedBaciTypes(usedBaciTypes);
@@ -310,51 +289,6 @@ public class BaciCodeGenSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDevIOVariable(DevIOVariable object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Property Specific Variable</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Property Specific Variable</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePropertySpecificVariable(PropertySpecificVariable object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Common Variable</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Common Variable</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCommonVariable(CommonVariable object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Auxiliary Variable</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Auxiliary Variable</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAuxiliaryVariable(AuxiliaryVariable object) {
 		return null;
 	}
 

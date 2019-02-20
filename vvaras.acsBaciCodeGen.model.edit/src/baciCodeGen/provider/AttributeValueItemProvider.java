@@ -80,7 +80,7 @@ public class AttributeValueItemProvider
 				 getString("_UI_AttributeValue_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AttributeValue_name_feature", "_UI_AttributeValue_type"),
 				 BaciCodeGenPackage.Literals.ATTRIBUTE_VALUE__NAME,
-				 true,
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,

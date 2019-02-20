@@ -461,31 +461,13 @@ public interface BaciCodeGenPackage extends EPackage {
 	int DEV_IO__REQUIRED_LIBRARIES = 1;
 
 	/**
-	 * The feature id for the '<em><b>Property Specific Variables</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Dev IO Variables</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEV_IO__PROPERTY_SPECIFIC_VARIABLES = 2;
-
-	/**
-	 * The feature id for the '<em><b>Common Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEV_IO__COMMON_VARIABLES = 3;
-
-	/**
-	 * The feature id for the '<em><b>Auxiliary Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEV_IO__AUXILIARY_VARIABLES = 4;
+	int DEV_IO__DEV_IO_VARIABLES = 2;
 
 	/**
 	 * The number of structural features of the '<em>Dev IO</em>' class.
@@ -494,7 +476,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEV_IO_FEATURE_COUNT = 5;
+	int DEV_IO_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Dev IO</em>' class.
@@ -534,13 +516,40 @@ public interface BaciCodeGenPackage extends EPackage {
 	int DEV_IO_VARIABLE__TYPE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Is Read</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEV_IO_VARIABLE__IS_READ = 2;
+
+	/**
+	 * The feature id for the '<em><b>Is Write</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEV_IO_VARIABLE__IS_WRITE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Is Property Specific</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEV_IO_VARIABLE__IS_PROPERTY_SPECIFIC = 4;
+
+	/**
 	 * The number of structural features of the '<em>Dev IO Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEV_IO_VARIABLE_FEATURE_COUNT = 2;
+	int DEV_IO_VARIABLE_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Dev IO Variable</em>' class.
@@ -552,180 +561,6 @@ public interface BaciCodeGenPackage extends EPackage {
 	int DEV_IO_VARIABLE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link baciCodeGen.impl.PropertySpecificVariableImpl <em>Property Specific Variable</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.impl.PropertySpecificVariableImpl
-	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getPropertySpecificVariable()
-	 * @generated
-	 */
-	int PROPERTY_SPECIFIC_VARIABLE = 8;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_SPECIFIC_VARIABLE__NAME = DEV_IO_VARIABLE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_SPECIFIC_VARIABLE__TYPE = DEV_IO_VARIABLE__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Is Read</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_SPECIFIC_VARIABLE__IS_READ = DEV_IO_VARIABLE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Is Write</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_SPECIFIC_VARIABLE__IS_WRITE = DEV_IO_VARIABLE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Property Specific Variable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_SPECIFIC_VARIABLE_FEATURE_COUNT = DEV_IO_VARIABLE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Property Specific Variable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_SPECIFIC_VARIABLE_OPERATION_COUNT = DEV_IO_VARIABLE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link baciCodeGen.impl.CommonVariableImpl <em>Common Variable</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.impl.CommonVariableImpl
-	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getCommonVariable()
-	 * @generated
-	 */
-	int COMMON_VARIABLE = 9;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMON_VARIABLE__NAME = DEV_IO_VARIABLE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMON_VARIABLE__TYPE = DEV_IO_VARIABLE__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Is Read</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMON_VARIABLE__IS_READ = DEV_IO_VARIABLE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Is Write</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMON_VARIABLE__IS_WRITE = DEV_IO_VARIABLE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Common Variable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMON_VARIABLE_FEATURE_COUNT = DEV_IO_VARIABLE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Common Variable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMON_VARIABLE_OPERATION_COUNT = DEV_IO_VARIABLE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link baciCodeGen.impl.AuxiliaryVariableImpl <em>Auxiliary Variable</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see baciCodeGen.impl.AuxiliaryVariableImpl
-	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getAuxiliaryVariable()
-	 * @generated
-	 */
-	int AUXILIARY_VARIABLE = 10;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUXILIARY_VARIABLE__NAME = DEV_IO_VARIABLE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUXILIARY_VARIABLE__TYPE = DEV_IO_VARIABLE__TYPE;
-
-	/**
-	 * The number of structural features of the '<em>Auxiliary Variable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUXILIARY_VARIABLE_FEATURE_COUNT = DEV_IO_VARIABLE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Auxiliary Variable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUXILIARY_VARIABLE_OPERATION_COUNT = DEV_IO_VARIABLE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link baciCodeGen.impl.UsedBaciTypesImpl <em>Used Baci Types</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -733,7 +568,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getUsedBaciTypes()
 	 * @generated
 	 */
-	int USED_BACI_TYPES = 11;
+	int USED_BACI_TYPES = 8;
 
 	/**
 	 * The feature id for the '<em><b>Baci Types</b></em>' containment reference list.
@@ -770,7 +605,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getBaciType()
 	 * @generated
 	 */
-	int BACI_TYPE = 12;
+	int BACI_TYPE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -834,7 +669,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getComponentInstances()
 	 * @generated
 	 */
-	int COMPONENT_INSTANCES = 13;
+	int COMPONENT_INSTANCES = 10;
 
 	/**
 	 * The feature id for the '<em><b>Instances</b></em>' containment reference list.
@@ -880,7 +715,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getInstance()
 	 * @generated
 	 */
-	int INSTANCE = 14;
+	int INSTANCE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -962,7 +797,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getAttributeValues()
 	 * @generated
 	 */
-	int ATTRIBUTE_VALUES = 15;
+	int ATTRIBUTE_VALUES = 12;
 
 	/**
 	 * The feature id for the '<em><b>Instance Attributes</b></em>' containment reference list.
@@ -1008,7 +843,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getAttributeValue()
 	 * @generated
 	 */
-	int ATTRIBUTE_VALUE = 16;
+	int ATTRIBUTE_VALUE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1054,7 +889,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getCharacteristicValues()
 	 * @generated
 	 */
-	int CHARACTERISTIC_VALUES = 17;
+	int CHARACTERISTIC_VALUES = 14;
 
 	/**
 	 * The feature id for the '<em><b>Property Name</b></em>' attribute.
@@ -1109,7 +944,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getCharacteristicValue()
 	 * @generated
 	 */
-	int CHARACTERISTIC_VALUE = 18;
+	int CHARACTERISTIC_VALUE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1155,7 +990,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getPropertyDefinition()
 	 * @generated
 	 */
-	int PROPERTY_DEFINITION = 19;
+	int PROPERTY_DEFINITION = 16;
 
 	/**
 	 * The number of structural features of the '<em>Property Definition</em>' class.
@@ -1183,7 +1018,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getAccessType()
 	 * @generated
 	 */
-	int ACCESS_TYPE = 20;
+	int ACCESS_TYPE = 17;
 
 	/**
 	 * The meta object id for the '{@link baciCodeGen.BasicType <em>Basic Type</em>}' enum.
@@ -1193,7 +1028,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getBasicType()
 	 * @generated
 	 */
-	int BASIC_TYPE = 21;
+	int BASIC_TYPE = 18;
 
 	/**
 	 * The meta object id for the '{@link baciCodeGen.SeqType <em>Seq Type</em>}' enum.
@@ -1203,7 +1038,7 @@ public interface BaciCodeGenPackage extends EPackage {
 	 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getSeqType()
 	 * @generated
 	 */
-	int SEQ_TYPE = 22;
+	int SEQ_TYPE = 19;
 
 
 	/**
@@ -1552,37 +1387,15 @@ public interface BaciCodeGenPackage extends EPackage {
 	EAttribute getDevIO_RequiredLibraries();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link baciCodeGen.DevIO#getPropertySpecificVariables <em>Property Specific Variables</em>}'.
+	 * Returns the meta object for the containment reference list '{@link baciCodeGen.DevIO#getDevIOVariables <em>Dev IO Variables</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Property Specific Variables</em>'.
-	 * @see baciCodeGen.DevIO#getPropertySpecificVariables()
+	 * @return the meta object for the containment reference list '<em>Dev IO Variables</em>'.
+	 * @see baciCodeGen.DevIO#getDevIOVariables()
 	 * @see #getDevIO()
 	 * @generated
 	 */
-	EReference getDevIO_PropertySpecificVariables();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link baciCodeGen.DevIO#getCommonVariables <em>Common Variables</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Common Variables</em>'.
-	 * @see baciCodeGen.DevIO#getCommonVariables()
-	 * @see #getDevIO()
-	 * @generated
-	 */
-	EReference getDevIO_CommonVariables();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link baciCodeGen.DevIO#getAuxiliaryVariables <em>Auxiliary Variables</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Auxiliary Variables</em>'.
-	 * @see baciCodeGen.DevIO#getAuxiliaryVariables()
-	 * @see #getDevIO()
-	 * @generated
-	 */
-	EReference getDevIO_AuxiliaryVariables();
+	EReference getDevIO_DevIOVariables();
 
 	/**
 	 * Returns the meta object for class '{@link baciCodeGen.DevIOVariable <em>Dev IO Variable</em>}'.
@@ -1617,78 +1430,37 @@ public interface BaciCodeGenPackage extends EPackage {
 	EAttribute getDevIOVariable_Type();
 
 	/**
-	 * Returns the meta object for class '{@link baciCodeGen.PropertySpecificVariable <em>Property Specific Variable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Property Specific Variable</em>'.
-	 * @see baciCodeGen.PropertySpecificVariable
-	 * @generated
-	 */
-	EClass getPropertySpecificVariable();
-
-	/**
-	 * Returns the meta object for the attribute '{@link baciCodeGen.PropertySpecificVariable#isIsRead <em>Is Read</em>}'.
+	 * Returns the meta object for the attribute '{@link baciCodeGen.DevIOVariable#isIsRead <em>Is Read</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Is Read</em>'.
-	 * @see baciCodeGen.PropertySpecificVariable#isIsRead()
-	 * @see #getPropertySpecificVariable()
+	 * @see baciCodeGen.DevIOVariable#isIsRead()
+	 * @see #getDevIOVariable()
 	 * @generated
 	 */
-	EAttribute getPropertySpecificVariable_IsRead();
+	EAttribute getDevIOVariable_IsRead();
 
 	/**
-	 * Returns the meta object for the attribute '{@link baciCodeGen.PropertySpecificVariable#isIsWrite <em>Is Write</em>}'.
+	 * Returns the meta object for the attribute '{@link baciCodeGen.DevIOVariable#isIsWrite <em>Is Write</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Is Write</em>'.
-	 * @see baciCodeGen.PropertySpecificVariable#isIsWrite()
-	 * @see #getPropertySpecificVariable()
+	 * @see baciCodeGen.DevIOVariable#isIsWrite()
+	 * @see #getDevIOVariable()
 	 * @generated
 	 */
-	EAttribute getPropertySpecificVariable_IsWrite();
+	EAttribute getDevIOVariable_IsWrite();
 
 	/**
-	 * Returns the meta object for class '{@link baciCodeGen.CommonVariable <em>Common Variable</em>}'.
+	 * Returns the meta object for the attribute '{@link baciCodeGen.DevIOVariable#isIsPropertySpecific <em>Is Property Specific</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Common Variable</em>'.
-	 * @see baciCodeGen.CommonVariable
+	 * @return the meta object for the attribute '<em>Is Property Specific</em>'.
+	 * @see baciCodeGen.DevIOVariable#isIsPropertySpecific()
+	 * @see #getDevIOVariable()
 	 * @generated
 	 */
-	EClass getCommonVariable();
-
-	/**
-	 * Returns the meta object for the attribute '{@link baciCodeGen.CommonVariable#isIsRead <em>Is Read</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Read</em>'.
-	 * @see baciCodeGen.CommonVariable#isIsRead()
-	 * @see #getCommonVariable()
-	 * @generated
-	 */
-	EAttribute getCommonVariable_IsRead();
-
-	/**
-	 * Returns the meta object for the attribute '{@link baciCodeGen.CommonVariable#isIsWrite <em>Is Write</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Write</em>'.
-	 * @see baciCodeGen.CommonVariable#isIsWrite()
-	 * @see #getCommonVariable()
-	 * @generated
-	 */
-	EAttribute getCommonVariable_IsWrite();
-
-	/**
-	 * Returns the meta object for class '{@link baciCodeGen.AuxiliaryVariable <em>Auxiliary Variable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Auxiliary Variable</em>'.
-	 * @see baciCodeGen.AuxiliaryVariable
-	 * @generated
-	 */
-	EClass getAuxiliaryVariable();
+	EAttribute getDevIOVariable_IsPropertySpecific();
 
 	/**
 	 * Returns the meta object for class '{@link baciCodeGen.UsedBaciTypes <em>Used Baci Types</em>}'.
@@ -2346,28 +2118,12 @@ public interface BaciCodeGenPackage extends EPackage {
 		EAttribute DEV_IO__REQUIRED_LIBRARIES = eINSTANCE.getDevIO_RequiredLibraries();
 
 		/**
-		 * The meta object literal for the '<em><b>Property Specific Variables</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Dev IO Variables</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEV_IO__PROPERTY_SPECIFIC_VARIABLES = eINSTANCE.getDevIO_PropertySpecificVariables();
-
-		/**
-		 * The meta object literal for the '<em><b>Common Variables</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DEV_IO__COMMON_VARIABLES = eINSTANCE.getDevIO_CommonVariables();
-
-		/**
-		 * The meta object literal for the '<em><b>Auxiliary Variables</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DEV_IO__AUXILIARY_VARIABLES = eINSTANCE.getDevIO_AuxiliaryVariables();
+		EReference DEV_IO__DEV_IO_VARIABLES = eINSTANCE.getDevIO_DevIOVariables();
 
 		/**
 		 * The meta object literal for the '{@link baciCodeGen.impl.DevIOVariableImpl <em>Dev IO Variable</em>}' class.
@@ -2396,22 +2152,12 @@ public interface BaciCodeGenPackage extends EPackage {
 		EAttribute DEV_IO_VARIABLE__TYPE = eINSTANCE.getDevIOVariable_Type();
 
 		/**
-		 * The meta object literal for the '{@link baciCodeGen.impl.PropertySpecificVariableImpl <em>Property Specific Variable</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see baciCodeGen.impl.PropertySpecificVariableImpl
-		 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getPropertySpecificVariable()
-		 * @generated
-		 */
-		EClass PROPERTY_SPECIFIC_VARIABLE = eINSTANCE.getPropertySpecificVariable();
-
-		/**
 		 * The meta object literal for the '<em><b>Is Read</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PROPERTY_SPECIFIC_VARIABLE__IS_READ = eINSTANCE.getPropertySpecificVariable_IsRead();
+		EAttribute DEV_IO_VARIABLE__IS_READ = eINSTANCE.getDevIOVariable_IsRead();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Write</b></em>' attribute feature.
@@ -2419,43 +2165,15 @@ public interface BaciCodeGenPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PROPERTY_SPECIFIC_VARIABLE__IS_WRITE = eINSTANCE.getPropertySpecificVariable_IsWrite();
+		EAttribute DEV_IO_VARIABLE__IS_WRITE = eINSTANCE.getDevIOVariable_IsWrite();
 
 		/**
-		 * The meta object literal for the '{@link baciCodeGen.impl.CommonVariableImpl <em>Common Variable</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see baciCodeGen.impl.CommonVariableImpl
-		 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getCommonVariable()
-		 * @generated
-		 */
-		EClass COMMON_VARIABLE = eINSTANCE.getCommonVariable();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Read</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Is Property Specific</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMON_VARIABLE__IS_READ = eINSTANCE.getCommonVariable_IsRead();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Write</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMMON_VARIABLE__IS_WRITE = eINSTANCE.getCommonVariable_IsWrite();
-
-		/**
-		 * The meta object literal for the '{@link baciCodeGen.impl.AuxiliaryVariableImpl <em>Auxiliary Variable</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see baciCodeGen.impl.AuxiliaryVariableImpl
-		 * @see baciCodeGen.impl.BaciCodeGenPackageImpl#getAuxiliaryVariable()
-		 * @generated
-		 */
-		EClass AUXILIARY_VARIABLE = eINSTANCE.getAuxiliaryVariable();
+		EAttribute DEV_IO_VARIABLE__IS_PROPERTY_SPECIFIC = eINSTANCE.getDevIOVariable_IsPropertySpecific();
 
 		/**
 		 * The meta object literal for the '{@link baciCodeGen.impl.UsedBaciTypesImpl <em>Used Baci Types</em>}' class.
